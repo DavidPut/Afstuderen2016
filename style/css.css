@@ -5,6 +5,8 @@ html, body {
 }
 #map {
     height: 50%;
+    border-width: 0 0 2px 0;
+    border-style: solid;
 }
 
 @font-face {
