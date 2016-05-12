@@ -32,6 +32,11 @@ html, body {
     border-style: solid;
     margin-top: 1%;
 }
+.loc-block{
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 1%;
+}
 
 .container-fluid{
     padding-left:5% !important;
@@ -42,3 +47,19 @@ html, body {
     width: 250px;
 }
 
+.icon-document{
+    margin-top:20px;
+}
+.side-bar{
+    border-width: 1px;
+    border-style: solid;
+    height:500px;
+}
+
+.container-fluid {
+    padding-right:0 !important;
+}
+
+.no-padding{
+    padding:0 !important;
+}

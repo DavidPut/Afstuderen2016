@@ -1,6 +1,8 @@
 var map;
 $( document ).ready(function() {
    initMap();
+    characterLimit();
+    addHeight();
 });
 
 function initMap() {
@@ -31,4 +33,18 @@ function initMap() {
         map: map,
         title: 'Marker!'
     });
+}
+
+function addHeight(){
+    var height = $('.doc-block').height() +2;
+    console.log(height);
+    $('.loc-block').css("height", height+"px");
+}
+
+function characterLimit(){
+    var myTag = $('.document-content').text();
+    if (myTag.length > 15) {
+        var truncated = myTag.trim().substring(0, 300) + "…";
+        $('.document-content').text(truncated);
+    }
 }
