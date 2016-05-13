@@ -2,7 +2,6 @@ var map;
 $( document ).ready(function() {
    initMap();
     characterLimit();
-    addHeight();
 });
 
 function initMap() {
@@ -33,12 +32,6 @@ function initMap() {
         map: map,
         title: 'Marker!'
     });
-}
-
-function addHeight(){
-    var height = $('.doc-block').height() +2;
-    console.log(height);
-    $('.loc-block').css("height", height+"px");
 }
 
 function characterLimit(){
