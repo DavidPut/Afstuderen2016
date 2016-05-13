@@ -2,6 +2,8 @@ var map;
 $( document ).ready(function() {
    initMap();
     characterLimit();
+    addHeight();
+
 });
 
 function initMap() {
@@ -26,18 +28,29 @@ function initMap() {
     // Create the Google Map using our element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
 
+    //Custom image
+    var image = './images/Marker_Icon_fysiek_red.png';
+
     // Let's also add a marker while we're at it
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(51.811994, 4.659263),
         map: map,
-        title: 'Marker!'
+        title: 'Marker!',
+        icon: image
     });
 }
 
+//Limit characters.
 function characterLimit(){
     var myTag = $('.document-content').text();
     if (myTag.length > 15) {
         var truncated = myTag.trim().substring(0, 300) + "…";
         $('.document-content').text(truncated);
     }
+}
+
+//To center location icon, add height to icon-block.
+function addHeight(){
+    var height = $('.loc-block').height();
+    $('.icon-block').css("height", height + "px");
 }
