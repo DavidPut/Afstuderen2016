@@ -3,7 +3,6 @@ $( document ).ready(function() {
    initMap();
     characterLimit();
     addHeight();
-
 });
 
 function initMap() {
