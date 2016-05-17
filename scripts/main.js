@@ -131,11 +131,12 @@ $(document).on('click', '.toggle-button', function() {
 
 //Sort documents by date
 function sortDocs(){
-    $(".doc-row").sort(function(a,b){
-        return new Date($(a).attr("date")) > new Date($(b).attr("date"));
-    }).each(function(){
-        $(".doc-container").prepend(this);
-    })
+    //TODO: Filter sidebar wordt ook gesort!
+    //$(".doc-row").sort(function(a,b){
+    //    return new Date($(a).attr("date")) > new Date($(b).attr("date"));
+    //}).each(function(){
+    //    $(".doc-container").prepend(this);
+    //})
 }
 
 function filterTags(){
