@@ -4,6 +4,8 @@ $( document ).ready(function() {
     characterLimit();
     addHeight();
     moveSidebar();
+    sortDocs();
+    filterTags();
 });
 
 function initMap() {
@@ -38,6 +40,23 @@ function initMap() {
         title: 'Marker!',
         icon: image
     });
+
+    //Location search
+    $(".btn-loc").click(function(e){
+        e.preventDefault();
+
+        var geocoder = new google.maps.Geocoder();
+        var address = $(".input-loc").val();
+
+        geocoder.geocode( { 'address': address}, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+                map.setCenter(new google.maps.LatLng(latitude, longitude));
+            }
+        });
+    });
 }
 
 //Limit characters.
@@ -64,11 +83,13 @@ function moveSidebar(){
         $('.no-padding').removeClass('side-bar');
         $('.mob-sidebar').addClass('side-bar');
 
-        //Remove toggle button
-        $( ".toggle-button" ).remove();
+        //Make toggle button vertical
+        $(".toggle-button").css({"top" : "97%", "left"  : "50%", "height" : "50px", "width" : "28px"});
+        $(".toggle-button button").css({"transition" : "top 0.3s", "top" : "25px"});
     }
     else {
-        jQuery(".mob-sidebar").detach().appendTo('.cont-sidebar')
+        jQuery(".mob-sidebar").detach().appendTo('.cont-sidebar');
+
         //Add and remove classes for proper padding placement
         $('.mob-sidebar').removeClass('side-bar');
         $('.no-padding').addClass('side-bar');
@@ -79,16 +100,60 @@ function moveSidebar(){
 state = true;
 $(document).on('click', '.toggle-button', function() {
 
-    $(this).toggleClass('toggle-button-selected');
+    //Mobile
+    if ($(window).width() < 992) {
+        $(this).toggleClass("toggle-button-selected-vert");
 
-    if (state){
-        $( ".cont-sidebar" ).animate({ "left": "20%" }, "slow" );
-        state = false;
+        if (state){
+            $( ".mob-sidebar" ).animate({ "margin-top": "-565px" }, "slow" );
+            state = false;
+        }
+        else {
+            $( ".mob-sidebar" ).animate({ "margin-top": "0px" }, "slow" );
+            state = true;
+        }
     }
+
+    //Desktop
     else {
-        $( ".cont-sidebar" ).animate({ "left": "-=20%" }, "slow" );
-        state = true;
+        $(this).toggleClass('toggle-button-selected');
+
+        if (state){
+            $( ".cont-sidebar" ).animate({ "left": "20%" }, "slow" );
+            state = false;
+        }
+        else {
+            $( ".cont-sidebar" ).animate({ "left": "-=20%" }, "slow" );
+            state = true;
+        }
     }
 });
+
+//Sort documents by date
+function sortDocs(){
+    $(".doc-row").sort(function(a,b){
+        return new Date($(a).attr("date")) > new Date($(b).attr("date"));
+    }).each(function(){
+        $(".doc-container").prepend(this);
+    })
+}
+
+function filterTags(){
+
+    //Split tag by , in array.
+    var tags = "doc";
+    var array = tags.split(',');
+
+    //Loop through array
+    jQuery.each( array, function( i, val ) {
+        console.log(val);
+
+        //Remove documents that does not contain value specified in tags.
+        $( ".doc-row").not('[tags*="'+val+'"]').remove();
+    });
+}
+
+
+
 
 

@@ -10,6 +10,7 @@ html, body {
     height: 50%;
     border-width: 0 0 2px 0;
     border-style: solid;
+    z-index: 100;
 }
 
 @font-face {
@@ -32,6 +33,10 @@ html, body {
 
 .container-fluid{
     margin-top: 1%;
+    padding-right:0 !important;
+    padding-left:2% !important;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .doc-block{
@@ -39,6 +44,10 @@ html, body {
     border-style: solid;
     margin-bottom: 1%;
 
+}
+
+.doc-row{
+    margin-right: 10px !important;
 }
 
 .loc-block:after {
@@ -58,9 +67,6 @@ html, body {
     margin:auto;
 }
 
-.container-fluid{
-    padding-left:5% !important;
-}
 
 .search-form{
     margin-top: 8px;
@@ -79,10 +85,6 @@ html, body {
 
 }
 
-.container-fluid {
-    padding-right:0 !important;
-}
-
 .no-padding{
     padding:0 !important;
 }
@@ -91,7 +93,12 @@ html, body {
     margin-top:10px;
 }
 .cont-sidebar{
-    padding-right: 0px!important;
+    padding: 0px!important;
+}
+
+.mob-sidebar{
+    margin-bottom: 50px;
+    z-index: -100;
 }
 
 #location-form{
@@ -103,6 +110,8 @@ html, body {
     border-style: solid;
     padding: 0 10px 10px 10px;
 }
+
+
 
 .doc-type-block{
     border-width: 0 0 1px 0;
@@ -175,6 +184,22 @@ html, body {
     height: 24px;
     box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
+
+.toggle-button-selected-vert{
+    background-color: #83B152;
+    border: 2px solid #7DA652;
+}
+
+.toggle-button-selected-vert button {
+    left: 0px;
+    top: 0px !important;
+    margin: 0;
+    border: none;
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
 
 
 
