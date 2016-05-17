@@ -27,19 +27,9 @@
 
 <div class="container-fluid">
     <div class="col-md-9">
-        <!--Tag search bar-->
-        <!--ToDo: Move to filter sidebar-->
-        <div class="row">
-            <form class="search-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
-                </div>
-            </form>
-        </div>
+        <div class="row mob-sidebar">
 
+        </div>
         <!--Document blocks-->
         <div class="row">
             <div class="col-md-12 col-xs-12 doc-block loc-block">
@@ -57,7 +47,7 @@
                     <p class="document-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tincidunt purus, quis sodales justo. Sed egestas, leo ac tristique tincidunt, purus lectus auctor enim, eu semper lectus eros id velit. Nullam semper laoreet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit amet consequat metus. Ut varius, urna a rutrum volutpat, tellus tellus semper massa, vel faucibus justo lacus quis dolor.</p>
                     </div>
                 <div class="col-md-2 col-xs-2 icon-block">
-                    <img class="pull-right img-responsive loc-icon"src="images/Icon_fysiek_red.png" alt="icon document">
+                    <a href="#"><img class="pull-right img-responsive loc-icon"src="images/Icon_fysiek_red.png" alt="icon document"></a>
                 </div>
             </div>
         </div>
@@ -97,24 +87,78 @@
         </div>
 
     </div>
-    <!--Filter sidebar->
 
-    <!--<div class="col-md-3 no-padding">-->
-        <!--<div class="col-md-12 side-bar">-->
-            <!--&lt;!&ndash;Tag search bar&ndash;&gt;-->
-            <!--<div class="row">-->
-                <!--<form class="location-form" role="search">-->
-                    <!--<div class="input-group">-->
-                        <!--<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-post">-->
-                        <!--<div class="input-group-btn">-->
-                            <!--<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</form>-->
-            <!--</div>-->
-        <!--</div>-->
+    <!--Filter sidebar-->
+    <div class="col-md-3 cont-sidebar">
+        <div class="col-md-12 side-bar no-padding">
 
-    <!--</div>-->
+            <div class="search-block">
+                <span class="text-center"><h4>Filter</h4></span>
+                <!--Location search bar-->
+                <form id="location-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Postcode + plaatsnaam" name="srch-term" id="srch-loc">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+
+                <!--Tag search bar-->
+                <form id="tags-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tags" name="srch-term" id="srch-tag">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="doc-type-block">
+                <span class="text-center"><h4>Type besluitvorming</h4></span>
+                <!--Filter type document-->
+                <form id="type-form" role="filter">
+                    <input type="checkbox" name="physical" value="Physical"> <img src="images/Icon_hammer.png" alt="Icon physical"> = Fysiek </br>
+                    <input type="checkbox" name="social" value="Social"> <img src="images/Icon_people.png" alt="Icon social"> = Sociaal  </br>
+                    <input type="checkbox" name="money" value="Money">  <img src="images/Icon_money.png" alt="Icon money"> = Bestuur & middelen </br>
+                </form>
+            </div>
+
+            <div class="toggle-button">
+                <button></button>
+            </div>
+
+            <div class="doc-time-block">
+                <span class="text-center"><h4>Tijdsindicatie</h4></span>
+                <!--Filter tijd document-->
+                <form id="time-form" role="filter">
+                    <div class="input-time">
+                        <input type="checkbox" name="low" value="<1">  <img class="icon-time" src="images/Circle_green.png" alt="Icon physical"> = Fysiek
+                    </div>
+                    <div class="input-time">
+                        <input type="checkbox" name="mid" value="1-5"> <img class="icon-time" src="images/Circle_orange.png" alt="Icon social"> = Sociaal
+                    </div>
+                    <div class="input-time">
+                        <input type="checkbox" name="hig" value="5+">  <img class="icon-time" src="images/Circle_red.png" alt="Icon money"> = Bestuur & middelen
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="slider-block">
+                <span class="text-center"><h4>Afstand</h4></span>
+                <!--Filter afstand-->
+                <form id="marker-form" role="filter">
+                    <div data-role="rangeslider">
+                        <input type="range" name="marker-range" id="marker-range" value="200" min="0" max="1000">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
 </div>
 </body>
 </html>

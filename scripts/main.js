@@ -3,6 +3,7 @@ $( document ).ready(function() {
    initMap();
     characterLimit();
     addHeight();
+    moveSidebar();
 });
 
 function initMap() {
@@ -53,3 +54,41 @@ function addHeight(){
     var height = $('.loc-block').height();
     $('.icon-block').css("height", height + "px");
 }
+
+//Move sidebar for mobile users.
+function moveSidebar(){
+    if ($(window).width() < 992) {
+        jQuery(".cont-sidebar").detach().appendTo('.mob-sidebar');
+
+        //Add and remove classes for proper padding placement
+        $('.no-padding').removeClass('side-bar');
+        $('.mob-sidebar').addClass('side-bar');
+
+        //Remove toggle button
+        $( ".toggle-button" ).remove();
+    }
+    else {
+        jQuery(".mob-sidebar").detach().appendTo('.cont-sidebar')
+        //Add and remove classes for proper padding placement
+        $('.mob-sidebar').removeClass('side-bar');
+        $('.no-padding').addClass('side-bar');
+    }
+}
+
+//Sidebar toggle
+state = true;
+$(document).on('click', '.toggle-button', function() {
+
+    $(this).toggleClass('toggle-button-selected');
+
+    if (state){
+        $( ".cont-sidebar" ).animate({ "left": "20%" }, "slow" );
+        state = false;
+    }
+    else {
+        $( ".cont-sidebar" ).animate({ "left": "-=20%" }, "slow" );
+        state = true;
+    }
+});
+
+
