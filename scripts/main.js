@@ -139,20 +139,31 @@ function sortDocs(){
 }
 
 function filterTags(){
+    $(".btn-tags").click(function(e){
+        e.preventDefault();
 
-    //Split tag by , in array.
-    var tags = "doc";
-    var array = tags.split(',');
+        //Split tag by , in array.
+        var tags = $(".input-tags").val().replace(/\s+/g,",");
 
-    //Loop through array
-    jQuery.each( array, function( i, val ) {
-        console.log(val);
+        //Split by comma.
+        var array = tags.split(',');
 
-        //Remove documents that does not contain value specified in tags.
-        $( ".doc-row").not('[tags*="'+val+'"]').remove();
+        //Loop through array
+        jQuery.each( array, function( i, val ) {
+
+            //TODO: meerdere tags filtert nog niet goed!
+            console.log(val);
+            //Remove/add documents that contain value specified in tags.
+            $(".doc-row" ).removeClass("show");
+
+            $(".doc-row" ).not(".show").addClass("hidden");
+
+            $(".doc-row").filter('[tags*="'+val+'"]').removeClass("hidden").addClass("show");
+
+
+        });
     });
 }
-
 
 
 
