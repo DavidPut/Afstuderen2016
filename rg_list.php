@@ -37,7 +37,7 @@ $griffie = 0;
         <th>Nummer</th>
         <th>Titel</th>
         <th>Eigen standpunten</th>
-        <th><span class="glyphicons glyphicons-parents"></span> Andere standpunten</th>
+        <th><span class="glyphicons glyphicons-25-parents"></span> Andere standpunten</th>
       </tr>
     </thead>
     <tbody>

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3ce3654-bc7a-47ef-80d3-5089e0d2d61e" name="Default" comment="testing in testmap">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rg_list.php" afterPath="$PROJECT_DIR$/rg_list.php" />
     </list>
     <ignored path="Afstuderen2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,12 +49,12 @@
       <file leaf-file-name="rg_list.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rg_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+            <state relative-caret-position="165">
+              <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
               <folding>
-                <marker date="1463570310000" expanded="true" signature="1215:1228" placeholder="..." />
-                <marker date="1463570310000" expanded="true" signature="1215:1229" placeholder="..." />
-                <marker date="1463570310000" expanded="true" signature="1215:1328" placeholder="..." />
+                <marker date="1463571119000" expanded="true" signature="1218:1231" placeholder="..." />
+                <marker date="1463571119000" expanded="true" signature="1218:1232" placeholder="..." />
+                <marker date="1463571119000" expanded="true" signature="1218:1331" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -64,8 +63,8 @@
       <file leaf-file-name="backend_css.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/backend_css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+            <state relative-caret-position="294">
+              <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -276,7 +275,7 @@
       <option name="presentableId" value="Default" />
       <updated>1463557680910</updated>
       <workItem from="1463557681969" duration="581000" />
-      <workItem from="1463558310532" duration="9120000" />
+      <workItem from="1463558310532" duration="9562000" />
     </task>
     <task id="LOCAL-00001" summary="testing in testmap">
       <created>1463558497582</created>
@@ -331,14 +330,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9701000" />
+    <option name="totallyTimeSpent" value="10143000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="52" y="23" width="1388" height="877" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25334322" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25334322" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -435,14 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/backend_css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap/style/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -451,14 +442,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/style/backend_css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rg_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+        <state relative-caret-position="165">
+          <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
           <folding>
-            <marker date="1463570310000" expanded="true" signature="1215:1228" placeholder="..." />
-            <marker date="1463570310000" expanded="true" signature="1215:1229" placeholder="..." />
-            <marker date="1463570310000" expanded="true" signature="1215:1328" placeholder="..." />
+            <marker date="1463571119000" expanded="true" signature="1218:1231" placeholder="..." />
+            <marker date="1463571119000" expanded="true" signature="1218:1232" placeholder="..." />
+            <marker date="1463571119000" expanded="true" signature="1218:1331" placeholder="..." />
           </folding>
         </state>
       </provider>
