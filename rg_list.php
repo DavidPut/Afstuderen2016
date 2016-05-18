@@ -49,7 +49,7 @@ $griffie = 0;
     echo "
       <tr>
         <td>".$x."</td>
-        <td>Besluitvorming school</td>
+        <td>Besluitvorming school...</td>
         <td>0</td>
         <td>2</td>
       </tr>"; }
