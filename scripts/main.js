@@ -274,7 +274,7 @@ function filterTime(){
 function linkDoc(){
     $('.doc-row').click(function(e) {
         var id = $(this).attr('id');
-        window.location.href = "detail.html?id=" + id;
+        window.location.href = "dossier.html?id=" + id;
     });
 
 }
