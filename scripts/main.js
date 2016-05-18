@@ -144,9 +144,12 @@ function filterTags(){
 
         //Split tag by , in array.
         var tags = $(".input-tags").val().replace(/\s+/g,",");
-
+        var myattr = $(".doc-row").attr("tags");
+        console.log("Myattr: " + myattr);
         //Split by comma.
         var array = tags.split(',');
+
+        console.log("array" + array);
 
         //Loop through array
         jQuery.each( array, function( i, val ) {
