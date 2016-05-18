@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3ce3654-bc7a-47ef-80d3-5089e0d2d61e" name="Default" comment="testing in testmap">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rg_list.php" afterPath="$PROJECT_DIR$/rg_list.php" />
     </list>
     <ignored path="Afstuderen2016.iws" />
@@ -49,12 +50,12 @@
       <file leaf-file-name="rg_list.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rg_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+            <state relative-caret-position="270">
+              <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
               <folding>
-                <marker date="1463571119000" expanded="true" signature="1218:1231" placeholder="..." />
-                <marker date="1463571119000" expanded="true" signature="1218:1232" placeholder="..." />
-                <marker date="1463571119000" expanded="true" signature="1218:1331" placeholder="..." />
+                <marker date="1463571368000" expanded="true" signature="1215:1228" placeholder="..." />
+                <marker date="1463571368000" expanded="true" signature="1215:1229" placeholder="..." />
+                <marker date="1463571368000" expanded="true" signature="1215:1328" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -275,7 +276,7 @@
       <option name="presentableId" value="Default" />
       <updated>1463557680910</updated>
       <workItem from="1463557681969" duration="581000" />
-      <workItem from="1463558310532" duration="9562000" />
+      <workItem from="1463558310532" duration="9827000" />
     </task>
     <task id="LOCAL-00001" summary="testing in testmap">
       <created>1463558497582</created>
@@ -330,7 +331,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10143000" />
+    <option name="totallyTimeSpent" value="10408000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="52" y="23" width="1388" height="877" extended-state="6" />
@@ -452,12 +453,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rg_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+        <state relative-caret-position="270">
+          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
           <folding>
-            <marker date="1463571119000" expanded="true" signature="1218:1231" placeholder="..." />
-            <marker date="1463571119000" expanded="true" signature="1218:1232" placeholder="..." />
-            <marker date="1463571119000" expanded="true" signature="1218:1331" placeholder="..." />
+            <marker date="1463571368000" expanded="true" signature="1215:1228" placeholder="..." />
+            <marker date="1463571368000" expanded="true" signature="1215:1229" placeholder="..." />
+            <marker date="1463571368000" expanded="true" signature="1215:1328" placeholder="..." />
           </folding>
         </state>
       </provider>
