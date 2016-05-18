@@ -1,0 +1,38 @@
+/* Page login */
+
+.navbar{
+  border-radius: 0px;
+  background-color: #34495E;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #FFFFFF;
+}
+
+body {
+  margin: 0px auto;
+  background-color:#ECEFF1;
+}
+
+.pagescreen {
+  width: auto;
+  height: auto;
+  background-color:#ECEFF1;
+}
+
+.loginscreen {
+  width: 600px;
+  height: auto;
+  margin: 100px auto;
+  background-color: #ECEFF1;
+}
+
+.loginform {
+  width: 500px;
+  height: auto;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-bottom: 22px;
+}
+
+
