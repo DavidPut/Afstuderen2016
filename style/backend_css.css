@@ -25,7 +25,7 @@
 
 body, html {
   margin: 0px auto;
-  background-color:#ECEFF1;
+  background-color:#F9F9F9;
   overflow-x: hidden;
   max-width:100%;
 }
@@ -33,22 +33,25 @@ body, html {
 .pagescreen {
   width: auto;
   height: auto;
-  background-color:#ECEFF1;
+  background-color:#F9F9F9;
 }
 
-.loginscreen {
-  width: 600px;
-  height: auto;
-  margin: 100px auto;
-  background-color: #ECEFF1;
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
-.loginform {
-  width: 500px;
-  height: auto;
-  margin-top: 10px;
-  margin-left: 50px;
-  margin-bottom: 22px;
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
