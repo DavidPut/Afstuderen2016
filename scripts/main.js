@@ -9,6 +9,7 @@ $( document ).ready(function() {
     filterTags();
     filterType();
     filterTime();
+    linkDoc();
 });
 
 function initMap() {
@@ -267,6 +268,15 @@ function filterTime(){
             $('.doc-row[time*="high"]').addClass("hiddenTime");
         }
     });
+}
+
+//Link document to detail page
+function linkDoc(){
+    $('.doc-row').click(function(e) {
+        var id = $(this).attr('id');
+        window.location.href = "detail.html?id=" + id;
+    });
+
 }
 
 

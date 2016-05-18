@@ -51,7 +51,7 @@ body {
     border-width: 1px;
     border-style: solid;
     margin-bottom: 1%;
-
+    cursor : pointer;
 }
 
 .doc-row{
