@@ -8,6 +8,7 @@ $( document ).ready(function() {
     sortDocs();
     filterTags();
     filterType();
+    filterTime();
 });
 
 function initMap() {
@@ -33,7 +34,7 @@ function initMap() {
     var map = new google.maps.Map(mapElement, mapOptions);
 
     //Custom image
-    var image = './images/Marker_Icon_fysiek_red.png';
+    var image = './images/Marker_Icon_fysiek_green.png';
 
     // Let's also add a marker while we're at it
     var marker = new google.maps.Marker({
@@ -58,6 +59,20 @@ function initMap() {
                 map.setCenter(new google.maps.LatLng(latitude, longitude));
             }
         });
+    });
+
+    //Click document marker
+    $('.doc-row a').click(function() {
+
+        var lat = $(this).parent().parent().parent().attr('lat');
+        var long = $(this).parent().parent().parent().attr('long');
+
+        //Center map
+        map.setCenter(new google.maps.LatLng(lat, long));
+
+        //Scroll to top
+        $("html,body").animate({ scrollTop: 0 }, "slow");
+
     });
 }
 
@@ -161,14 +176,23 @@ function filterTags(){
         //Reset
         $(".doc-row" ).removeClass("showBlock").removeClass("hidden");
 
-        //Loop through array
-        jQuery.each( array, function( i, val ) {
+        //If empty tag, reset
+        if(tags == ""){
+            $(".doc-row" ).removeClass("hidden");
+        }
 
-            //Remove/add documents that contain value specified in tags.
-            $('.doc-row[tags*="'+val+'"]').addClass("showBlock");
-            $(".doc-row" ).not(".showBlock").addClass("hidden");
+        //Filter by tags
+        else{
+            //Loop through array
+            jQuery.each( array, function( i, val ) {
 
-        });
+                //Remove/add documents that contain value specified in tags.
+                $('.doc-row[tags*="'+val+'"]').addClass("showBlock");
+                $(".doc-row" ).not(".showBlock").addClass("hidden");
+
+            });
+        }
+
     });
 }
 
@@ -177,7 +201,7 @@ function filterType(){
     $('#checkbox-physical').click(function(){
 
         if ($('#checkbox-physical').is(':checked')) {
-            $('.doc-row[type*="physical"]').removeClass("hiddenType").addClass("show");
+            $('.doc-row[type*="physical"]').removeClass("hiddenType");
         } else {
             $('.doc-row[type*="physical"]').addClass("hiddenType");
         }
@@ -187,7 +211,7 @@ function filterType(){
     $('#checkbox-social').click(function(){
 
         if ($(this).is(':checked')) {
-            $('.doc-row[type*="social"]').removeClass("hiddenType").addClass("show");
+            $('.doc-row[type*="social"]').removeClass("hiddenType");
         } else {
             $('.doc-row[type*="social"]').addClass("hiddenType");
         }
@@ -197,15 +221,43 @@ function filterType(){
     $('#checkbox-money').click(function(){
 
         if ($(this).is(':checked')) {
-            $('.doc-row[type*="money"]').removeClass("hiddenType").addClass("show");
+            $('.doc-row[type*="money"]').removeClass("hiddenType");
         } else {
             $('.doc-row[type*="money"]').addClass("hiddenType");
         }
 
     });
-
 }
 
+//Filter by time
+function filterTime(){
+    $('#checkbox-low').click(function(){
+
+        if ($(this).is(':checked')) {
+            $('.doc-row[time*="low"]').removeClass("hiddenTime");
+        } else {
+            $('.doc-row[time*="low"]').addClass("hiddenTime");
+        }
+    });
+
+    $('#checkbox-mid').click(function(){
+
+        if ($(this).is(':checked')) {
+            $('.doc-row[time*="mid"]').removeClass("hiddenTime");
+        } else {
+            $('.doc-row[time*="mid"]').addClass("hiddenTime");
+        }
+    });
+
+    $('#checkbox-high').click(function(){
+
+        if ($(this).is(':checked')) {
+            $('.doc-row[time*="high"]').removeClass("hiddenTime");
+        } else {
+            $('.doc-row[time*="high"]').addClass("hiddenTime");
+        }
+    });
+}
 
 
 
