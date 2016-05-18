@@ -40,8 +40,9 @@ function initMap() {
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(51.811994, 4.659263),
         map: map,
-        title: 'Marker!',
-        icon: image
+        title: 'Lorem Ipsum',
+        icon: image,
+        id: "1"
     });
 
     //Location search
@@ -73,6 +74,15 @@ function initMap() {
         //Scroll to top
         $("html,body").animate({ scrollTop: 0 }, "slow");
 
+    });
+
+    //Scroll to document
+    marker.addListener('click', function() {
+
+        $('html, body').animate({
+            scrollTop: $('.doc-row[id*="'+marker.id+'"]').offset().top
+        }, 2000);
+        $('.doc-row[id*="'+marker.id+'"]').find('.doc-block').effect("highlight", {}, 3000);
     });
 }
 
