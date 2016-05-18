@@ -13,7 +13,7 @@ $wachtwoord = "";
 if(isset($_POST['submit'])) {
 
   //If the user press 'inloggen', connect with database
-  require_once 'database/connect.php';
+  //require_once 'database/connect.php';
 
   //Get the information from the form
   $email 		= $_POST['email'];
@@ -62,53 +62,46 @@ if (isset($_SESSION['email'])) {
 
 <!DOCTYPE html>
 
-<head>
-  <title><?php require 'title.php'; ?> | inloggen</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/style_login.css"/>
-</head>
+  <head>
+    <title> inloggen</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/backend_css.css"/>
+    <script src="scripts/jquery-1.12.3.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="bootstrap/scripts/bootstrap.min.js"></script>
 
-<body>
-<div class="pageScreen">
-  <div class="loginScreen">
+  </head>
 
-    <div class="loginInformation">
-      <h1>Inloggen</h1>
-      <p>U moet inloggen om verder te kunnen gaan.</p>
-      <p>Heeft u geen inloggegevens, bekijk voor meer informatie op <a href="http://www.d.nl">dannyvandalen</a>.</p>
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Gemeentedossier</a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <div class="pagescreen">
+      <div class="loginscreen">
+        <div class="loginform">
+          <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">E-mailadres</span>
+              <input type="email" name="email" class="form-control" placeholder="e-mail" aria-describedby="basic-addon1" autofocus>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Wachtwoord</span>
+              <input type="password" name="password" class="form-control" placeholder="wachtwoord" aria-describedby="basic-addon1">
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" name=submit" value="inloggen">Inloggen</button>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <div class="loginForm">
-
-      <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-        <table>
-          <tbody>
-          <tr>
-            <td><label class="formStyle">E-mailadres</label></td>
-            <td><input class="formStyleField" type="email" name="email" placeholder="e-mailadres" autofocus /></td>
-            <td></td> <!-- empty <td> for passing validator without warning -->
-          </tr>
-          <tr>
-            <td><label class="formStyle">Wachtwoord</label></td>
-            <td><input class="formStyleField" type="password" name="wachtwoord" placeholder="wachtwoord" /></td>
-            <td><a href="?action=wachtwoord_vergeten">wachtwoord vergeten?</a></td>
-          </tr>
-          <tr>
-            <td><input class="submit" type="submit" name="submit" value="Inloggen" /></td>
-            <td>
-              <label>
-                <input type="checkbox" name="remember">
-                <span class="blackMarker">Laat mij langer ingelogd blijven</span>
-              </label>
-            </td>
-            <td></td> <!-- empty <td> for passing validator without warning -->
-          </tr>
-          </tbody>
-        </table>
-      </form>
-    </div>
-  </div>
-</div>
-</body>
+  </body>
 
 </html>
