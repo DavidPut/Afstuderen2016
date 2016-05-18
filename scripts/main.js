@@ -131,12 +131,11 @@ $(document).on('click', '.toggle-button', function() {
 
 //Sort documents by date
 function sortDocs(){
-    //TODO: Filter sidebar wordt ook gesort!
-    //$(".doc-row").sort(function(a,b){
-    //    return new Date($(a).attr("date")) > new Date($(b).attr("date"));
-    //}).each(function(){
-    //    $(".doc-container").prepend(this);
-    //})
+        $(".doc-row").sort(function(a,b){
+           return new Date($(a).attr("date")) > new Date($(b).attr("date"));
+        }).each(function(){
+          $(this).insertAfter( $( ".doc-content" ) );
+        })
 }
 
 function filterTags(){
@@ -151,16 +150,14 @@ function filterTags(){
 
         //Loop through array
         jQuery.each( array, function( i, val ) {
-
             //TODO: meerdere tags filtert nog niet goed!
-            console.log(val);
+            console.log(i + " : " + val);
             //Remove/add documents that contain value specified in tags.
             $(".doc-row" ).removeClass("show");
 
             $(".doc-row" ).not(".show").addClass("hidden");
 
             $(".doc-row").filter('[tags*="'+val+'"]').removeClass("hidden").addClass("show");
-
 
         });
     });
