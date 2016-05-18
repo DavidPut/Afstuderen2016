@@ -6,6 +6,7 @@ $( document ).ready(function() {
     moveSidebar();
     sortDocs();
     filterTags();
+    filterType();
 });
 
 function initMap() {
@@ -160,6 +161,42 @@ function filterTags(){
 
         });
     });
+}
+
+function filterType(){
+    $('#checkbox-physical').click(function(){
+
+        if ($('#checkbox-physical').is(':checked')) {
+            $('.doc-row[type*="physical"]').removeClass("hidden").addClass("show");
+        } else {
+            $('.doc-row[type*="physical"]').addClass("hidden");
+        }
+
+    });
+
+    $('#checkbox-social').click(function(){
+
+        if ($(this).is(':checked')) {
+            $('.doc-row[type*="social"]').removeClass("hidden").addClass("show");
+        } else {
+            $('.doc-row[type*="social"]').addClass("hidden");
+        }
+
+    });
+
+    $('#checkbox-money').click(function(){
+
+        if ($(this).is(':checked')) {
+            $('.doc-row[type*="money"]').removeClass("hidden").addClass("show");
+        } else {
+            $('.doc-row[type*="money"]').addClass("hidden");
+        }
+
+    });
+
+    //if ($('#checkbox-physical').is(':checked')) {
+    //    console.log("checked");
+    //}
 }
 
 

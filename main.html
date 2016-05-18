@@ -34,7 +34,7 @@
 
         </div>
         <!--Document blocks-->
-        <div class="row doc-row" date="12-05-2016" Lat="51.8119941" Long="4.659262600000034" tags="school, bouwen, all">
+        <div class="row doc-row" date="12-05-2016" Lat="51.8119941" Long="4.659262600000034" tags="school, bouwen, all" type="physical">
             <div class="col-md-12 col-xs-12 doc-block loc-block">
 
                 <div class="col-md-10 col-xs-10">
@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="row doc-row" date="5-05-2016" tags="bouwen, plein, all">
+        <div class="row doc-row" date="5-05-2016" tags="bouwen, plein, all" type="physical">
             <div class="col-md-10 col-xs-10 doc-block">
 
                 <div class="col-md-12 col-xs-12">
@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <div class="row doc-row" date="1-05-2016" tags="sociaal, vereniging, sport, all">
+        <div class="row doc-row" date="1-05-2016" tags="sociaal, vereniging, sport, all" type="social">
             <div class="col-md-10 col-xs-10 doc-block">
 
                 <div class="col-md-12 col-xs-12">
@@ -122,9 +122,9 @@
                 <span class="text-center"><h4>Type besluitvorming</h4></span>
                 <!--Filter type document-->
                 <form id="type-form" role="filter">
-                    <input type="checkbox" name="physical" value="Physical"> <img src="images/Icon_hammer.png" alt="Icon physical"> = Fysiek </br>
-                    <input type="checkbox" name="social" value="Social"> <img src="images/Icon_people.png" alt="Icon social"> = Sociaal  </br>
-                    <input type="checkbox" name="money" value="Money">  <img src="images/Icon_money.png" alt="Icon money"> = Bestuur & middelen </br>
+                    <input id="checkbox-physical" type="checkbox" name="physical" value="Physical" checked> <img src="images/Icon_hammer.png" alt="Icon physical"> = Fysiek </br>
+                    <input id="checkbox-social" type="checkbox" name="social" value="Social" checked> <img src="images/Icon_people.png" alt="Icon social"> = Sociaal  </br>
+                    <input id="checkbox-money" type="checkbox" name="money" value="Money" checked>  <img src="images/Icon_money.png" alt="Icon money"> = Bestuur & middelen </br>
                 </form>
             </div>
 
@@ -137,13 +137,13 @@
                 <!--Filter tijd document-->
                 <form id="time-form" role="filter">
                     <div class="input-time">
-                        <input type="checkbox" name="low" value="<1">  <img class="icon-time" src="images/Circle_green.png" alt="Icon physical"> = Fysiek
+                        <input type="checkbox" name="low" value="<1" checked>  <img class="icon-time" src="images/Circle_green.png" alt="Icon physical"> = Fysiek
                     </div>
                     <div class="input-time">
-                        <input type="checkbox" name="mid" value="1-5"> <img class="icon-time" src="images/Circle_orange.png" alt="Icon social"> = Sociaal
+                        <input type="checkbox" name="mid" value="1-5" checked> <img class="icon-time" src="images/Circle_orange.png" alt="Icon social"> = Sociaal
                     </div>
                     <div class="input-time">
-                        <input type="checkbox" name="hig" value="5+">  <img class="icon-time" src="images/Circle_red.png" alt="Icon money"> = Bestuur & middelen
+                        <input type="checkbox" name="hig" value="5+" checked>  <img class="icon-time" src="images/Circle_red.png" alt="Icon money"> = Bestuur & middelen
                     </div>
 
                 </form>
