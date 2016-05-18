@@ -76,7 +76,7 @@ function initMap() {
 
     });
 
-    //Scroll to document.
+    //Scroll to document
     marker.addListener('click', function() {
 
         $('html, body').animate({
