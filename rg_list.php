@@ -31,13 +31,14 @@ $griffie = 0;
 </nav>
 
 <div class="pagescreen">
-  <table class="table table-hover">
+  <table class="table table-hover table-list">
     <thead>
       <tr>
-        <th>Nummer</th>
-        <th>Titel</th>
-        <th>Eigen standpunten</th>
-        <th><span class="glyphicons glyphicons-parents"></span> Andere standpunten</th>
+        <th class="col-md-1">Nummer</th>
+        <th class="col-md-8">Titel</th>
+        <th class="col-md-1">Eigen standpunten</th>
+        <th class="col-md-1"><span class="glyphicons glyphicons-parents"></span> Andere standpunten</th>
+        <th class="col-md-1">contactgegevens</th>
       </tr>
     </thead>
     <tbody>
@@ -52,6 +53,7 @@ $griffie = 0;
         <td>Besluitvorming school...</td>
         <td>0</td>
         <td>2</td>
+        <td>ja</td>
       </tr>"; }
 
 ?>
