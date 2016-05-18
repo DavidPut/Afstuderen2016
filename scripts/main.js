@@ -4,6 +4,7 @@ $( document ).ready(function() {
     characterLimit();
     addHeight();
     moveSidebar();
+    addTimeColors();
     sortDocs();
     filterTags();
     filterType();
@@ -97,6 +98,13 @@ function moveSidebar(){
     }
 }
 
+//Add side colors
+function addTimeColors(){
+    $('.doc-row[time="low"]').find('.doc-block').css({"border-right-width" : "10px", "border-right-color" : "#31931b" });
+    $('.doc-row[time="mid"]').find('.doc-block').css({"border-right-width" : "10px", "border-right-color" : "#c0710b" });
+    $('.doc-row[time="high"]').find('.doc-block').css({"border-right-width" : "10px", "border-right-color" : "#bf3e38" });
+}
+
 //Sidebar toggle
 state = true;
 $(document).on('click', '.toggle-button', function() {
@@ -139,6 +147,7 @@ function sortDocs(){
         })
 }
 
+//Filter by tags
 function filterTags(){
     $(".btn-tags").click(function(e){
         e.preventDefault();
@@ -150,26 +159,27 @@ function filterTags(){
         var array = tags.split(',');
 
         //Reset
-        $(".doc-row" ).removeClass("show").removeClass("hidden");
+        $(".doc-row" ).removeClass("showBlock").removeClass("hidden");
 
         //Loop through array
         jQuery.each( array, function( i, val ) {
 
             //Remove/add documents that contain value specified in tags.
-            $('.doc-row[tags*="'+val+'"]').addClass("show");
-            $(".doc-row" ).not(".show").addClass("hidden");
+            $('.doc-row[tags*="'+val+'"]').addClass("showBlock");
+            $(".doc-row" ).not(".showBlock").addClass("hidden");
 
         });
     });
 }
 
+//Filter by type
 function filterType(){
     $('#checkbox-physical').click(function(){
 
         if ($('#checkbox-physical').is(':checked')) {
-            $('.doc-row[type*="physical"]').removeClass("hidden").addClass("show");
+            $('.doc-row[type*="physical"]').removeClass("hiddenType").addClass("show");
         } else {
-            $('.doc-row[type*="physical"]').addClass("hidden");
+            $('.doc-row[type*="physical"]').addClass("hiddenType");
         }
 
     });
@@ -177,9 +187,9 @@ function filterType(){
     $('#checkbox-social').click(function(){
 
         if ($(this).is(':checked')) {
-            $('.doc-row[type*="social"]').removeClass("hidden").addClass("show");
+            $('.doc-row[type*="social"]').removeClass("hiddenType").addClass("show");
         } else {
-            $('.doc-row[type*="social"]').addClass("hidden");
+            $('.doc-row[type*="social"]').addClass("hiddenType");
         }
 
     });
@@ -187,16 +197,13 @@ function filterType(){
     $('#checkbox-money').click(function(){
 
         if ($(this).is(':checked')) {
-            $('.doc-row[type*="money"]').removeClass("hidden").addClass("show");
+            $('.doc-row[type*="money"]').removeClass("hiddenType").addClass("show");
         } else {
-            $('.doc-row[type*="money"]').addClass("hidden");
+            $('.doc-row[type*="money"]').addClass("hiddenType");
         }
 
     });
 
-    //if ($('#checkbox-physical').is(':checked')) {
-    //    console.log("checked");
-    //}
 }
 
 
