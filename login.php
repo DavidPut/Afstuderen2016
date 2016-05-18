@@ -3,7 +3,7 @@
 session_start();
 
 //Config file to manage navigations and page title
-require ('navigatie/config.php');
+//require ('navigatie/config.php');
 
 //create variables, protecting against errors
 $email 		= "";
@@ -75,7 +75,7 @@ if (isset($_SESSION['email'])) {
     <div class="loginInformation">
       <h1>Inloggen</h1>
       <p>U moet inloggen om verder te kunnen gaan.</p>
-      <p>Heeft u geen inloggegevens, bekijk voor meer informatie op <a href="http://www.dannyvandalen.nl">dannyvandalen</a>.</p>
+      <p>Heeft u geen inloggegevens, bekijk voor meer informatie op <a href="http://www.d.nl">dannyvandalen</a>.</p>
     </div>
 
     <div class="loginForm">
