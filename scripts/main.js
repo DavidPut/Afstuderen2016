@@ -6,6 +6,7 @@ $( document ).ready(function() {
     moveSidebar();
     sortDocs();
     filterTags();
+    filterType();
 });
 
 function initMap() {
@@ -144,26 +145,58 @@ function filterTags(){
 
         //Split tag by , in array.
         var tags = $(".input-tags").val().replace(/\s+/g,",");
-        var myattr = $(".doc-row").attr("tags");
-        console.log("Myattr: " + myattr);
+
         //Split by comma.
         var array = tags.split(',');
 
-        console.log("array" + array);
+        //Reset
+        $(".doc-row" ).removeClass("show").removeClass("hidden");
 
         //Loop through array
         jQuery.each( array, function( i, val ) {
-            //TODO: meerdere tags filtert nog niet goed!
-            console.log(i + " : " + val);
+
             //Remove/add documents that contain value specified in tags.
-            $(".doc-row" ).removeClass("show");
-
+            $('.doc-row[tags*="'+val+'"]').addClass("show");
             $(".doc-row" ).not(".show").addClass("hidden");
-
-            $(".doc-row").filter('[tags*="'+val+'"]').removeClass("hidden").addClass("show");
 
         });
     });
+}
+
+function filterType(){
+    $('#checkbox-physical').click(function(){
+
+        if ($('#checkbox-physical').is(':checked')) {
+            $('.doc-row[type*="physical"]').removeClass("hidden").addClass("show");
+        } else {
+            $('.doc-row[type*="physical"]').addClass("hidden");
+        }
+
+    });
+
+    $('#checkbox-social').click(function(){
+
+        if ($(this).is(':checked')) {
+            $('.doc-row[type*="social"]').removeClass("hidden").addClass("show");
+        } else {
+            $('.doc-row[type*="social"]').addClass("hidden");
+        }
+
+    });
+
+    $('#checkbox-money').click(function(){
+
+        if ($(this).is(':checked')) {
+            $('.doc-row[type*="money"]').removeClass("hidden").addClass("show");
+        } else {
+            $('.doc-row[type*="money"]').addClass("hidden");
+        }
+
+    });
+
+    //if ($('#checkbox-physical').is(':checked')) {
+    //    console.log("checked");
+    //}
 }
 
 
