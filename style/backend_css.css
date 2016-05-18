@@ -9,9 +9,25 @@
   color: #FFFFFF;
 }
 
-body {
+.input-group{
+  margin: 0 12px 12px 12px;
+}
+
+.input-group-addon{
+  padding: 0;
+  min-width:130px;
+}
+
+.btn{
+  width:98%;
+  margin-left:1%;
+}
+
+body, html {
   margin: 0px auto;
   background-color:#ECEFF1;
+  overflow-x: hidden;
+  max-width:100%;
 }
 
 .pagescreen {

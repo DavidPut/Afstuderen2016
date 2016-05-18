@@ -68,7 +68,6 @@ if (isset($_SESSION['email'])) {
     <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style/backend_css.css"/>
     <script src="scripts/jquery-1.12.3.min.js"></script>
-    <script src="scripts/main.js"></script>
     <script src="bootstrap/scripts/bootstrap.min.js"></script>
 
   </head>
@@ -86,21 +85,23 @@ if (isset($_SESSION['email'])) {
 
 
     <div class="pagescreen">
-      <div class="loginscreen">
-        <div class="loginform">
-          <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+      <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
             <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">E-mailadres</span>
-              <input type="email" name="email" class="form-control" placeholder="e-mail" aria-describedby="basic-addon1" autofocus>
+                <span class="input-group-addon" id="basic-addon1">E-mailadres</span>
+                <input type="email" name="email" class="form-control" placeholder="e-mail" aria-describedby="basic-addon1" autofocus>
             </div>
+          </div>
+          <div class="col-md-4 col-md-offset-4">
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1">Wachtwoord</span>
               <input type="password" name="password" class="form-control" placeholder="wachtwoord" aria-describedby="basic-addon1">
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" name=submit" value="inloggen">Inloggen</button>
-          </form>
+          </div>
+          <div class="col-md-4 col-md-offset-4"><button class="btn btn-lg btn-primary btn-block" type="submit" name=submit" value="inloggen">Inloggen</button></div>
         </div>
-      </div>
+      </form>
     </div>
   </body>
 
