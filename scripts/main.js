@@ -8,6 +8,7 @@ $( document ).ready(function() {
     sortDocs();
     filterTags();
     filterType();
+    filterTime();
 });
 
 function initMap() {
@@ -177,7 +178,7 @@ function filterType(){
     $('#checkbox-physical').click(function(){
 
         if ($('#checkbox-physical').is(':checked')) {
-            $('.doc-row[type*="physical"]').removeClass("hiddenType").addClass("show");
+            $('.doc-row[type*="physical"]').removeClass("hiddenType");
         } else {
             $('.doc-row[type*="physical"]').addClass("hiddenType");
         }
@@ -187,7 +188,7 @@ function filterType(){
     $('#checkbox-social').click(function(){
 
         if ($(this).is(':checked')) {
-            $('.doc-row[type*="social"]').removeClass("hiddenType").addClass("show");
+            $('.doc-row[type*="social"]').removeClass("hiddenType");
         } else {
             $('.doc-row[type*="social"]').addClass("hiddenType");
         }
@@ -197,7 +198,7 @@ function filterType(){
     $('#checkbox-money').click(function(){
 
         if ($(this).is(':checked')) {
-            $('.doc-row[type*="money"]').removeClass("hiddenType").addClass("show");
+            $('.doc-row[type*="money"]').removeClass("hiddenType");
         } else {
             $('.doc-row[type*="money"]').addClass("hiddenType");
         }
@@ -206,6 +207,34 @@ function filterType(){
 
 }
 
+function filterTime(){
+    $('#checkbox-low').click(function(){
+
+        if ($(this).is(':checked')) {
+            $('.doc-row[time*="low"]').removeClass("hiddenTime");
+        } else {
+            $('.doc-row[time*="low"]').addClass("hiddenTime");
+        }
+    });
+
+    $('#checkbox-mid').click(function(){
+
+        if ($(this).is(':checked')) {
+            $('.doc-row[time*="mid"]').removeClass("hiddenTime");
+        } else {
+            $('.doc-row[time*="mid"]').addClass("hiddenTime");
+        }
+    });
+
+    $('#checkbox-high').click(function(){
+
+        if ($(this).is(':checked')) {
+            $('.doc-row[time*="high"]').removeClass("hiddenTime");
+        } else {
+            $('.doc-row[time*="high"]').addClass("hiddenTime");
+        }
+    });
+}
 
 
 
