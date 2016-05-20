@@ -1,5 +1,6 @@
 <?php
 
+//test
 $raadslid = 1;
 $griffie = 0;
 
@@ -37,7 +38,7 @@ $griffie = 0;
         <th class="col-md-1">Nummer</th>
         <th class="col-md-8">Titel</th>
         <th class="col-md-1">Eigen standpunten</th>
-        <th class="col-md-1"><span class="glyphicons glyphicons-parents"></span> Andere standpunten</th>
+        <th class="col-md-1"><img class="icon-time" src="images/glyphicons-25-parents.png" alt="Icon physical"></span> Andere standpunten</th>
         <th class="col-md-1">contactgegevens</th>
       </tr>
     </thead>
@@ -45,12 +46,12 @@ $griffie = 0;
 
     <?php
 
-    for ($x = 0; $x <= 10; $x++) {
+    for ($x = 0; $x <= 20; $x++) {
 
     echo "
       <tr>
         <td>".$x."</td>
-        <td>Besluitvorming school...</td>
+        <td>Besluitvorming school over een school dat gaat komen in de gmemeente dordrecht. De school moet er over 10 dagen komen en dit is een zeer lange titel. </td>
         <td>0</td>
         <td>2</td>
         <td>ja</td>
