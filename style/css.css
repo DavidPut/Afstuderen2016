@@ -235,9 +235,20 @@ body {
     border-width: 2px;
     border-style: solid;
     padding: 8px;
-    margin-top:1%;
+    margin: 1% 0 1% 0;
     cursor: pointer;
 }
 
+.closed{
+    display: none;
+}
+
+.doss-row{
+    cursor: pointer;
+}
+
+.btn-more{
+    margin-bottom: 1%!important;
+}
 
 
