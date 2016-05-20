@@ -4,9 +4,10 @@
 $( document ).ready(function() {
     toggleDossier();
     calendar();
+    toggleButton();
 });
 
-//open/close dossier
+//Open/close dossier
 function toggleDossier(){
     $(".dos-toggle").click(function(e) {
         $(this).parent().find('.dos-content').slideToggle( "slow" );
@@ -14,6 +15,7 @@ function toggleDossier(){
     });
 }
 
+//Calender plugin
 function calendar(){
     $('#calendar').fullCalendar({
 
@@ -90,8 +92,11 @@ function calendar(){
         ],
         height: 450
     });
+}
 
-
-
+//Toggle button placement
+function toggleButton(){
+    var sidebarHeight = $(".side-bar").height();
+    $(".toggle-button").css("top", sidebarHeight / 2  - 70 + "px");
 }
 
