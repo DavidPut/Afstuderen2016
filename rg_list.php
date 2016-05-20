@@ -62,7 +62,7 @@ $griffie = 1;
     } elseif ($griffie == 1 && $raadslid == 0){
       // do nothing
     } else {
-      //do nothing and more nothing edit - nog een kleine dit
+      //do nothing and more nothing edit - nog een kleine dit / test
     }
 
 ?>
