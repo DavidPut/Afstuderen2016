@@ -1,6 +1,6 @@
 <?php
 
-//test
+//test 2
 $raadslid = 1;
 $griffie = 0;
 
