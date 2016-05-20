@@ -45,7 +45,7 @@ $griffie = 1;
         <th class="col-md-1"><img class="icon-time" src="images/glyphicons-25-parents.png" alt="Icon physical"></span> Andere standpunten</th>
         <th class="col-md-1">contactgegevens</th>
         '
-        } elsif ($raadslid == 0 && $griffie == 1){
+        } elseif ($raadslid == 0 && $griffie == 1){
             echo '
         <th class="col-md-1">Nummer</th>
         <th class="col-md-8">Titel</th>
