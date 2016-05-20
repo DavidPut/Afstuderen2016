@@ -2,7 +2,6 @@
 
 session_start();
 
-//test test// testststs
 //Config file to manage navigations and page title
 //require ('navigatie/config.php');
 

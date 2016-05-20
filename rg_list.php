@@ -1,6 +1,6 @@
 <?php
 
-//test 2
+//test 2test
 $raadslid = 1;
 $griffie = 0;
 
@@ -9,7 +9,7 @@ $griffie = 0;
 <!DOCTYPE html>
 
 <head>
-  <title> inloggen</title>
+  <title>Overzicht</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style/backend_css.css"/>
@@ -46,16 +46,24 @@ $griffie = 0;
 
     <?php
 
-    for ($x = 0; $x <= 20; $x++) {
+    if ($raadslid == 1 && $griffie == 0){
 
-    echo "
+      for ($x = 0; $x <= 20; $x++) {
+
+        echo "
       <tr>
-        <td>".$x."</td>
+        <td>" . $x . "</td>
         <td>Besluitvorming school over een school dat gaat komen in de gmemeente dordrecht. De school moet er over 10 dagen komen en dit is een zeer lange titel. </td>
         <td>0</td>
         <td>2</td>
         <td>ja</td>
-      </tr>"; }
+      </tr>";
+      }
+    } elseif ($griffie == 1 && $raadslid == 0){
+      // do nothing
+    } else {
+      //do nothing and more nothing edit - nog een kleine dit
+    }
 
 ?>
     </tbody>
