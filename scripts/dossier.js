@@ -92,6 +92,11 @@ function calendar(){
         ],
         height: 450
     });
+
+    //Making calendar Bootstrap responsive
+    $(".fc-toolbar").addClass("row");
+    $(".fc-left").addClass("col-md-6");
+    $(".fc-right").addClass("col-md-6");
 }
 
 //Toggle button placement
