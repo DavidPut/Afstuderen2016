@@ -61,6 +61,8 @@ $griffie = 1;
       }
     } elseif ($griffie == 1 && $raadslid == 0){
 // do nothing
+    } else {
+      //do nothing
     }
 
 ?>
