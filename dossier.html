@@ -17,6 +17,13 @@
     <script src="scripts/dossier.js"></script>
     <script src="bootstrap/scripts/bootstrap.min.js"></script>
 
+    <!-- Calendar plugin -->
+    <link href='plugins/fullcalendar-2.7.2/fullcalendar.css' rel='stylesheet' />
+    <link href='plugins/fullcalendar-2.7.2/fullcalendar.print.css' rel='stylesheet' media='print' />
+    <script src='plugins/fullcalendar-2.7.2/lib/moment.min.js'></script>
+    <script src='plugins/fullcalendar-2.7.2/fullcalendar.min.js'></script>
+    <script src='plugins/fullcalendar-2.7.2/lang/nl.js'></script>
+
     <meta charset="UTF-8">
     <title>Dossier</title>
 </head>
@@ -24,47 +31,106 @@
 
 <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-md-8 title-block">
-            <div class="col-md-8">
-                <h4>Lorem Ipsum</h4>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-9 title-block">
+                <div class="col-md-8">
+                    <h4>Lorem Ipsum</h4>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="pull-right">12-05-2016</h4>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h4 class="pull-right">12-05-2016</h4>
+        </div>
+
+        <div class="row doss-row" id="1">
+            <div class="col-md-9 content-block">
+                <i class="dos-toggle glyphicon glyphicon-minus"></i>
+                <div class="col-md-12">
+                    <h3>Lorem Ipsum</h3>
+                </div>
+                <div class="col-md-12 dos-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tincidunt purus, quis sodales justo. Sed egestas, leo ac tristique tincidunt, purus lectus auctor enim, eu semper lectus eros id velit. Nullam semper laoreet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit amet consequat metus. Ut varius, urna a rutrum volutpat, tellus tellus semper massa, vel faucibus justo lacus quis dolor. Sed facilisis odio sagittis facilisis commodo. Cras scelerisque massa risus, ac sodales massa pharetra non. Nunc mollis eros id sapien sodales, eget ornare nunc porta. Sed a lobortis leo. Donec semper ut libero a sodales. Donec malesuada laoreet eros, quis tempus tortor auctor ac. Donec ullamcorper tellus at velit ultrices dictum. Donec ac felis rutrum, semper purus eu, gravida arcu. In nunc magna, ullamcorper quis ipsum nec, vestibulum imperdiet magna. Sed semper elit id eros tincidunt, sed luctus nisl convallis. Nam congue purus eu rutrum malesuada. Vivamus varius enim in ante consequat, eu faucibus nibh maximus. Nullam eget lacus pretium, semper lorem a, gravida erat. Proin accumsan vestibulum congue. Etiam purus felis, blandit non arcu id, lacinia faucibus nunc. Pellentesque habitant.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row doss-row" id="2">
+            <div class="col-md-9 content-block">
+
+                <i class="pull-left dos-toggle glyphicon glyphicon-plus"></i>
+
+                <div class="col-md-9 pull-left">
+                    <h4>Lorem Ipsum</h4>
+                </div>
+                <div class="col-md-2 pull-right">
+                    <h4 class="pull-right">02-05-2016</h4>
+                </div>
+                <div class="col-md-12 dos-content closed">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tincidunt purus, quis sodales justo. Sed egestas, leo ac tristique tincidunt, purus lectus auctor enim, eu semper lectus eros id velit. Nullam semper laoreet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit amet consequat metus. Ut varius, urna a rutrum volutpat, tellus tellus semper massa, vel faucibus justo lacus quis dolor. Sed facilisis odio sagittis facilisis commodo. Cras scelerisque massa risus, ac sodales massa pharetra non. Nunc mollis eros id sapien sodales, eget ornare nunc porta. Sed a lobortis leo. Donec semper ut libero a sodales. Donec malesuada laoreet eros, quis tempus tortor auctor ac. Donec ullamcorper tellus at velit ultrices dictum. Donec ac felis rutrum, semper purus eu, gravida arcu. In nunc magna, ullamcorper quis ipsum nec, vestibulum imperdiet magna. Sed semper elit id eros tincidunt, sed luctus nisl convallis. Nam congue purus eu rutrum malesuada. Vivamus varius enim in ante consequat, eu faucibus nibh maximus. Nullam eget lacus pretium, semper lorem a, gravida erat. Proin accumsan vestibulum congue. Etiam purus felis, blandit non arcu id, lacinia faucibus nunc. Pellentesque habitant.</p>
+                </div>
+
             </div>
         </div>
     </div>
+    <div class="col-md-3 side-bar no-padding pull-right">
+        <!--Plugin abbo-->
+        <div class="abbo-block">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Abonneren</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="abbo-form" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-loc" placeholder="Email" name="srch-term" id="abbo">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-loc" type="submit"><i class="glyphicon glyphicon-save"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-    <div class="row doss-row" id="1">
-        <div class="col-md-8 content-block">
-            <i class="dos-toggle glyphicon glyphicon-minus"></i>
-            <div class="col-md-12">
-                <h3>Lorem Ipsum</h3>
-            </div>
-            <div class="col-md-12 dos-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tincidunt purus, quis sodales justo. Sed egestas, leo ac tristique tincidunt, purus lectus auctor enim, eu semper lectus eros id velit. Nullam semper laoreet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit amet consequat metus. Ut varius, urna a rutrum volutpat, tellus tellus semper massa, vel faucibus justo lacus quis dolor. Sed facilisis odio sagittis facilisis commodo. Cras scelerisque massa risus, ac sodales massa pharetra non. Nunc mollis eros id sapien sodales, eget ornare nunc porta. Sed a lobortis leo. Donec semper ut libero a sodales. Donec malesuada laoreet eros, quis tempus tortor auctor ac. Donec ullamcorper tellus at velit ultrices dictum. Donec ac felis rutrum, semper purus eu, gravida arcu. In nunc magna, ullamcorper quis ipsum nec, vestibulum imperdiet magna. Sed semper elit id eros tincidunt, sed luctus nisl convallis. Nam congue purus eu rutrum malesuada. Vivamus varius enim in ante consequat, eu faucibus nibh maximus. Nullam eget lacus pretium, semper lorem a, gravida erat. Proin accumsan vestibulum congue. Etiam purus felis, blandit non arcu id, lacinia faucibus nunc. Pellentesque habitant.</p>
-            </div>
-            <div class="col-md-12">
-                <button class="btn btn-primary btn-more" type="submit">Lees meer</button>
-            </div>
         </div>
-    </div>
 
-    <div class="row doss-row" id="2">
-        <div class="col-md-8 content-block">
-
-            <i class="pull-left dos-toggle glyphicon glyphicon-plus"></i>
-
-            <div class="col-md-8 pull-left">
-                <h4>Lorem Ipsum</h4>
+        <div class="contact-block">
+            <!--Plugin contact-->
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Contactgegevens</h4>
+                </div>
+                <div class="col-md-2">
+                    <img class="img-responsive" src="./images/Profile.png" alt="Contact photo">
+                </div>
+                <div class="col-md-10">
+                    <p class="contact">Lorem ipsum</p>
+                </div>
             </div>
-            <div class="col-md-3 pull-right">
-                <h4 class="pull-right">02-05-2016</h4>
-            </div>
-            <div class="col-md-12 dos-content closed">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tincidunt purus, quis sodales justo. Sed egestas, leo ac tristique tincidunt, purus lectus auctor enim, eu semper lectus eros id velit. Nullam semper laoreet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit amet consequat metus. Ut varius, urna a rutrum volutpat, tellus tellus semper massa, vel faucibus justo lacus quis dolor. Sed facilisis odio sagittis facilisis commodo. Cras scelerisque massa risus, ac sodales massa pharetra non. Nunc mollis eros id sapien sodales, eget ornare nunc porta. Sed a lobortis leo. Donec semper ut libero a sodales. Donec malesuada laoreet eros, quis tempus tortor auctor ac. Donec ullamcorper tellus at velit ultrices dictum. Donec ac felis rutrum, semper purus eu, gravida arcu. In nunc magna, ullamcorper quis ipsum nec, vestibulum imperdiet magna. Sed semper elit id eros tincidunt, sed luctus nisl convallis. Nam congue purus eu rutrum malesuada. Vivamus varius enim in ante consequat, eu faucibus nibh maximus. Nullam eget lacus pretium, semper lorem a, gravida erat. Proin accumsan vestibulum congue. Etiam purus felis, blandit non arcu id, lacinia faucibus nunc. Pellentesque habitant.</p>
 
-                <button class="btn btn-primary btn-more" type="submit">Lees meer</button>
+            <div class="row">
+                <div class="col-md-2">
+                    <img class="img-responsive" src="./images/Profile.png" alt="Contact photo">
+                </div>
+                <div class="col-md-10">
+                    <p class="contact">Lorem ipsum</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="meeting-block">
+            <!--Plugin meetings-->
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Vergaderingen</h4>
+                </div>
+                <div class="col-md-12">
+                    <div id='calendar'></div>
+                </div>
+
             </div>
 
         </div>
