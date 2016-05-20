@@ -59,8 +59,8 @@ $griffie = 1;
         <td>ja</td>
       </tr>";
       }
-    } else if ($griffie == 1 && $raadslid == 0){
-
+    } elseif ($griffie == 1 && $raadslid == 0){
+// do nothing
     }
 
 ?>
