@@ -79,6 +79,7 @@ $griffie = 1;
         <td>Besluitvorming school over een school dat gaat komen in de gmemeente dordrecht. De school moet er over 10 dagen komen en dit is een zeer lange titel. </td>
         <td>0</td>
       </tr>";
+    }
     } else {
       //do nothing and more nothing edit - nog een kleine dit / test
     }
