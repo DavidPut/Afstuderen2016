@@ -63,7 +63,7 @@ if (isset($_SESSION['email'])) {
 <!DOCTYPE html>
 
   <head>
-    <title> inloggen</title>
+    <title>Inloggen gemeentedossier</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style/backend_css.css"/>
@@ -76,11 +76,10 @@ if (isset($_SESSION['email'])) {
 
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Gemeentedossier</a>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </nav>
 
 
