@@ -86,19 +86,19 @@ if (isset($_SESSION['email'])) {
     <div class="pagescreen">
       <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
         <div class="row">
-          <div class="col-md-4 col-md-offset-4">
+          <div class="col-md-4 .col-xs-12 col-md-offset-4">
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">E-mailadres</span>
                 <input type="email" name="email" class="form-control" placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>
             </div>
           </div>
-          <div class="col-md-4 col-md-offset-4">
+          <div class="col-md-4 .col-xs-12 col-md-offset-4">
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1">Wachtwoord</span>
               <input type="password" name="password" class="form-control" placeholder="uw wachtwoord" aria-describedby="basic-addon1">
             </div>
           </div>
-          <div class="col-md-4 col-md-offset-4"><button class="btn btn-lg btn-primary btn-block" type="submit" name=submit" value="inloggen">Inloggen</button></div>
+          <div class="col-md-4 .col-xs-12 col-md-offset-4"><button class="btn btn-lg btn-primary btn-block" type="submit" name=submit" value="inloggen">Inloggen</button></div>
         </div>
       </form>
     </div>
