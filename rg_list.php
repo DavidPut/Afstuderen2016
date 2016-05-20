@@ -81,7 +81,7 @@ $griffie = 1;
       </tr>";
     }
     } else {
-      //do nothing and more nothing edit - nog een kleine dit / test
+      //do nothing and more nothing edit - nog een kleine dit / test test
     }
 
 ?>
