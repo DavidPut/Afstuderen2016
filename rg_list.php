@@ -35,11 +35,24 @@ $griffie = 1;
   <table class="table table-hover table-list">
     <thead>
       <tr>
+        <?php
+        if ($raadslid == 1 && $griffie == 0) {
+
+          echo '
         <th class="col-md-1">Nummer</th>
         <th class="col-md-8">Titel</th>
         <th class="col-md-1">Eigen standpunten</th>
         <th class="col-md-1"><img class="icon-time" src="images/glyphicons-25-parents.png" alt="Icon physical"></span> Andere standpunten</th>
         <th class="col-md-1">contactgegevens</th>
+        '
+        } elsif ($raadslid == 0 && $griffie == 1){
+            echo '
+        <th class="col-md-1">Nummer</th>
+        <th class="col-md-8">Titel</th>
+        <th class="col-md-1">Exttra opties</th>
+        '
+        }
+        ?>
       </tr>
     </thead>
     <tbody>
