@@ -8,7 +8,6 @@ $( document ).ready(function() {
 //open/close dossier
 function toggleDossier(){
     $(".dos-toggle").click(function(e) {
-        //$(this).parent().find('.dos-content').toggleClass("hidden", "show");
         $(this).parent().find('.dos-content').slideToggle( "slow" );
         $(this).toggleClass("glyphicon-minus glyphicon-plus");
     });
