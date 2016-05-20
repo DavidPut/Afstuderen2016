@@ -65,6 +65,7 @@ if (isset($_SESSION['email'])) {
   <head>
     <title>Inloggen gemeentedossier</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style/backend_css.css"/>
     <script src="scripts/jquery-1.12.3.min.js"></script>
