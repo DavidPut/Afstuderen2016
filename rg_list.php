@@ -1,8 +1,8 @@
 <?php
 
 //test 2test
-$raadslid = 1;
-$griffie = 0;
+$raadslid = 0;
+$griffie = 1;
 
 ?>
 
@@ -35,11 +35,24 @@ $griffie = 0;
   <table class="table table-hover table-list">
     <thead>
       <tr>
+        <?php
+        if ($raadslid == 1 && $griffie == 0) {
+
+          echo '
         <th class="col-md-1">Nummer</th>
         <th class="col-md-8">Titel</th>
         <th class="col-md-1">Eigen standpunten</th>
         <th class="col-md-1"><img class="icon-time" src="images/glyphicons-25-parents.png" alt="Icon physical"></span> Andere standpunten</th>
         <th class="col-md-1">contactgegevens</th>
+        ';
+        } elseif ($raadslid == 0 && $griffie == 1){
+            echo '
+        <th class="col-md-1">Nummer</th>
+        <th class="col-md-8">Titel</th>
+        <th class="col-md-1">Exttra opties</th>
+        ';
+        }
+        ?>
       </tr>
     </thead>
     <tbody>
@@ -47,7 +60,6 @@ $griffie = 0;
     <?php
 
     if ($raadslid == 1 && $griffie == 0){
-
       for ($x = 0; $x <= 20; $x++) {
 
         echo "
@@ -59,10 +71,17 @@ $griffie = 0;
         <td>ja</td>
       </tr>";
       }
-    } elseif ($griffie == 1 && $raadslid == 0){
-      // do nothing
+    } elseif ($raadslid == 0 && $griffie == 1){
+    for ($x = 0; $x <= 20; $x++) {
+      echo "
+      <tr>
+        <td>" . $x . "</td>
+        <td>Besluitvorming school over een school dat gaat komen in de gmemeente dordrecht. De school moet er over 10 dagen komen en dit is een zeer lange titel. </td>
+        <td>0</td>
+      </tr>";
+    }
     } else {
-      //do nothing and more nothing edit - nog een kleine dit
+      //do nothing and more nothing edit - nog een kleine dit / test
     }
 
 ?>
