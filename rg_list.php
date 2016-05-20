@@ -60,9 +60,9 @@ $griffie = 0;
       </tr>";
       }
     } elseif ($griffie == 1 && $raadslid == 0){
-// do nothing
+      // do nothing
     } else {
-      //do nothing
+      //do nothing and more nothing
     }
 
 ?>
