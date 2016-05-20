@@ -60,7 +60,6 @@ $griffie = 1;
     <?php
 
     if ($raadslid == 1 && $griffie == 0){
-
       for ($x = 0; $x <= 20; $x++) {
 
         echo "
@@ -72,8 +71,14 @@ $griffie = 1;
         <td>ja</td>
       </tr>";
       }
-    } elseif ($griffie == 1 && $raadslid == 0){
-      // do nothing
+    } elseif ($raadslid == 0 && $griffie == 1){
+    for ($x = 0; $x <= 20; $x++) {
+      echo "
+      <tr>
+        <td>" . $x . "</td>
+        <td>Besluitvorming school over een school dat gaat komen in de gmemeente dordrecht. De school moet er over 10 dagen komen en dit is een zeer lange titel. </td>
+        <td>0</td>
+      </tr>";
     } else {
       //do nothing and more nothing edit - nog een kleine dit / test
     }
