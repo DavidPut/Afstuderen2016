@@ -66,8 +66,8 @@ function initMap() {
     //Click document marker
     $('.doc-row a').click(function() {
 
-        var lat = $(this).parent().parent().parent().attr('lat');
-        var long = $(this).parent().parent().parent().attr('long');
+        var lat = $(this).closest('.doc-row').attr('lat');
+        var long = $(this).closest('.doc-row').attr('long');
 
         //Center map
         map.setCenter(new google.maps.LatLng(lat, long));
@@ -272,8 +272,8 @@ function filterTime(){
 
 //Link document to detail page
 function linkDoc(){
-    $('.doc-row').click(function(e) {
-        var id = $(this).attr('id');
+    $('.btn-more').click(function(e) {
+        var id = $(this).closest('.doc-row').attr('id');
         window.location.href = "dossier.html?id=" + id;
     });
 

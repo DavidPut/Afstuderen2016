@@ -243,5 +243,12 @@ body {
     display: none;
 }
 
+.doss-row{
+    cursor: pointer;
+}
+
+.btn-more{
+    margin-bottom: 1%!important;
+}
 
 
