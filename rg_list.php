@@ -2,7 +2,7 @@
 
 //test 2test
 $raadslid = 1;
-$griffie = 1;
+$griffie = 0;
 
 ?>
 
