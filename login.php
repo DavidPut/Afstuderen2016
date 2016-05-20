@@ -86,7 +86,6 @@ if (isset($_SESSION['email'])) {
     <div class="container-fluid">
       
       <div class="row">
-        <div class="col-md-12">
           <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
             
             <div class="row">
@@ -118,7 +117,6 @@ if (isset($_SESSION['email'])) {
               
             
           </form>
-        </div>
       </div>
       
       
