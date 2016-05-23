@@ -31,6 +31,11 @@
 
 <div class="container-fluid">
 
+    <div class="row mob-sidebar">
+
+    </div>
+
+    <!--Dossier title block-->
     <div class="col-md-9">
         <div class="row">
             <div class="col-md-9 col-xs-12 title-block">
@@ -43,18 +48,128 @@
             </div>
         </div>
 
+        <!--Visible document-->
         <div class="row doss-row" id="1">
             <div class="col-md-9 content-block">
-                <i class="dos-toggle glyphicon glyphicon-minus"></i>
-                <div class="col-md-12">
+                <i class="dos-toggle glyphicon glyphicon-minus pull-left"></i>
+                <div class="col-md-4">
                     <h3>Lorem Ipsum</h3>
                 </div>
                 <div class="col-md-12 dos-content">
+                    <!--Decisions in bullet points-->
+                    <ul class="decided-short">
+                        <li>In sit amet massa massa. Suspendisse at eleifend sem.</li>
+                        <li>Vivamus sit amet arcu nec dui hendrerit consequat.</li>
+                        <li>Nam auctor feugiat lectus, sit amet luctus erat bibendum non.</li>
+                    </ul>
+                    <!--Detailed text-->
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tincidunt purus, quis sodales justo. Sed egestas, leo ac tristique tincidunt, purus lectus auctor enim, eu semper lectus eros id velit. Nullam semper laoreet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit amet consequat metus. Ut varius, urna a rutrum volutpat, tellus tellus semper massa, vel faucibus justo lacus quis dolor. Sed facilisis odio sagittis facilisis commodo. Cras scelerisque massa risus, ac sodales massa pharetra non. Nunc mollis eros id sapien sodales, eget ornare nunc porta. Sed a lobortis leo. Donec semper ut libero a sodales. Donec malesuada laoreet eros, quis tempus tortor auctor ac. Donec ullamcorper tellus at velit ultrices dictum. Donec ac felis rutrum, semper purus eu, gravida arcu. In nunc magna, ullamcorper quis ipsum nec, vestibulum imperdiet magna. Sed semper elit id eros tincidunt, sed luctus nisl convallis. Nam congue purus eu rutrum malesuada. Vivamus varius enim in ante consequat, eu faucibus nibh maximus. Nullam eget lacus pretium, semper lorem a, gravida erat. Proin accumsan vestibulum congue. Etiam purus felis, blandit non arcu id, lacinia faucibus nunc. Pellentesque habitant.</p>
+
+                    <hr>
+                    <!--RIS files-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>RIS bestanden:</h4>
+                        </div>
+                    </div>
+
+                    <div class="ris-files">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#">In sit amet massa massa</a>
+                            </div>
+                            <div class="col-md-4">
+                                <p>of</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#">In sit amet massa massa</a>
+                            </div>
+                            <div class="col-md-4">
+                                <p>of</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#">In sit amet massa massa</a>
+                            </div>
+                            <div class="col-md-4">
+                                <p>of</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
+                                </a>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <!--Politic arguments-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Politieke partijen:</h4>
+                            </div>
+                        </div>
+
+                        <!-- Politic view positive -->
+                        <div class="col-md-4 politic-block">
+                            <span class="politic-icon glyphicon glyphicon-ok-sign"></span>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>CDA:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>D66:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Politic view negative -->
+                        <div class="col-md-4 politic-block">
+                            <span class="politic-icon glyphicon glyphicon-remove-sign"></span>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>GroenLinks:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Politic view unknown -->
+                        <div class="col-md-4 politic-block">
+                            <span class="politic-icon glyphicon glyphicon-question-sign"></span>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>VVD:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>PVDA:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!--Closed/hidden document-->
         <div class="row doss-row" id="2">
             <div class="col-md-9 col-xs-12 content-block">
 
@@ -67,14 +182,122 @@
                     <h4 class="pull-right">02-05-2016</h4>
                 </div>
                 <div class="col-md-12 dos-content closed">
+                    <!-- Decisions in bullet points -->
+                    <ul class="decided-short">
+                        <li>In sit amet massa massa. Suspendisse at eleifend sem.</li>
+                        <li>Vivamus sit amet arcu nec dui hendrerit consequat.</li>
+                        <li>Nam auctor feugiat lectus, sit amet luctus erat bibendum non.</li>
+                    </ul>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tincidunt purus, quis sodales justo. Sed egestas, leo ac tristique tincidunt, purus lectus auctor enim, eu semper lectus eros id velit. Nullam semper laoreet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit amet consequat metus. Ut varius, urna a rutrum volutpat, tellus tellus semper massa, vel faucibus justo lacus quis dolor. Sed facilisis odio sagittis facilisis commodo. Cras scelerisque massa risus, ac sodales massa pharetra non. Nunc mollis eros id sapien sodales, eget ornare nunc porta. Sed a lobortis leo. Donec semper ut libero a sodales. Donec malesuada laoreet eros, quis tempus tortor auctor ac. Donec ullamcorper tellus at velit ultrices dictum. Donec ac felis rutrum, semper purus eu, gravida arcu. In nunc magna, ullamcorper quis ipsum nec, vestibulum imperdiet magna. Sed semper elit id eros tincidunt, sed luctus nisl convallis. Nam congue purus eu rutrum malesuada. Vivamus varius enim in ante consequat, eu faucibus nibh maximus. Nullam eget lacus pretium, semper lorem a, gravida erat. Proin accumsan vestibulum congue. Etiam purus felis, blandit non arcu id, lacinia faucibus nunc. Pellentesque habitant.</p>
+
+                    <hr>
+                    <!--RIS files-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>RIS bestanden:</h4>
+                        </div>
+                    </div>
+
+                    <div class="ris-files">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#">In sit amet massa massa</a>
+                            </div>
+                            <div class="col-md-4">
+                                <p>of</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#">In sit amet massa massa</a>
+                            </div>
+                            <div class="col-md-4">
+                                <p>of</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#">In sit amet massa massa</a>
+                            </div>
+                            <div class="col-md-4">
+                                <p>of</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <!--Politic arguments-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Politieke partijen:</h4>
+                        </div>
+                    </div>
+
+                    <!-- Politic view positive -->
+                    <div class="col-md-4 politic-block">
+                        <span class="politic-icon glyphicon glyphicon-ok-sign"></span>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><b>CDA:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><b>D66:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Politic view negative -->
+                    <div class="col-md-4 politic-block">
+                        <span class="politic-icon glyphicon glyphicon-remove-sign"></span>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><b>GroenLinks:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Politic view unknown -->
+                    <div class="col-md-4 politic-block">
+                        <span class="politic-icon glyphicon glyphicon-question-sign"></span>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><b>VVD:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><b>PVDA:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
 
             </div>
         </div>
     </div>
+
+    <!--Plugin abbo-->
     <div class="col-md-3 side-bar no-padding pull-right">
-        <!--Plugin abbo-->
         <div class="abbo-block">
             <div class="row">
                 <div class="col-md-12">
@@ -93,11 +316,10 @@
                     </form>
                 </div>
             </div>
-
         </div>
 
+        <!--Plugin contact-->
         <div class="contact-block">
-            <!--Plugin contact-->
             <div class="row">
                 <div class="col-md-12">
                     <h4>Contactgegevens</h4>
@@ -118,15 +340,15 @@
                     <p class="contact">Lorem ipsum</p>
                 </div>
             </div>
-
         </div>
 
+        <!--Plugin toggle button-->
         <div class="toggle-button">
             <button></button>
         </div>
 
+        <!--Plugin meetings-->
         <div class="meeting-block">
-            <!--Plugin meetings-->
             <div class="row">
                 <div class="col-md-12">
                     <h4>Vergaderingen</h4>
@@ -134,9 +356,7 @@
                 <div class="col-md-12">
                     <div id='calendar'></div>
                 </div>
-
             </div>
-
         </div>
     </div>
 

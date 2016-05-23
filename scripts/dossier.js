@@ -5,6 +5,7 @@ $( document ).ready(function() {
     toggleDossier();
     calendar();
     toggleButton();
+    moveSidebar();
 });
 
 //Open/close dossier
@@ -104,4 +105,23 @@ function toggleButton(){
     var sidebarHeight = $(".side-bar").height();
     $(".toggle-button").css("top", sidebarHeight / 2  - 70 + "px");
 }
+
+//Move sidebar for mobile users.
+function moveSidebar(){
+    if ($(window).width() < 992) {
+        jQuery(".side-bar").detach().appendTo('.mob-sidebar');
+
+        //Make toggle button vertical
+        $(".toggle-button").css({"top" : "97%", "left"  : "50%", "height" : "50px", "width" : "28px"});
+        $(".toggle-button button").css({"transition" : "top 0.3s", "top" : "25px"});
+    }
+    else {
+        jQuery(".mob-sidebar").detach().appendTo('.side-bar');
+
+        //Add and remove classes for proper padding placement
+        $('.mob-sidebar').removeClass('side-bar');
+        $('.no-padding').addClass('side-bar');
+    }
+}
+
 

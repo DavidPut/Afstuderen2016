@@ -269,3 +269,18 @@ body {
     margin: 10px 0 0 0;
 }
 
+.decided-short{
+    padding-left: inherit;
+}
+
+.ris-files{
+    margin-bottom: 1%;
+}
+
+.politic-icon{
+    font-size: 25px;
+}
+
+.politic-block{
+    padding-left: 0px !important;
+}
