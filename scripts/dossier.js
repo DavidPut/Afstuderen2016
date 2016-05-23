@@ -124,4 +124,36 @@ function moveSidebar(){
     }
 }
 
+//Sidebar toggle
+state = true;
+$(document).on('click', '.toggle-button', function() {
+
+    //Mobile
+    if ($(window).width() < 992) {
+        $(this).toggleClass("toggle-button-selected-vert");
+
+        if (state){
+            $( ".mob-sidebar" ).animate({ "margin-top": "-850px" }, "slow" );
+            state = false;
+        }
+        else {
+            $( ".mob-sidebar" ).animate({ "margin-top": "0px" }, "slow" );
+            state = true;
+        }
+    }
+
+    //Desktop
+    else {
+        $(this).toggleClass('toggle-button-selected');
+
+        if (state){
+            $( ".side-bar" ).animate({ "left": "20%" }, "slow" );
+            state = false;
+        }
+        else {
+            $( ".side-bar" ).animate({ "left": "-=20%" }, "slow" );
+            state = true;
+        }
+    }
+});
 
