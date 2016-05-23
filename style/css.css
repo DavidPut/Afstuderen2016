@@ -241,10 +241,6 @@ body {
     display: none;
 }
 
-.doss-row{
-    cursor: pointer;
-}
-
 .btn-more{
     margin-bottom: 1%!important;
 }
@@ -278,9 +274,16 @@ body {
 }
 
 .politic-icon{
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .politic-block{
     padding-left: 0px !important;
 }
+
+.politic-block p{
+    border-width: 2px;
+    border-style: solid;
+    padding: 5px;
+}
+
