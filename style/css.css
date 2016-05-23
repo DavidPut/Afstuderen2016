@@ -181,6 +181,7 @@ body {
     margin-left: -4%;
     position: absolute;
     top: 49.6%;
+    z-index: 1000;
 }
 .toggle-button button {
     cursor: pointer;
