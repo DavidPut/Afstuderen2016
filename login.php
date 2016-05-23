@@ -65,6 +65,7 @@ if (isset($_SESSION['email'])) {
   <head>
     <title>Inloggen gemeentedossier</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style/backend_css.css"/>
     <script src="scripts/jquery-1.12.3.min.js"></script>
@@ -84,28 +85,68 @@ if (isset($_SESSION['email'])) {
 
 
     <div class="container-fluid">
+      
       <div class="row">
-        <div class="col-md-12 col-xs-12">
-      <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-        <div class="row">
-          <div class="col-md-4 col-xs-12 col-md-offset-4">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">E-mailadres</span>
-                <input type="email" name="email" class="form-control" placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>
+          <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+            
+            <div class="row">
+              <div class="col-md-4 col-xs-12 col-md-offset-4">
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">E-mailadres</span>
+                  <input type="email" name="email" class="form-control" placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4 col-xs-12 col-md-offset-4">
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">Wachtwoord</span>
-              <input type="password" name="password" class="form-control" placeholder="uw wachtwoord" aria-describedby="basic-addon1">
+            
+            <div class="row">
+              <div class="col-md-4 col-xs-12 col-md-offset-4">
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Wachtwoord</span>
+                    <input type="password" name="password" class="form-control" placeholder="uw wachtwoord" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+             
             </div>
-          </div>
-          <div class="col-md-4 .col-xs-12 col-md-offset-4"><button class="btn btn-lg btn-primary btn-block" type="submit" name=submit" value="inloggen">Inloggen</button></div>
-        </div>
-      </form>
+            
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4 col-xs-12">
+               <button class="btn btn-lg btn-primary btn-block" type="submit" name=submit" value="inloggen">Inloggen</button>
+
+              </div>
+            </div>
+              
+              
+            
+          </form>
       </div>
-        </div>
-    </div>
+      
+      
+      
+      
+      
+      
+<!--      <div class="row">-->
+<!--        <div class="col-md-12 col-xs-12">-->
+<!--      <form action="--><?php //echo htmlentities($_SERVER['PHP_SELF']); ?><!--" method="POST">-->
+<!--        <div class="row">-->
+<!--          <div class="col-md-4 col-xs-12 col-md-offset-4">-->
+<!--            <div class="input-group">-->
+<!--                <span class="input-group-addon" id="basic-addon1">E-mailadres</span>-->
+<!--                <input type="email" name="email" class="form-control" placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-md-4 col-xs-12 col-md-offset-4">-->
+<!--            <div class="input-group">-->
+<!--              <span class="input-group-addon" id="basic-addon1">Wachtwoord</span>-->
+<!--              <input type="password" name="password" class="form-control" placeholder="uw wachtwoord" aria-describedby="basic-addon1">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-md-4 .col-xs-12 col-md-offset-4"><button class="btn btn-lg btn-primary btn-block" type="submit" name=submit" value="inloggen">Inloggen</button></div>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--      </div>-->
+<!--        </div>-->
+<!--    </div>-->
   </body>
 
 </html>
