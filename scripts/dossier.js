@@ -13,7 +13,9 @@ $( document ).ready(function() {
 //Open/close dossier
 function toggleDossier(){
     $(".dos-toggle").click(function(e) {
-        $(this).parent().find('.dos-content').slideToggle( "slow" );
+        $(this).closest(".content-block").find('.dos-content').slideToggle("slow", function(){
+            $(this).toggleClass("closed");
+        });
         $(this).toggleClass("glyphicon-minus glyphicon-plus");
     });
 }
