@@ -112,7 +112,8 @@ function moveSidebar(){
         $('.mob-sidebar').addClass('side-bar');
 
         //Make toggle button vertical
-        $(".toggle-button").css({"top" : "97%", "left"  : "50%", "height" : "50px", "width" : "28px"});
+        $(".toggle-button").css({"top" : "99.2%", "left"  : "50%", "height" : "35px", "width" : "80px"});
+        $(".toggle-button p").removeClass("rotate").css("margin-top", "0px");
         $(".toggle-button button").css({"transition" : "top 0.3s", "top" : "25px"});
     }
     else {
@@ -138,13 +139,14 @@ $(document).on('click', '.toggle-button', function() {
     //Mobile
     if ($(window).width() < 992) {
         $(this).toggleClass("toggle-button-selected-vert");
+        var sidebarH = $(".side-bar").outerHeight();
 
         if (state){
-            $( ".mob-sidebar" ).animate({ "margin-top": "-565px" }, "slow" );
+            $( ".mob-sidebar" ).animate({ "margin-top": "-="+sidebarH + "px" }, "slow" );
             state = false;
         }
         else {
-            $( ".mob-sidebar" ).animate({ "margin-top": "0px" }, "slow" );
+            $( ".mob-sidebar" ).animate({ "margin-top": "+="+sidebarH+"px" }, "slow" );
             state = true;
         }
     }
@@ -152,13 +154,14 @@ $(document).on('click', '.toggle-button', function() {
     //Desktop
     else {
         $(this).toggleClass('toggle-button-selected');
-
+        var sidebarW = $(".side-bar").outerWidth();
         if (state){
-            $( ".cont-sidebar" ).animate({ "left": "20%" }, "slow" );
+
+            $( ".side-bar" ).animate({ "left": sidebarW + "px" }, "slow" );
             state = false;
         }
         else {
-            $( ".cont-sidebar" ).animate({ "left": "-=20%" }, "slow" );
+            $( ".side-bar" ).animate({ "left": "-="+sidebarW+"px" }, "slow" );
             state = true;
         }
     }

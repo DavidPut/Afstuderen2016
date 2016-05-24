@@ -167,22 +167,32 @@ body {
 
 .toggle-button {
     background-color: white;
-    margin: 5px 0; border-radius: 20px;
+    margin: 5px 0;
     border: 2px solid #D0D0D0;
+    border-radius: 5px;
     height: 24px;
     cursor: pointer;
-    width: 50px;
+    width: 25px;
+    height: 80px;
     position: relative;
     display: inline-block;
     user-select: none;
     -webkit-user-select:
     none; -ms-user-select:
     none; -moz-user-select: none;
-    margin-left: -4%;
+    margin-left: -6.5%;
     position: absolute;
     top: 49.6%;
     z-index: 1000;
 }
+
+.filter-txt{
+    margin-top: 35px;
+}
+.plugin-txt{
+    margin-top: 41px;
+}
+
 .toggle-button button {
     cursor: pointer;
     outline: 0;
@@ -309,5 +319,24 @@ body {
 
 .politic-block .fa{
     font-size: 35px !important;
+}
+
+.rotate {
+
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+
+    /* IE */
+    -ms-transform: rotate(-90deg);
+
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
 }
 

@@ -6,6 +6,7 @@ $( document ).ready(function() {
     calendar();
     toggleButton();
     moveSidebar();
+    emailAbbo();
 });
 
 //Open/close dossier
@@ -102,8 +103,8 @@ function calendar(){
 
 //Toggle button placement
 function toggleButton(){
-    var sidebarHeight = $(".side-bar").height();
-    $(".toggle-button").css("top", sidebarHeight / 2  - 70 + "px");
+    var sidebarHeight = $(".side-bar").outerHeight();
+    $(".toggle-button").css("top", sidebarHeight / 2  + "px");
 }
 
 //Move sidebar for mobile users.
@@ -112,7 +113,8 @@ function moveSidebar(){
         jQuery(".side-bar").detach().appendTo('.mob-sidebar');
 
         //Make toggle button vertical
-        $(".toggle-button").css({"top" : "97%", "left"  : "50%", "height" : "50px", "width" : "28px"});
+        $(".toggle-button").css({"top" : "99.5%", "left"  : "50%", "height" : "35px", "width" : "80px"});
+        $(".toggle-button p").removeClass("rotate").css("margin-top", "0px");
         $(".toggle-button button").css({"transition" : "top 0.3s", "top" : "25px"});
     }
     else {
@@ -127,13 +129,14 @@ $(document).on('click', '.toggle-button', function() {
     //Mobile
     if ($(window).width() < 992) {
         $(this).toggleClass("toggle-button-selected-vert");
+        var sidebarH = $(".side-bar").outerHeight();
 
         if (state){
-            $( ".mob-sidebar" ).animate({ "margin-top": "-850px" }, "slow" );
+            $( ".mob-sidebar" ).animate({ "margin-top": "-="+sidebarH + "px" }, "slow" );
             state = false;
         }
         else {
-            $( ".mob-sidebar" ).animate({ "margin-top": "0px" }, "slow" );
+            $( ".mob-sidebar" ).animate({ "margin-top": "+="+sidebarH+"px" }, "slow" );
             state = true;
         }
     }
@@ -141,15 +144,25 @@ $(document).on('click', '.toggle-button', function() {
     //Desktop
     else {
         $(this).toggleClass('toggle-button-selected');
-
+        var sidebarW = $(".side-bar").outerWidth();
         if (state){
-            $( ".side-bar" ).animate({ "left": "20%" }, "slow" );
+
+            $( ".side-bar" ).animate({ "left": sidebarW + "px" }, "slow" );
             state = false;
         }
         else {
-            $( ".side-bar" ).animate({ "left": "-=20%" }, "slow" );
+            $( ".side-bar" ).animate({ "left": "-="+sidebarW+"px" }, "slow" );
             state = true;
         }
     }
 });
 
+//Keep updated on dossier changes
+function emailAbbo(){
+    $(".btn-abbo").click(function(e){
+        e.preventDefault();
+        email = $(".input-abbo").val();
+        console.log(email);
+
+    });
+}
