@@ -105,7 +105,7 @@ function addHeight(){
 //Move sidebar for mobile users.
 function moveSidebar(){
     if ($(window).width() < 992) {
-        jQuery(".cont-sidebar").detach().appendTo('.mob-sidebar');
+        $(".cont-sidebar").detach().appendTo('.mob-sidebar');
 
         //Add and remove classes for proper padding placement
         $('.no-padding').removeClass('side-bar');
@@ -117,7 +117,7 @@ function moveSidebar(){
         $(".toggle-button button").css({"transition" : "top 0.3s", "top" : "25px"});
     }
     else {
-        jQuery(".mob-sidebar").detach().appendTo('.cont-sidebar');
+        $(".mob-sidebar").detach().appendTo('.cont-sidebar');
 
         //Add and remove classes for proper padding placement
         $('.mob-sidebar').removeClass('side-bar');

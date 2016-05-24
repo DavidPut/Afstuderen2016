@@ -8,13 +8,27 @@ $( document ).ready(function() {
     moveSidebar();
     emailAbbo();
     sortDocs();
+    //toggleTitleDate();
 });
+
+function toggleTitleDate(clickedClass){
+    //Check if document is closed
+    //ToDo: Verder uitwerken.
+    if($(clickedClass).closest(".content-block").find(".dos-content").hasClass("closed")){
+        $(".titleDate-row").detach().appendTo(".toggle-row").removeClass("row");
+    }
+    else{
+        $(".titleDate-row").detach().insertAfter(".toggle-row").addClass("row");
+    }
+}
 
 //Open/close dossier
 function toggleDossier(){
     $(".dos-toggle").click(function(e) {
         $(this).closest(".content-block").find('.dos-content').slideToggle("slow", function(){
             $(this).toggleClass("closed");
+
+            toggleTitleDate(this);
         });
         $(this).toggleClass("glyphicon-minus glyphicon-plus");
     });
@@ -113,7 +127,7 @@ function toggleButton(){
 //Move sidebar for mobile users.
 function moveSidebar(){
     if ($(window).width() < 992) {
-        jQuery(".side-bar").detach().appendTo('.mob-sidebar');
+        $(".side-bar").detach().appendTo('.mob-sidebar');
 
         //Make toggle button vertical
         $(".toggle-button").css({"top" : "99.5%", "left"  : "50%", "height" : "35px", "width" : "80px"});
@@ -121,7 +135,7 @@ function moveSidebar(){
         $(".toggle-button button").css({"transition" : "top 0.3s", "top" : "25px"});
     }
     else {
-        jQuery(".mob-sidebar").detach().appendTo('.side-bar');
+        $(".mob-sidebar").detach().appendTo('.side-bar');
     }
 }
 
