@@ -117,10 +117,6 @@ function moveSidebar(){
     }
     else {
         jQuery(".mob-sidebar").detach().appendTo('.side-bar');
-
-        //Add and remove classes for proper padding placement
-        $('.mob-sidebar').removeClass('side-bar');
-        $('.no-padding').addClass('side-bar');
     }
 }
 
