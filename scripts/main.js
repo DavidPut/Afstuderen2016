@@ -173,7 +173,7 @@ function sortDocs(){
            return new Date($(a).attr("date")) > new Date($(b).attr("date"));
         }).each(function(){
           $(this).insertAfter( $( ".doc-content" ) );
-        })
+        });
 }
 
 //Filter by tags

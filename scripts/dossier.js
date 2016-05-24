@@ -7,6 +7,7 @@ $( document ).ready(function() {
     toggleButton();
     moveSidebar();
     emailAbbo();
+    sortDocs();
 });
 
 //Open/close dossier
@@ -163,6 +164,20 @@ function emailAbbo(){
         e.preventDefault();
         email = $(".input-abbo").val();
         console.log(email);
+    });
+}
+
+//Sort documents by date
+function sortDocs(){
+    $(".dos-doc").sort(function(a,b){
+        return new Date($(a).attr("date")) > new Date($(b).attr("date"));
+    }).each(function(){
+        //Insert documents sorted after doc-content
+        $(this).insertAfter( $( ".doc-content" ) );
+        //Set documents on default on close
+        $(".dos-content").addClass("closed");
 
     });
+    //Set the first document open as default
+    $(".dos-content").first().removeClass("closed");
 }

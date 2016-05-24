@@ -34,7 +34,8 @@
 
 <div class="container-fluid">
 
-    <div class="row mob-sidebar">    </div>
+    <!--Position for mobile sidebar-->
+    <div class="row mob-sidebar"></div>
 
     <!--Dossier title block-->
     <div class="col-md-9">
@@ -49,8 +50,11 @@
             </div>
         </div>
 
+        <!--Used for sorting documents-->
+        <div class="row doc-content"></div>
+
         <!--Visible document-->
-        <div class="row" id="1">
+        <div class="row dos-doc" id="1" date="08-05-2016">
             <div class="col-md-9 content-block">
 
                 <i class="dos-toggle glyphicon glyphicon-minus pull-left"></i>
@@ -63,7 +67,6 @@
                         <h5 class="pull-right">08-05-2016</h5>
                     </div>
                 </div>
-
 
                 <div class="col-md-12 dos-content">
                     <!--Decisions in bullet points-->
@@ -184,7 +187,7 @@
         </div>
 
         <!--Closed/hidden document-->
-        <div class="row" id="2">
+        <div class="row dos-doc" id="2" date="02-05-2016">
             <div class="col-md-9 col-xs-12 content-block">
 
                 <i class="pull-left dos-toggle glyphicon glyphicon-plus"></i>
