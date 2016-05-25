@@ -8,10 +8,6 @@ if($action == "new"){
   $newEntry = false;
 }
 
-//if($newEntry == true){
-
-//}
-
 
 ?>
 
@@ -48,7 +44,7 @@ if($action == "new"){
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="page-header">
           <?php
-          if($newEntry == true) {
+          if($action == "new") {
             echo '<h4>Besluitvormingsproces <span class="label label-info">Nieuw</span></h4>';
           } else {
             echo '<h4>Besluitvormingsproces <a href="#"><span class="label label-primary">Ga naar pagina</span></a></h4>';
@@ -346,7 +342,7 @@ if($action == "new"){
       <div class="row">
         <div class="col-md-4 col-md-offset-4 col-xs-12">
           <?php
-          if($newEntry == true) {
+          if($action == "new") {
             echo '<button class="btn btn-lg btn-primary btn-block" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>';
           } else {
             echo '<button class="btn btn-lg btn-primary btn-block" type = "submit" name = "edit" value = "Aanpassen">Aanpassen</button>';
