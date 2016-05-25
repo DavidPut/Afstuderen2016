@@ -28,7 +28,7 @@
 
 
 <div class="container-fluid">
-  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+  <form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
 
   <div class="row">
     <div class="col-md-8 col-md-offset-2 col-xs-12 ">
@@ -41,9 +41,11 @@
   <div class="row">
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Titel</span>
-            <input type="email" name="email" class="form-control" placeholder="Titel besluitvorming" aria-describedby="basic-addon1" autofocus>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Titel</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="Titel besluitvorming">
+            </div>
           </div>
         </div>
       </div>
