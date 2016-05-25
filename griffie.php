@@ -344,7 +344,7 @@ if($action == "new"){
         <div class="col-md-4 col-md-offset-4 col-xs-12">
           <?php
           if($action == "new") {
-            echo '<button class="btn btn-lg btn-primary btn-block" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>';
+            echo '<button class="btn btn-lg btn-success btn-block" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>';
           } else {
             echo '<button class="btn btn-lg btn-primary btn-block" type = "submit" name = "edit" value = "Aanpassen">Aanpassen</button>';
           }
