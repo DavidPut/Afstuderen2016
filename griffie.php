@@ -161,6 +161,11 @@ $newEntry = false;
       </div>
     </div>
 
+    <div class = "panel panel-info">
+      <div class = "panel-heading">
+        <h3 class = "panel-title">Panel title</h3>
+      </div>
+      <div class = "panel-body">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="form-group">
@@ -191,6 +196,8 @@ $newEntry = false;
             <input class="form-control" type="file" name="inputFile"></input>
           </div>
         </div>
+      </div>
+    </div>
       </div>
     </div>
 
