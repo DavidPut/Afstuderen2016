@@ -42,6 +42,7 @@ $newEntry = false;
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="page-header">
           <h4>Besluitvormingsproces</h4>
+          <a class="btn btn-default" href="#" role="button">Link</a>
         </div>
       </div>
     </div>
