@@ -190,9 +190,9 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="form-group">
-            <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
+            <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
             <div class="col-sm-10">
-              <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
+              <input type="text" name="agendaTitle" class="form-control" placeholder="Titel agenda">
             </div>
           </div>
         </div>
