@@ -169,7 +169,7 @@
           <div class="form-group">
             <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
             <div class="col-sm-10">
-              <input class="form-control" name="inputFile"></input>
+              <input class="form-control" type="file" name="inputFile"></input>
             </div>
           </div>
         </div>
