@@ -41,7 +41,13 @@ $newEntry = false;
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="page-header">
-          <h4>Besluitvormingsproces <span class="label label-primary"><a href="#">Link</a></span></h4>
+          <?php
+          if($newEntry == true) {
+            echo '<h4>Besluitvormingsproces <span class="label label-info">Nieuw toevoeging</span></h4>';
+          } else {
+            echo '<h4>Besluitvormingsproces <span class="label label-primary"><a class="label" href="#">Ga naar overzicht</a></span></h4>';
+          }
+          ?>
         </div>
       </div>
     </div>
