@@ -39,7 +39,8 @@
   </div>
 
   <div class="row">
-      <div class="row">
+
+    <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">Titel</label>
@@ -50,32 +51,39 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Samenvatting</span>
-            <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3" aria-describedby="basic-addon1"></textarea>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Samenvatting</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Postcode of adres</span>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Postcode/adres</label>
+          <div class="col-sm-10">
             <input class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres" aria-describedby="basic-addon1"></input>
           </div>
         </div>
       </div>
+    </div>
 
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12">
-        <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Zoekwoorden</span>
-          <input class="form-control" type="text" name="tags" placeholder="Vul een zoekwoord in, gescheiden door komma's" aria-describedby="basic-addon1"></input>
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Zoekwoorden</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" name="tags" placeholder="Tags, gescheiden door komma's" aria-describedby="basic-addon1"></input>
+          </div>
         </div>
       </div>
     </div>
+
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12">
