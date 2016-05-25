@@ -142,7 +142,7 @@
         </div>
       </div>
 
-        <div class="row">
+      <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12 ">
             <div class="form-group">
               <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
@@ -153,7 +153,7 @@
           </div>
         </div>
 
-        <div class="row">
+      <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12 ">
             <div class="form-group">
               <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
@@ -165,19 +165,20 @@
         </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-          <div class="form-group">
-            <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
-            <div class="col-sm-10">
-              <input class="form-control" type="file" name="inputFile"></input>
+          <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+            <div class="form-group">
+              <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="file" name="inputFile"></input>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
       <!-- proces uitprinten als die er zijn voor edit pagina -->
 
 
+      <!-- extra gegevens -->
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="page-header">
@@ -223,6 +224,7 @@
     </div>
 
   </form>
+</div>
 </body>
 
 </html>
