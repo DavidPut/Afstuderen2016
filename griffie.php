@@ -92,6 +92,23 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Soort</span>
+          <label class="radio-inline">
+            <input type="radio" name="RadioOptions" id="Radio1" value="option1"> 1</input>
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="RadioOptions" id="Radio2" value="option2"> 2</input>
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="RadioOptions" id="Radio3" value="option3"> 3</input>
+          </label>
+        </div>
+      </div>
+    </div>
+
       <div class="row">
         <div class="col-md-4 col-md-offset-4 col-xs-12">
           <button class="btn btn-lg btn-primary btn-block" type="submit" name="add" value="toevoegen">Toevoegen</button>
