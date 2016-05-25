@@ -164,8 +164,9 @@ $newEntry = false;
         <h3 class = "panel-title">Nieuwe besluitvorming</h3>
       </div>
       <div class = "panel-body">
+
     <div class="row">
-      <div class="col-md-12 col-md-offset-0 col-xs-12 ">
+      <div class="col-md-12 col-xs-12 ">
         <div class="form-group">
           <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
           <div class="col-sm-10">
@@ -176,7 +177,7 @@ $newEntry = false;
     </div>
 
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+      <div class="col-md-12 col-xs-12 ">
         <div class="form-group">
           <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
           <div class="col-sm-10">
@@ -187,7 +188,7 @@ $newEntry = false;
     </div>
 
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+      <div class="col-md-12 col-xs-12 ">
         <div class="form-group">
           <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
           <div class="col-sm-10">
