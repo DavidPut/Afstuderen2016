@@ -200,29 +200,41 @@
 
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-          <div class="form-group row">
-            <label for="inputTitleProces" class="col-sm-2 control-label">Dag</label>
-            <div class="col-sm-10">
-              <input type="text" name="agendaTitle" class="form-control" placeholder="Titel agenda">
+          <div class="form-group>
+            <label class="col-sm-2 control-label">Datum</label>
+            <div class="form-group row">
+              <label for="inputKey" class="col-md-1 control-label">Dag</label>
+              <div class="col-md-2">
+                <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                </select>
+              </div>
+              <label for="inputValue" class="col-md-1 control-label">Maand</label>
+              <div class="col-md-2">
+                <select class="form-control">
+                  <option>Januari</option>
+                  <option>Februari</option>
+                  <option>Maart</option>
+                  <option>April</option>
+                  <option>Mei</option>
+                  <option>Juli</option>
+                  <option>Juni</option>
+                  <option>Augustus</option>
+                  <option>September</option>
+                  <option>Oktober</option>
+                  <option>November</option>
+                  <option>December</option>
+                </select>
+              </div>
+              <label for="inputValue" class="col-md-1 control-label">Jaar</label>
+              <div class="col-md-2">
+                <select class="form-control">
+                  <option>2016</option>
+                  <option>2017</option>
+                </select>
+              </div>
             </div>
-            <label for="inputTitleProces" class="col-sm-2 control-label">Maand</label>
-            <div class="col-sm-10">
-              <select class="form-control">
-                <option>Januari</option>
-                <option>Februari</option>
-                <option>Maart</option>
-                <option>April</option>
-                <option>Mei</option>
-                <option>Juli</option>
-                <option>Juni</option>
-                <option>Augustus</option>
-                <option>September</option>
-                <option>Oktober</option>
-                <option>November</option>
-                <option>December</option>
-              </select>
-            </div>
-          </div>
         </div>
       </div>
 
