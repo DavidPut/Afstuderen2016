@@ -211,9 +211,9 @@ $newEntry = false;
 
     '<div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-        <div class = "panel panel-info">
+        <div class = "panel panel-warning">
             <div class = "panel-heading">
-                <h3 class = "panel-title">Nieuwe besluitvorming</h3>
+                <h3 class = "panel-title">Bestaande besluitvorming</h3>
             </div>
             <div class = "panel-body">
 
