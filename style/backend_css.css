@@ -15,9 +15,13 @@
 
 .input-group-addon{
   padding: 0;
-  /**min-width:130px;**/
   min-width:130px;
 
+}
+
+.form-horizontal .form-group{
+  margin-right:0px;
+  /** overriding **/
 }
 
 .btn{
