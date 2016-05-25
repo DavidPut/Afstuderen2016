@@ -133,7 +133,7 @@
       </div>
 
 
-
+      <!-- proces -->
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="page-header">
@@ -175,11 +175,50 @@
         </div>
       </div>
 
-        <div class="row">
-          <div class="col-md-4 col-md-offset-4 col-xs-12">
-            <button class="btn btn-lg btn-primary btn-block" type="submit" name="add" value="toevoegen">Toevoegen</button>
+      <!-- proces uitprinten als die er zijn voor edit pagina -->
+
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+          <div class="page-header">
+            <h2>Extra gegevens</h2>
           </div>
         </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+          <div class="form-group">
+            <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
+            <div class="col-sm-10">
+              <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+          <div class="form-group">
+            <label for="inputTags" class="col-sm-2 control-label">Soort</label>
+            <div class="col-sm-10">
+              <label class="checkbox">
+                <input type="checkbox" id="Checkbox1" value="option1"> De gegeven van de gemeente achterlaten
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="Checkbox2" value="option2"> De gegevens van de griffie achterlaten
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-xs-12">
+          <button class="btn btn-lg btn-primary btn-block" type="submit" name="add" value="toevoegen">Toevoegen</button>
+        </div>
+      </div>
 
     </div>
 
