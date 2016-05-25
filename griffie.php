@@ -43,9 +43,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Titel</label>
+            <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputEmail3" placeholder="Titel besluitvorming">
+              <input type="text" class="form-control" placeholder="Titel besluitvorming">
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">Samenvatting</label>
+          <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
           <div class="col-sm-10">
             <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
           </div>
@@ -65,9 +65,9 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">Postcode/adres</label>
+          <label for="inputAdrescode" class="col-sm-2 control-label">Postcode/adres</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres" aria-describedby="basic-addon1"></input>
+            <input class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres"></input>
           </div>
         </div>
       </div>
@@ -76,30 +76,40 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">Zoekwoorden</label>
+          <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" name="tags" placeholder="Tags, gescheiden door komma's" aria-describedby="basic-addon1"></input>
+            <input class="form-control" type="text" name="tags" placeholder="Tags, gescheiden door komma's"></input>
           </div>
         </div>
       </div>
     </div>
 
-
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12">
-            <input type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
-            <input type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
-            <input type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
+          <div class="col-sm-10">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek </input>
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal</input>
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen </input>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
+          <div class="col-sm-10">
             <input type="radio" name="RadioOptions" id="Radio1" value="option1">Korter dan een jaar</input>
             <input type="radio" name="RadioOptions" id="Radio2" value="option2">1 tot 5 jaar</input>
             <input type="radio" name="RadioOptions" id="Radio3" value="option3">5 jaar of langer</input>
+          </div>
+        </div>
       </div>
     </div>
+
 
       <div class="row">
         <div class="col-md-4 col-md-offset-4 col-xs-12">
