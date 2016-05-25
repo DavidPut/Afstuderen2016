@@ -78,6 +78,7 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12">
         <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Soort</span>
           <label class="checkbox-inline">
             <input type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
           </label>
