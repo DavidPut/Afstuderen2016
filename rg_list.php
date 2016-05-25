@@ -13,6 +13,7 @@ $griffie = 1;
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
+  <link href='./fonts/font-awesome.min.css' rel='stylesheet'/>
   <link rel="stylesheet" type="text/css" href="style/backend_css.css"/>
   <script src="scripts/jquery-1.12.3.min.js"></script>
   <script src="bootstrap/scripts/bootstrap.min.js"></script>
@@ -52,7 +53,7 @@ $griffie = 1;
             echo '
         <th class="col-md-1">Nummer</th>
         <th class="col-md-8">Titel</th>
-        <th class="col-md-1">Exttra opties</th>
+        <th class="col-md-3">Exttra opties</th>
         ';
         }
         ?>
@@ -68,7 +69,7 @@ $griffie = 1;
         echo "
       <tr>
         <td>" . $x . "</td>
-        <td>Besluitvorming school over een school dat gaat komen in de gmemeente dordrecht. De school moet er over 10 dagen komen en dit is een zeer lange titel. </td>
+        <td>Een titel van een besluitvorming</td>
         <td>0</td>
         <td>2</td>
         <td>ja</td>
@@ -79,8 +80,12 @@ $griffie = 1;
       echo "
       <tr>
         <td>" . $x . "</td>
-        <td>Besluitvorming school over een school dat gaat komen in de gmemeente dordrecht. De school moet er over 10 dagen komen en dit is een zeer lange titel. </td>
-        <td>0</td>
+        <td>Een titel van een besluitvorming</td>
+        <td>
+          <a href='http://gemeentedossier.nl/dossier.html'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></button></a>
+          <a href='http://gemeentedossier.nl/griffie.php#'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></a>
+          <button type=\"button\" class=\"btn btn-list btn-danger\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button>
+        </td>
       </tr>";
     }
     } else {
