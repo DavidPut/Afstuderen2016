@@ -211,7 +211,7 @@ $newEntry = false;
         <div class="form-group">
           <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
           <div class="col-sm-10">
-            <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
+            <input type="text" name="titleProces" class="form-control" value="Commissievergaderinng">
           </div>
         </div>
       </div>
@@ -222,7 +222,7 @@ $newEntry = false;
         <div class="form-group">
           <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
           <div class="col-sm-10">
-            <textarea class="form-control" name="summaryProces" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
+            <textarea class="form-control" name="summaryProces" value="Samenvatting besluit van de commissievergadering" rows="6"></textarea>
           </div>
         </div>
       </div>
