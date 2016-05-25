@@ -1,6 +1,6 @@
 var map;
 $( document ).ready(function() {
-   initMap();
+    initMap();
     characterLimit();
     addHeight();
     moveSidebar();
@@ -22,28 +22,69 @@ function initMap() {
         // The latitude and longitude to center the map (always required)
         center: new google.maps.LatLng(51.811994, 4.659263),
 
-        // How you would like to style the map.
-        // This is where you would paste any style found on Snazzy Maps.
+        //Custom style
         styles: [	{		"featureType":"landscape",		"stylers":[			{				"hue":"#FFBB00"			},			{				"saturation":43.400000000000006			},			{				"lightness":37.599999999999994			},			{				"gamma":1			}		]	},	{		"featureType":"road.highway",		"stylers":[			{				"hue":"#FFC200"			},			{				"saturation":-61.8			},			{				"lightness":45.599999999999994			},			{				"gamma":1			}		]	},	{		"featureType":"road.arterial",		"stylers":[			{				"hue":"#FF0300"			},			{				"saturation":-100			},			{				"lightness":51.19999999999999			},			{				"gamma":1			}		]	},	{		"featureType":"road.local",		"stylers":[			{				"hue":"#FF0300"			},			{				"saturation":-100			},			{				"lightness":52			},			{				"gamma":1			}		]	},	{		"featureType":"water",		"stylers":[			{				"hue":"#0078FF"			},			{				"saturation":-13.200000000000003			},			{				"lightness":2.4000000000000057			},			{				"gamma":1			}		]	},	{		"featureType":"poi",		"stylers":[			{				"hue":"#00FF6A"			},			{				"saturation":-1.0989010989011234			},			{				"lightness":11.200000000000017			},			{				"gamma":1			}		]	}]
     };
 
-    // Get the HTML DOM element that will contain your map
-    // We are using a div with id="map" seen below in the <body>
+    //Get map element
     var mapElement = document.getElementById('map');
 
-    // Create the Google Map using our element and options defined above
+    //Create Google Map
     var map = new google.maps.Map(mapElement, mapOptions);
 
     //Custom image
     var image = './images/Marker_Icon_fysiek_green.png';
 
-    // Let's also add a marker while we're at it
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(51.811994, 4.659263),
-        map: map,
-        title: 'Lorem Ipsum',
-        icon: image,
-        id: "1"
+    //Create marker
+    //ToDo: Add custom image, title
+
+    var marker;
+    $('.doc-row[lat]').each(function() {
+
+        var id = $(this).attr("id");
+        var lat = $(this).attr("lat");
+        var long = $(this).attr("long");
+
+        var type = $(this).attr("type");
+        var time = $(this).attr("time");
+
+        //if(type == "physical")
+        //    //ToDo: Add switch
+        //    if(time == "low"){
+        //        image = './images/Marker_Icon_fysiek_green.png';
+        //    }
+        //}
+
+        //Create marker
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(lat, long),
+            map: map,
+            title: 'Lorem Ipsum',
+            icon: image,
+            id: id
+        });
+
+        //Scroll to document
+        marker.addListener('click', function() {
+            $('html, body').animate({
+                scrollTop: $('.doc-row[id*="'+id+'"]').offset().top
+            }, 2000);
+            $('.doc-row[id*="'+id+'"]').find('.doc-block').effect("highlight", {}, 3000);
+        });
+    });
+
+    //Click document marker
+    $('.doc-row a').click(function() {
+
+        //Lat and long attributes
+        var lat = $(this).closest('.doc-row').attr('lat');
+        var long = $(this).closest('.doc-row').attr('long');
+
+        //Center map
+        map.setCenter(new google.maps.LatLng(lat, long));
+
+        //Scroll to top
+        $("html,body").animate({ scrollTop: 0 }, "slow");
     });
 
     //Location search
@@ -63,28 +104,9 @@ function initMap() {
         });
     });
 
-    //Click document marker
-    $('.doc-row a').click(function() {
 
-        var lat = $(this).closest('.doc-row').attr('lat');
-        var long = $(this).closest('.doc-row').attr('long');
 
-        //Center map
-        map.setCenter(new google.maps.LatLng(lat, long));
 
-        //Scroll to top
-        $("html,body").animate({ scrollTop: 0 }, "slow");
-
-    });
-
-    //Scroll to document
-    marker.addListener('click', function() {
-
-        $('html, body').animate({
-            scrollTop: $('.doc-row[id*="'+marker.id+'"]').offset().top
-        }, 2000);
-        $('.doc-row[id*="'+marker.id+'"]').find('.doc-block').effect("highlight", {}, 3000);
-    });
 }
 
 //Limit characters.
@@ -118,7 +140,6 @@ function moveSidebar(){
     }
     else {
         $(".mob-sidebar").detach().appendTo('.cont-sidebar');
-
         //Add and remove classes for proper padding placement
         $('.mob-sidebar').removeClass('side-bar');
         $('.no-padding').addClass('side-bar');
@@ -156,12 +177,11 @@ $(document).on('click', '.toggle-button', function() {
         $(this).toggleClass('toggle-button-selected');
         var sidebarW = $(".side-bar").outerWidth();
         if (state){
-
-            $( ".side-bar" ).animate({ "left": sidebarW + "px" }, "slow" );
+            $(".side-bar").animate({ "left": sidebarW + "px" }, "slow" );
             state = false;
         }
         else {
-            $( ".side-bar" ).animate({ "left": "-="+sidebarW+"px" }, "slow" );
+            $(".side-bar").animate({ "left": "-="+sidebarW+"px" }, "slow" );
             state = true;
         }
     }
@@ -198,10 +218,10 @@ function filterTags(){
     $(".btn-tags").click(function(e){
         e.preventDefault();
 
-        //Split tag by , in array.
+        //Split tag by , in array
         var tags = $(".input-tags").val().replace(/\s+/g,",");
 
-        //Split by comma.
+        //Split by comma
         var array = tags.split(',');
 
         //Reset
@@ -217,13 +237,11 @@ function filterTags(){
             //Loop through array
             jQuery.each( array, function( i, val ) {
 
-                //Remove/add documents that contain value specified in tags.
+                //Remove/add documents that contain value specified in tags
                 $('.doc-row[tags*="'+val+'"]').addClass("showBlock");
                 $(".doc-row" ).not(".showBlock").addClass("hidden");
-
             });
         }
-
     });
 }
 
@@ -236,7 +254,6 @@ function filterType(){
         } else {
             $('.doc-row[type*="physical"]').addClass("hiddenType");
         }
-
     });
 
     $('#checkbox-social').click(function(){
@@ -246,7 +263,6 @@ function filterType(){
         } else {
             $('.doc-row[type*="social"]').addClass("hiddenType");
         }
-
     });
 
     $('#checkbox-money').click(function(){
@@ -256,14 +272,13 @@ function filterType(){
         } else {
             $('.doc-row[type*="money"]').addClass("hiddenType");
         }
-
     });
 }
 
 //Filter by time
 function filterTime(){
+    //Filter by <1 year
     $('#checkbox-low').click(function(){
-
         if ($(this).is(':checked')) {
             $('.doc-row[time*="low"]').removeClass("hiddenTime");
         } else {
@@ -271,8 +286,8 @@ function filterTime(){
         }
     });
 
+    //Filter by 1-5 year
     $('#checkbox-mid').click(function(){
-
         if ($(this).is(':checked')) {
             $('.doc-row[time*="mid"]').removeClass("hiddenTime");
         } else {
@@ -280,8 +295,8 @@ function filterTime(){
         }
     });
 
+    //Filter by 5+ year
     $('#checkbox-high').click(function(){
-
         if ($(this).is(':checked')) {
             $('.doc-row[time*="high"]').removeClass("hiddenTime");
         } else {
