@@ -13,9 +13,6 @@ $( document ).ready(function() {
 
 //Toggle title and date position
 function toggleTitleDate(clickedClass){
-    //Check if document is closed
-    //ToDo: Verder uitwerken.
-    //Document closed
 
     var titleDateRow;
     var toggleRow;
@@ -27,17 +24,19 @@ function toggleTitleDate(clickedClass){
         $(titleDateRow).detach().appendTo(toggleRow).removeClass("row");
     }
 
-    //If user clicked on toggle button
+    //User clicked on toggle button and document is closed
     if($(clickedClass).closest(".content-block").find(".dos-content").hasClass("closed")){
         titleDateRow = $(clickedClass).closest(".content-block").find(".titleDate-row");
         toggleRow =  $(titleDateRow).parent().find(".toggle-row");
+        //Place title and date next to toggle button
         $(titleDateRow).detach().appendTo(toggleRow).removeClass("row");
 
     }
-    //Document open
+    //User clicked on toggle button and document is open
     else{
         titleDateRow = $(clickedClass).closest(".content-block").find(".titleDate-row");
         toggleRow =  $(titleDateRow).closest(".toggle-row");
+        //Place title and date under toggle button
         $(titleDateRow).detach().insertAfter(toggleRow).addClass("row");
     }
 }
