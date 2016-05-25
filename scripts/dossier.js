@@ -46,9 +46,10 @@ function toggleDossier(){
     $(".dos-toggle").click(function(e) {
         $(this).closest(".content-block").find('.dos-content').slideToggle("slow", function(){
             $(this).toggleClass("closed");
+            //Title and date placement
             toggleTitleDate(e.target);
-
         });
+        //Change toggle image
         $(this).toggleClass("glyphicon-minus glyphicon-plus");
     });
 }
@@ -57,21 +58,26 @@ function toggleDossier(){
 function calendar(){
     $('#calendar').fullCalendar({
 
+        //When clicked on item in calendar
         eventClick: function(calEvent, jsEvent, view) {
-
             console.log('Event: ' + calEvent.title);
             console.log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
             console.log('View: ' + view.name);
         },
 
+        //Header settings
         header: {
             left: 'prev,next today',
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         },
+
+        //Calendar settings
         defaultDate: '2016-05-12',
         editable: true,
         eventLimit: true, // allow "more" link when too many events
+
+        //Calendar items
         events: [
             {
                 title: 'All Day Event',
@@ -128,6 +134,8 @@ function calendar(){
                 start: '2016-05-28'
             }
         ],
+
+        //Calendar height
         height: 450
     });
 
