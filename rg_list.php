@@ -80,7 +80,11 @@ $griffie = 1;
       <tr>
         <td>" . $x . "</td>
         <td>Een titel van een besluitvorming</td>
-        <td><button type=\"button\" class=\"btn btn-secondary\">Secondary</button></td>
+        <td>
+          <button type=\"button\" class=\"btn btn-default\">Aanpassen</button>
+          <button type=\"button\" class=\"btn btn-default\">Aanpassen</button>
+          <button type=\"button\" class=\"btn btn-danger\">Verwijderen</button>
+        </td>
       </tr>";
     }
     } else {
