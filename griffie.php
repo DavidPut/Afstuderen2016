@@ -34,7 +34,7 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="page-header">
-          <h2>Nieuwe besluitvormingsproces</h2>
+          <h2>Besluitvormingsproces</h2>
         </div>
       </div>
     </div>
