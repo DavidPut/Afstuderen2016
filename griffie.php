@@ -44,7 +44,7 @@
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Titel</span>
-            <input type="email" name="email" class="form-control" placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>
+            <input type="email" name="email" class="form-control" placeholder="Titel besluitvorming" aria-describedby="basic-addon1" autofocus>
           </div>
         </div>
       </div>
@@ -53,10 +53,18 @@
         <div class="col-md-8 col-md-offset-2 col-xs-12">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Samenvatting</span>
-            <textarea class="form-control" name="summary" placeholder="samenvatting" rows="3" aria-describedby="basic-addon1"></textarea>
+            <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3" aria-describedby="basic-addon1"></textarea>
           </div>
         </div>
+      </div>
 
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Postcode of adres</span>
+            <input class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres" aria-describedby="basic-addon1"></input>
+          </div>
+        </div>
       </div>
 
       <div class="row">
