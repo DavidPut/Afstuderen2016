@@ -1,8 +1,8 @@
 <?php
 
 //test 2test
-$raadslid = 1;
-$griffie = 0;
+$raadslid = 0;
+$griffie = 1;
 
 ?>
 
@@ -32,7 +32,9 @@ $griffie = 0;
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class="pagescreen">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-12 ">
   <table class="table table-hover table-list">
     <thead>
       <tr>
@@ -88,6 +90,8 @@ $griffie = 0;
 ?>
     </tbody>
   </table>
+      </div>
+    </div>
 </div>
 
 
