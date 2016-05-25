@@ -77,15 +77,17 @@
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12">
-        <label class="checkbox-inline">
-          <input type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
-        </label>
+        <div class="input-group">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
+          </label>
+        </div>
       </div>
     </div>
 
