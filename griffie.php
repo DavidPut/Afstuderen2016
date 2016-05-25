@@ -200,7 +200,7 @@
 
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-          <div class="form-group row>
+          <div class="form-group row">
             <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
             <div class="col-md-2">
               <select class="form-control">
