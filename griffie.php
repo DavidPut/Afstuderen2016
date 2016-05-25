@@ -203,12 +203,16 @@
           <div class="form-group">
             <label for="inputContact" class="col-sm-2 control-label">Contactgegevens</label>
             <div class="col-sm-10">
-              <label class="checkbox">
-                <input type="checkbox" id="Checkbox1" value="option1"> De gegeven van de gemeente achterlaten
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="Checkbox2" value="option2"> De gegevens van de griffie achterlaten
-              </label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value=""> Gemeente contactgegevens
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value=""> Griffie contactgegevens
+                </label>
+              </div>
             </div>
           </div>
         </div>
