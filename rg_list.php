@@ -82,7 +82,7 @@ $griffie = 1;
         <td>" . $x . "</td>
         <td>Een titel van een besluitvorming</td>
         <td>
-          <button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></button>
+          <a href='http://gemeentedossier.nl/griffie.php#'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></button></a>
           <button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
           <button type=\"button\" class=\"btn btn-list btn-danger\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button>
         </td>
