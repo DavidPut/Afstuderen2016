@@ -28,6 +28,7 @@
 
 
 <div class="container-fluid">
+  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
 
   <div class="row">
     <div class="col-md-8 col-md-offset-2 col-xs-12 ">
@@ -38,8 +39,6 @@
   </div>
 
   <div class="row">
-    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
-
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="input-group">
@@ -74,8 +73,8 @@
         </div>
       </div>
 
-    </form>
   </div>
+  </form>
 </body>
 
 </html>
