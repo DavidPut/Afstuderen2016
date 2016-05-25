@@ -43,7 +43,7 @@ $newEntry = false;
         <div class="page-header">
           <?php
           if($newEntry == true) {
-            echo '<h4>Besluitvormingsproces <span class="label label-info">Nieuw toevoeging</span></h4>';
+            echo '<h4>Besluitvormingsproces <span class="label label-info">Nieuw</span></h4>';
           } else {
             echo '<h4>Besluitvormingsproces <a href="#"><span class="label label-primary">Ga naar overzicht</span></a></h4>';
           }
