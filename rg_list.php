@@ -68,7 +68,7 @@ $griffie = 1;
         echo "
       <tr>
         <td>" . $x . "</td>
-        <td>Besluitvorming school over een school dat gaat komen in de gmemeente dordrecht. De school moet er over 10 dagen komen en dit is een zeer lange titel. </td>
+        <td>Een titel van een besluitvorming</td>
         <td>0</td>
         <td>2</td>
         <td>ja</td>
@@ -79,8 +79,8 @@ $griffie = 1;
       echo "
       <tr>
         <td>" . $x . "</td>
-        <td>Besluitvorming school over een school dat gaat komen in de gmemeente dordrecht. De school moet er over 10 dagen komen en dit is een zeer lange titel. </td>
-        <td>0</td>
+        <td>Een titel van een besluitvorming</td>
+        <td><button type=\"button\" class=\"btn btn-secondary\">Secondary</button></td>
       </tr>";
     }
     } else {
