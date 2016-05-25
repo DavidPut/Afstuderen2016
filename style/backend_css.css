@@ -20,6 +20,10 @@
 
 }
 
+.form-horizontal .form-group{
+  margin-right:0px;
+}
+
 .btn{
   width:98%;
   margin-left:1%;
