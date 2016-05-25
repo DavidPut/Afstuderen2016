@@ -1,7 +1,7 @@
 /**
  * Created by David on 18-5-2016.
  */
-$( document ).ready(function() {
+$(document).ready(function() {
     toggleDossier();
     calendar();
     toggleButton();
@@ -9,12 +9,12 @@ $( document ).ready(function() {
     emailAbbo();
     sortDocs();
     toggleTitleDate();
-
 });
 
 //Toggle title and date position
 function toggleTitleDate(clickedClass){
 
+    //Class variables
     var titleDateRow;
     var toggleRow;
 
@@ -36,8 +36,8 @@ function toggleTitleDate(clickedClass){
         toggleRow =  $(titleDateRow).parent().find(".toggle-row");
         //Place title and date next to toggle button
         $(titleDateRow).detach().appendTo(toggleRow).removeClass("row");
-
     }
+
     //User clicked on toggle button and document is open
     else{
         titleDateRow = $(clickedClass).closest(".content-block").find(".titleDate-row");
@@ -47,7 +47,7 @@ function toggleTitleDate(clickedClass){
     }
 }
 
-//Open/close dossier
+//Open or close dossier
 function toggleDossier(){
     $(".dos-toggle").click(function(e) {
         $(this).closest(".content-block").find('.dos-content').slideToggle("slow", function(){
@@ -222,6 +222,7 @@ function sortDocs(){
     //Get all items with date
     var items = $(".dos-doc");
 
+    //Loop through each item with date
     items.each(function() {
         //Convert to date format
         var BCDate = $(this).attr("date").split("-");
