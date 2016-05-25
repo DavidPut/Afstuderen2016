@@ -145,9 +145,9 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12 ">
             <div class="form-group">
-              <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
+              <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Titel besluitvorming">
+                <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
               </div>
             </div>
           </div>
@@ -156,13 +156,24 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12 ">
             <div class="form-group">
-              <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
+              <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
               <div class="col-sm-10">
-                <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
+                <textarea class="form-control" name="summaryProces" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
               </div>
             </div>
           </div>
         </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+          <div class="form-group">
+            <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
+            <div class="col-sm-10">
+              <input class="form-control" name="inputFile"></input>
+            </div>
+          </div>
+        </div>
+      </div>
 
         <div class="row">
           <div class="col-md-4 col-md-offset-4 col-xs-12">
