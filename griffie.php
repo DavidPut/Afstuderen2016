@@ -77,7 +77,6 @@
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12">
-          <span class="input-group-addon" id="basic-addon1">Soort</span>
             <input type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
             <input type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
             <input type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
@@ -86,7 +85,6 @@
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12">
-          <span class="input-group-addon" id="basic-addon1">Verwachting tijd</span>
             <input type="radio" name="RadioOptions" id="Radio1" value="option1">Korter dan een jaar</input>
             <input type="radio" name="RadioOptions" id="Radio2" value="option2">1 tot 5 jaar</input>
             <input type="radio" name="RadioOptions" id="Radio3" value="option3">5 jaar of langer</input>
