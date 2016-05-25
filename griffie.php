@@ -157,9 +157,7 @@ $newEntry = false;
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-        <p></p><span class="label label-info">Nieuwe besluitvorming</span></p>
-      </div>
-    </div>
+
 
     <div class = "panel panel-info">
       <div class = "panel-heading">
@@ -196,6 +194,8 @@ $newEntry = false;
             <input class="form-control" type="file" name="inputFile"></input>
           </div>
         </div>
+      </div>
+    </div>
       </div>
     </div>
       </div>
