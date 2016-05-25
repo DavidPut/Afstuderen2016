@@ -200,12 +200,12 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="form-group">
-            <label for="inputTags" class="col-sm-2 control-label">Soort</label>
+            <label for="inputTags" class="col-sm-2 control-label">Contactgegevens</label>
             <div class="col-sm-10">
               <label class="checkbox">
                 <input type="checkbox" id="Checkbox1" value="option1"> De gegeven van de gemeente achterlaten
               </label>
-              <label class="checkbox-inline">
+              <label class="checkbox">
                 <input type="checkbox" id="Checkbox2" value="option2"> De gegevens van de griffie achterlaten
               </label>
             </div>
