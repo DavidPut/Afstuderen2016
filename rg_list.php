@@ -82,9 +82,9 @@ $griffie = 1;
         <td>" . $x . "</td>
         <td>Een titel van een besluitvorming</td>
         <td>
-          <button type=\"button\" class=\"btn btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
-          <button type=\"button\" class=\"btn btn-default\">Aanpassen</button>
-          <button type=\"button\" class=\"btn btn-danger\">Verwijderen</button>
+          <button type=\"button\" class=\"btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
+          <button type=\"button\" class=\"btn-default\">Aanpassen</button>
+          <button type=\"button\" class=\"btn-danger\">Verwijderen</button>
         </td>
       </tr>";
     }
