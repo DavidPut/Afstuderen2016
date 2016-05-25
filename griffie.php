@@ -4,9 +4,9 @@ $action = urlencode($_GET['action']);
 echo $action;
 if($action == "new"){
   $newEntry = true;
+} else {
+  $newEntry = false;
 }
-
-$newEntry = false;
 
 //if($newEntry == true){
 
