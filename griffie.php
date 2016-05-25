@@ -202,7 +202,7 @@ $newEntry = false;
 
     '<div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-        <p></p><span class="label label-info">Bestaande besluitvorming</span></p>
+        <p></p><span class="label label-warning">Bestaande besluitvorming</span></p>
       </div>
     </div>
 
