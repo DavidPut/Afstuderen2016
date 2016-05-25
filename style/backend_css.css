@@ -24,6 +24,10 @@
   /** overriding **/
 }
 
+.checkbox{
+  font-weight: 400;
+}
+
 .btn{
   width:98%;
   margin-left:1%;
