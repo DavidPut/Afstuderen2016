@@ -169,11 +169,28 @@ $(document).on('click', '.toggle-button', function() {
 
 //Sort documents by date
 function sortDocs(){
-        $(".doc-row").sort(function(a,b){
-           return new Date($(a).attr("date")) > new Date($(b).attr("date"));
-        }).each(function(){
-          $(this).insertAfter( $( ".doc-content" ) );
-        });
+    //Get all items with date
+    var items = $(".doc-row");
+
+    items.each(function() {
+        //Convert to date format
+        var BCDate = $(this).attr("date").split("-");
+        var standardDate = BCDate[1]+" "+BCDate[0]+" "+BCDate[2];
+        standardDate = new Date(standardDate).getTime();
+        //Add new date format
+        $(this).attr("date", standardDate);
+    });
+
+    items.sort(function(a,b){
+        //Get date attributes
+        a = parseFloat($(a).attr("date"));
+        b = parseFloat($(b).attr("date"));
+        //Sort by date
+        return a<b ? -1 : a>b ? 1 : 0;
+    }).each(function(){
+        //Insert docs sorted by date
+        $(this).insertAfter( $( ".doc-content" ) );
+    });
 }
 
 //Filter by tags

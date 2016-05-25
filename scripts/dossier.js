@@ -9,6 +9,7 @@ $( document ).ready(function() {
     emailAbbo();
     sortDocs();
     toggleTitleDate();
+
 });
 
 //Toggle title and date position
@@ -20,8 +21,13 @@ function toggleTitleDate(clickedClass){
     //If user has not clicked on toggle button, default status
     if(clickedClass == null) {
         titleDateRow = $(".closed").closest(".content-block").find(".titleDate-row");
-        toggleRow =  $(titleDateRow).parent().find(".toggle-row");
-        $(titleDateRow).detach().appendTo(toggleRow).removeClass("row");
+
+        //Loop through all closed documents
+        $(titleDateRow).each(function(i, obj) {
+            toggleRow =  $(obj).parent().find(".toggle-row");
+            //Place title and date next to toggle button
+            $(obj).detach().appendTo(toggleRow).removeClass("row");
+        });
     }
 
     //User clicked on toggle button and document is closed
@@ -212,15 +218,34 @@ function emailAbbo(){
 
 //Sort documents by date
 function sortDocs(){
-    $(".dos-doc").sort(function(a,b){
-        return new Date($(a).attr("date")) > new Date($(b).attr("date"));
+
+    //Get all items with date
+    var items = $(".dos-doc");
+
+    items.each(function() {
+        //Convert to date format
+        var BCDate = $(this).attr("date").split("-");
+        var standardDate = BCDate[1]+" "+BCDate[0]+" "+BCDate[2];
+        standardDate = new Date(standardDate).getTime();
+        //Add new date format
+        $(this).attr("date", standardDate);
+    });
+
+    items.sort(function(a,b){
+        //Get date attributes
+        a = parseFloat($(a).attr("date"));
+        b = parseFloat($(b).attr("date"));
+        //Sort by date
+        return a<b ? -1 : a>b ? 1 : 0;
     }).each(function(){
-        //Insert documents sorted after doc-content
+        //Insert docs sorted by date
         $(this).insertAfter( $( ".doc-content" ) );
         //Set documents on default on close
         $(".dos-content").addClass("closed");
-
     });
+
     //Set the first document open as default
     $(".dos-content").first().removeClass("closed");
+    //Switch image toggle button to open
+    $(".dos-content").first().parent().find(".dos-toggle").toggleClass("glyphicon-minus glyphicon-plus");
 }
