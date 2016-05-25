@@ -200,6 +200,34 @@
 
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+          <div class="form-group row">
+            <label for="inputTitleProces" class="col-sm-2 control-label">Dag</label>
+            <div class="col-sm-10">
+              <input type="text" name="agendaTitle" class="form-control" placeholder="Titel agenda">
+            </div>
+            <label for="inputTitleProces" class="col-sm-2 control-label">Maand</label>
+            <div class="col-sm-10">
+              <select class="form-control">
+                <option>Januari</option>
+                <option>Februari</option>
+                <option>Maart</option>
+                <option>April</option>
+                <option>Mei</option>
+                <option>Juli</option>
+                <option>Juni</option>
+                <option>Augustus</option>
+                <option>September</option>
+                <option>Oktober</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="form-group">
             <label for="inputContact" class="col-sm-2 control-label">Contactgegevens</label>
             <div class="col-sm-10">
