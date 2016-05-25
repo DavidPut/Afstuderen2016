@@ -203,14 +203,14 @@
           <div class="form-group>
             <label class="col-sm-2 control-label">Datum</label>
             <div class="form-group row">
-              <label for="inputKey" class="col-md-1 control-label">Dag</label>
+              <label for="inputKey" class="col-md-1">Dag</label>
               <div class="col-md-2">
                 <select class="form-control">
                   <option>1</option>
                   <option>2</option>
                 </select>
               </div>
-              <label for="inputValue" class="col-md-1 control-label">Maand</label>
+              <label for="inputValue" class="col-md-1">Maand</label>
               <div class="col-md-2">
                 <select class="form-control">
                   <option>Januari</option>
@@ -227,7 +227,7 @@
                   <option>December</option>
                 </select>
               </div>
-              <label for="inputValue" class="col-md-1 control-label">Jaar</label>
+              <label for="inputValue" class="col-md-1">Jaar</label>
               <div class="col-md-2">
                 <select class="form-control">
                   <option>2016</option>
