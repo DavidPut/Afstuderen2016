@@ -8,17 +8,37 @@ $( document ).ready(function() {
     moveSidebar();
     emailAbbo();
     sortDocs();
-    //toggleTitleDate();
+    toggleTitleDate();
 });
 
+//Toggle title and date position
 function toggleTitleDate(clickedClass){
     //Check if document is closed
     //ToDo: Verder uitwerken.
-    if($(clickedClass).closest(".content-block").find(".dos-content").hasClass("closed")){
-        $(".titleDate-row").detach().appendTo(".toggle-row").removeClass("row");
+    //Document closed
+
+    var titleDateRow;
+    var toggleRow;
+
+    //If user has not clicked on toggle button, default status
+    if(clickedClass == null) {
+        titleDateRow = $(".closed").closest(".content-block").find(".titleDate-row");
+        toggleRow =  $(titleDateRow).parent().find(".toggle-row");
+        $(titleDateRow).detach().appendTo(toggleRow).removeClass("row");
     }
+
+    //If user clicked on toggle button
+    if($(clickedClass).closest(".content-block").find(".dos-content").hasClass("closed")){
+        titleDateRow = $(clickedClass).closest(".content-block").find(".titleDate-row");
+        toggleRow =  $(titleDateRow).parent().find(".toggle-row");
+        $(titleDateRow).detach().appendTo(toggleRow).removeClass("row");
+
+    }
+    //Document open
     else{
-        $(".titleDate-row").detach().insertAfter(".toggle-row").addClass("row");
+        titleDateRow = $(clickedClass).closest(".content-block").find(".titleDate-row");
+        toggleRow =  $(titleDateRow).closest(".toggle-row");
+        $(titleDateRow).detach().insertAfter(toggleRow).addClass("row");
     }
 }
 
@@ -27,8 +47,8 @@ function toggleDossier(){
     $(".dos-toggle").click(function(e) {
         $(this).closest(".content-block").find('.dos-content').slideToggle("slow", function(){
             $(this).toggleClass("closed");
+            toggleTitleDate(e.target);
 
-            toggleTitleDate(this);
         });
         $(this).toggleClass("glyphicon-minus glyphicon-plus");
     });
