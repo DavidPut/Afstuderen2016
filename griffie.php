@@ -156,7 +156,7 @@ $newEntry = false;
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-          <h4>Nieuwe besluitvorming</h4>
+        <span class="label label-info">Nieuwe besluitvormingsproces</span>
       </div>
     </div>
 
