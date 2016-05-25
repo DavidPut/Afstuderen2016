@@ -45,7 +45,7 @@ if($action == "new"){
         <div class="page-header">
           <?php
           if($action == "new") {
-            echo '<h4>Besluitvormingsproces <span class="label label-info">Nieuw</span></h4>';
+            echo '<h4>Besluitvormingsproces <span class="label label-success">Nieuw</span></h4>';
           } else {
             echo '<h4>Besluitvormingsproces <a href="#"><span class="label label-primary">Ga naar pagina</span></a></h4>';
           }
