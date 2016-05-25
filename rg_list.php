@@ -14,7 +14,7 @@ $griffie = 1;
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
   <link href='./fonts/font-awesome.min.css' rel='stylesheet'/>
-  <link rel="stylesheet" type="text/css" href="style/backend_css.css"/>
+  <link rel="stylesheet" type="text/css" href="style/backend_css12.css"/>
   <script src="scripts/jquery-1.12.3.min.js"></script>
   <script src="bootstrap/scripts/bootstrap.min.js"></script>
 
@@ -82,9 +82,9 @@ $griffie = 1;
         <td>" . $x . "</td>
         <td>Een titel van een besluitvorming</td>
         <td>
+          <button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></button>
           <button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>
-          <button type=\"button\" class=\"btn btn-list btn-default\">Aanpassen</button>
-          <button type=\"button\" class=\"btn btn-list btn-danger\">Verwijderen</button>
+          <button type=\"button\" class=\"btn btn-list btn-danger\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button>
         </td>
       </tr>";
     }
