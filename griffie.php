@@ -43,9 +43,9 @@ $newEntry = false;
         <div class="page-header">
           <?php
           if($newEntry == true) {
-            echo '<h3>Besluitvormingsproces <span class="label label-info">Nieuw</span></h3>';
+            echo '<h4>Besluitvormingsproces <span class="label label-info">Nieuw</span></h4>';
           } else {
-            echo '<h3>Besluitvormingsproces <a href="#"><span class="label label-primary">Ga naar pagina</span></a></h3>';
+            echo '<h4>Besluitvormingsproces <a href="#"><span class="label label-primary">Ga naar pagina</span></a></h4>';
           }
           ?>
         </div>
@@ -149,14 +149,14 @@ $newEntry = false;
       <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="page-header">
-          <h3>Besluitvorming</h3>
+          <h4>Besluitvorming</h4>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-          <h5>Nieuwe besluitvorming</h5>
+          <h4>Nieuwe besluitvorming</h4>
       </div>
     </div>
 
@@ -200,7 +200,7 @@ $newEntry = false;
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="page-header">
-            <h3>Extra gegevens</h3>
+            <h4>Extra gegevens</h4>
           </div>
         </div>
       </div>
