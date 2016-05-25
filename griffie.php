@@ -33,7 +33,7 @@
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
 
       <div class="row">
-        <div class="col-md-8 col-xs-12 col-md-offset-4">
+        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Titel</span>
             <input type="email" name="email" class="form-control" placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>
@@ -42,7 +42,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-xs-12">
+        <div class="col-md-8 col-md-offset-2 col-xs-12">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Samenvatting</span>
             <textarea class="form-control" name="summary" rows="3" aria-describedby="basic-addon1"></textarea>
