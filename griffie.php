@@ -207,10 +207,10 @@ if($action == "new"){
 
     <?php
 
+    if($action != "new") {
+      echo
 
-    echo
-
-    '<div class="row">
+      '<div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class = "panel panel-primary">
             <div class = "panel-heading">
@@ -256,6 +256,7 @@ if($action == "new"){
      </div>
     
     ';
+    }
     ?>
 
 
