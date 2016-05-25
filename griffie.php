@@ -161,11 +161,11 @@ $newEntry = false;
 
     <div class = "panel panel-info">
       <div class = "panel-heading">
-        <h3 class = "panel-title">Panel title</h3>
+        <h3 class = "panel-title">Nieuwe besluitvorming</h3>
       </div>
       <div class = "panel-body">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+      <div class="col-md-12 col-md-offset-0 col-xs-12 ">
         <div class="form-group">
           <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
           <div class="col-sm-10">
