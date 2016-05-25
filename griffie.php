@@ -79,15 +79,9 @@
       <div class="col-md-8 col-md-offset-2 col-xs-12">
         <div class="input-group">
           <span class="input-group-addon" id="basic-addon1">Soort</span>
-          <label class="checkbox-inline">
             <input type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
-          </label>
-          <label class="checkbox-inline">
             <input type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
-          </label>
-          <label class="checkbox-inline">
             <input type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
-          </label>
         </div>
       </div>
     </div>
