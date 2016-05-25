@@ -53,13 +53,15 @@
         <!--Used for sorting documents-->
         <div class="row doc-content"></div>
 
-        <!--Visible document-->
+        <!--DOCUMENTS BEGIN-->
+
+        <!--First document-->
         <div class="row dos-doc" id="1" date="08-05-2016">
             <div class="col-md-9 content-block">
 
                 <div class="row toggle-row">
                     <div class="col-md-1">
-                        <i class="dos-toggle glyphicon glyphicon-minus pull-left"></i>
+                        <i class="dos-toggle glyphicon glyphicon glyphicon-plus pull-left"></i>
                     </div>
                 </div>
 
@@ -192,20 +194,20 @@
             </div>
         </div>
 
-        <!--Closed/hidden document-->
-        <div class="row dos-doc" id="2" date="02-05-2016">
+        <!--Second document-->
+        <div class="row dos-doc" id="2" date="15-05-2016">
             <div class="col-md-9 content-block">
 
                 <div class="row toggle-row">
                     <div class="col-md-1">
-                        <i class="pull-left dos-toggle glyphicon glyphicon-plus"></i>
+                        <i class="dos-toggle glyphicon glyphicon glyphicon-plus pull-left"></i>
                     </div>
                 </div>
 
                 <div class="row titleDate-row">
                     <div class="col-md-11">
                         <div class="col-md-3 col-xs-5">
-                            <h5>02-05-2016</h5>
+                            <h5>15-05-2016</h5>
                         </div>
                         <div class="col-md-9 col-xs-6">
                             <h4>Lorem Ipsum</h4>
@@ -214,12 +216,13 @@
                 </div>
 
                 <div class="col-md-12 dos-content">
-                    <!-- Decisions in bullet points -->
+                    <!--Decisions in bullet points-->
                     <ul class="decided-short">
                         <li>In sit amet massa massa. Suspendisse at eleifend sem.</li>
                         <li>Vivamus sit amet arcu nec dui hendrerit consequat.</li>
                         <li>Nam auctor feugiat lectus, sit amet luctus erat bibendum non.</li>
                     </ul>
+                    <!--Detailed text-->
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tincidunt purus, quis sodales justo. Sed egestas, leo ac tristique tincidunt, purus lectus auctor enim, eu semper lectus eros id velit. Nullam semper laoreet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit amet consequat metus. Ut varius, urna a rutrum volutpat, tellus tellus semper massa, vel faucibus justo lacus quis dolor. Sed facilisis odio sagittis facilisis commodo. Cras scelerisque massa risus, ac sodales massa pharetra non. Nunc mollis eros id sapien sodales, eget ornare nunc porta. Sed a lobortis leo. Donec semper ut libero a sodales. Donec malesuada laoreet eros, quis tempus tortor auctor ac. Donec ullamcorper tellus at velit ultrices dictum. Donec ac felis rutrum, semper purus eu, gravida arcu. In nunc magna, ullamcorper quis ipsum nec, vestibulum imperdiet magna. Sed semper elit id eros tincidunt, sed luctus nisl convallis. Nam congue purus eu rutrum malesuada. Vivamus varius enim in ante consequat, eu faucibus nibh maximus. Nullam eget lacus pretium, semper lorem a, gravida erat. Proin accumsan vestibulum congue. Etiam purus felis, blandit non arcu id, lacinia faucibus nunc. Pellentesque habitant.</p>
 
                     <hr>
@@ -272,60 +275,208 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
 
-                    <hr>
-                    <!--Politic arguments-->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>Politieke partijen:</h4>
+                        <hr>
+                        <!--Politic arguments-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Politieke partijen:</h4>
+                            </div>
                         </div>
-                    </div>
 
-                    <!--Politic view positive-->
-                    <div class="col-md-4 politic-block">
-                        <span class="politic-icon glyphicon glyphicon-ok"></span>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p><b>CDA -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p><b>D66 -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Politic view positive -->
+                        <div class="col-md-4 politic-block">
+                            <span class="politic-icon glyphicon glyphicon-ok"></span>
 
-                    <!--Politic view negative-->
-                    <div class="col-md-4 politic-block">
-                        <span class="politic-icon glyphicon glyphicon glyphicon-remove"></span>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p><b>GroenLinks -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>CDA -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!--Politic view unknown-->
-                    <div class="col-md-4 politic-block">
-                        <span class="fa fa-question" aria-hidden="true"></span>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p><b>VVD -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>D66 -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p><b>PVDA -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+
+                        <!-- Politic view negative -->
+                        <div class="col-md-4 politic-block">
+                            <span class="politic-icon glyphicon glyphicon glyphicon-remove"></span>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>GroenLinks -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
                             </div>
+                        </div>
+
+                        <!-- Politic view unknown -->
+                        <div class="col-md-4 politic-block">
+                            <span class="fa fa-question" aria-hidden="true"></span>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>VVD -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>PVDA -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Third document-->
+        <div class="row dos-doc" id="3" date="05-05-2016">
+            <div class="col-md-9 content-block">
+
+                <div class="row toggle-row">
+                    <div class="col-md-1">
+                        <i class="dos-toggle glyphicon glyphicon glyphicon-plus pull-left"></i>
+                    </div>
+                </div>
+
+                <div class="row titleDate-row">
+                    <div class="col-md-11">
+                        <div class="col-md-3 col-xs-5">
+                            <h5>05-05-2016</h5>
+                        </div>
+                        <div class="col-md-9 col-xs-6">
+                            <h4>Lorem Ipsum</h4>
                         </div>
                     </div>
                 </div>
 
+                <div class="col-md-12 dos-content">
+                    <!--Decisions in bullet points-->
+                    <ul class="decided-short">
+                        <li>In sit amet massa massa. Suspendisse at eleifend sem.</li>
+                        <li>Vivamus sit amet arcu nec dui hendrerit consequat.</li>
+                        <li>Nam auctor feugiat lectus, sit amet luctus erat bibendum non.</li>
+                    </ul>
+                    <!--Detailed text-->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tincidunt purus, quis sodales justo. Sed egestas, leo ac tristique tincidunt, purus lectus auctor enim, eu semper lectus eros id velit. Nullam semper laoreet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit amet consequat metus. Ut varius, urna a rutrum volutpat, tellus tellus semper massa, vel faucibus justo lacus quis dolor. Sed facilisis odio sagittis facilisis commodo. Cras scelerisque massa risus, ac sodales massa pharetra non. Nunc mollis eros id sapien sodales, eget ornare nunc porta. Sed a lobortis leo. Donec semper ut libero a sodales. Donec malesuada laoreet eros, quis tempus tortor auctor ac. Donec ullamcorper tellus at velit ultrices dictum. Donec ac felis rutrum, semper purus eu, gravida arcu. In nunc magna, ullamcorper quis ipsum nec, vestibulum imperdiet magna. Sed semper elit id eros tincidunt, sed luctus nisl convallis. Nam congue purus eu rutrum malesuada. Vivamus varius enim in ante consequat, eu faucibus nibh maximus. Nullam eget lacus pretium, semper lorem a, gravida erat. Proin accumsan vestibulum congue. Etiam purus felis, blandit non arcu id, lacinia faucibus nunc. Pellentesque habitant.</p>
+
+                    <hr>
+                    <!--RIS files-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>RIS bestanden:</h4>
+                        </div>
+                    </div>
+
+                    <div class="ris-files">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#">In sit amet massa massa</a>
+                            </div>
+                            <div class="col-md-4">
+                                <p>of</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#">In sit amet massa massa</a>
+                            </div>
+                            <div class="col-md-4">
+                                <p>of</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#">In sit amet massa massa</a>
+                            </div>
+                            <div class="col-md-4">
+                                <p>of</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
+                                </a>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <!--Politic arguments-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Politieke partijen:</h4>
+                            </div>
+                        </div>
+
+                        <!-- Politic view positive -->
+                        <div class="col-md-4 politic-block">
+                            <span class="politic-icon glyphicon glyphicon-ok"></span>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>CDA -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>D66 -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Politic view negative -->
+                        <div class="col-md-4 politic-block">
+                            <span class="politic-icon glyphicon glyphicon glyphicon-remove"></span>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>GroenLinks -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Politic view unknown -->
+                        <div class="col-md-4 politic-block">
+                            <span class="fa fa-question" aria-hidden="true"></span>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>VVD -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p><b>PVDA -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
+
+
+    <!--DOCUMENTS END-->
     </div>
+
+
 
     <!--Plugin abbo-->
     <div class="col-md-3 side-bar no-padding pull-right">
@@ -391,7 +542,7 @@
             </div>
         </div>
     </div>
-
+</div>
 </div>
 </body>
 </html>
