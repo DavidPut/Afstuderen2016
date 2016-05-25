@@ -89,16 +89,10 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12">
         <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1">Soort</span>
-          <label class="radio-inline">
-            <input type="radio" name="RadioOptions" id="Radio1" value="option1"> 1</input>
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="RadioOptions" id="Radio2" value="option2"> 2</input>
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="RadioOptions" id="Radio3" value="option3"> 3</input>
-          </label>
+          <span class="input-group-addon" id="basic-addon1">Verwachting tijd</span>
+            <input type="radio" name="RadioOptions" id="Radio1" value="option1">Korter dan een jaar</input>
+            <input type="radio" name="RadioOptions" id="Radio2" value="option2">1 tot 5 jaar</input>
+            <input type="radio" name="RadioOptions" id="Radio3" value="option3">5 jaar of langer</input>
         </div>
       </div>
     </div>
