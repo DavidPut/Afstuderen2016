@@ -39,7 +39,6 @@
       </div>
     </div>
 
-    <div class="row">
 
       <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12 ">
@@ -260,8 +259,6 @@
           <button class="btn btn-lg btn-primary btn-block" type="submit" name="add" value="toevoegen">Toevoegen</button>
         </div>
       </div>
-
-    </div>
 
   </form>
 </div>
