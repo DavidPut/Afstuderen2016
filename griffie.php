@@ -1,6 +1,13 @@
 <?php
 
 
+$newEntry = false;
+
+//if($newEntry == true){
+
+//}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -256,7 +263,13 @@
 
       <div class="row">
         <div class="col-md-4 col-md-offset-4 col-xs-12">
-          <button class="btn btn-lg btn-primary btn-block" type="submit" name="add" value="toevoegen">Toevoegen</button>
+          <?php
+          if($newEntry == true) {
+            echo '<button class="btn btn-lg btn-primary btn-block" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>';
+          } else {
+            echo '<button class="btn btn-lg btn-primary btn-block" type = "submit" name = "edit" value = "Aanpassen">Aanpassen</button>';
+          }
+          ?>
         </div>
       </div>
 
