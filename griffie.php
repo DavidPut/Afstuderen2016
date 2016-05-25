@@ -1,7 +1,8 @@
 <?php
 
 $action = urlencode($_GET['action']);
-if($action == 'new'){
+echo $action;
+if($action == "new"){
   $newEntry = true;
 }
 
