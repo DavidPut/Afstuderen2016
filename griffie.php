@@ -41,7 +41,7 @@ $newEntry = false;
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="page-header">
-          <h4>Besluitvormingsproces <span class="label label-primary"><a class="btn btn-default" href="#" role="button">Link</a></span></h4>
+          <h4>Besluitvormingsproces <span class="label label-primary"><a class="btn btn-default" href="##" role="button">Link</a></span></h4>
         </div>
       </div>
     </div>
