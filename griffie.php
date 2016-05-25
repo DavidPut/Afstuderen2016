@@ -210,10 +210,12 @@ $newEntry = false;
     echo
 
     '<div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-        <p></p><span class="label label-warning">Bestaande besluitvorming</span></p>
+    <div class = "panel panel-info">
+      <div class = "panel-heading">
+        <h3 class = "panel-title">Nieuwe besluitvorming</h3>
       </div>
-    </div>
+      <div class = "panel-body">
+
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
@@ -246,7 +248,11 @@ $newEntry = false;
           </div>
         </div>
       </div>
-    </div>';
+    </div>
+       </div>
+       </div>
+    
+    ';
     ?>
 
 
