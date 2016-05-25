@@ -209,17 +209,15 @@ $newEntry = false;
 
     echo
 
-    '    <div class="row">
+    '<div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-<div class="row">
-    <div class = "panel panel-info">
-      <div class = "panel-heading">
-        <h3 class = "panel-title">Nieuwe besluitvorming</h3>
-      </div>
-      <div class = "panel-body">
+        <div class = "panel panel-info">
+            <div class = "panel-heading">
+                <h3 class = "panel-title">Nieuwe besluitvorming</h3>
+            </div>
+            <div class = "panel-body">
 
-
-    <div class="row">
+                <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="form-group">
           <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
@@ -230,7 +228,7 @@ $newEntry = false;
       </div>
     </div>
 
-    <div class="row">
+                <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="form-group">
           <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
@@ -241,7 +239,7 @@ $newEntry = false;
       </div>
     </div>
 
-    <div class="row">
+                <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="form-group">
           <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
@@ -251,10 +249,10 @@ $newEntry = false;
         </div>
       </div>
     </div>
+            </div>
+        </div>
        </div>
-       </div>
-       </div>
-       </div>
+     </div>
     
     ';
     ?>
