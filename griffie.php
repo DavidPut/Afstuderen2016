@@ -42,7 +42,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-xs-12 col-md-offset-4">
+        <div class="col-md-8 col-xs-12">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Samenvatting</span>
             <textarea class="form-control" name="summary" rows="3" aria-describedby="basic-addon1"></textarea>
