@@ -29,8 +29,12 @@
 
 <div class="container-fluid">
 
-  <div class="page-header">
-    <h1>Nieuwe besluitvorming</h1>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+      <div class="page-header">
+        <h1>Nieuwe besluitvorming</h1>
+      </div>
+    </div>
   </div>
 
   <div class="row">
