@@ -1,6 +1,13 @@
 <?php
 
 
+$newEntry = false;
+
+//if($newEntry == true){
+
+//}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -34,12 +41,17 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="page-header">
-          <h2>Nieuwe besluitvorming</h2>
+          <?php
+          if($newEntry == true) {
+            echo '<h4>Besluitvormingsproces <span class="label label-info">Nieuw</span></h4>';
+          } else {
+            echo '<h4>Besluitvormingsproces <a href="#"><span class="label label-primary">Ga naar pagina</span></a></h4>';
+          }
+          ?>
         </div>
       </div>
     </div>
 
-    <div class="row">
 
       <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12 ">
@@ -135,14 +147,20 @@
 
       <!-- proces -->
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-          <div class="page-header">
-            <h2>Proces toevoegen</h2>
-          </div>
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="page-header">
+          <h4>Besluitvorming</h4>
         </div>
       </div>
+    </div>
 
-        <div class="row">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <p></p><span class="label label-info">Nieuwe besluitvormingsproces</span></p>
+      </div>
+    </div>
+
+      <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12 ">
             <div class="form-group">
               <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
@@ -153,7 +171,7 @@
           </div>
         </div>
 
-        <div class="row">
+      <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12 ">
             <div class="form-group">
               <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
@@ -165,33 +183,70 @@
         </div>
 
       <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+            <div class="form-group">
+              <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="file" name="inputFile"></input>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- proces uitprinten als die er zijn voor edit pagina -->
+
+
+      <!-- extra gegevens -->
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+          <div class="page-header">
+            <h4>Extra gegevens</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="form-group">
-            <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
+            <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
             <div class="col-sm-10">
-              <input class="form-control" type="file" name="inputFile"></input>
+              <input type="text" name="agendaTitle" class="form-control" placeholder="Titel agenda">
             </div>
           </div>
         </div>
       </div>
 
-      <!-- proces uitprinten als die er zijn voor edit pagina -->
-
-
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-          <div class="page-header">
-            <h2>Extra gegevens</h2>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-          <div class="form-group">
-            <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
-            <div class="col-sm-10">
-              <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
+          <div class="form-group row">
+            <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
+            <div class="col-md-2">
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <select class="form-control">
+                <option>Januari</option>
+                <option>Februari</option>
+                <option>Maart</option>
+                <option>April</option>
+                <option>Mei</option>
+                <option>Juli</option>
+                <option>Juni</option>
+                <option>Augustus</option>
+                <option>September</option>
+                <option>Oktober</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <select class="form-control">
+                <option>2016</option>
+                <option>2017</option>
+              </select>
             </div>
           </div>
         </div>
@@ -202,12 +257,16 @@
           <div class="form-group">
             <label for="inputContact" class="col-sm-2 control-label">Contactgegevens</label>
             <div class="col-sm-10">
-              <label class="checkbox">
-                <input type="checkbox" id="Checkbox1" value="option1"> De gegeven van de gemeente achterlaten
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" id="Checkbox2" value="option2"> De gegevens van de griffie achterlaten
-              </label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value=""> Gemeente contactgegevens
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value=""> Griffie contactgegevens
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -216,13 +275,18 @@
 
       <div class="row">
         <div class="col-md-4 col-md-offset-4 col-xs-12">
-          <button class="btn btn-lg btn-primary btn-block" type="submit" name="add" value="toevoegen">Toevoegen</button>
+          <?php
+          if($newEntry == true) {
+            echo '<button class="btn btn-lg btn-primary btn-block" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>';
+          } else {
+            echo '<button class="btn btn-lg btn-primary btn-block" type = "submit" name = "edit" value = "Aanpassen">Aanpassen</button>';
+          }
+          ?>
         </div>
       </div>
 
-    </div>
-
   </form>
+</div>
 </body>
 
 </html>
