@@ -41,7 +41,7 @@ $newEntry = false;
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="page-header">
-          <h2>Besluitvormingsproces</h2>
+          <h4>Besluitvormingsproces</h4>
         </div>
       </div>
     </div>
@@ -143,7 +143,7 @@ $newEntry = false;
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="page-header">
-            <h2>Proces toevoegen</h2>
+            <h4>Proces toevoegen</h4>
           </div>
         </div>
       </div>
@@ -188,7 +188,7 @@ $newEntry = false;
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12 ">
           <div class="page-header">
-            <h2>Extra gegevens</h2>
+            <h4>Extra gegevens</h4>
           </div>
         </div>
       </div>
