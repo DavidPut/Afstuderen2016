@@ -1,7 +1,7 @@
 <?php
 
 
-$newEntry = false;
+$newEntry = true;
 
 //if($newEntry == true){
 
@@ -45,7 +45,7 @@ $newEntry = false;
           if($newEntry == true) {
             echo '<h4>Besluitvormingsproces <span class="label label-info">Nieuw</span></h4>';
           } else {
-            echo '<h4>Besluitvormingsproces <a class="btn" href="#"><span class="label label-primary">Ga naar overzicht</span></a></h4>';
+            echo '<h4>Besluitvormingsproces <a href="#"><span class="label label-primary">Ga naar overzicht</span></a></h4>';
           }
           ?>
         </div>
