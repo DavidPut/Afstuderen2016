@@ -222,7 +222,7 @@ $newEntry = false;
         <div class="form-group">
           <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
           <div class="col-sm-10">
-            <textarea class="form-control" name="summaryProces" value="Samenvatting besluit van de commissievergadering" rows="6"></textarea>
+            <textarea class="form-control" name="summaryProces" rows="6">Samenvatting besluit van de commissievergadering</textarea>
           </div>
         </div>
       </div>
