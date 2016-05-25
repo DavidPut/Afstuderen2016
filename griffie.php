@@ -1,7 +1,7 @@
 <?php
 
 
-$newEntry = false;
+$newEntry = true;
 
 //if($newEntry == true){
 
