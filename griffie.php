@@ -29,6 +29,10 @@
 
 <div class="container-fluid">
 
+  <div class="page-header">
+    <h1>Nieuwe besluitvorming</h1>
+  </div>
+
   <div class="row">
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
 
@@ -45,7 +49,7 @@
         <div class="col-md-8 col-md-offset-2 col-xs-12">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Samenvatting</span>
-            <textarea class="form-control" name="summary" rows="3" aria-describedby="basic-addon1"></textarea>
+            <textarea class="form-control" name="summary" placeholder="samenvatting" rows="3" aria-describedby="basic-addon1"></textarea>
           </div>
         </div>
 
