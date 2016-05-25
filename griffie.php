@@ -156,44 +156,92 @@ $newEntry = false;
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-        <p></p><span class="label label-info">Nieuwe besluitvormingsproces</span></p>
+        <p></p><span class="label label-info">Nieuwe besluitvorming</span></p>
       </div>
     </div>
 
-      <div class="row">
-          <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-            <div class="form-group">
-              <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
-              <div class="col-sm-10">
-                <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
-              </div>
-            </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
+          <div class="col-sm-10">
+            <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
           </div>
         </div>
+      </div>
+    </div>
 
-      <div class="row">
-          <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-            <div class="form-group">
-              <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
-              <div class="col-sm-10">
-                <textarea class="form-control" name="summaryProces" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
-              </div>
-            </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" name="summaryProces" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
           </div>
         </div>
+      </div>
+    </div>
 
-      <div class="row">
-          <div class="col-md-8 col-md-offset-2 col-xs-12 ">
-            <div class="form-group">
-              <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="file" name="inputFile"></input>
-              </div>
-            </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="file" name="inputFile"></input>
           </div>
         </div>
+      </div>
+    </div>
 
       <!-- proces uitprinten als die er zijn voor edit pagina -->
+
+    <?php
+
+
+    echo
+
+    '<div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <p></p><span class="label label-info">Bestaande besluitvorming</span></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
+          <div class="col-sm-10">
+            <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" name="summaryProces" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="form-group">
+          <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="file" name="inputFile"></input>
+          </div>
+        </div>
+      </div>
+    </div>';
+    ?>
+
+
+
 
 
       <!-- extra gegevens -->
