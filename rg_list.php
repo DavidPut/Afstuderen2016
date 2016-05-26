@@ -38,7 +38,7 @@ $griffie = 1;
     <div class="col-md-8 col-md-offset-2 col-xs-12 ">
       <?php
       if($raadslid == 0 && $griffie == 1) {
-        echo '<a href="griffie.php?action=new"><button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i></button></a>';
+        echo '<a href="griffie.php?action=add"><button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i></button></a>';
       }
       ?>
   <table class="table table-hover table-list">

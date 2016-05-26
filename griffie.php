@@ -1,10 +1,14 @@
 <?php
 
 $action = urlencode($_GET['action']);
-if($action == "new"){
+if($action == "add"){
   $newEntry = true;
+} elseif ($action == "edit"){
+
+} elseif ($action == "delete"){
+
 } else {
-  $newEntry = false;
+  //redirect
 }
 
 
@@ -43,7 +47,7 @@ if($action == "new"){
       <div class="col-md-8 col-md-offset-2 col-xs-12 ">
         <div class="page-header">
           <?php
-          if($action == "new") {
+          if($action == "add") {
             echo '<h4>Besluitvormingsproces <span class="label label-success">Nieuw</span></h4>';
           } elseif ($action == "edit") {
             echo '<h4>Besluitvormingsproces <span class="label label-primary">Aanpassen</span></h4>';
