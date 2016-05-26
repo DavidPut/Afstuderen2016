@@ -212,7 +212,7 @@ if($action == "add"){
 
     <?php
 
-    if($action != "new") {
+    if($action != "add") {
       echo
 
       '<div class="row">
@@ -348,10 +348,12 @@ if($action == "add"){
       <div class="row">
         <div class="col-md-4 col-md-offset-4 col-xs-12">
           <?php
-          if($action == "new") {
+          if($action == "add") {
             echo '<button class="btn btn-lg btn-success btn-block" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>';
-          } else {
+          } elseif ($action =="edit") {
             echo '<button class="btn btn-lg btn-primary btn-block" type = "submit" name = "edit" value = "Aanpassen">Aanpassen</button>';
+          } elseif ($action =="delete"){
+            echo '<button class="btn btn-lg btn-danger btn-block" type = "submit" name = "delete" value = "Aanpassen">Verwijderen</button>';
           }
           ?>
         </div>
