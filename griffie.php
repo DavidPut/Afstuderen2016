@@ -45,8 +45,10 @@ if($action == "new"){
           <?php
           if($action == "new") {
             echo '<h4>Besluitvormingsproces <span class="label label-success">Nieuw</span></h4>';
-          } else {
+          } elseif ($action == "edit") {
             echo '<h4>Besluitvormingsproces <a href="#"><span class="label label-primary">Ga naar pagina</span></a></h4>';
+          } elseif ($action == "delete"){
+            echo '<h4>Besluitvormingsproces <span class="label label-danger">Verwijderen</span><a href="#"><span class="label label-primary">Ga naar pagina</span></a></h4>';
           }
           ?>
         </div>
