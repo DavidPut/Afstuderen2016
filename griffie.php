@@ -70,6 +70,7 @@ if($action == "add"){
           ?>
         </div>
       </div>
+      <div class="page-header"></div>
     </div>
 
 
