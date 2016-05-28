@@ -50,10 +50,12 @@ $griffie = 0;
           echo '
         <th class="col-md-1">Nummer</th>
         <th class="col-md-7">Titel</th>
-        <th class="col-md-1"><i class="fa fa-comment-o" aria-hidden="true"></i></th>
-        <th class="col-md-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
-        <th class="col-md-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
-        <th class="col-md-1">Opties</th>
+        <th class="col-md-2">
+          <i class="fa fa-comment-o" aria-hidden="true"></i>
+          <i class="fa fa-comments" aria-hidden="true"></i>
+          <i class="fa fa-comments" aria-hidden="true"></i>
+        </th>
+        <th class="col-md-4">Opties</th>
         ';
         } elseif ($raadslid == 0 && $griffie == 1){
             echo '
