@@ -46,6 +46,8 @@ if($action == "add"){
     <div class="row">
       <div class="col-md-12 col-md-offset-0 col-xs-12 ">
         <div class="page-header">
+          <row>
+            <div class="col-md-2">
           <?php
           if($action == "add") {
             echo '<h4>Besluitvormingsproces <span class="label label-success">Nieuw</span></h4>';
@@ -55,13 +57,15 @@ if($action == "add"){
             echo '<h4>Besluitvormingsproces <span class="label label-danger">Verwijderen</span></h4>';
           }
           ?>
+            </div>
+          </row>
         </div>
       </div>
     </div>
 
 
       <div class="row">
-          <div class="col-md-10 col-md-offset-2 col-xs-12 ">
+          <div class="col-md-10 col-md-offset-1 col-xs-12 ">
             <div class="form-group">
               <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
               <div class="col-sm-10">
@@ -83,7 +87,7 @@ if($action == "add"){
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="col-md-10 col-md-offset-1 col-xs-12 ">
           <div class="form-group">
             <label for="inputAdrescode" class="col-sm-2 control-label">Postcode/adres</label>
             <div class="col-sm-10">
@@ -94,7 +98,7 @@ if($action == "add"){
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="col-md-10 col-md-offset-1 col-xs-12 ">
           <div class="form-group">
             <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
             <div class="col-sm-10">
@@ -105,7 +109,7 @@ if($action == "add"){
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="col-md-10 col-md-offset-1 col-xs-12 ">
           <div class="form-group">
             <label for="inputTags" class="col-sm-2 control-label">Soort</label>
             <div class="col-sm-10">
@@ -124,7 +128,7 @@ if($action == "add"){
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="col-md-10 col-md-offset-1 col-xs-12 ">
           <div class="form-group">
             <label for="inputTags" class="col-sm-2 control-label">Periode</label>
             <div class="col-sm-10">
@@ -154,7 +158,7 @@ if($action == "add"){
 
       <!-- proces -->
       <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+      <div class="col-md-10 col-md-offset-1 col-xs-12 ">
         <div class="page-header">
           <h4>Besluitvorming</h4>
         </div>
@@ -162,7 +166,7 @@ if($action == "add"){
     </div>
 
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+      <div class="col-md-10 col-md-offset-1 col-xs-12 ">
 
 
     <div class = "panel panel-default">
