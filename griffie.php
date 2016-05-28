@@ -61,7 +61,7 @@ if($action == "add"){
 
 
       <div class="row">
-          <div class="col-md-12 col-md-offset-0 col-xs-12 ">
+          <div class="col-md-12 col-xs-12 ">
             <div class="form-group">
               <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
               <div class="col-sm-10">
@@ -72,7 +72,7 @@ if($action == "add"){
         </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="col-md-10 col-xs-12 ">
           <div class="form-group">
             <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
             <div class="col-sm-10">
