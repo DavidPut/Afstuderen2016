@@ -216,7 +216,7 @@ if($action == "add"){
       echo
 
       '<div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+      <div class="col-md-10 col-md-offset-1 col-xs-12 ">
         <div class = "panel panel-primary">
             <div class = "panel-heading">
                 <h3 class = "panel-title">Bestaande besluitvorming</h3>
@@ -270,7 +270,7 @@ if($action == "add"){
 
       <!-- extra gegevens -->
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="col-md-10 col-md-offset-1 col-xs-12 ">
           <div class="page-header">
             <h4>Extra gegevens</h4>
           </div>
@@ -278,7 +278,7 @@ if($action == "add"){
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="col-md-10 col-md-offset-1 col-xs-12 ">
           <div class="form-group">
             <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
             <div class="col-sm-10">
@@ -289,7 +289,7 @@ if($action == "add"){
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="col-md-10 col-md-offset-1 col-xs-12 ">
           <div class="form-group row">
             <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
             <div class="col-md-2">
@@ -325,7 +325,7 @@ if($action == "add"){
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+        <div class="col-md-10 col-md-offset-1 col-xs-12 ">
           <div class="form-group">
             <label for="inputContact" class="col-sm-2 control-label">Contactgegevens</label>
             <div class="col-sm-10">
