@@ -46,8 +46,6 @@ if($action == "add"){
     <div class="row">
       <div class="col-md-12 col-md-offset-0 col-xs-12 ">
         <div class="page-header">
-          <row>
-            <div class="col-md-2">
           <?php
           if($action == "add") {
             echo '<h4>Besluitvormingsproces <span class="label label-success">Nieuw</span></h4>';
@@ -57,8 +55,6 @@ if($action == "add"){
             echo '<h4>Besluitvormingsproces <span class="label label-danger">Verwijderen</span></h4>';
           }
           ?>
-            </div>
-          </row>
         </div>
       </div>
     </div>
