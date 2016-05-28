@@ -44,7 +44,20 @@ if($action == "add"){
 
     <!-- nieuwe besluitvorming -->
     <div class="row">
-      <div class="col-md-12 col-md-offset-0 col-xs-12 ">
+      <div class="col-md-8 col-xs-12 ">
+        <div class="page-header">
+          <?php
+          if($action == "add") {
+            echo '<h4>Besluitvormingsproces <span class="label label-success">Nieuw</span></h4>';
+          } elseif ($action == "edit") {
+            echo '<h4>Besluitvormingsproces <span class="label label-primary">Aanpassen</span></h4>';
+          } elseif ($action == "delete"){
+            echo '<h4>Besluitvormingsproces <span class="label label-danger">Verwijderen</span></h4>';
+          }
+          ?>
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-12 ">
         <div class="page-header">
           <?php
           if($action == "add") {
