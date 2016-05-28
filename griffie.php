@@ -44,7 +44,7 @@ if($action == "add"){
 
     <!-- nieuwe besluitvorming -->
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+      <div class="col-md-12 col-md-offset-0 col-xs-12 ">
         <div class="page-header">
           <?php
           if($action == "add") {
