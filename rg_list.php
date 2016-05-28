@@ -82,6 +82,7 @@ $griffie = 0;
         <td>
           <a href='http://gemeentedossier.nl/dossier.html' data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></button></a>
           <a href='http://gemeentedossier.nl/griffie.php?action=edit' data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></a>
+          <a href='https://www.facebook.com/share.php?u=gemeentedossier.nl/griffie.php?action=new&title=test' target=\"blank\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></a>
         </td>
       </tr>";
       }
