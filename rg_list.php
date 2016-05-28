@@ -23,7 +23,7 @@ $griffie = 1;
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Gemeentedossier</a>
@@ -33,7 +33,7 @@ $griffie = 1;
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2 col-xs-12 ">
       <?php

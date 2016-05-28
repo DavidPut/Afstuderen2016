@@ -31,7 +31,7 @@ if($action == "add"){
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Gemeentedossier</a>
     </div>
@@ -39,7 +39,7 @@ if($action == "add"){
 </nav>
 
 
-<div class="container-fluid">
+<div class="container">
   <form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
 
     <!-- nieuwe besluitvorming -->
