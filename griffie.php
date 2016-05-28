@@ -72,7 +72,7 @@ if($action == "add"){
         </div>
 
       <div class="row">
-        <div class="col-md-10 col-xs-12 ">
+        <div class="col-md-12 col-xs-12 ">
           <div class="form-group">
             <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
             <div class="col-sm-10">
