@@ -52,7 +52,7 @@ $griffie = 0;
         <th class="col-md-7">Titel</th>
         <th class="col-md-1"><i class="fa fa-comment-o" aria-hidden="true"></i></th>
         <th class="col-md-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
-        <th class="col-md-1">contactgegevens</th>
+        <th class="col-md-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
         <th class="col-md-1">Opties</th>
         ';
         } elseif ($raadslid == 0 && $griffie == 1){
