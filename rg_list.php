@@ -1,8 +1,8 @@
 <?php
 
 //test 2test
-$raadslid = 0;
-$griffie = 1;
+$raadslid = 1;
+$griffie = 0;
 
 ?>
 
