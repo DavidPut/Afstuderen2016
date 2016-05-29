@@ -58,8 +58,8 @@ $griffie = 1;
         } elseif ($raadslid == 0 && $griffie == 1){
             echo '
         <th class="col-md-1">Nummer</th>
-        <th class="col-md-7">Titel</th>
-        <th class="col-md-4">Opties</th>
+        <th class="col-md-8">Titel</th>
+        <th class="col-md-3">Opties</th>
         ';
         }
         ?>
