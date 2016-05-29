@@ -5,6 +5,10 @@
   background-color: #34495E;
 }
 
+.navbar-right{
+  margin-right:0px;
+}
+
 .navbar-inverse .navbar-brand {
   color: #FFFFFF;
 }
