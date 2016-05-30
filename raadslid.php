@@ -9,6 +9,7 @@ $action = urlencode($_GET['action']);
 
 <head>
   <title>Inloggen gemeentedossier</title>
+  <base href="//gemeentedossier.nl" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
