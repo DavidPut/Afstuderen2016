@@ -2,69 +2,64 @@
 
 session_start();
 
-//Config file to manage navigations and page title
-//require ('navigatie/config.php');
-
-//create variables, protecting against errors
-$email 		= "";
-$wachtwoord = "";
+//If there is already a session, go to index and do stuff test test
+if (isset($_SESSION['mail'])) {
+  switch ($_SESSION['role']){
+    case "raadslid";
+      header("Location: raadslid.php");
+      exit();
+      break;
+    case "griffier";
+      header("Location: griffie.php");
+      exit();
+      break;
+    default:
+      header("Location: index.php");
+      exit();
+      break;
+  }
+}
 
 //Check the user pressed the submit button
 if(isset($_POST['submit'])) {
+  if (isset($_POST['mail'])) {
+    if (isset($_POST['password'])) {
 
-  require_once "database/db_functions.php";
-  $db_login = new DB_functions();
-  
-  $mail = $_POST['email'];
-  $password = $_POST['wachtwoord'];
-  
-  $db_login_info = $db_login->login($mail);
-  echo $db_login_info["mail"];
-  echo $db_login_info["name"];
-  echo $db_login_info["id"];
-  echo $db_login_info["password"];
-  echo $db_login_info["role"];
+      $form_mail = $_POST['mail'];
+      $form_pass = $_POST['password'];
 
-}
+      require_once "database/db_functions.php";
+      $db_login = new DB_functions();
+      $db_login_info = $db_login->login($form_mail);
 
+      $database_pass = $db_login_info['password'];
 
-
-
-//  $query = "SELECT * FROM inloggegevens WHERE email = '$email'";
-//  $loginInformation = mysqli_query($db, $query) or die('Geen verbinding: ' . mysqli_error($loginInformation));
-//
-//  if ($row = mysqli_fetch_assoc($loginInformation)) {
-//
-//    $loginWachtwoord = $row['wachtwoord'];
-//    if (md5(sha1($wachtwoord)) == $loginWachtwoord) {
-//      $login = 1;
-//    }
-//    else {
-//      $login = 0;
-//    }
-//
-//    if ($login == 1) {
-//      if ($saveLogin == "on") {
-//        //Create longer logged in session
-//        $_SESSION['email']= $email;
-//        $_SESSION['time'] = time();
-//      }
-//      else if($saveLogin == "") {
-//        //Create short logged in session
-//        $_SESSION['email']= $email;
-//        $_SESSION['time'] = time();
-//      }
-//      header("Location: index.php");
-//      mysqli_close($db);
-//      exit();
-//    }
-//  }
-//}
-
-//If there is already a session, go to index and do stuff test test
-if (isset($_SESSION['email'])) {
-  header("Location: index.php");
-  exit();
+      if (md5($form_pass) == $database_pass) {
+        $_SESSION['mail'] = $db_login_info['mail'];
+        $_SESSION['name'] = $db_login_info["name"];
+        $_SESSION['role'] = $db_login_info["role"];
+        $_SESSION['uid'] = $db_login_info["id"];
+        switch ($_SESSION['role']){
+          case "raadslid";
+            header("Location: raadslid.php");
+            exit();
+            break;
+          case "griffier";
+            header("Location: griffie.php");
+            exit();
+            break;
+          default:
+            header("Location: index.php");
+            exit();
+            break;
+        }
+      } else {
+        // verkeerde wachtwoord
+        header("Location: login.php");
+        exit();
+      }
+    }
+  }
 }
 
 
@@ -104,7 +99,7 @@ if (isset($_SESSION['email'])) {
               <div class="col-md-4 col-xs-12 col-md-offset-4">
                 <div class="input-group">
                   <span class="input-group-addon" id="basic-addon1">E-mailadres</span>
-                  <input type="email" name="email" class="form-control" placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>
+                  <input type="email" name="mail" class="form-control" placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>
                 </div>
               </div>
             </div>
