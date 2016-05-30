@@ -18,9 +18,9 @@
         <td>Een titel van een besluitvorming</td>
         <td>
           <p class='text-right'>
-            <button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><i class=\"fa fa-long-arrow-right small-icon\" aria-hidden=\"true\"><a href='http://gemeentedossier.nl/dossier.html'></a></i></button>
-            <button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><i class=\"fa fa-pencil small-icon\" aria-hidden=\"true\"><a href='http://gemeentedossier.nl/griffie/edit/'></a></i></button>
-            <button type=\"button\" class=\"btn btn-list btn-danger\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen'><i class=\"fa fa-trash-o small-icon\" aria-hidden=\"true\" ><a href='http://gemeentedossier.nl/griffie/delete/'></a></i></button>
+            <a href='http://gemeentedossier.nl/dossier.html'><button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><i class=\"fa fa-long-arrow-right small-icon\" aria-hidden=\"true\"></i></button></a>
+            <a href='http://gemeentedossier.nl/griffie/edit/'><button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><i class=\"fa fa-pencil small-icon\" aria-hidden=\"true\"></i></button></a>
+            <a href='http://gemeentedossier.nl/griffie/delete/'><button type=\"button\" class=\"btn btn-list btn-danger\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen'><i class=\"fa fa-trash-o small-icon\" aria-hidden=\"true\" ></i></button></a>
           </p>
         </td>
       </tr>"; } ?>
