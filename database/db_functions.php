@@ -21,7 +21,7 @@ class DB_functions
   /**
    * Login
    */
-  public function login()
+  public function login($mail)
   {
     $result = mysqli_query($this->db->connect(), "SELECT * FROM users WHERE mail = '$mail'") or die(mysqli_error($this->db->connect()));
     $no_of_rows = mysqli_num_rows($result);

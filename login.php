@@ -13,11 +13,12 @@ $wachtwoord = "";
 if(isset($_POST['submit'])) {
 
   require_once "database/db_functions.php";
+  $db_login = new DB_functions();
+  
   $mail = $_POST['email'];
   $password = $_POST['wachtwoord'];
-
-  $db_login = new DB_functions();
-  $test = $db_login->login();
+  
+  $test = $db_login->login($mail);
 echo $test;
 
 }
