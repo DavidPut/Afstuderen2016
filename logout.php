@@ -7,6 +7,7 @@ if (isset($_SESSION['mail'])) {
   session_destroy();
 }
 
+session_destroy();
 header("Location: login");
 exit();
 
