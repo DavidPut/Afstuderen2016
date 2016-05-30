@@ -4,6 +4,16 @@ session_start();
 
 $action = urlencode($_GET['action']);
 
+if (isset($_SESSION['mail'])) {
+  if ($_SESSION['role'] != "raadslid") {
+    header("Location: indexerror.php");
+    exit();
+  }
+} else {
+  header("Location: login.php");
+  exit();
+}
+
 
 ?>
 
