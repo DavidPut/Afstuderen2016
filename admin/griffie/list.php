@@ -23,7 +23,7 @@
             <a href='http://gemeentedossier.nl/griffie.php?action=delete' data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen'><button type=\"button\" class=\"btn btn-list btn-danger\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button></a>
           </p>
         </td>
-      </tr>"; ?>
+      </tr>"; } ?>
       </tbody>
     </table>
   </div>
