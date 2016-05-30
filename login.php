@@ -12,43 +12,49 @@ $wachtwoord = "";
 //Check the user pressed the submit button
 if(isset($_POST['submit'])) {
 
-  //If the user press 'inloggen', connect with database
-  //require_once 'database/connect.php';
+  require_once "database/db_functions.php";
+  $mail = $_POST['email'];
+  $password = $_POST['wachtwoord'];
 
-  //Get the information from the form
-  $email 		= $_POST['email'];
-  $wachtwoord = $_POST['wachtwoord'];
+  $db_login = new DB_functions();
+  $db_login->login();
+echo $db_login;
 
-  $query = "SELECT * FROM inloggegevens WHERE email = '$email'";
-  $loginInformation = mysqli_query($db, $query) or die('Geen verbinding: ' . mysqli_error($loginInformation));
-
-  if ($row = mysqli_fetch_assoc($loginInformation)) {
-
-    $loginWachtwoord = $row['wachtwoord'];
-    if (md5(sha1($wachtwoord)) == $loginWachtwoord) {
-      $login = 1;
-    }
-    else {
-      $login = 0;
-    }
-
-    if ($login == 1) {
-      if ($saveLogin == "on") {
-        //Create longer logged in session
-        $_SESSION['email']= $email;
-        $_SESSION['time'] = time();
-      }
-      else if($saveLogin == "") {
-        //Create short logged in session
-        $_SESSION['email']= $email;
-        $_SESSION['time'] = time();
-      }
-      header("Location: index.php");
-      mysqli_close($db);
-      exit();
-    }
-  }
 }
+
+
+
+
+//  $query = "SELECT * FROM inloggegevens WHERE email = '$email'";
+//  $loginInformation = mysqli_query($db, $query) or die('Geen verbinding: ' . mysqli_error($loginInformation));
+//
+//  if ($row = mysqli_fetch_assoc($loginInformation)) {
+//
+//    $loginWachtwoord = $row['wachtwoord'];
+//    if (md5(sha1($wachtwoord)) == $loginWachtwoord) {
+//      $login = 1;
+//    }
+//    else {
+//      $login = 0;
+//    }
+//
+//    if ($login == 1) {
+//      if ($saveLogin == "on") {
+//        //Create longer logged in session
+//        $_SESSION['email']= $email;
+//        $_SESSION['time'] = time();
+//      }
+//      else if($saveLogin == "") {
+//        //Create short logged in session
+//        $_SESSION['email']= $email;
+//        $_SESSION['time'] = time();
+//      }
+//      header("Location: index.php");
+//      mysqli_close($db);
+//      exit();
+//    }
+//  }
+//}
 
 //If there is already a session, go to index and do stuff test test
 if (isset($_SESSION['email'])) {
