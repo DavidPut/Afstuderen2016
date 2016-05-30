@@ -1,6 +1,6 @@
 var map;
 $( document ).ready(function() {
-    initMap();
+    getPosition();
     characterLimit();
     addHeight();
     moveSidebar();
@@ -11,10 +11,35 @@ $( document ).ready(function() {
     filterTime();
     linkDoc();
 });
+//User location
+var lat;
+var long;
 
-function initMap() {
-    //ToDo: zoom map with user location
+//Get user position
+function getPosition(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
 
+    } else {
+        //Default values
+        lat = 51.811994;
+        long = 4.659263;
+
+        //Initialize map with default latlong
+        initMap(lat, long);
+    }
+}
+
+function showPosition(position) {
+    //User location
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
+
+    //Initialize map with user latlong
+    initMap(lat, long);
+}
+
+function initMap(lat, long) {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     var mapOptions = {
@@ -22,7 +47,7 @@ function initMap() {
         zoom: 16,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(51.811994, 4.659263),
+        center: new google.maps.LatLng(lat, long),
 
         //Custom style
         styles: [	{		"featureType":"landscape",		"stylers":[			{				"hue":"#FFBB00"			},			{				"saturation":43.400000000000006			},			{				"lightness":37.599999999999994			},			{				"gamma":1			}		]	},	{		"featureType":"road.highway",		"stylers":[			{				"hue":"#FFC200"			},			{				"saturation":-61.8			},			{				"lightness":45.599999999999994			},			{				"gamma":1			}		]	},	{		"featureType":"road.arterial",		"stylers":[			{				"hue":"#FF0300"			},			{				"saturation":-100			},			{				"lightness":51.19999999999999			},			{				"gamma":1			}		]	},	{		"featureType":"road.local",		"stylers":[			{				"hue":"#FF0300"			},			{				"saturation":-100			},			{				"lightness":52			},			{				"gamma":1			}		]	},	{		"featureType":"water",		"stylers":[			{				"hue":"#0078FF"			},			{				"saturation":-13.200000000000003			},			{				"lightness":2.4000000000000057			},			{				"gamma":1			}		]	},	{		"featureType":"poi",		"stylers":[			{				"hue":"#00FF6A"			},			{				"saturation":-1.0989010989011234			},			{				"lightness":11.200000000000017			},			{				"gamma":1			}		]	}]
