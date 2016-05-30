@@ -6,7 +6,7 @@ $action = urlencode($_GET['action']);
 
 if (isset($_SESSION['mail'])) {
   if ($_SESSION['role'] == "griffier") {
-    header("Location: griffier");
+    header("Location: griffie");
     exit();
   } elseif ($_SESSION["role"] == "raadslid") {
     header("Location: raadslid");
