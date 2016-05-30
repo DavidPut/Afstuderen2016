@@ -1,6 +1,7 @@
 /**
  * Created by David on 18-5-2016.
  */
+
 $(document).ready(function() {
     toggleDossier();
     calendar();
