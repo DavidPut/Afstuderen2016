@@ -1,5 +1,6 @@
 <?php
 
+session_unset();
 session_start();
 
 //If there is already a session, go to index and do stuff test test
