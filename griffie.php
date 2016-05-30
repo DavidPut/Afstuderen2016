@@ -6,7 +6,7 @@ $action = urlencode($_GET['action']);
 
 if (isset($_SESSION['mail'])) {
   if ($_SESSION['role'] != "griffier") {
-    header("Location: index.php");
+    header("Location: indexerror.php");
     exit();
   }
 } else {
