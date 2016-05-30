@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
   $password = $_POST['wachtwoord'];
   
   $test = $db_login->login($mail);
-  header("Location: dossier.html");
+  echo $test;
 
 }
 
