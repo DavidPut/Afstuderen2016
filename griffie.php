@@ -32,6 +32,7 @@ if($action == "add"){
 </head>
 
 <body>
+<?php echo $_SESSION['uid']; ?>
 
 <nav class="navbar navbar-inverse">
   <div class="container">

@@ -80,7 +80,6 @@ if(isset($_POST['submit'])) {
   </head>
 
   <body>
-
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
