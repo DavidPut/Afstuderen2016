@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12 col-md-offset-0 col-xs-12 ">
-    <a href="griffie.php?action=add"><button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i></button></a>
+    <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"><a href="griffie.php?action=add"></a</i></button>
     <table class="table table-hover table-list">
       <thead>
       <tr>
