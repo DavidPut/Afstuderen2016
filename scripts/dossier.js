@@ -164,7 +164,7 @@ function moveSidebar(){
         $(".side-bar").detach().appendTo('.mob-sidebar');
 
         //Make toggle button vertical
-        $(".toggle-button").css({"top" : "99.5%", "left"  : "50%", "height" : "35px", "width" : "80px"});
+        $(".toggle-button").css({"top" : "99.5%", "left"  : "7%", "height" : "35px", "width" : "97%"});
         $(".toggle-button p").removeClass("rotate").css("margin-top", "0px");
         $(".toggle-button button").css({"transition" : "top 0.3s", "top" : "25px"});
     }
