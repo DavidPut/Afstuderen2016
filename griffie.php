@@ -11,6 +11,10 @@ if($action == "add"){
   //redirect test
 }
 
+echo $_SESSION['mail'];
+echo $_SESSION['role'];
+echo $_SESSION['uid'];
+
 
 ?>
 
