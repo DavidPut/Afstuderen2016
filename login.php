@@ -21,20 +21,6 @@ if(isset($_POST['submit'])) {
         $_SESSION['name'] = $db_login_info["name"];
         $_SESSION['role'] = $db_login_info["role"];
         $_SESSION['uid'] = $db_login_info["id"];
-        switch ($db_login_info['role']){
-          case "raadslid";
-            header("Location: raadslid");
-            exit();
-            break;
-          case "griffier";
-            header("Location: griffie");
-            exit();
-            break;
-          default:
-            header("Location: index.php");
-            exit();
-            break;
-        }
       } else {
         // verkeerde wachtwoord
         header("Location: login");
