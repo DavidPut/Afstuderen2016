@@ -18,7 +18,7 @@
         <td>Een titel van een besluitvorming</td>
         <td>
           <p class='text-right'>
-            <button type=\"button\" class=\"btn btn-list btn-default\"><a href='http://gemeentedossier.nl/dossier.html' data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></a></button>
+            <button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"><a href='http://gemeentedossier.nl/dossier.html' data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'></a></i></button>
             <button type=\"button\" class=\"btn btn-list btn-default\"><a href='http://gemeentedossier.nl/griffie.php?action=edit' data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></a></button>
             <button type=\"button\" class=\"btn btn-list btn-danger\"><a href='http://gemeentedossier.nl/griffie.php?action=delete' data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen'><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></a></button>
           </p>
