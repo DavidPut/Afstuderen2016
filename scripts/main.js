@@ -418,8 +418,6 @@ function markerRange(){
                 markers[i].setVisible(true);
             }
         }
-
-
     });
 }
 
