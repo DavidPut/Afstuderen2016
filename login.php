@@ -10,7 +10,7 @@ if (isset($_SESSION['mail'])) {
       exit();
       break;
     case "griffier";
-      header("Location: griffier.php");
+      header("Location: griffie.php");
       exit();
       break;
     default:
@@ -45,7 +45,7 @@ if(isset($_POST['submit'])) {
             exit();
             break;
           case "griffier";
-            header("Location: griffier.php");
+            header("Location: griffie.php");
             exit();
             break;
           default:
