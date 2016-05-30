@@ -1,10 +1,11 @@
 <?php
 
 session_start();
-
-//If there is already a session, go to index and do stuff test testtest
 session_unset();
 session_destroy();
+session_write_close();
+setcookie(session_name(),'',0,'/');
+session_regenerate_id(true);
 
 
 header("Location: login");
