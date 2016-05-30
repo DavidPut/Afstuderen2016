@@ -32,7 +32,7 @@ if($action == "add"){
 
 <nav class="navbar navbar-inverse">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- Brand and toggle get grouped for better mobile display and actions-->
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Gemeentedossier</a>
     </div>
