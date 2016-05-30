@@ -2,8 +2,6 @@
 
 session_start();
 
-echo $_SESSION['mail'];
-
 //If there is already a session, go to index and do stuff test test
 if (isset($_SESSION['mail'])) {
   switch ($_SESSION['role']){
