@@ -5,11 +5,8 @@ session_start();
 $action = urlencode($_GET['action']);
 
 if (isset($_SESSION['mail'])) {
-  if ($_SESSION['role'] == "griffier") {
-    header("Location: griffie");
-    exit();
-  } elseif ($_SESSION["role"] == "raadslid") {
-    header("Location: raadslid");
+  if ($_SESSION['role'] != "griffier") {
+    header("Location: index.php");
     exit();
   }
 }
