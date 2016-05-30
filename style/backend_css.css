@@ -24,6 +24,11 @@
   /** overriding **/
 }
 
+.small-icon{
+  width:15px;
+  height:15px;
+}
+
 .btn{
   width:98%;
   margin-left:1%;
