@@ -53,6 +53,12 @@ $action = urlencode($_GET['action']);
       break; }
   ?>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
 </body>
 
 </html>

@@ -62,6 +62,12 @@ if($action == "add"){
           break; }
   ?>
 </div>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+
 </body>
 
 </html>
