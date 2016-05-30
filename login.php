@@ -31,6 +31,7 @@ if(isset($_POST['submit'])) {
       require_once "database/db_functions.php";
       $db_login = new DB_functions();
       $db_login_info = $db_login->login($form_mail);
+      echo $db_login_info;
 
       $database_pass = $db_login_info['password'];
 
@@ -39,25 +40,25 @@ if(isset($_POST['submit'])) {
         $_SESSION['name'] = $db_login_info["name"];
         $_SESSION['role'] = $db_login_info["role"];
         $_SESSION['uid'] = $db_login_info["id"];
-        switch ($db_login_info['role']){
-          case "raadslid";
-            header("Location: raadslid");
-            exit();
-            break;
-          case "griffier";
-            header("Location: griffie");
-            exit();
-            break;
-          default:
-            header("Location: index.php");
-            exit();
-            break;
-        }
-      } else {
-        // verkeerde wachtwoord
-        header("Location: login");
-        exit();
-      }
+//        switch ($db_login_info['role']){
+//          case "raadslid";
+//            header("Location: raadslid");
+//            exit();
+//            break;
+//          case "griffier";
+//            header("Location: griffie");
+//            exit();
+//            break;
+//          default:
+//            header("Location: index.php");
+//            exit();
+//            break;
+//        }
+//      } else {
+//        // verkeerde wachtwoord
+//        header("Location: login");
+//        exit();
+//      }
     }
   }
 }
