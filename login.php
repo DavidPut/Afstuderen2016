@@ -2,6 +2,17 @@
 
 session_start();
 
+//If there is already a session, go to index and do stuff test test
+if (isset($_SESSION['email'])) {
+  if ($_SESSION['role'] == "raadslid") {
+    header("Location: raadslid.php");
+    exit();
+  } elseif ($_SESSION['role'] == "griffier") {
+    header("Location: griffie.php");
+    exit();
+  }
+}
+
 //Config file to manage navigations and page title
 //require ('navigatie/config.php');
 
@@ -10,7 +21,7 @@ $email 		= "";
 $wachtwoord = "";
 
 //Check the user pressed the submit button
-if(isset($_POST['submit']) {
+if(isset($_POST['submit'])) {
   if (isset($_POST['mail'])) {
     if (isset($_POST['password'])) {
 
@@ -23,10 +34,10 @@ if(isset($_POST['submit']) {
 
       $database_pass = $db_login_info['password'];
 
-      if (md5($wachtwoord) == $loginWachtwoord) {
-        $login = 1;
+      if (md5($form_pass) == $database_pass) {
+        $_SESSION['email'] = $email;
       } else {
-        $login = 0;
+        $_SESSION['email'] = $email;
       }
 
       if ($login == 1) {
@@ -51,12 +62,6 @@ if(isset($_POST['submit']) {
   echo $db_login_info["password"];
   echo $db_login_info["role"];
 
-}
-
-//If there is already a session, go to index and do stuff test test
-if (isset($_SESSION['email'])) {
-  header("Location: index.php");
-  exit();
 }
 
 
