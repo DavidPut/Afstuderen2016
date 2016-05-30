@@ -1,11 +1,11 @@
 <?php
 
-session_start();
-session_unset();
+if ( isset( $_COOKIE[session_name()] ) )
+  setcookie( session_name(),"", time()-3600,"/" );
+//clear session from globals
+$_SESSION = array();
+//clear session from disk
 session_destroy();
-session_write_close();
-setcookie(session_name(),'',0,'/');
-session_regenerate_id(true);
 
 
 header("Location: login");
