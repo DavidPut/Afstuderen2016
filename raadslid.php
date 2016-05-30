@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $action = urlencode($_GET['action']);
 
 
@@ -28,7 +30,7 @@ $action = urlencode($_GET['action']);
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Gemeentedossier</a>
     </div>
-    <p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="#" class="navbar-link">Mijn account</a></p>
+    <p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="logout.php" class="navbar-link">Mijn account</a></p>
     </uL>
   </div><!-- /.container-fluid -->
 </nav>
@@ -38,7 +40,7 @@ $action = urlencode($_GET['action']);
   <?php
   switch ($action) {
     case "list";
-      require 'admin/raadslid/list.php';
+      require 'admin/raadslid/';
       break;
 //    case "add";
 //      require 'admin/raadslid/add.php';

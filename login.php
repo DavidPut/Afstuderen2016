@@ -39,7 +39,7 @@ if(isset($_POST['submit'])) {
         $_SESSION['name'] = $db_login_info["name"];
         $_SESSION['role'] = $db_login_info["role"];
         $_SESSION['uid'] = $db_login_info["id"];
-        switch ($_SESSION['role']){
+        switch ($db_login_info['role']){
           case "raadslid";
             header("Location: raadslid");
             exit();
