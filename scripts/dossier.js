@@ -209,6 +209,7 @@ $(document).on('click', '.toggle-button', function() {
 });
 
 //Keep updated on dossier changes
+//ToDo: Adding email functionality
 function emailAbbo(){
     $(".btn-abbo").click(function(e){
         e.preventDefault();
