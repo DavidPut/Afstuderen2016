@@ -26,7 +26,6 @@ $( document ).ready(function() {
     filterTime();
     linkDoc();
     markerRange();
-
 });
 
 //ToDo: Switch to HTTPS website: HTML5 geolocation is depricated for non https websites. https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only
@@ -87,6 +86,7 @@ function initMap(lat, long) {
         var long = $(this).attr("long");
         var type = $(this).attr("type");
         var time = $(this).attr("time");
+        var tags = $(this).attr("tags");
 
         //Get title
         var title = $(this).find(".doc-title").text();
@@ -145,6 +145,8 @@ function initMap(lat, long) {
         //Set position
         marker.set('lat', lat);
         marker.set('long', long);
+        //Set tags
+        marker.set('tags', tags);
         //Push marker to array
         markers.push(marker);
 
@@ -294,6 +296,7 @@ function sortDocs(){
 }
 
 //Filter by tags
+//ToDo: Also filter markers by tags
 function filterTags(){
     $(".btn-tags").click(function(e){
         e.preventDefault();
@@ -314,18 +317,38 @@ function filterTags(){
 
         //Filter by tags
         else{
-            //Loop through array
-            jQuery.each( array, function( i, val ) {
 
+            //FILTER DOCUMENTS
+            //Loop through array
+            $.each( array, function( i, val ) {
                 //Remove/add documents that contain value specified in tags
                 $('.doc-row[tags*="'+val+'"]').addClass("showBlock");
                 $(".doc-row" ).not(".showBlock").addClass("hidden");
+
+                //FILTER MARKERS
+                //ToDo: multiple words (only filters last word atm)
+                //Loop through all markers
+                for(var i = 0; i < markers.length; i++) {
+
+                    //Get marker tags
+                    var tags = markers[i].get("tags");
+
+                    //If marker contains tag, show marker
+                    if (tags.indexOf(val) > -1) {
+                        markers[i].setVisible(true);
+                    }
+                    //If marker does not contains tag, hide marker
+                    else {
+                        markers[i].setVisible(false);
+                    }
+                }
             });
         }
     });
 }
 
 //Filter by type
+//ToDo: Also filter markers by type
 function filterType(){
     $('#checkbox-physical').click(function(){
 
@@ -356,6 +379,7 @@ function filterType(){
 }
 
 //Filter by time
+//ToDo: Also filter markers by time
 function filterTime(){
     //Filter by <1 year
     $('#checkbox-low').click(function(){
@@ -391,7 +415,6 @@ function linkDoc(){
         var id = $(this).closest('.doc-row').attr('id');
         window.location.href = "dossier.html?id=" + id;
     });
-
 }
 
 //Filter amount of markers to show
