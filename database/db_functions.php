@@ -27,7 +27,7 @@ class DB_functions
     $no_of_rows = mysqli_num_rows($result);
     if ($no_of_rows > 0) {
       $row = mysqli_fetch_assoc($result);
-      return $mail;
+      return $row;
       $this->db->close();
     } else {
       return false;
