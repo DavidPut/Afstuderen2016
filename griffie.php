@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $action = urlencode($_GET['action']);
 if($action == "add"){
   $newEntry = true;
