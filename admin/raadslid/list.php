@@ -3,12 +3,13 @@
     <table class="table table-hover table-list">
       <thead>
       <tr>
-        <th class="col-md-1 col-xs-1">Nummer</th>
-        <th class="col-md-5 col-xs-4">Titel</th>
-        <th class="col-md-1 col-xs-1"><i class="fa fa-comment-o" aria-hidden="true"></i></th>
-        <th class="col-md-1 col-xs-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
-        <th class="col-md-1 col-xs-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
-        <th class="col-md-3 col-xs-4">Opties</th>
+        <th class="col-md-1">Nummer</th>
+        <th class="col-md-6">Titel</th>
+        <th class="col-md-2">
+          <i class="fa fa-comment-o" aria-hidden="true"></i>
+          <i class="fa fa-comments" aria-hidden="true"></i>
+          <i class="fa fa-comments" aria-hidden="true"></i></th>
+        <th class="col-md-3">Opties</th>
       </tr>
       </thead>
       <tbody>
@@ -18,9 +19,9 @@
       <tr>
         <td>" . $x . "</td>
         <td>Een titel van een besluitvorming</td>
-        <td>0</td>
-        <td>2</td>
-        <td>ja</td>
+        <td>0
+        2
+        ja</td>
         <td>
           <a href=\"dossier.html\"><button type=\"button\" class=\"btn btn-list btn-default\"  data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><i class=\"fa fa-long-arrow-right small-icon\" aria-hidden=\"true\"></i></button></a>
           <a href=\"griffie.php?action=edit\"><button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><i class=\"fa fa-pencil small-icon\" aria-hidden=\"true\"></i></button></a>
