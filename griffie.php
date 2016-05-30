@@ -3,14 +3,20 @@
 session_start();
 
 $action = urlencode($_GET['action']);
-if($action == "add"){
-  $newEntry = true;
-} elseif ($action == "edit"){
 
-} elseif ($action == "delete"){
-
-} else {
-  //redirect test
+if (isset($_SESSION['mail'])) {
+  switch ($_SESSION['role']){
+    case "raadslid";
+      header("Location: raadslid");
+      exit();
+      break;
+    case "griffier";
+      break;
+    default:
+      header("Location: index.php");
+      exit();
+      break;
+  }
 }
 
 
