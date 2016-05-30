@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
   }
 }
 
-//If there is already a session, go to index and do stuff test
+//If there is already a session, go to index and do stuff test test
 if (isset($_SESSION['email'])) {
   header("Location: index.php");
   exit();
