@@ -49,16 +49,16 @@ if($action == "add"){
   <?php
   switch ($action) {
     case "list";
-          require 'admin/griffie/list/';
+          require 'admin/griffie/list.php';
           break;
     case "add";
-          require 'admin/griffie/add/';
+          require 'admin/griffie/add.php';
           break;
     case "edit";
-          require 'admin/griffie/edit/';
+          require 'admin/griffie/edit.php';
           break;
     case "delete";
-          require 'admin/griffie/delete/';
+          require 'admin/griffie/delete.php';
           break;
     default:
           require 'admin/griffie/list.php';

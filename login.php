@@ -6,11 +6,11 @@ session_start();
 if (isset($_SESSION['mail'])) {
   switch ($_SESSION['role']){
     case "raadslid";
-      header("Location: raadslid.php");
+      header("Location: raadslid");
       exit();
       break;
     case "griffier";
-      header("Location: griffie.php");
+      header("Location: griffie");
       exit();
       break;
     default:
@@ -41,11 +41,11 @@ if(isset($_POST['submit'])) {
         $_SESSION['uid'] = $db_login_info["id"];
         switch ($_SESSION['role']){
           case "raadslid";
-            header("Location: raadslid.php");
+            header("Location: raadslid");
             exit();
             break;
           case "griffier";
-            header("Location: griffie.php");
+            header("Location: griffie");
             exit();
             break;
           default:
@@ -55,7 +55,7 @@ if(isset($_POST['submit'])) {
         }
       } else {
         // verkeerde wachtwoord
-        header("Location: login.php");
+        header("Location: login");
         exit();
       }
     }
