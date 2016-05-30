@@ -19,8 +19,8 @@
         <td>
           <p class='text-right'>
             <button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"><a href='http://gemeentedossier.nl/dossier.html'></a></i></button>
-            <button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"><a href='http://gemeentedossier.nl/griffie/edit/' data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'></i></button>
-            <button type=\"button\" class=\"btn btn-list btn-danger\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"><a href='http://gemeentedossier.nl/griffie/delete/' data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen'></i></a></button>
+            <button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><i class=\"fa fa-pencil\" aria-hidden=\"true\"><a href='http://gemeentedossier.nl/griffie/edit/'></a></i></button>
+            <button type=\"button\" class=\"btn btn-list btn-danger\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen'><i class=\"fa fa-trash-o\" aria-hidden=\"true\" ><a href='http://gemeentedossier.nl/griffie/delete/'></a></i></button>
           </p>
         </td>
       </tr>"; } ?>
