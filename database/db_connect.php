@@ -31,5 +31,3 @@ class DB_Connect {
   }
 
 }
-
-?>
