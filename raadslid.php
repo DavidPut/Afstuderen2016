@@ -40,7 +40,7 @@ $action = urlencode($_GET['action']);
   <?php
   switch ($action) {
     case "list";
-      require 'admin/raadslid/';
+      require 'admin/raadslid/list.php';
       break;
 //    case "add";
 //      require 'admin/raadslid/add.php';
