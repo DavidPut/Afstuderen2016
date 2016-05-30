@@ -1,6 +1,21 @@
+
+//Map with markers
 var map;
+
+//User location
+var lat;
+var long;
+
+//Default
+lat = 51.811994;
+long = 4.659263;
+
+//Markers array
+var markers = new Array();
+
 $( document ).ready(function() {
-    getPosition();
+    initMap(lat, long);
+    //getPosition();
     characterLimit();
     addHeight();
     moveSidebar();
@@ -14,40 +29,30 @@ $( document ).ready(function() {
 
 });
 
-//Map with markers
-var map;
+//ToDo: Switch to HTTPS website: HTML5 geolocation is depricated for non https websites. https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only
+////Get user position
+//function getPosition(){
+//    if (navigator.geolocation) {
+//        navigator.geolocation.getCurrentPosition(showPosition);
+//
+//    } else {
+//        //Default values
+//        lat = 51.811994;
+//        long = 4.659263;
+//
+//        //Initialize map with default latlong
+//        initMap(lat, long);
+//    }
+//}
 
-//User location
-var lat;
-var long;
-
-//Markers array
-var markers = new Array();
-
-
-//Get user position
-function getPosition(){
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-
-    } else {
-        //Default values
-        lat = 51.811994;
-        long = 4.659263;
-
-        //Initialize map with default latlong
-        initMap(lat, long);
-    }
-}
-
-function showPosition(position) {
-    //User location
-    lat = position.coords.latitude;
-    long = position.coords.longitude;
-
-    //Initialize map with user latlong
-    initMap(lat, long);
-}
+//function showPosition(position) {
+//    //User location
+//    lat = position.coords.latitude;
+//    long = position.coords.longitude;
+//
+//    //Initialize map with user latlong
+//    initMap(lat, long);
+//}
 
 function initMap(lat, long) {
     // Basic options for a simple Google Map
