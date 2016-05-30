@@ -3,12 +3,12 @@
     <table class="table table-hover table-list">
       <thead>
       <tr>
-        <th class="col-md-1">Nummer</th>
-        <th class="col-md-5">Titel</th>
-        <th class="col-md-1"><i class="fa fa-comment-o" aria-hidden="true"></i></th>
-        <th class="col-md-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
-        <th class="col-md-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
-        <th class="col-md-3">Opties</th>
+        <th class="col-md-1 col-xs-1">Nummer</th>
+        <th class="col-md-5 col-xs-4">Titel</th>
+        <th class="col-md-1 col-xs-1"><i class="fa fa-comment-o" aria-hidden="true"></i></th>
+        <th class="col-md-1 col-xs-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
+        <th class="col-md-1 col-xs-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
+        <th class="col-md-3 col-xs-4">Opties</th>
       </tr>
       </thead>
       <tbody>
