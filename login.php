@@ -10,37 +10,39 @@ $email 		= "";
 $wachtwoord = "";
 
 //Check the user pressed the submit button
-if(isset($_POST['submit']) && isset($_POST['mail']) && isset($_POST['password'])) {
+if(isset($_POST['submit']) {
+  if (isset($_POST['mail'])) {
+    if (isset($_POST['password'])) {
 
-  $form_mail = $_POST['mail'];
-  $form_pass = $_POST['password'];
+      $form_mail = $_POST['mail'];
+      $form_pass = $_POST['password'];
 
-  require_once "database/db_functions.php";
-  $db_login = new DB_functions();
-  $db_login_info = $db_login->login($form_mail);
+      require_once "database/db_functions.php";
+      $db_login = new DB_functions();
+      $db_login_info = $db_login->login($form_mail);
 
-  $database_pass = $db_login_info['password'];
+      $database_pass = $db_login_info['password'];
 
-  if (md5($wachtwoord) == $loginWachtwoord) {
+      if (md5($wachtwoord) == $loginWachtwoord) {
         $login = 1;
-      }
-      else {
+      } else {
         $login = 0;
       }
 
       if ($login == 1) {
         if ($saveLogin == "on") {
           //Create longer logged in session
-          $_SESSION['email']= $email;
-        }
-        else if($saveLogin == "") {
+          $_SESSION['email'] = $email;
+        } else if ($saveLogin == "") {
           //Create short logged in session
-          $_SESSION['email']= $email;
+          $_SESSION['email'] = $email;
         }
         header("Location: index.php");
         mysqli_close($db);
         exit();
       }
+    }
+  }
 
 
   echo $db_login_info["mail"];
