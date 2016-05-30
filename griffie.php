@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $action = urlencode($_GET['action']);
 if($action == "add"){
   $newEntry = true;
@@ -10,10 +12,6 @@ if($action == "add"){
 } else {
   //redirect test
 }
-
-echo $_SESSION['mail'];
-echo $_SESSION['role'];
-echo $_SESSION['uid'];
 
 
 ?>
@@ -41,7 +39,7 @@ echo $_SESSION['uid'];
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Gemeentedossier</a>
     </div>
-    <p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="#" class="navbar-link">Mijn account</a></p>
+    <p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="#" class="navbar-link"><?php echo $_SESSION['name'];</a></p>
     </uL>
   </div><!-- /.container-fluid -->
 </nav>
