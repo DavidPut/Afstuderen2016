@@ -10,10 +10,20 @@ $( document ).ready(function() {
     filterType();
     filterTime();
     linkDoc();
+    markerRange();
+
 });
+
+//Map with markers
+var map;
+
 //User location
 var lat;
 var long;
+
+//Markers array
+var markers = new Array();
+
 
 //Get user position
 function getPosition(){
@@ -57,7 +67,7 @@ function initMap(lat, long) {
     var mapElement = document.getElementById('map');
 
     //Create Google Map
-    var map = new google.maps.Map(mapElement, mapOptions);
+    map = new google.maps.Map(mapElement, mapOptions);
 
     //Document vars
     var image;
@@ -127,6 +137,11 @@ function initMap(lat, long) {
             icon: image,
             id: id
         });
+        //Set position
+        marker.set('lat', lat);
+        marker.set('long', long);
+        //Push marker to array
+        markers.push(marker);
 
         //Scroll to document
         marker.addListener('click', function() {
@@ -374,5 +389,38 @@ function linkDoc(){
 
 }
 
+//Filter amount of markers to show
+function markerRange(){
+    $('#marker-range').on("change", function() {
+        //Range value
+        var range = $(this).val();
+        //Map center in latlong
+        var center = map.getCenter();
+
+        //Change ranger value
+        $( "#range-value").empty().append('<h5>' + range + 'km' + '</h5>' );
+
+        //Loop through all markers
+        for(var i = 0; i < markers.length; i++) {
+
+            //Latlong of marker
+            var latlong = new google.maps.LatLng(markers[i].get('lat'), markers[i].get('long'));
+
+            //Marker distance from center in km
+            var distance = google.maps.geometry.spherical.computeDistanceBetween(center, latlong) / 1000;
+
+            //If distance bigger then specified range, hide marker
+            if(distance > range) {
+                markers[i].setVisible(false);
+            }
+            //Else show marker
+            else {
+                markers[i].setVisible(true);
+            }
+        }
+
+
+    });
+}
 
 

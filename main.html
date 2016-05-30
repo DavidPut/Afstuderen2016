@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="style/css.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZJfE_Tj_HySFXXamSQw5WG2RZ6SHotJ0"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZJfE_Tj_HySFXXamSQw5WG2RZ6SHotJ0&libraries=geometry"></script>
     <script src="scripts/jquery-1.12.3.min.js"></script>
     <script src="scripts/jquery-ui.min.js"></script>
     <script src="scripts/main.js"></script>
@@ -183,10 +183,11 @@
             <!-- ToDo: JQuery functionaliteit toevoegen-->
             <div class="slider-block">
                 <span class="text-center"><h4>Afstand</h4></span>
+                <span id="range-value" class="text-center"><h5>50km</h5></span>
                 <!--Filter afstand-->
                 <form id="marker-form" role="filter">
                     <div data-role="rangeslider">
-                        <input type="range" name="marker-range" id="marker-range" value="200" min="0" max="1000">
+                        <input type="range" name="marker-range" id="marker-range" value="50" min="0" max="100">
                     </div>
                 </form>
             </div>
