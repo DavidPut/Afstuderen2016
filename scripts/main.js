@@ -36,7 +36,7 @@ function initMap() {
     var image = './images/Marker_Icon_fysiek_green.png';
 
     //Create marker
-    //ToDo: Add custom image, title
+    //ToDo: title
 
     var marker;
     $('.doc-row[lat]').each(function() {
@@ -48,12 +48,48 @@ function initMap() {
         var type = $(this).attr("type");
         var time = $(this).attr("time");
 
-        //if(type == "physical")
-        //    //ToDo: Add switch
-        //    if(time == "low"){
-        //        image = './images/Marker_Icon_fysiek_green.png';
-        //    }
-        //}
+        //Type physical
+        if(type == "physical") {
+            switch(time) {
+                case "low":
+                    image = './images/Marker_Icon_fysiek_green.png';
+                    break;
+                case "mid":
+                    image = './images/Marker_Icon_fysiek_orange.png';
+                    break;
+                case "high":
+                    image = './images/Marker_Icon_fysiek_red.png';
+                    break;
+            }
+        }
+        //Type social
+        else if  (type == "social"){
+            switch(time) {
+                case "low":
+                    image = './images/Marker_Icon_sociaal_green';
+                    break;
+                case "mid":
+                    image = './images/Marker_Icon_sociaal_orange';
+                    break;
+                case "high":
+                    image = './images/Marker_Icon_sociaal_red';
+                    break;
+            }
+        }
+        //Type money
+        else if  (type == "money"){
+            switch(time) {
+                case "low":
+                    image = './images/Marker_Icon_bestuur_green';
+                    break;
+                case "mid":
+                    image = './images/Marker_Icon_bestuur_orange';
+                    break;
+                case "high":
+                    image = './images/Marker_Icon_bestuur_red';
+                    break;
+            }
+        }
 
         //Create marker
         marker = new google.maps.Marker({
