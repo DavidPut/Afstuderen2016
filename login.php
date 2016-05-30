@@ -75,7 +75,7 @@ if (isset($_SESSION['email'])) {
   <body>
 
     <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Gemeentedossier</a>
         </div>
@@ -83,7 +83,7 @@ if (isset($_SESSION['email'])) {
     </nav>
 
 
-    <div class="container-fluid">
+    <div class="container">
       
       <div class="row">
           <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">

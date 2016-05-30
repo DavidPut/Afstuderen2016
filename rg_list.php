@@ -23,7 +23,7 @@ $griffie = 1;
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Gemeentedossier</a>
@@ -33,9 +33,14 @@ $griffie = 1;
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2 col-xs-12 ">
+    <div class="col-md-12 col-md-offset-0 col-xs-12 ">
+      <?php
+      if($raadslid == 0 && $griffie == 1) {
+        echo '<a href="griffie.php?action=add"><button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i></button></a>';
+      }
+      ?>
   <table class="table table-hover table-list">
     <thead>
       <tr>
@@ -44,16 +49,17 @@ $griffie = 1;
 
           echo '
         <th class="col-md-1">Nummer</th>
-        <th class="col-md-8">Titel</th>
-        <th class="col-md-1">Eigen standpunten</th>
-        <th class="col-md-1"><img class="icon-time" src="images/glyphicons-25-parents.png" alt="Icon physical"></span> Andere standpunten</th>
-        <th class="col-md-1">contactgegevens</th>
+        <th class="col-md-5">Titel</th>
+        <th class="col-md-1"><i class="fa fa-comment-o" aria-hidden="true"></i></th>
+        <th class="col-md-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
+        <th class="col-md-1"><i class="fa fa-comments" aria-hidden="true"></i></th>
+        <th class="col-md-3">Opties</th>
         ';
         } elseif ($raadslid == 0 && $griffie == 1){
             echo '
         <th class="col-md-1">Nummer</th>
         <th class="col-md-8">Titel</th>
-        <th class="col-md-3">Exttra opties</th>
+        <th class="col-md-3">Opties</th>
         ';
         }
         ?>
@@ -73,6 +79,11 @@ $griffie = 1;
         <td>0</td>
         <td>2</td>
         <td>ja</td>
+        <td>
+          <a href='http://gemeentedossier.nl/dossier.html' data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></button></a>
+          <a href='http://gemeentedossier.nl/griffie.php?action=edit' data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></a>
+          <a href='https://www.facebook.com/share.php?u=gemeentedossier.nl/griffie.php?action=new&title=test' target=\"blank\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-share-alt\" aria-hidden=\"true\"></i></button></a>
+        </td>
       </tr>";
       }
     } elseif ($raadslid == 0 && $griffie == 1){
@@ -82,14 +93,16 @@ $griffie = 1;
         <td>" . $x . "</td>
         <td>Een titel van een besluitvorming</td>
         <td>
-          <a href='http://gemeentedossier.nl/dossier.html'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></button></a>
-          <a href='http://gemeentedossier.nl/griffie.php#'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></a>
-          <button type=\"button\" class=\"btn btn-list btn-danger\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button>
+        <p class='text-right'>
+          <a href='http://gemeentedossier.nl/dossier.html' data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></button></a>
+          <a href='http://gemeentedossier.nl/griffie.php?action=edit' data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></a>
+          <a href='http://gemeentedossier.nl/griffie.php?action=delete' data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen'><button type=\"button\" class=\"btn btn-list btn-danger\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></button></a>
+        </p>
         </td>
       </tr>";
     }
     } else {
-      //do nothing and more nothing edit - nog een kleine dit / test test
+      //do nothing and more nothing edit - nog een kleine dit / test test test
     }
 
 ?>
@@ -99,7 +112,11 @@ $griffie = 1;
     </div>
 </div>
 
-
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
 
 </body>
 
