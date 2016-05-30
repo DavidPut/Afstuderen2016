@@ -3,22 +3,22 @@
 session_start();
 
 //If there is already a session, go to index and do stuff test test
-if (isset($_SESSION['email'])) {
-  if ($_SESSION['role'] == "raadslid") {
-    header("Location: raadslid.php");
-    exit();
-  } elseif ($_SESSION['role'] == "griffier") {
-    header("Location: griffie.php");
-    exit();
+if (isset($_SESSION['mail'])) {
+  switch ($_SESSION['role']){
+    case "raadslid";
+      header("Location: raadslid.php");
+      exit();
+      break;
+    case "griffier";
+      header("Location: griffier.php");
+      exit();
+      break;
+    default:
+      header("Location: index.php");
+      exit();
+      break;
   }
 }
-
-//Config file to manage navigations and page title
-//require ('navigatie/config.php');
-
-//create variables, protecting against errors
-$email 		= "";
-$wachtwoord = "";
 
 //Check the user pressed the submit button
 if(isset($_POST['submit'])) {
@@ -35,33 +35,31 @@ if(isset($_POST['submit'])) {
       $database_pass = $db_login_info['password'];
 
       if (md5($form_pass) == $database_pass) {
-        $_SESSION['email'] = $email;
-      } else {
-        $_SESSION['email'] = $email;
-      }
-
-      if ($login == 1) {
-        if ($saveLogin == "on") {
-          //Create longer logged in session
-          $_SESSION['email'] = $email;
-        } else if ($saveLogin == "") {
-          //Create short logged in session
-          $_SESSION['email'] = $email;
+        $_SESSION['mail'] = $db_login_info['mail'];
+        $_SESSION['name'] = $db_login_info["name"];
+        $_SESSION['role'] = $db_login_info["role"];
+        $_SESSION['uid'] = $db_login_info["id"];
+        switch ($_SESSION['role']){
+          case "raadslid";
+            header("Location: raadslid.php");
+            exit();
+            break;
+          case "griffier";
+            header("Location: griffier.php");
+            exit();
+            break;
+          default:
+            header("Location: index.php");
+            exit();
+            break;
         }
-        header("Location: index.php");
-        mysqli_close($db);
+      } else {
+        // verkeerde wachtwoord
+        header("Location: login.php");
         exit();
       }
     }
   }
-
-
-  echo $db_login_info["mail"];
-  echo $db_login_info["name"];
-  echo $db_login_info["id"];
-  echo $db_login_info["password"];
-  echo $db_login_info["role"];
-
 }
 
 
