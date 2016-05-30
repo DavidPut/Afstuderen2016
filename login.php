@@ -1,25 +1,6 @@
 <?php
 
-session_unset();
 session_start();
-
-//If there is already a session, go to index and do stuff test test
-if (isset($_SESSION['mail'])) {
-  switch ($_SESSION['role']){
-    case "raadslid";
-      header("Location: raadslid");
-      exit();
-      break;
-    case "griffier";
-      header("Location: griffie");
-      exit();
-      break;
-    default:
-      header("Location: index.php");
-      exit();
-      break;
-  }
-}
 
 //Check the user pressed the submit button
 if(isset($_POST['submit'])) {
@@ -60,6 +41,24 @@ if(isset($_POST['submit'])) {
         exit();
       }
     }
+  }
+}
+
+//If there is already a session, go to index and do stuff test test
+if (isset($_SESSION['mail'])) {
+  switch ($_SESSION['role']){
+    case "raadslid";
+      header("Location: raadslid");
+      exit();
+      break;
+    case "griffier";
+      header("Location: griffie");
+      exit();
+      break;
+    default:
+      header("Location: index.php");
+      exit();
+      break;
   }
 }
 
