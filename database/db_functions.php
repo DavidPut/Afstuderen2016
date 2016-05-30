@@ -19,7 +19,7 @@ class DB_functions
   }
 
   /**
-   * Login
+   * Login for users
    */
   public function login($mail)
   {
@@ -28,8 +28,19 @@ class DB_functions
     if ($no_of_rows > 0) {
       $row = mysqli_fetch_assoc($result);
       return $row;
+      $this->db->close();
     } else {
       return false;
+      $this->db->close();
     }
   }
+  
+  public function griffielist(){
+    
+  }
+  
+  public function raadslidlist(){
+    
+  }
+  
 }

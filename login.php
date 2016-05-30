@@ -18,8 +18,12 @@ if(isset($_POST['submit'])) {
   $mail = $_POST['email'];
   $password = $_POST['wachtwoord'];
   
-  $test = $db_login->login($mail);
-  echo $test["mail"];
+  $db_login_info = $db_login->login($mail);
+  echo $db_login_info["mail"];
+  echo $db_login_info["name"];
+  echo $db_login_info["id"];
+  echo $db_login_info["password"];
+  echo $db_login_info["role"];
 
 }
 
