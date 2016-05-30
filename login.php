@@ -17,8 +17,8 @@ if(isset($_POST['submit'])) {
   $password = $_POST['wachtwoord'];
 
   $db_login = new DB_functions();
-  $db_login->login();
-echo "test".$db_login["mail"];
+  $test = $db_login->login();
+echo $test;
 
 }
 
