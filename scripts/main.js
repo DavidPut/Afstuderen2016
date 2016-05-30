@@ -32,21 +32,22 @@ function initMap() {
     //Create Google Map
     var map = new google.maps.Map(mapElement, mapOptions);
 
-    //Custom image
-    var image = './images/Marker_Icon_fysiek_green.png';
-
-    //Create marker
-    //ToDo: title
-
+    //Document vars
+    var image;
     var marker;
+
+    //Get document
     $('.doc-row[lat]').each(function() {
 
+        //Get attributes
         var id = $(this).attr("id");
         var lat = $(this).attr("lat");
         var long = $(this).attr("long");
-
         var type = $(this).attr("type");
         var time = $(this).attr("time");
+
+        //Get title
+        var title = $(this).find(".doc-title").text();
 
         //Type physical
         if(type == "physical") {
@@ -95,7 +96,7 @@ function initMap() {
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(lat, long),
             map: map,
-            title: 'Lorem Ipsum',
+            title: title,
             icon: image,
             id: id
         });
@@ -139,10 +140,6 @@ function initMap() {
             }
         });
     });
-
-
-
-
 }
 
 //Limit characters.
