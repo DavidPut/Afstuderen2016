@@ -32,34 +32,71 @@ function initMap() {
     //Create Google Map
     var map = new google.maps.Map(mapElement, mapOptions);
 
-    //Custom image
-    var image = './images/Marker_Icon_fysiek_green.png';
-
-    //Create marker
-    //ToDo: Add custom image, title
-
+    //Document vars
+    var image;
     var marker;
+
+    //Get document
     $('.doc-row[lat]').each(function() {
 
+        //Get attributes
         var id = $(this).attr("id");
         var lat = $(this).attr("lat");
         var long = $(this).attr("long");
-
         var type = $(this).attr("type");
         var time = $(this).attr("time");
 
-        //if(type == "physical")
-        //    //ToDo: Add switch
-        //    if(time == "low"){
-        //        image = './images/Marker_Icon_fysiek_green.png';
-        //    }
-        //}
+        //Get title
+        var title = $(this).find(".doc-title").text();
+
+        //Type physical
+        if(type == "physical") {
+            switch(time) {
+                case "low":
+                    image = './images/Marker_Icon_fysiek_green.png';
+                    break;
+                case "mid":
+                    image = './images/Marker_Icon_fysiek_orange.png';
+                    break;
+                case "high":
+                    image = './images/Marker_Icon_fysiek_red.png';
+                    break;
+            }
+        }
+        //Type social
+        else if  (type == "social"){
+            switch(time) {
+                case "low":
+                    image = './images/Marker_Icon_sociaal_green';
+                    break;
+                case "mid":
+                    image = './images/Marker_Icon_sociaal_orange';
+                    break;
+                case "high":
+                    image = './images/Marker_Icon_sociaal_red';
+                    break;
+            }
+        }
+        //Type money
+        else if  (type == "money"){
+            switch(time) {
+                case "low":
+                    image = './images/Marker_Icon_bestuur_green';
+                    break;
+                case "mid":
+                    image = './images/Marker_Icon_bestuur_orange';
+                    break;
+                case "high":
+                    image = './images/Marker_Icon_bestuur_red';
+                    break;
+            }
+        }
 
         //Create marker
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(lat, long),
             map: map,
-            title: 'Lorem Ipsum',
+            title: title,
             icon: image,
             id: id
         });
@@ -103,10 +140,6 @@ function initMap() {
             }
         });
     });
-
-
-
-
 }
 
 //Limit characters.
