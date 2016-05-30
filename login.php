@@ -18,7 +18,7 @@ if(isset($_POST['submit'])) {
 
   $db_login = new DB_functions();
   $db_login->login();
-echo $db_login;
+echo "test".$db_login["mail"];
 
 }
 
