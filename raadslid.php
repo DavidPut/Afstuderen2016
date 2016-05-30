@@ -1,15 +1,6 @@
 <?php
 
 $action = urlencode($_GET['action']);
-if($action == "add"){
-  $newEntry = true;
-} elseif ($action == "edit"){
-
-} elseif ($action == "delete"){
-
-} else {
-  //redirect
-}
 
 
 ?>
@@ -46,20 +37,20 @@ if($action == "add"){
   <?php
   switch ($action) {
     case "list";
-          require 'admin/griffie/list.php';
-          break;
-    case "add";
-          require 'admin/griffie/add.php';
-          break;
-    case "edit";
-          require 'admin/griffie/edit.php';
-          break;
-    case "delete";
-          require 'admin/griffie/delete.php';
-          break;
+      require 'admin/raadslid/list.php';
+      break;
+//    case "add";
+//      require 'admin/raadslid/add.php';
+//      break;
+//    case "edit";
+//      require 'admin/raadslid/edit.php';
+//      break;
+//    case "delete";
+//      require 'admin/raadslid/delete.php';
+//      break;
     default:
-          require 'admin/griffie/list.php';
-          break; }
+      require 'admin/raadslid/list.php';
+      break; }
   ?>
 </div>
 </body>
