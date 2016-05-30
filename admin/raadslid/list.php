@@ -1,6 +1,5 @@
 <div class="row">
   <div class="col-md-12 col-md-offset-0 col-xs-12 ">
-    <a href="griffie.php?action=add"><button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i></button></a>
     <table class="table table-hover table-list">
       <thead>
       <tr>
@@ -23,9 +22,9 @@
         <td>2</td>
         <td>ja</td>
         <td>
-          <a href='http://gemeentedossier.nl/dossier.html' data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></button></a>
-          <a href='http://gemeentedossier.nl/griffie.php?action=edit' data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button></a>
-          <a href='https://www.facebook.com/share.php?u=gemeentedossier.nl/griffie.php?action=new&title=test' target=\"blank\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><button type=\"button\" class=\"btn btn-list btn-default\"><i class=\"fa fa-share-alt\" aria-hidden=\"true\"></i></button></a>
+          <button type=\"button\" class=\"btn btn-list btn-default\"  data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><i class=\"fa fa-long-arrow-right small-icon\" aria-hidden=\"true\"><a href='http://gemeentedossier.nl/dossier.html'></a></i></button>
+          <button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><i class=\"fa fa-pencil small-icon\" aria-hidden=\"true\"><a href='http://gemeentedossier.nl/griffie.php?action=edit'></a></i></button>
+          <button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Delen'><i class=\"fa fa-share-alt small-icon\" aria-hidden=\"true\"><a href='https://www.facebook.com/share.php?u=gemeentedossier.nl/griffie.php?action=new&title=test' target=\"blank\"></a></i></button>
         </td>
       </tr>";
       } ?>
