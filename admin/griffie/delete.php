@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
-        <h3>Besluitvormingsproces <span class="label label-danger">Verwijderen</span></h3>';
+        <h3>Besluitvormingsproces <span class="label label-danger"><i class="fa fa-trash-o small-icon" aria-hidden="true"></i></span></h3>
       </div>
     </div>
   </div>
