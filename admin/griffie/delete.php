@@ -22,7 +22,7 @@
       <div class="form-group">
         <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Titel besluitvorming">
+          <input readonly="readonly" type="text" class="form-control" placeholder="Titel besluitvorming">
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
       <div class="form-group">
         <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
+          <textarea readonly="readonly" class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
         </div>
       </div>
     </div>
