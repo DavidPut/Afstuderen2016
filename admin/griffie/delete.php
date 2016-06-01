@@ -256,3 +256,18 @@
   </div>
 
 </form>
+
+<script>
+  $(document).ready(function() {
+    $('.input-group-addon-text').datepicker({
+      format: "dd/mm/yyyy",
+      startView: 1,
+      maxViewMode: 0,
+      language: "nl",
+      calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true,
+      enableOnReadonly: false
+    });
+  });
+</script>
