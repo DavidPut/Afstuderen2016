@@ -13,16 +13,9 @@
   margin: 0 12px 12px 12px;
 }
 
-/** test test **/
-#datepicker-edit .input-group{
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
 .input-group-addon{
   padding: 0;
   min-width:130px;
-
 }
 
 .form-horizontal .form-group{
