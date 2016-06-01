@@ -296,7 +296,6 @@ function sortDocs(){
 }
 
 //Filter by tags
-//ToDo: Also filter markers by tags
 function filterTags(){
     $(".btn-tags").click(function(e){
         e.preventDefault();
@@ -335,23 +334,16 @@ function filterTags(){
 
                     //Get marker tags
                     var tags = markers[i].get("tags");
+                    //Remove comma from tags
+                    tags = tags.replace(',', '');
 
                     //If marker contains tag, show marker
                     if (tags.indexOf(val) > -1) {
-
-                        //markers[i].setVisible(true);
                         markerBooleansArray.push( {id:i, value: true} );
-
-                        console.log("VISIBLE: Marker tags: " + tags);
-                        //console.log("User tag: " + val);
                     }
                     //If marker does not contains tag, hide marker
                     else {
-                        //markers[i].setVisible(false);
                         markerBooleansArray.push( {id:i, value: false} );
-
-                        console.log("HIDDEN: Marker tags: " + tags);
-                        //console.log("User tag: " + val);
                     }
                 }
 
@@ -359,9 +351,7 @@ function filterTags(){
                 markerBooleansArray.sort(function(a, b) {
                     return parseFloat(a.id) - parseFloat(b.id);
                 });
-
             });
-
 
             //If marker contains user tag -> set visible
             //If marker does not contain user tag -> set hidden
@@ -390,7 +380,6 @@ function filterTags(){
                     }
                 }
             }
-
         }
     });
 }
