@@ -83,7 +83,7 @@ if (isset($_SESSION['mail'])) {
       autoclose: true,
       todayHighlight: true
     });
-  }
+  });
 </script>
 
 </body>
