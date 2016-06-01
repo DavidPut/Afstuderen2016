@@ -53,7 +53,7 @@ if (isset($_SESSION['mail'])) {
     </div>
     <div class="collapse navbar-collapse navbar-menubuilder">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="Uitloggen">Account</a>
+        <li><a href="logout.php"><p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="logout.php" class="navbar-link"><?php echo $_SESSION['name']; ?></a></p></a>
         </li>
         <li><a href="uitloggenlink">Uitloggen</a>
         </li>
