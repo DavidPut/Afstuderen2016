@@ -43,6 +43,7 @@ h3{
 .btn-list{
   width: auto;
   margin-left:0%;
+  text-decoration: none;
 }
 
 body, html {
