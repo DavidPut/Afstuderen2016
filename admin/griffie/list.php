@@ -18,9 +18,9 @@
         <td>Een titel van een besluitvorming</td>
         <td>
           <p class='text-right'>
-            <a href='/dossier.html'><button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><i class=\"fa fa-long-arrow-right small-icon\" aria-hidden=\"true\"></i></button></a>
-            <a href='/griffie/edit/'><button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><i class=\"fa fa-pencil small-icon\" aria-hidden=\"true\"></i></button></a>
-            <a href='/griffie/delete/'><button type=\"button\" class=\"btn btn-list btn-danger\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen'><i class=\"fa fa-trash-o small-icon\" aria-hidden=\"true\" ></i></button></a>
+            <a href='/dossier.html'><button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina'><i class=\"fa fa-long-arrow-right fa-fw\" aria-hidden=\"true\"></i></button></a>
+            <a href='/griffie/edit/'><button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen'><i class=\"fa fa-pencil fa-fw\" aria-hidden=\"true\"></i></button></a>
+            <a href='/griffie/delete/'><button type=\"button\" class=\"btn btn-list btn-danger\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen'><i class=\"fa fa-trash-o fa-fw\" aria-hidden=\"true\" ></i></button></a>
           </p>
         </td>
       </tr>"; } ?>
