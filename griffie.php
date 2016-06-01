@@ -55,6 +55,12 @@ if (isset($_SESSION['mail'])) {
     <p class="navbar-text navbar-right"><a href="logout.php" class="navbar-link"><i class="fa fa-sign-out" aria-hidden="true"></i></a></p>
     <p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="logout.php" class="navbar-link"><?php echo $_SESSION['name']; ?></a></p>
     </div>
+
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"><a href="logout.php" class="navbar-link">Danny van Dalen</a></span>
+      <span class="icon-bar"><a href="logout.php" class="navbar-link">Logout</a></span>
+    </button>
   </div><!-- /.container-fluid -->
 </nav>
 
