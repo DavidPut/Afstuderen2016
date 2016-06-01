@@ -14,6 +14,7 @@ if (isset($_SESSION['mail'])) {
   exit();
 }
 
+// rare rrors soms
 
 ?>
 
