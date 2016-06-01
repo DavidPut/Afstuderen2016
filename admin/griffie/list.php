@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-md-12 col-md-offset-0 col-xs-12 ">
+    <a class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" href="griffier/add"><i class="fa fa-plus small-icon fa-lg"></i> Toevoegen</a>
     <a href="griffie/add"><button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success pull-right"><i class="fa fa-plus small-icon" aria-hidden="true"></i></button></a>
     <table class="table table-hover table-list">
       <thead>
