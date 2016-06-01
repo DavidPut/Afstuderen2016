@@ -51,8 +51,10 @@ if (isset($_SESSION['mail'])) {
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Gemeentedossier</a>
     </div>
-    <p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="logout.php" class="navbar-link"><?php echo $_SESSION['name']; ?></a></p>
-    <p class="navbar-text navbar-right"><i class="fa fa-sign-out" aria-hidden="true"></i><a href="logout.php"</a></p>
+    <ul class="navbar-text navbar-right">
+      <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="logout.php" class="navbar-link"><?php echo $_SESSION['name']; ?></a></li>
+      <li><button type="button" class="btn btn-default navbar-btn"><i class="fa fa-sign-out" aria-hidden="true"></i><a href="logout.php"</a></button></li>
+    </uL
   </div><!-- /.container-fluid -->
 </nav>
 
