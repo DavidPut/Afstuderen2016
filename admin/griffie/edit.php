@@ -231,10 +231,11 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group" id="datepicker-edit">
+      <div class="form-group has-feedback">
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
         <div class="col-sm-10 date">
           <input type="text" class="form-control input-group-addon-text">
+          <i class="glyphicon glyphicon-user form-control-feedback"></i>
         </div>
       </div>
     </div>
