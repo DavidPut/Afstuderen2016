@@ -71,7 +71,7 @@ if (isset($_SESSION['mail'])) {
   ?>
 </div>
 <script>
-  $(document).ready(function(){
+  $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
 
     $('.input-group.date').datepicker({
@@ -83,6 +83,7 @@ if (isset($_SESSION['mail'])) {
       autoclose: true,
       todayHighlight: true
     });
+  }
 </script>
 
 </body>
