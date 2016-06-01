@@ -305,7 +305,10 @@ function filterTags(){
         var tags = $(".input-tags").val().replace(/\s+/g,",");
 
         //Split by comma
-        var array = tags.split(',');
+        var tagsArray = tags.split(',');
+
+        var markerBooleansArray = [];
+        var tempArr = [];
 
         //Reset
         $(".doc-row" ).removeClass("showBlock").removeClass("hidden");
@@ -320,14 +323,13 @@ function filterTags(){
 
             //FILTER DOCUMENTS
             //Loop through array
-            $.each( array, function( i, val ) {
+            //ToDo: sport, bouw niet zichtbaar
+            $.each( tagsArray, function( i, val ) {
                 //Remove/add documents that contain value specified in tags
                 $('.doc-row[tags*="'+val+'"]').addClass("showBlock");
                 $(".doc-row" ).not(".showBlock").addClass("hidden");
 
                 //FILTER MARKERS
-                //ToDo: multiple words (only filters last word atm)
-                //Loop through all markers
                 for(var i = 0; i < markers.length; i++) {
 
                     //Get marker tags
@@ -335,14 +337,56 @@ function filterTags(){
 
                     //If marker contains tag, show marker
                     if (tags.indexOf(val) > -1) {
-                        markers[i].setVisible(true);
+
+                        //markers[i].setVisible(true);
+                        markerBooleansArray.push( {id:i, value: true} );
+
+                        console.log("VISIBLE: Marker tags: " + tags);
+                        //console.log("User tag: " + val);
                     }
                     //If marker does not contains tag, hide marker
                     else {
-                        markers[i].setVisible(false);
+                        //markers[i].setVisible(false);
+                        markerBooleansArray.push( {id:i, value: false} );
+
+                        console.log("HIDDEN: Marker tags: " + tags);
+                        //console.log("User tag: " + val);
                     }
                 }
+
+                //Sort array by ID
+                markerBooleansArray.sort(function(a, b) {
+                    return parseFloat(a.id) - parseFloat(b.id);
+                });
+
             });
+
+
+            //If marker contains user tag -> set visible
+            //If marker does not contain user tag -> set hidden
+            for(var i = 0; i < markers.length;  i++) {
+                splitMarkerTags(i);
+
+                if($.inArray(true, tempArr) !== -1){
+                    markers[i].setVisible(true);
+                }
+                else{
+                    markers[i].setVisible(false);
+                }
+
+                //Empty temp array
+                tempArr = [];
+            }
+
+            function splitMarkerTags(id){
+                for(var i = 0; i < markerBooleansArray.length; i++){
+                    if(markerBooleansArray[i].id == id){
+                        tempArr.push(markerBooleansArray[i].value);
+                    }
+
+                }
+            }
+
         }
     });
 }
