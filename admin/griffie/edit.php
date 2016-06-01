@@ -233,8 +233,9 @@
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group row">
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
-        <div class="col-sm-10">
-          <input type="text" id="dp1" name="agendaDate" class="form-control datepicker" placeholder="Titel agenda">
+        <div class="input-append date" id="dp1" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+          <input class="span2" size="16" type="text" value="12-02-2012">
+          <span class="add-on"><i class="icon-th"></i></span>
         </div>
 <!--        <div class="col-md-2">-->
 <!--          <select class="form-control">-->
