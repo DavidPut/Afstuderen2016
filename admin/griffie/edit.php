@@ -231,39 +231,13 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group row">
+      <div class="form-group">
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
-        <div class="input-group date">
-          <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        <div class="col-sm-10 input-group date">
+          <input type="text" class="form-control">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i>
+          </span>
         </div>
-<!--        <div class="col-md-2">-->
-<!--          <select class="form-control">-->
-<!--            <option>1</option>-->
-<!--            <option>2</option>-->
-<!--          </select>-->
-<!--        </div>-->
-<!--        <div class="col-md-2">-->
-<!--          <select class="form-control">-->
-<!--            <option>Januari</option>-->
-<!--            <option>Februari</option>-->
-<!--            <option>Maart</option>-->
-<!--            <option>April</option>-->
-<!--            <option>Mei</option>-->
-<!--            <option>Juli</option>-->
-<!--            <option>Juni</option>-->
-<!--            <option>Augustus</option>-->
-<!--            <option>September</option>-->
-<!--            <option>Oktober</option>-->
-<!--            <option>November</option>-->
-<!--            <option>December</option>-->
-<!--          </select>-->
-<!--        </div>-->
-<!--        <div class="col-md-2">-->
-<!--          <select class="form-control">-->
-<!--            <option>2016</option>-->
-<!--            <option>2017</option>-->
-<!--          </select>-->
-<!--        </div>-->
       </div>
     </div>
   </div>
