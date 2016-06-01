@@ -5,7 +5,7 @@
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
         <div class="pull-left">
-          <h3>Besluitvormingsproces <span class="label label-primary">Aanpassen</span></h3>
+          <h3>Besluitvormingsproces <span class="label label-primary"><i class="fa fa-times small-icon" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
           <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-danger">Annuleren <i class="fa fa-times small-icon" aria-hidden="true"><a href="griffie"></a></i></button>
