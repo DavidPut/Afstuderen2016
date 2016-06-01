@@ -8,6 +8,7 @@
           <h3>Besluitvormingsproces <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
+          <button data-toggle="tooltip" data-placement="top" title="Ga naar pagina" class="btn btn-list btn-default">Ga naar pagina<a href="dossier.html"></a></button>
           <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">annuleren<a href="griffie"></a></button>
           <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces aanpassen" class="btn btn-list btn-primary">aanpassen<a href="griffie"></a></button>
         </div>
@@ -174,7 +175,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-xs-12">
       <button class="btn btn-lg btn-primary btn-block" type = "submit" name = "edit" value = "Aanpassen">Aanpassen</button>
