@@ -67,19 +67,19 @@ if (isset($_SESSION['mail'])) {
   <?php
   switch ($action) {
     case "list";
-          require 'admin/griffie/list.php';
+          require_once 'admin/griffie/list.php';
           break;
     case "add";
-          require 'admin/griffie/add.php';
+          require_once 'admin/griffie/add.php';
           break;
     case "edit";
-          require 'admin/griffie/edit.php';
+          require_once 'admin/griffie/edit.php';
           break;
     case "delete";
-          require 'admin/griffie/delete.php';
+          require_once 'admin/griffie/delete.php';
           break;
     default:
-          require 'admin/griffie/list.php';
+          require_once 'admin/griffie/list.php';
           break; }
   ?>
 </div>
