@@ -44,7 +44,7 @@
       <div class="form-group">
         <label for="inputAdrescode" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres"></input>
+          <input readonly="readonly" class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres"></input>
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@
       <div class="form-group">
         <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="tags" placeholder="Tags, gescheiden door komma's"></input>
+          <input readonly="readonly" class="form-control" type="text" name="tags" placeholder="Tags, gescheiden door komma's"></input>
         </div>
       </div>
     </div>
@@ -67,13 +67,13 @@
         <label for="inputTags" class="col-sm-2 control-label">Soort</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
+            <input readonly="readonly" type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
+            <input readonly="readonly" type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
+            <input readonly="readonly" type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
           </label>
         </div>
       </div>
@@ -87,19 +87,19 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              <input readonly="readonly" type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
               Korter dan een jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input readonly="readonly" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
               Langer dan een jaar, korter dan vijf jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+              <input readonly="readonly" type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
               Vijf jaar of langer
             </label>
           </div>
@@ -133,7 +133,7 @@
               <div class="form-group">
                 <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
                 <div class="col-sm-10">
-                  <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
+                  <input readonly="readonly" type="text" name="titleProces" class="form-control" placeholder="Titel proces">
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@
               <div class="form-group">
                 <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control" name="summaryProces" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
+                  <textarea readonly="readonly" class="form-control" name="summaryProces" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@
               <div class="form-group">
                 <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="file" name="inputFile"></input>
+                  <input readonly="readonly" class="form-control" type="file" name="inputFile"></input>
                 </div>
               </div>
             </div>
@@ -186,7 +186,7 @@
       <div class="form-group">
         <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
         <div class="col-sm-10">
-          <input type="text" name="agendaTitle" class="form-control" placeholder="Titel agenda">
+          <input readonly="readonly" type="text" name="agendaTitle" class="form-control" placeholder="Titel agenda">
         </div>
       </div>
     </div>
