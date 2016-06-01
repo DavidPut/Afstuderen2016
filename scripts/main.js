@@ -11,7 +11,7 @@ lat = 51.811994;
 long = 4.659263;
 
 //Markers array
-var markers = new Array();
+var markers = [];
 
 $( document ).ready(function() {
     initMap(lat, long);
@@ -493,12 +493,12 @@ function filterTime(){
 
 //Reset markers and show on map
 //ToDo: Atm it resets all markers! -> add marker id to reset specific marker
+//ToDo: Also make sure that markerRange overwrites other filters!
 function markerReset(){
     for(var i = 0; i < markers.length; i++) {
         markers[i].setVisible(true);
     }
 }
-
 
 //Link document to detail page
 function linkDoc(){
