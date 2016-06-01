@@ -25,13 +25,14 @@ if (isset($_SESSION['mail'])) {
   <base href="//gemeentedossier.nl" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="plugins/datepicker/datepicker.css"/> 
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.standalone.css"/>
   <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css"/>
   <link href='./fonts/font-awesome.min.css' rel='stylesheet'/>
   <link rel="stylesheet" type="text/css" href="style/backend_css.css"/>
   <script src="scripts/jquery-1.12.3.min.js"></script>
   <script src="bootstrap/scripts/bootstrap.min.js"></script>
-  <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/locales/bootstrap-datepicker.nl.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.js"></script>
   <script src="scripts/backend_main.js"></script>
 </head>
 
@@ -72,34 +73,6 @@ if (isset($_SESSION['mail'])) {
 <script>
   $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
-    $('.datepicker').datepicker();
-    
-      var nowTemp = new Date();
-      var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-
-      var checkin = $('#dp3').datepicker({
-        onRender: function(date) {
-          return date.valueOf() < now.valueOf() ? 'disabled' : '';
-        }
-      }).on('changeDate', function(ev) {
-        if (ev.date.valueOf() > checkout.date.valueOf()) {
-          var newDate = new Date(ev.date)
-          newDate.setDate(newDate.getDate() + 1);
-          checkout.setValue(newDate);
-        }
-        checkin.hide();
-        $('#dp3')[0].focus();
-      }).data('datepicker');
-      var checkout = $('#dp3').datepicker({
-        onRender: function(date) {
-          return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-        }
-      }).on('changeDate', function(ev) {
-        checkout.hide();
-      }).data('datepicker');
-    });
-
-  });
 </script>
 
 </body>
