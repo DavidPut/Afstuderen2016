@@ -33,7 +33,7 @@ if (isset($_SESSION['mail'])) {
   <script src="bootstrap/scripts/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/locales/bootstrap-datepicker.nl.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.js"></script>
-  <script src="scripts/backend_main.js"></script>
+  <script src="scripts/backend_main.js?id=122333"></script>
 </head>
 
 <body>
