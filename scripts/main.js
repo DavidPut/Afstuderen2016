@@ -140,6 +140,7 @@ function initMap(lat, long) {
             map: map,
             title: title,
             type: type,
+            time: time,
             icon: image,
             id: id
         });
@@ -150,6 +151,8 @@ function initMap(lat, long) {
         marker.set('tags', tags);
         //Set type
         marker.set('type', type);
+        //Set time
+        marker.set('time', time);
         //Push marker to array
         markers.push(marker);
 
@@ -388,7 +391,6 @@ function filterTags(){
 }
 
 //Filter by type
-//ToDo: Also filter markers by type
 function filterType(){
 
     //FILTER DOCUMENTS
@@ -430,31 +432,26 @@ function filterType(){
             //Get marker type
             var markerType = markers[i].get("type");
 
-            //If marker has type same as user filter
+            //If marker has same type as user filter
             if(markerType == type){
                 markers[i].setVisible(false);
             }
         }
     }
-
-    //Reset markers and show on map
-    function markerReset(){
-        for(var i = 0; i < markers.length; i++) {
-            markers[i].setVisible(true);
-        }
-    }
-
 }
 
 //Filter by time
-//ToDo: Also filter markers by time
 function filterTime(){
+
+    //FILTER DOCUMENTS
     //Filter by <1 year
     $('#checkbox-low').click(function(){
         if ($(this).is(':checked')) {
             $('.doc-row[time*="low"]').removeClass("hiddenTime");
+            markerReset();
         } else {
             $('.doc-row[time*="low"]').addClass("hiddenTime");
+            markerFilterTime("low");
         }
     });
 
@@ -462,8 +459,10 @@ function filterTime(){
     $('#checkbox-mid').click(function(){
         if ($(this).is(':checked')) {
             $('.doc-row[time*="mid"]').removeClass("hiddenTime");
+            markerReset();
         } else {
             $('.doc-row[time*="mid"]').addClass("hiddenTime");
+            markerFilterTime("mid");
         }
     });
 
@@ -471,11 +470,35 @@ function filterTime(){
     $('#checkbox-high').click(function(){
         if ($(this).is(':checked')) {
             $('.doc-row[time*="high"]').removeClass("hiddenTime");
+            markerReset();
         } else {
             $('.doc-row[time*="high"]').addClass("hiddenTime");
+            markerFilterTime("high");
         }
     });
+
+    //FILTER MARKERS
+    function markerFilterTime(time){
+        for(var i = 0; i < markers.length; i++) {
+            //Get marker time
+            var markerTime = markers[i].get("time");
+
+            //If marker has same time as user filter
+            if(markerTime == time){
+                markers[i].setVisible(false);
+            }
+        }
+    }
 }
+
+//Reset markers and show on map
+//ToDo: Atm it resets all markers! -> add marker id to reset specific marker
+function markerReset(){
+    for(var i = 0; i < markers.length; i++) {
+        markers[i].setVisible(true);
+    }
+}
+
 
 //Link document to detail page
 function linkDoc(){
@@ -516,5 +539,4 @@ function markerRange(){
         }
     });
 }
-
 
