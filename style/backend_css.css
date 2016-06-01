@@ -23,6 +23,10 @@
   /** overriding **/
 }
 
+.h3{
+  margin-top:0px;
+}
+
 .small-icon{
   width:20px;
   height:auto;
