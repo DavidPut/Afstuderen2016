@@ -8,7 +8,7 @@
           <h3>Besluitvormingsproces <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-          <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">Annuleren <i class="fa fa-times small-icon" aria-hidden="true"><a href="griffie"></a></i></button>
+          <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">Annuleren<a href="griffie"></a></button>
           <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces aanpassen" class="btn btn-list btn-primary">Aanpassen <i class="fa fa-pencil small-icon" aria-hidden="true"><a href="griffie"></a></i></button>
         </div>
         <div class="clearfix"></div>
