@@ -80,16 +80,6 @@ if (isset($_SESSION['mail'])) {
 <script>
   $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
-
-    $('.input-group-addon-text').datepicker({
-      format: "dd/mm/yyyy",
-      startView: 1,
-      maxViewMode: 0,
-      language: "nl",
-      calendarWeeks: true,
-      autoclose: true,
-      todayHighlight: true
-    });
   });
 </script>
 
