@@ -117,8 +117,6 @@
       </div>
     </div>
   </div>
-
-  <div class="row">
 <!--    <div class="col-md-10 col-md-offset-1 col-xs-12 ">-->
 <!---->
 <!---->
@@ -163,7 +161,6 @@
 <!--        </div>-->
 <!--      </div>-->
 <!--    </div>-->
-  </div>
 
   <!-- proces uitprinten als die er zijn voor edit pagina -->
   <div class="row">
@@ -210,7 +207,6 @@
             </div>
         </div>
        </div>
-     </div>
 
 
 
@@ -273,6 +269,7 @@
     <div class="col-md-4 col-md-offset-4 col-xs-12">
       <button class="btn btn-lg btn-primary btn-block" type = "submit" name = "edit" value = "Aanpassen">Aanpassen</button>
     </div>
+  </div>
   </div>
 
 </form>
