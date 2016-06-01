@@ -4,7 +4,14 @@
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
+        <div class="pull-left">
         <h3>Besluitvormingsproces <span class="label label-success"><i class="fa fa-plus small-icon" aria-hidden="true"></i></span></h3>
+        </div>
+        <div class="pull-right">
+          <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">annuleren<a href="griffie"></a></button>
+          <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success">toevoegen<a href="griffie"></a></button>
+        </div>
+        <div class="clearfix"></div>
       </div>
     </div>
   </div>
