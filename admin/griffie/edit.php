@@ -234,10 +234,7 @@
       <div class="form-group">
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
         <div class="col-sm-10 date">
-          <input type="text" class="form-control input-group-addon-text">
-          <span class="input-group-addon">
-            <i class="glyphicon glyphicon-user form-control-feedback"></i>
-          </span>
+          <input type="text" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj">
         </div>
       </div>
     </div>
