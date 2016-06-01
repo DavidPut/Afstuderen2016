@@ -139,6 +139,7 @@ function initMap(lat, long) {
             position: new google.maps.LatLng(lat, long),
             map: map,
             title: title,
+            type: type,
             icon: image,
             id: id
         });
@@ -147,6 +148,8 @@ function initMap(lat, long) {
         marker.set('long', long);
         //Set tags
         marker.set('tags', tags);
+        //Set type
+        marker.set('type', type);
         //Push marker to array
         markers.push(marker);
 
@@ -387,12 +390,15 @@ function filterTags(){
 //Filter by type
 //ToDo: Also filter markers by type
 function filterType(){
-    $('#checkbox-physical').click(function(){
 
+    //FILTER DOCUMENTS
+    $('#checkbox-physical').click(function(){
         if ($('#checkbox-physical').is(':checked')) {
             $('.doc-row[type*="physical"]').removeClass("hiddenType");
+            markerReset();
         } else {
             $('.doc-row[type*="physical"]').addClass("hiddenType");
+            markerFilterType("physical");
         }
     });
 
@@ -400,8 +406,10 @@ function filterType(){
 
         if ($(this).is(':checked')) {
             $('.doc-row[type*="social"]').removeClass("hiddenType");
+            markerReset();
         } else {
             $('.doc-row[type*="social"]').addClass("hiddenType");
+            markerFilterType("social");
         }
     });
 
@@ -409,10 +417,33 @@ function filterType(){
 
         if ($(this).is(':checked')) {
             $('.doc-row[type*="money"]').removeClass("hiddenType");
+            markerReset();
         } else {
             $('.doc-row[type*="money"]').addClass("hiddenType");
+            markerFilterType("money");
         }
     });
+
+    //FILTER MARKERS
+    function markerFilterType(type){
+        for(var i = 0; i < markers.length; i++) {
+            //Get marker type
+            var markerType = markers[i].get("type");
+
+            //If marker has type same as user filter
+            if(markerType == type){
+                markers[i].setVisible(false);
+            }
+        }
+    }
+
+    //Reset markers and show on map
+    function markerReset(){
+        for(var i = 0; i < markers.length; i++) {
+            markers[i].setVisible(true);
+        }
+    }
+
 }
 
 //Filter by time
