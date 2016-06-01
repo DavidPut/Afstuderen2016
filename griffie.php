@@ -81,7 +81,7 @@ if (isset($_SESSION['mail'])) {
   $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
 
-    $('.input-group.date').datepicker({
+    $('.input-group-addon').datepicker({
       format: "dd/mm/yyyy",
       startView: 1,
       maxViewMode: 0,
