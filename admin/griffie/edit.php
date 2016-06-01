@@ -233,34 +233,37 @@
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group row">
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
-        <div class="col-md-2">
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-          </select>
+        <div class="col-sm-10">
+          <input type="text" id="dp1" name="agendaDate" class="form-control datepicker" placeholder="Titel agenda">
         </div>
-        <div class="col-md-2">
-          <select class="form-control">
-            <option>Januari</option>
-            <option>Februari</option>
-            <option>Maart</option>
-            <option>April</option>
-            <option>Mei</option>
-            <option>Juli</option>
-            <option>Juni</option>
-            <option>Augustus</option>
-            <option>September</option>
-            <option>Oktober</option>
-            <option>November</option>
-            <option>December</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <select class="form-control">
-            <option>2016</option>
-            <option>2017</option>
-          </select>
-        </div>
+<!--        <div class="col-md-2">-->
+<!--          <select class="form-control">-->
+<!--            <option>1</option>-->
+<!--            <option>2</option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <div class="col-md-2">-->
+<!--          <select class="form-control">-->
+<!--            <option>Januari</option>-->
+<!--            <option>Februari</option>-->
+<!--            <option>Maart</option>-->
+<!--            <option>April</option>-->
+<!--            <option>Mei</option>-->
+<!--            <option>Juli</option>-->
+<!--            <option>Juni</option>-->
+<!--            <option>Augustus</option>-->
+<!--            <option>September</option>-->
+<!--            <option>Oktober</option>-->
+<!--            <option>November</option>-->
+<!--            <option>December</option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <div class="col-md-2">-->
+<!--          <select class="form-control">-->
+<!--            <option>2016</option>-->
+<!--            <option>2017</option>-->
+<!--          </select>-->
+<!--        </div>-->
       </div>
     </div>
   </div>
