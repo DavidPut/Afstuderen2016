@@ -54,7 +54,7 @@ if (isset($_SESSION['mail'])) {
     <ul class="navbar-text navbar-right">
       <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="logout.php" class="navbar-link"><?php echo $_SESSION['name']; ?></a></li>
       <li><button type="button" class="btn btn-default navbar-btn"><i class="fa fa-sign-out" aria-hidden="true"></i><a href="logout.php"</a></button></li>
-    </uL
+    </ul>
   </div><!-- /.container-fluid -->
 </nav>
 
