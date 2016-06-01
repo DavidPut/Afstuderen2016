@@ -67,13 +67,13 @@
         <label for="inputTags" class="col-sm-2 control-label">Soort</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input readonly="readonly" type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
+            <input disabled type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input readonly="readonly" type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
+            <input disabled type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input readonly="readonly" type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
+            <input disabled type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
           </label>
         </div>
       </div>
@@ -87,19 +87,19 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input readonly="readonly" type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              <input disabled type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
               Korter dan een jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input readonly="readonly" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input disabled type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
               Langer dan een jaar, korter dan vijf jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input readonly="readonly" type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+              <input disabled type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
               Vijf jaar of langer
             </label>
           </div>
