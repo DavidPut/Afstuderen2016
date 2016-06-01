@@ -235,7 +235,7 @@
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
         <div class="col-sm-10 input-group date">
           <input type="text" class="form-control">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i>
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i>
           </span>
         </div>
       </div>
