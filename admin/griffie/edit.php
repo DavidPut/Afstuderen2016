@@ -234,7 +234,7 @@
       <div class="form-group" id="datepicker-edit">
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
         <div class="col-sm-10 date">
-          <input type="text" class="form-control input-group-addon">
+          <input type="text" class="form-control input-group-addon-text">
         </div>
       </div>
     </div>
