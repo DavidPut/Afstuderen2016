@@ -231,11 +231,13 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group has-feedback">
+      <div class="form-group">
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
         <div class="col-sm-10 date">
           <input type="text" class="form-control input-group-addon-text">
-          <i class="glyphicon glyphicon-user form-control-feedback"></i>
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-user form-control-feedback"></i>
+          </span>
         </div>
       </div>
     </div>
