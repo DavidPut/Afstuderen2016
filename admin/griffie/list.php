@@ -18,9 +18,9 @@
         <td>Een titel van een besluitvorming</td>
         <td>
           <p class='text-right'>
-            <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina' href=\"#\"><i class=\"fa fa-long-arrow-right fa-fw\"></i></a>
-            <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"#\"><i class=\"fa fa-pencil fa-fw\"></i></a>
-            <a class=\"btn btn-danger\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"#\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
+            <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina' href=\"griffie/add\"><i class=\"fa fa-long-arrow-right fa-fw\"></i></a>
+            <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"griffie/edit\"><i class=\"fa fa-pencil fa-fw\"></i></a>
+            <a class=\"btn btn-danger\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"griffie/delete\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
           </p>
         </td>
       </tr>"; } ?>
