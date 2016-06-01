@@ -307,7 +307,9 @@ function filterTags(){
         //Split by comma
         var tagsArray = tags.split(',');
 
+        //Array with booleans if user tag exist in marker tags
         var markerBooleansArray = [];
+        //Temp array to split makerBooleansArray
         var tempArr = [];
 
         //Reset
@@ -323,10 +325,9 @@ function filterTags(){
 
             //FILTER DOCUMENTS
             //Loop through array
-            //ToDo: sport, bouw niet zichtbaar
             $.each( tagsArray, function( i, val ) {
                 //Remove/add documents that contain value specified in tags
-                $('.doc-row[tags*="'+val+'"]').addClass("showBlock");
+                $('.doc-row[tags*="'+val+'"]').addClass("showBlock").removeClass("hidden");
                 $(".doc-row" ).not(".showBlock").addClass("hidden");
 
                 //FILTER MARKERS
