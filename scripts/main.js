@@ -368,9 +368,12 @@ function filterTags(){
             for(var i = 0; i < markers.length;  i++) {
                 splitMarkerTags(i);
 
+                //If boolean true (user tag and marker tag match) exists in tempArr, set marker visible
                 if($.inArray(true, tempArr) !== -1){
                     markers[i].setVisible(true);
                 }
+
+                //If there is no boolean true in tempArr (user tag and marker tag do not match), set marker hidden
                 else{
                     markers[i].setVisible(false);
                 }
@@ -381,10 +384,10 @@ function filterTags(){
 
             function splitMarkerTags(id){
                 for(var i = 0; i < markerBooleansArray.length; i++){
+                    //Select booleans by marker id
                     if(markerBooleansArray[i].id == id){
                         tempArr.push(markerBooleansArray[i].value);
                     }
-
                 }
             }
 
