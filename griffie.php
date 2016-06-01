@@ -3,16 +3,18 @@
 session_start();
 
 $action = urlencode($_GET['action']);
-if($action == "add"){
-  $newEntry = true;
-} elseif ($action == "edit"){
 
-} elseif ($action == "delete"){
-
+if (isset($_SESSION['mail'])) {
+  if ($_SESSION['role'] != "griffier") {
+    header("Location: indexerror.php");
+    exit();
+  }
 } else {
-  //redirect test
+  header("Location: login.php");
+  exit();
 }
 
+// rare rrors soms
 
 ?>
 
@@ -22,13 +24,23 @@ if($action == "add"){
   <title>Inloggen gemeentedossier</title>
   <base href="//gemeentedossier.nl" />
   <meta charset="utf-8">
+
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.css"/>
+  <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css"/>
   <link href='./fonts/font-awesome.min.css' rel='stylesheet'/>
   <link rel="stylesheet" type="text/css" href="style/backend_css.css"/>
   <script src="scripts/jquery-1.12.3.min.js"></script>
   <script src="bootstrap/scripts/bootstrap.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/locales/bootstrap-datepicker.nl.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.js"></script>
+  <script src="scripts/backend_main.js"></script>
 </head>
 
 <body>
@@ -66,8 +78,18 @@ if($action == "add"){
   ?>
 </div>
 <script>
-  $(document).ready(function(){
+  $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
+
+    $('.input-group-addon-text').datepicker({
+      format: "dd/mm/yyyy",
+      startView: 1,
+      maxViewMode: 0,
+      language: "nl",
+      calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true
+    });
   });
 </script>
 

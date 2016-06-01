@@ -4,7 +4,14 @@
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
-        <h3>Besluitvormingsproces <span class="label label-primary">Aanpassen</span></h3>
+        <div class="pull-left">
+          <h3>Besluitvormingsproces <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
+        </div>
+        <div class="pull-right">
+          <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">annuleren<a href="griffie"></a></button>
+          <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces aanpassen" class="btn btn-list btn-primary">aanpassen<a href="griffie"></a></button>
+        </div>
+        <div class="clearfix"></div>
       </div>
     </div>
   </div>
@@ -231,35 +238,10 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group row">
+      <div class="form-group">
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
-        <div class="col-md-2">
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <select class="form-control">
-            <option>Januari</option>
-            <option>Februari</option>
-            <option>Maart</option>
-            <option>April</option>
-            <option>Mei</option>
-            <option>Juli</option>
-            <option>Juni</option>
-            <option>Augustus</option>
-            <option>September</option>
-            <option>Oktober</option>
-            <option>November</option>
-            <option>December</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <select class="form-control">
-            <option>2016</option>
-            <option>2017</option>
-          </select>
+        <div class="col-sm-10 date">
+          <input type="text" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj">
         </div>
       </div>
     </div>

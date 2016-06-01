@@ -4,6 +4,16 @@ session_start();
 
 $action = urlencode($_GET['action']);
 
+if (isset($_SESSION['mail'])) {
+  if ($_SESSION['role'] != "raadslid") {
+    header("Location: indexerror.php");
+    exit();
+  }
+} else {
+  header("Location: login.php");
+  exit();
+}
+
 
 ?>
 
@@ -30,7 +40,7 @@ $action = urlencode($_GET['action']);
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Gemeentedossier</a>
     </div>
-    <p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="logout.php" class="navbar-link">Mijn account</a></p>
+    <p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="logout.php" class="navbar-link"><?php echo $_SESSION['name']; ?></a></p>
     </uL>
   </div><!-- /.container-fluid -->
 </nav>

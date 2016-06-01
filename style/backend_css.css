@@ -16,13 +16,23 @@
 .input-group-addon{
   padding: 0;
   min-width:130px;
-
 }
 
 .form-horizontal .form-group{
   margin-right:0px;
   /** overriding **/
 }
+
+h3{
+  margin-top:0px;
+}
+
+.small-icon{
+  width:20px;
+  height:auto;
+  /** test 12 **/
+}
+
 
 .btn{
   width:98%;

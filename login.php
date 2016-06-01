@@ -2,24 +2,6 @@
 
 session_start();
 
-//If there is already a session, go to index and do stuff test test
-if (isset($_SESSION['mail'])) {
-  switch ($_SESSION['role']){
-    case "raadslid";
-      header("Location: raadslid");
-      exit();
-      break;
-    case "griffier";
-      header("Location: griffie");
-      exit();
-      break;
-    default:
-      header("Location: index.php");
-      exit();
-      break;
-  }
-}
-
 //Check the user pressed the submit button
 if(isset($_POST['submit'])) {
   if (isset($_POST['mail'])) {
@@ -39,26 +21,30 @@ if(isset($_POST['submit'])) {
         $_SESSION['name'] = $db_login_info["name"];
         $_SESSION['role'] = $db_login_info["role"];
         $_SESSION['uid'] = $db_login_info["id"];
-        switch ($db_login_info['role']){
-          case "raadslid";
-            header("Location: raadslid");
-            exit();
-            break;
-          case "griffier";
-            header("Location: griffie");
-            exit();
-            break;
-          default:
-            header("Location: index.php");
-            exit();
-            break;
-        }
       } else {
         // verkeerde wachtwoord
         header("Location: login");
         exit();
       }
     }
+  }
+}
+
+//If there is already a session, go to index and do stuff test test
+if (isset($_SESSION['mail'])) {
+  switch ($_SESSION['role']){
+    case "raadslid";
+      header("Location: raadslid");
+      exit();
+      break;
+    case "griffier";
+      header("Location: griffie");
+      exit();
+      break;
+    default:
+      header("Location: index.php");
+      exit();
+      break;
   }
 }
 

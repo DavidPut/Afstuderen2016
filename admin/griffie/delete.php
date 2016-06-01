@@ -4,8 +4,15 @@
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
-        <h3>Besluitvormingsproces <span class="label label-danger">Verwijderen</span></h3>';
-      </div>
+        <div class="pull-left">
+        <h3>Besluitvormingsproces <span class="label label-danger"><i class="fa fa-trash-o small-icon" aria-hidden="true"></i></span></h3>
+        </div>
+        <div class="pull-right">
+          <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">annuleren<a href="griffie"></a></button>
+          <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces verwijderen" class="btn btn-list btn-danger">verwijderen<a href="griffie"></a></button>
+        </div>
+        <div class="clearfix"></div>
+        </div>
     </div>
   </div>
 
@@ -15,7 +22,7 @@
       <div class="form-group">
         <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Titel besluitvorming">
+          <input readonly="readonly" type="text" class="form-control" placeholder="Titel besluitvorming">
         </div>
       </div>
     </div>
@@ -26,7 +33,7 @@
       <div class="form-group">
         <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
+          <textarea readonly="readonly" class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
         </div>
       </div>
     </div>
