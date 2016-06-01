@@ -72,10 +72,8 @@ if (isset($_SESSION['mail'])) {
 <script>
   $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
-
-    $( document ).ready(function() {
-      console.log( "ready!" );
-
+    $('.datepicker').datepicker();
+    
       var nowTemp = new Date();
       var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
 
