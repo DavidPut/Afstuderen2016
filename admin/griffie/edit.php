@@ -233,7 +233,7 @@
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group">
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
-        <div id="datepicker-edit"class="col-sm-10 input-group date">
+        <div id="datepicker-edit" class="col-sm-10 input-group date">
           <input type="text" class="form-control">
             <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i>
           </span>
