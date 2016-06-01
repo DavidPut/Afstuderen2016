@@ -15,7 +15,8 @@
 
 /** test **/
 #datepicker-edit .input-group{
-  margin: 0px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .input-group-addon{
