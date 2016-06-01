@@ -74,8 +74,14 @@ if (isset($_SESSION['mail'])) {
   $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 
-    $('#sandbox-container .input-append.date').datepicker({
-      autoclose: true
+    $('.input-group.date').datepicker({
+      format: "dd/mm/yyyy",
+      startView: 1,
+      maxViewMode: 0,
+      language: "nl",
+      calendarWeeks: true,
+      autoclose: true,
+      todayHighlight: true
     });
 </script>
 

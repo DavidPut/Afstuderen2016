@@ -233,9 +233,9 @@
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group row">
         <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
-        <div class="span5 col-md-5" id="sandbox-container"><div class="input-append date">
-            <input type="text" class="span2"><span class="add-on"><i class="icon-th"></i></span>
-          </div></div>
+        <div class="input-group date">
+          <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        </div>
 <!--        <div class="col-md-2">-->
 <!--          <select class="form-control">-->
 <!--            <option>1</option>-->
