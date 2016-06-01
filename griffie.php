@@ -73,6 +73,10 @@ if (isset($_SESSION['mail'])) {
 <script>
   $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
+
+    $('#sandbox-container .input-append.date').datepicker({
+      autoclose: true
+    });
 </script>
 
 </body>
