@@ -13,7 +13,7 @@
   </tr>
   </thead>
   <tbody>
-  <?php for ($x = 0; $x <= 20; $x++) {
+  <?php for ($x = 0; $x <= 5; $x++) {
     echo "
       <tr>
         <td>" . $x . "</td>
