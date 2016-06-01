@@ -4,7 +4,13 @@
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
+        <div class="pull-left">
         <h3>Besluitvormingsproces <span class="label label-primary">Aanpassen</span></h3>
+        </div
+        <div class="pull-right">
+          <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success pull-right"><i class="fa fa-plus small-icon" aria-hidden="true"><a href="griffie/add"></a></i></button>
+        </div>
+        <div class="clearfix"></div>
       </div>
     </div>
   </div>
