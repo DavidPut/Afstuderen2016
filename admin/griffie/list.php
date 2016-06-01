@@ -7,7 +7,7 @@
 
         <th class="col-md-1">Nummer</th>
         <th class="col-md-8">Titel</th>
-        <th class="col-md-3">Opties</th>
+        <th class="col-md-3 pull-right">Opties</th>
       </tr>
       </thead>
       <tbody>
