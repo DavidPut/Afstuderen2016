@@ -1,5 +1,3 @@
-//TIJD: 14:33 - DAVIED
-
 //Map with markers
 var map;
 
@@ -30,7 +28,7 @@ $( document ).ready(function() {
     markerRange();
 });
 
-//ToDo: Switch to HTTPS website: HTML5 geolocation is depricated for non https websites. ,https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only
+//ToDo: Switch to HTTPS website: HTML5 geolocation is depricated for non https websites. https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only
 ////Get user position
 //function getPosition(){
 //    if (navigator.geolocation) {
@@ -465,7 +463,7 @@ function filterTags(){
     });
 }
 
-//Filter by type
+//Filter by document type
 function filterType(){
 
     //FILTER DOCUMENTS
@@ -497,7 +495,7 @@ function filterType(){
     });
 }
 
-//Filter by time
+//Filter by document time
 function filterTime(){
 
     //FILTER DOCUMENTS
@@ -593,7 +591,6 @@ function markerFilter(mType, mTime){
                         markers[i].setVisible(false);
                     }
                 }
-
             }
             //If document does not have any hidden classes
             else if($(this).attr("lat") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hiddenType") ){
@@ -608,10 +605,8 @@ function markerFilter(mType, mTime){
                     }
                 }
             }
-
         });
     }
-
 }
 
 //Link document to detail page
