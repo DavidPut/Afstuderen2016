@@ -33,7 +33,7 @@
       <div class="form-group">
         <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea readonly="readonly" class="form-control" name="summary" value="<?php echo $db_getItem_info['summary']; ?>" rows="3"></textarea>
+          <textarea readonly="readonly" class="form-control" name="summary"rows="3"><?php echo $db_getItem_info['summary']; ?></textarea>
         </div>
       </div>
     </div>
