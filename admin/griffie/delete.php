@@ -72,13 +72,13 @@
         <label for="inputTags" class="col-sm-2 control-label">Soort</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input disabled type="checkbox" id="inlineCheckbox1" value="F" <? if(phpin_array('F',$selectedBox)){echo "checked";} ?>> Fysiek
+            <input disabled type="checkbox" id="inlineCheckbox1" value="F" <?php if(in_array('F',$selectedBox)){echo "checked";} ?>> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input disabled type="checkbox" id="inlineCheckbox2" value="S" <? if(phpin_array('S',$selectedBox)){echo "checked";} ?>> Sociaal
+            <input disabled type="checkbox" id="inlineCheckbox2" value="S" <?php if(in_array('S',$selectedBox)){echo "checked";} ?>> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input disabled type="checkbox" id="inlineCheckbox3" value="B" <? if(phpin_array('B',$selectedBox)){echo "checked";} ?>> Bestuur en middelen
+            <input disabled type="checkbox" id="inlineCheckbox3" value="B" <?php if(in_array('B',$selectedBox)){echo "checked";} ?>> Bestuur en middelen
           </label>
         </div>
       </div>
