@@ -17,13 +17,6 @@ if (isset($_SESSION['mail'])) {
   exit();
 }
 
-//list
-if($action == null || $action == 'list') {
-  require_once "database/db_functions.php"; //test
-  $db_getList = new DB_functions();
-  $db_getList_info = $db_getList->griffieList();
-}
-
 // Nieuwe besluitvormingsproces
 if(isset($_POST['BVPadd'])) {
   if(isset($_POST['BVPaddTitle'])) {
@@ -71,6 +64,13 @@ if(isset($_POST['BVPadd'])) {
       }
     }
   }
+}
+
+//list
+if($action == null || $action == 'list') {
+  require_once "database/db_functions.php"; //test
+  $db_getList = new DB_functions();
+  $db_getList_info = $db_getList->griffieList();
 }
 
 if ($action == 'edit' && $id != null){
