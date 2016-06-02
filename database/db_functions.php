@@ -39,7 +39,7 @@ class DB_functions
     $result = mysqli_query($this->db->connect(), "SELECT * FROM process") or die(mysqli_error($this->db->connect()));
     $no_of_rows = mysqli_num_rows($result);
     if ($no_of_rows > 0) {
-      return $result->fetch_assoc();
+      return $result;
       $this->db->close();
     } else {
       return false;
