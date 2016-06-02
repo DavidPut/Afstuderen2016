@@ -1,13 +1,12 @@
 <div class="row">
   <div class="col-md-12 col-md-offset-0 col-xs-12 ">
-    <a class="btn btn-success pull-right" data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" href="griffie/add"><i class="fa fa-plus small-icon fa-lg"></i> Toevoegen</a>
+    <a class="btn btn-success pull-right" data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" href="griffie/add"><i class="fa fa-plus small-icon fa-lg"></i></a>
     <table class="table table-hover table-list">
       <thead>
       <tr>
-
-        <th class="col-md-1">Nummer</th>
-        <th class="col-md-8">Titel</th>
-        <th class="col-md-3 text-right">Opties</th>
+        <th class="col-md-1">id</th>
+        <th class="col-md-8">titel</th>
+        <th class="col-md-3 text-right">opties</th>
       </tr>
       </thead>
       <tbody>
