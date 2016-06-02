@@ -33,7 +33,7 @@
       <div class="form-group">
         <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea readonly="readonly" class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
+          <textarea readonly="readonly" class="form-control" name="summary" value="<?php echo $db_getItem_info['summary']; ?>" rows="3"></textarea>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
       <div class="form-group">
         <label for="inputAdrescode" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
-          <input readonly="readonly" class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres"></input>
+          <input readonly="readonly" class="form-control" type="text" name="adrescode" value="<?php echo $db_getItem_info['location']; ?>"></input>
         </div>
       </div>
     </div>
@@ -55,11 +55,13 @@
       <div class="form-group">
         <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
-          <input readonly="readonly" class="form-control" type="text" name="tags" placeholder="Tags, gescheiden door komma's"></input>
+          <input readonly="readonly" class="form-control" type="text" name="tags" value="<?php echo $db_getItem_info['tags']; ?>"></input>
         </div>
       </div>
     </div>
   </div>
+
+  <?php echo $db_getItem_info['type']; ?>
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
@@ -79,6 +81,8 @@
       </div>
     </div>
   </div>
+
+  <?php echo $db_getItem_info['period']; ?>
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
