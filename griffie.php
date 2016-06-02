@@ -78,7 +78,7 @@ if ($action == 'edit' && $id != null){
 } elseif ($action == 'delete' && $id != null){
   require_once "database/db_functions.php"; 
   $db_getItem = new DB_functions();
-  $db_getItem_info = $db_getList->griffieItem();
+  $db_getItem_info = $db_getItem->griffieItem();
 } else {
 
 }
