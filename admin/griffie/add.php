@@ -123,56 +123,7 @@
       <div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw fa-lg" aria-hidden="true"></i> Er kunnen nog geen besluiten worden toegevoegd.</div>
     </div>
   </div>
-
-  <!-- proces uitprinten als die er zijn voor edit pagina -->
-  <div class="row">
-      <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-        <div class = "panel panel-primary">
-            <div class = "panel-heading">
-                <h3 class = "panel-title">Bestaande besluitvorming</h3>
-            </div>
-
-            <div class = "panel-body">
-              <div class="row">
-                <div class="col-md-12 col-xs-12 ">
-                  <div class="form-group">
-                  <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
-                    <div class="col-sm-10">
-                      <input type="text" name="titleProces" class="form-control" value="Commissievergaderinng">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-      <div class="col-md-12 col-xs-12 ">
-        <div class="form-group">
-          <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
-          <div class="col-sm-10">
-            <textarea class="form-control" name="summaryProces" rows="6">Samenvatting besluit van de commissievergadering</textarea>
-          </div>
-        </div>
-      </div>
-    </div>
-
-                <div class="row">
-      <div class="col-md-12 col-xs-12 ">
-        <div class="form-group">
-          <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
-          <div class="col-sm-10">
-            <input class="form-control" type="file" name="inputFile"></input>
-          </div>
-        </div>
-      </div>
-    </div>
-            </div>
-        </div>
-       </div>
-     </div>
-
-
-
-
+  
 
   <!-- extra gegevens -->
   <div class="row">
