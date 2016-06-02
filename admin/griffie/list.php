@@ -13,7 +13,7 @@
       <tbody>
       <?php foreach ($db_getList_info as $db_getList_info_item) {
         echo "hoi";
-        echo $db_getList_info_item['id'] . " 
+        echo $db_getList_info_item . " 
       <tr>
         <td>" . $db_getList_info_item['id'] . "</td>
         <td>Een titel van een besluitvorming</td>
