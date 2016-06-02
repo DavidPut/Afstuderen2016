@@ -235,7 +235,7 @@
 
 
   <div class="row">
-    <div class="col-md-4 col-md-offset-4 col-xs-12">
+    <div class="col-md-4 col-md-offset-5 col-xs-12">
       <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
       <button class="btn btn-lg btn-danger text-right" type ="submit" name ="BVPdelete">verwijderen</button>
     </div>
