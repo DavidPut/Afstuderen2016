@@ -69,7 +69,6 @@ if($action == null || $action == 'list') {
   $db_getList = new DB_functions();
   $db_getList_info = $db_getList->griffieList();
   mysqli_fetch_assoc($db_getList_info);
-  print_r($db_getList_info);
 }
 
 
