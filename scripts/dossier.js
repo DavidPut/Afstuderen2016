@@ -209,7 +209,7 @@ $(document).on('click', '.toggle-button', function() {
 });
 
 //Keep updated on dossier changes
-//ToDo: Adding email functionality
+//ToDo: Adding email functionality --> if db changes send email
 function emailAbbo(){
     $(".btn-abbo").click(function(e){
         e.preventDefault();
