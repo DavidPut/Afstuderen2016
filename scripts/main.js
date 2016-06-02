@@ -461,74 +461,81 @@ function filterTime(){
         }
         markerFilter("", "high");
     });
-
-
 }
 
 //Filter markers
 function markerFilter(mType, mTime){
 
-    //Get all rows with user specified type filter
-    $('.doc-row[type*="'+mType+'"]').each(function() {
-        //If doc has attr lat (meaning it has a marker) and has hidden class
-        if($(this).attr("lat") && $(this).hasClass("hiddenType")){
-            //Get document id
-            var mId = $(this).attr("id");
-            //Loop through markers
-            for(var i = 0; i < markers.length; i++) {
-                //If marker id is same as document id
-                if(markers[i].id == mId){
-                    //Hide markers (same as document)
-                    markers[i].setVisible(false);
-                }
-            }
-        }
+    //If range is hidden
+    if($('.doc-row').hasClass("hiddenRange")){
+        //Don't do anything, because marker range is the most important filter
+    }
 
-        //If document does not have any hidden classes
-        else if($(this).attr("lat") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hiddenTime") ){
-            //Get document id
-            var mId = $(this).attr("id");
-            //Loop through markers
-            for(var i = 0; i < markers.length; i++) {
-                //If marker id is same as document id
-                if(markers[i].id == mId){
-                    //Show markers (same as document)
-                    markers[i].setVisible(true);
-                }
-            }
-        }
-    });
-
-    //Get all rows with user specified time filter
-    $('.doc-row[time*="'+mTime+'"]').each(function() {
-        //If doc has attr lat (meaning it has a marker) and has hidden class
-        if($(this).attr("lat") && $(this).hasClass("hiddenTime")){
-            //Get document id
-            var mId = $(this).attr("id");
-            //Loop through markers
-            for(var i = 0; i < markers.length; i++) {
-                //If marker id is same as document id
-                if(markers[i].id == mId){
-                    //Hide markers (same as document)
-                    markers[i].setVisible(false);
+    //Else filter markers
+    else{
+        //Get all rows with user specified type filter
+        $('.doc-row[type*="'+mType+'"]').each(function() {
+            //If doc has attr lat (meaning it has a marker) and has hidden class
+            if($(this).attr("lat") && $(this).hasClass("hiddenType")){
+                //Get document id
+                var mId = $(this).attr("id");
+                //Loop through markers
+                for(var i = 0; i < markers.length; i++) {
+                    //If marker id is same as document id
+                    if(markers[i].id == mId){
+                        //Hide markers (same as document)
+                        markers[i].setVisible(false);
+                    }
                 }
             }
 
-        }
-        //If document does not have any hidden classes
-        else if($(this).attr("lat") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hiddenType") ){
-            //Get document id
-            var mId = $(this).attr("id");
-            //Loop through markers
-            for(var i = 0; i < markers.length; i++) {
-                //If marker id is same as document id
-                if(markers[i].id == mId){
-                    //Show markers (same as document)
-                    markers[i].setVisible(true);
+            //If document does not have any hidden classes
+            else if($(this).attr("lat") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hiddenTime")  ){
+                //Get document id
+                var mId = $(this).attr("id");
+                //Loop through markers
+                for(var i = 0; i < markers.length; i++) {
+                    //If marker id is same as document id
+                    if(markers[i].id == mId){
+                        //Show markers (same as document)
+                        markers[i].setVisible(true);
+                    }
                 }
             }
-        }
-    });
+        });
+
+        //Get all rows with user specified time filter
+        $('.doc-row[time*="'+mTime+'"]').each(function() {
+            //If doc has attr lat (meaning it has a marker) and has hidden class
+            if($(this).attr("lat") && $(this).hasClass("hiddenTime")){
+                //Get document id
+                var mId = $(this).attr("id");
+                //Loop through markers
+                for(var i = 0; i < markers.length; i++) {
+                    //If marker id is same as document id
+                    if(markers[i].id == mId){
+                        //Hide markers (same as document)
+                        markers[i].setVisible(false);
+                    }
+                }
+
+            }
+            //If document does not have any hidden classes
+            else if($(this).attr("lat") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hiddenType") ){
+                //Get document id
+                var mId = $(this).attr("id");
+                //Loop through markers
+                for(var i = 0; i < markers.length; i++) {
+                    //If marker id is same as document id
+                    if(markers[i].id == mId){
+                        //Show markers (same as document)
+                        markers[i].setVisible(true);
+                    }
+                }
+            }
+
+        });
+    }
 
 }
 
@@ -541,7 +548,6 @@ function linkDoc(){
 }
 
 //Filter amount of markers to show
-//ToDo: Make sure that markerRange overwrites other filters!
 function markerRange(){
     $('#marker-range').on("change", function() {
         //Range value
@@ -561,13 +567,26 @@ function markerRange(){
             //Marker distance from center in km
             var distance = google.maps.geometry.spherical.computeDistanceBetween(center, latlong) / 1000;
 
-            //If distance bigger then specified range, hide marker
+            var id = markers[i].get("id");
+
+            //If distance bigger then specified range
             if(distance > range) {
+                //Hide document with marker
+                $('.doc-row[id*="'+id+'"]').addClass("hiddenRange");
+                //Hide marker
                 markers[i].setVisible(false);
+                //Reset checkbox filters
+                $('input:checkbox').prop('checked', true);
+
             }
-            //Else show marker
             else {
+                //Show document with marker
+                $('.doc-row[id*="'+id+'"]').removeClass("hiddenRange");
+                //Show marker
                 markers[i].setVisible(true);
+                //Reset checkbox filters
+                $('input:checkbox').prop('checked', true);
+
             }
         }
     });
