@@ -97,7 +97,7 @@ if (isset($_SESSION['mail'])) {
               <div class="form-group">
                 <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
                 <div class="col-sm-10">
-                  <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
+                  <input type="text" name="title" class="form-control" placeholder="Titel proces">
                 </div>
               </div>
             </div>
@@ -108,7 +108,7 @@ if (isset($_SESSION['mail'])) {
               <div class="form-group">
                 <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control" name="summaryProces" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
+                  <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
                 </div>
               </div>
             </div>
