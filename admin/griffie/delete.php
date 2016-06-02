@@ -61,7 +61,14 @@
     </div>
   </div>
 
-  <?php echo $db_getItem_info['type']; ?>
+  <?php
+
+    $db_getItem_info['type'];
+    $selectedBox = explode(",", $db_getItem_info['type']);
+    var_dump ($selectedBox);
+
+
+  ?>
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
