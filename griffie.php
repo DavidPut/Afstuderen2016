@@ -14,16 +14,63 @@ if (isset($_SESSION['mail'])) {
   exit();
 }
 
-//Check the user pressed the submit button
-if(isset($_POST['add'])) {
-  require_once "database/db_functions.php";
-  $db_login = new DB_functions();
-  $db_login_info = $db_login->griffieAdd();
-} else {
+// Nieuwe besluitvormingsproces
+if(isset($_POST['BVPadd'])) {
+  if(isset($_POST['BVPaddTitle'])) {
+    if(isset($_POST['BVPaddSummary'])) {
+      if(isset($_POST['BVPaddPeriod'])) {
 
-    };
+        $BVPtitle = $_POST['BVPaddTitle'];
+        $BVPsummary = $_POST['BVPaddSummary'];
+        $BVPperiod = $_POST['BVPaddPeriod'];
 
-// rare rrors soms
+        if (isset($_POST['BVPaddLocation'])) {
+          $BVPlocation = $_POST['BVPaddLocation'];
+        } else {
+          $BVPlocation = null;
+        }
+
+        if (isset($_POST['BVPaddTags'])) {
+          $BVPtags = $_POST['BVPaddTags'];
+        } else {
+          $BVPtags = null;
+        }
+
+        if (!empty($_POST['BVPaddType'])) {
+          $BVPtypes = "";
+          foreach ($_POST['BVPaddType'] as $selected) {
+            $BVPtypes = $types . $selected . ",";
+          }
+        } else {
+          $BVPtypes = null;
+        }
+        
+        if (!empty($_POST['BVPaddContact'])) {
+          $BVPcontact = "";
+          foreach ($_POST['BVPaddContact'] as $selected) {
+            $BVPcontact = $BVPcontact . $selected . ",";
+          }
+        } else {
+          // is het empty.. geen probleem
+          $BVPcontact = null;
+        }
+
+        require_once "database/db_functions.php";
+        $db_addPush = new DB_functions();
+        $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        
+      }
+    }
+  }
+}
+
+if($action == null || $action == 'list') {
+  require_once "database/db_functions.php"; //test
+  $db_getList = new DB_functions();
+  $db_getList_info = $db_getList->griffieList();
+}
+
+
 
 ?>
 
