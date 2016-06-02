@@ -57,7 +57,7 @@ if(isset($_POST['BVPadd'])) {
 
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
-        $db_addPush_info = $db_login->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
         
       }
     }
