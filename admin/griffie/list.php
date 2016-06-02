@@ -11,10 +11,10 @@
       </tr>
       </thead>
       <tbody>
-      <?php foreach ($db_getList as $db_getList_item) {
+      <?php foreach ($db_getList_info as $db_getList_info_item) {
       echo "
       <tr>
-        <td>" . $db_getList_item['id'] . "</td>
+        <td>" . $db_getList_info_item['id'] . "</td>
         <td>Een titel van een besluitvorming</td>
         <td>
           <p class='text-right'>
