@@ -3,6 +3,9 @@
 session_start();
 
 $action = urlencode($_GET['action']);
+if(isset($_GET['id'])) {
+  $id = urlencode($_GET['id']);
+}
 
 if (isset($_SESSION['mail'])) {
   if ($_SESSION['role'] != "griffier") {
@@ -12,6 +15,13 @@ if (isset($_SESSION['mail'])) {
 } else {
   header("Location: login.php");
   exit();
+}
+
+//list
+if($action == null || $action == 'list') {
+  require_once "database/db_functions.php"; //test
+  $db_getList = new DB_functions();
+  $db_getList_info = $db_getList->griffieList();
 }
 
 // Nieuwe besluitvormingsproces
@@ -39,7 +49,7 @@ if(isset($_POST['BVPadd'])) {
         if (!empty($_POST['BVPaddType'])) {
           $BVPtypes = "";
           foreach ($_POST['BVPaddType'] as $selected) {
-            $BVPtypes = $types . $selected . ",";
+            $BVPtypes = $BVPtypes . $selected . ",";
           }
         } else {
           $BVPtypes = null;
@@ -58,17 +68,24 @@ if(isset($_POST['BVPadd'])) {
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
         $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
-        
       }
     }
   }
 }
 
-if($action == null || $action == 'list') {
-  require_once "database/db_functions.php"; //test
-  $db_getList = new DB_functions();
-  $db_getList_info = $db_getList->griffieList();
+if ($action == 'edit' && $id != null){
+  echo "test";
+} elseif ($action == 'delete' && $id != null){
+  echo "test2";
+} else {
+
 }
+
+
+
+
+
+
 
 
 
