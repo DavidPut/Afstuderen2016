@@ -8,7 +8,7 @@
         <h3>Besluitvormingsproces <span class="label label-success"><i class="fa fa-plus fa-fw" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-          <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">annuleren<a href="griffie"></a></button>
+          <a class="btn btn-default" href="griffie">annuleren</a>
           <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success">toevoegen<a href="griffie"></a></button>
         </div>
         <div class="clearfix"></div>
@@ -123,7 +123,7 @@
       <div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw fa-lg" aria-hidden="true"></i> Er kunnen nog geen besluiten worden toegevoegd.</div>
     </div>
   </div>
-  
+
 
   <!-- extra gegevens -->
   <div class="row">
@@ -203,7 +203,8 @@
 
 
   <div class="row">
-    <div class="col-md-4 col-md-offset-4 col-xs-12">
+    <div class="col-md-2 col-md-offset-8 col-xs-12">
+      <a class="btn btn-lg btn-block btn-default" href="griffie">annuleren</a>
       <button class="btn btn-lg btn-success btn-block" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>
     </div>
   </div>
