@@ -6,7 +6,7 @@
         <h3>Besluitvormingsprocessen <span class="label label-info"><i class="fa fa-list fa-fw" aria-hidden="true"></i></span></h3>
       </div>
       <div class="pull-right">
-        <a class="btn btn-success pull-right" data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" href="griffie/add"><i class="fa fa-plus small-icon fa-lg"></i></a>
+        <a class="btn btn-success pull-right" href="griffie/add"><i class="fa fa-plus small-icon fa-lg"></i> Toevoegen</a>
       </div>
       <div class="clearfix"></div>
     </div>
