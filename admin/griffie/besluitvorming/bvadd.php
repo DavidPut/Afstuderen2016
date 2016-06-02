@@ -65,11 +65,18 @@ if (isset($_SESSION['mail'])) {
 <div class="container">
 <form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
 
-  <!-- proces -->
+  <!-- nieuwe besluitvorming -->
   <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-xs-12 ">
+    <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
-        <h4>Besluitvorming</h4>
+        <div class="pull-left">
+          <h3>Besluitvorming<span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
+        </div>
+        <div class="pull-right">
+          <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">aanpassen annuleren<a href="griffie/edit"></a></button>
+          <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces aanpassen" class="btn btn-list btn-primary">besluitvorming opslaan<a href="griffie/edit"></a></button>
+        </div>
+        <div class="clearfix"></div>
       </div>
     </div>
   </div>
