@@ -12,7 +12,7 @@
       </thead>
       <tbody>
       <?php foreach ($db_getList_info as $db_getList_info_item) {
-
+        echo "hoi";
         echo $db_getList_info_item['id'] . " 
       <tr>
         <td>" . $db_getList_info_item['id'] . "</td>
