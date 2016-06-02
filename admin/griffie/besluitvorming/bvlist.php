@@ -21,15 +21,13 @@ if($action == 'edit'){
     echo "
       <tr>
         <td>" . $x . "</td>
-        <td>Een titel van een besluitvorming</td>";
-        if($action == 'edit'){
-          echo "
+        <td>Een titel van een besluitvorming</td>
         <td>
-          <p class='text-right'>
-            <a class=\"btn btn-default \" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"besluitvorming/edit/\"><i class=\"fa fa-pencil fa-fw\"></i></a>
-            <a class=\"btn btn-danger \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"besluitvorming/delete/\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
-          </p>
+          <p class='text-right'>";
+            if($action == 'edit'){ echo "<a class=\"btn btn-default \" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"besluitvorming/edit/\"><i class=\"fa fa-pencil fa-fw\"></i></a>";}
+            echo "<a class=\"btn btn-danger ". if($action =='delete'){echo "disabled"}; ." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"besluitvorming/delete/\"><i class=\"fa fa-trash-o fa-fw\"></i></a>";
+          echo "</p>
         </td>
-      </tr>"; }} ?>
+      </tr>";} ?>
   </tbody>
 </table>
