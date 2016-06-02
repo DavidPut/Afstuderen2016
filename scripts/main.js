@@ -316,7 +316,7 @@ function addTimeColors(){
 }
 
 //Sidebar toggle
-state = true;
+var state = true;
 $(document).on('click', '.toggle-button', function() {
 
     //Mobile
