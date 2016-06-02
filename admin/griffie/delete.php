@@ -22,7 +22,7 @@
       <div class="form-group">
         <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
         <div class="col-sm-10">
-          <input readonly="readonly" type="text" class="form-control" value="<?php echo "$db_getItem_info['title']" ?>">
+          <input readonly="readonly" type="text" class="form-control" value="<?php echo $db_getItem_info['title']; ?>">
         </div>
       </div>
     </div>
