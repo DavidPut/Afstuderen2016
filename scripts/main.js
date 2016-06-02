@@ -29,7 +29,7 @@ $( document ).ready(function() {
     markerRange();
 });
 
-//ToDo: Switch to HTTPS website: HTML5 geolocation is depricated for non https websites. https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only
+//ToDo: Switch to HTTPS website: HTML5 geolocation is depricated for non https websites. ,https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only
 ////Get user position
 //function getPosition(){
 //    if (navigator.geolocation) {
@@ -660,7 +660,6 @@ function markerRange(){
                 markers[i].setVisible(true);
                 //Reset checkbox filters
                 $('input:checkbox').prop('checked', true);
-
             }
         }
     });
