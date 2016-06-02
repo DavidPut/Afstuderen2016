@@ -22,7 +22,7 @@
       <div class="form-group">
         <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
         <div class="col-sm-10">
-          <input readonly="readonly" type="text" class="form-control" placeholder="Titel besluitvorming">
+          <input readonly="readonly" type="text" class="form-control" value="<?php echo "$db_getItem_info['title']" ?>">
         </div>
       </div>
     </div>
@@ -226,7 +226,7 @@
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-xs-12">
-      <button class="btn btn-lg btn-danger btn-block" type = "submit" name = "delete" value = "Aanpassen">Verwijderen</button>
+      <button class="btn btn-lg btn-danger btn-block" type ="submit" name ="delete">verwijderen</button>
     </div>
   </div>
 

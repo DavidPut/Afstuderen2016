@@ -74,9 +74,11 @@ if(isset($_POST['BVPadd'])) {
 }
 
 if ($action == 'edit' && $id != null){
-  echo "test";
+  
 } elseif ($action == 'delete' && $id != null){
-  echo "test2";
+  require_once "database/db_functions.php"; 
+  $db_getItem = new DB_functions();
+  $db_getItem_info = $db_getList->griffieItem();
 } else {
 
 }
