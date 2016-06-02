@@ -9,7 +9,7 @@
         </div>
         <div class="pull-right">
           <a class="btn btn-default" href="griffie">annuleren</a>
-          <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success">toevoegen<a href="griffie"></a></button>
+          <button type="submit" name ="add" value ="toevoegen" data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success"></button>
         </div>
         <div class="clearfix"></div>
       </div>
