@@ -19,6 +19,7 @@ $( document ).ready(function() {
     characterLimit();
     addHeight();
     moveSidebar();
+    addIcons();
     addTimeColors();
     sortDocs();
     filterTags();
@@ -232,6 +233,79 @@ function moveSidebar(){
         $('.mob-sidebar').removeClass('side-bar');
         $('.no-padding').addClass('side-bar');
     }
+}
+
+//Add documents icons
+function addIcons() {
+    //Main icon
+    var mainIcon;
+    //Location icon
+    var locIcon;
+
+    //Get documents
+    $('.doc-row').each(function () {
+
+        //Get document attributes
+        var type = $(this).attr("type");
+        var time = $(this).attr("time");
+
+        //Type physical
+        if (type == "physical") {
+            //Set main icon
+            mainIcon = "./images/Icon_hammer.png";
+            //Set location icon
+            switch(time) {
+                case "low":
+                    locIcon = './images/Icon_fysiek_green.png';
+                    break;
+                case "mid":
+                    locIcon = './images/Icon_fysiek_orange.png';
+                    break;
+                case "high":
+                    locIcon = './images/Icon_fysiek_red.png';
+                    break;
+            }
+        }
+        //Type social
+        else if (type == "social") {
+            //Set main icon
+            mainIcon = './images/Icon_people.png';
+            //Set location icon
+            switch(time) {
+                case "low":
+                    locIcon = './images/Icon_sociaal_green.png';
+                    break;
+                case "mid":
+                    locIcon = './images/Icon_sociaal_orange.png';
+                    break;
+                case "high":
+                    locIcon = './images/Icon_sociaal_red.png';
+                    break;
+            }
+        }
+        //Type money
+        else if (type == "money") {
+            //Set main icon
+            mainIcon = './images/Icon_money.png';
+            //Set location icon
+            switch(time) {
+                case "low":
+                    locIcon = './Icon_bestuur_green.png';
+                    break;
+                case "mid":
+                    locIcon = './images/Icon_bestuur_orange.png';
+                    break;
+                case "high":
+                    locIcon = './images/Icon_bestuur_red.png';
+                    break;
+            }
+        }
+
+        //Insert main icon
+        $(this).find(".icon-document").attr('src', mainIcon);
+        //Insert location icon
+        $(this).find(".loc-icon").attr('src', locIcon);
+    });
 }
 
 //Add side colors
