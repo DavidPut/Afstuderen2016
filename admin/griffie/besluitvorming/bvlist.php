@@ -2,7 +2,7 @@
 
 ?>
 
-<a class="btn btn-success pull-right" data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" href="griffie/add"><i class="fa fa-plus small-icon fa-lg"></i> Toevoegen</a>
+<a class="btn btn-success pull-right" href="griffie/besluitvorming/add"></i>toevoegen</a>
 <table class="table table-hover table-list">
   <thead>
   <tr>
@@ -20,7 +20,6 @@
         <td>Een titel van een besluitvorming</td>
         <td>
           <p class='text-right'>
-            <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina' href=\"griffie/add\"><i class=\"fa fa-long-arrow-right fa-fw\"></i></a>
             <a class=\"btn btn-default \" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"besluitvorming/edit/\"><i class=\"fa fa-pencil fa-fw\"></i></a>
             <a class=\"btn btn-danger disabled\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"besluitvorming/delete/\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
           </p>
