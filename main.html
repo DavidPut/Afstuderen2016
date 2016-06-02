@@ -164,10 +164,10 @@
                     </div>
                 </form>
 
-                <!--Tag search bar-->
+                <!--Tags search bar-->
                 <form id="tags-form" role="search">
                     <div class="input-group">
-                        <input type="text" class="form-control input-tags" placeholder="Tags" name="srch-term" id="srch-tag">
+                        <input type="text" class="form-control input-tags" placeholder="Zoekwoorden" name="srch-term" id="srch-tag">
                         <div class="input-group-btn">
                             <button class="btn btn-default btn-tags" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                         </div>
@@ -175,9 +175,9 @@
                 </form>
             </div>
 
+            <!--Document type filters-->
             <div class="doc-type-block">
                 <span class="text-center"><h4>Type besluitvorming</h4></span>
-                <!--Filter type document-->
                 <form id="type-form" role="filter">
                     <input id="checkbox-physical" type="checkbox" name="physical" value="Physical" checked> <img src="images/Icon_hammer.png" alt="Icon physical"> = Fysiek </br>
                     <input id="checkbox-social" type="checkbox" name="social" value="Social" checked> <img src="images/Icon_people.png" alt="Icon social"> = Sociaal  </br>
@@ -185,14 +185,15 @@
                 </form>
             </div>
 
+            <!--Sidebar button mobile-->
             <div class="toggle-button">
                 <!--<button></button>-->
                 <p class="rotate filter-txt text-center">Filter</p>
             </div>
 
+            <!--Document time filters-->
             <div class="doc-time-block">
                 <span class="text-center"><h4>Tijdsindicatie</h4></span>
-                <!--Filter tijd document-->
                 <form id="time-form" role="filter">
                     <div class="input-time">
                         <input id="checkbox-low" type="checkbox" name="low" value="<1" checked>  <img class="icon-time" src="images/Circle_green.png" alt="Icon physical"> = <1 jaar
@@ -206,10 +207,10 @@
                 </form>
             </div>
 
+            <!--Marker filter slider-->
             <div class="slider-block">
                 <span class="text-center"><h4>Afstand</h4></span>
                 <span id="range-value" class="text-center"><h5>50km</h5></span>
-                <!--Filter afstand-->
                 <form id="marker-form" role="filter">
                     <div data-role="rangeslider">
                         <input type="range" name="marker-range" id="marker-range" value="50" min="0" max="100">

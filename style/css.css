@@ -1,26 +1,4 @@
-html{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-
-}
-
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-#map {
-    height: 50%;
-    border-width: 0 0 2px 0;
-    border-style: solid;
-    z-index: 100;
-}
-
+/** Fonts **/
 @font-face {
     font-family: 'Glyphicons Halflings';
     src: url('../fonts/glyphicons-halflings-regular.eot');
@@ -57,6 +35,22 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/** Global **/
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .container-fluid{
     margin-top: 1%;
     padding-right:0 !important;
@@ -66,6 +60,12 @@ body {
 }
 
 /** Main **/
+#map {
+    height: 50%;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    z-index: 100;
+}
 
 .doc-block{
     border-width: 1px;
@@ -95,7 +95,6 @@ body {
     margin:auto;
 }
 
-
 .search-form{
     margin-top: 8px;
     width: 250px;
@@ -105,12 +104,10 @@ body {
     margin-top:20px;
 }
 
-
 .side-bar{
     border-width: 1px;
     border-style: solid;
     margin-bottom: 1%;
-
 }
 
 .no-padding{
@@ -169,11 +166,9 @@ body {
     margin: 5px 0;
     border: 2px solid #D0D0D0;
     border-radius: 5px;
-    height: 24px;
     cursor: pointer;
     width: 25px;
     height: 80px;
-    position: relative;
     display: inline-block;
     user-select: none;
     -webkit-user-select:
@@ -261,7 +256,6 @@ body {
     cursor: pointer;
 }
 
-
 .closed{
     display: none;
 }
@@ -317,7 +311,6 @@ body {
 }
 
 .rotate {
-
     /* Safari */
     -webkit-transform: rotate(-90deg);
 
@@ -332,6 +325,5 @@ body {
 
     /* Internet Explorer */
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-
 }
 
