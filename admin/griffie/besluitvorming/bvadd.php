@@ -70,10 +70,10 @@ if (isset($_SESSION['mail'])) {
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
         <div class="pull-left">
-          <h3>Nieuwe Besluitvorming<span class="label label-success"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
+          <h3>Besluitvorming <span class="label label-success"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-          <button class="btn btn-list btn-default">annuleren<a href="griffie/edit"></a></button>
+          <button class="btn btn-list btn-default">annuleren<a href="./griffie/edit"></a></button>
           <button class="btn btn-list btn-success">opslaan<a href="griffie/edit"></a></button>
         </div>
         <div class="clearfix"></div>
