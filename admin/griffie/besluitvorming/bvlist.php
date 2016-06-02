@@ -1,8 +1,10 @@
 <?php
 
-?>
 
-<a class="btn btn-success pull-right" href="griffie/besluitvorming/add"></i>toevoegen</a>
+if($action == 'edit'){
+  echo '<a class="btn btn-success pull-right" href="griffie/besluitvorming/add"></i>toevoegen</a>';
+}
+?>
 <table class="table table-hover table-list">
   <thead>
   <tr>
