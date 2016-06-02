@@ -23,8 +23,8 @@ if(isset($_POST['loginsubmit'])) {
         exit();
       } else {
         // verkeerde wachtwoord
-        header("Location: login");
-        exit();
+        //header("Location: login");
+        //exit();
       }
     }
   }
