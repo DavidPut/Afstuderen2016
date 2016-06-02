@@ -37,6 +37,7 @@ class DB_functions
   
   public function griffieList(){
     $result = mysqli_query($this->db->connect(), "SELECT * FROM process") or die(mysqli_error($this->db->connect()));
+    echo "wajo";
     $no_of_rows = mysqli_num_rows($result);
     if ($no_of_rows > 0) {
       return $result;
