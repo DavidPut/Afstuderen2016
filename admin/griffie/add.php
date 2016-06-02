@@ -8,8 +8,8 @@
         <h3>Besluitvormingsproces <span class="label label-success"><i class="fa fa-plus fa-fw" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-          <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">annuleren<a href="griffie"></a></button>
-          <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" class="btn btn-list btn-success">toevoegen<a href="griffie"></a></button>
+          <a class="btn btn-default" href="griffie">annuleren</a>
+          <button type="submit" name ="add" class="btn btn-list btn-success">toevoegen</button>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -120,99 +120,9 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-
-
-      <div class = "panel panel-default">
-        <div class = "panel-heading">
-          <h3 class = "panel-title">Nieuwe besluitvorming</h3>
-        </div>
-        <div class = "panel-body">
-
-          <div class="row">
-            <div class="col-md-12 col-xs-12 ">
-              <div class="form-group">
-                <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
-                <div class="col-sm-10">
-                  <input type="text" name="titleProces" class="form-control" placeholder="Titel proces">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-xs-12 ">
-              <div class="form-group">
-                <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
-                <div class="col-sm-10">
-                  <textarea class="form-control" name="summaryProces" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 col-xs-12 ">
-              <div class="form-group">
-                <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
-                <div class="col-sm-10">
-                  <input class="form-control" type="file" name="inputFile"></input>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw fa-lg" aria-hidden="true"></i> Er kunnen nog geen besluiten worden toegevoegd.</div>
     </div>
   </div>
-
-  <!-- proces uitprinten als die er zijn voor edit pagina -->
-  <div class="row">
-      <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-        <div class = "panel panel-primary">
-            <div class = "panel-heading">
-                <h3 class = "panel-title">Bestaande besluitvorming</h3>
-            </div>
-            <div class = "panel-body">
-
-                <div class="row">
-      <div class="col-md-12 col-xs-12 ">
-        <div class="form-group">
-          <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
-          <div class="col-sm-10">
-            <input type="text" name="titleProces" class="form-control" value="Commissievergaderinng">
-          </div>
-        </div>
-      </div>
-    </div>
-
-                <div class="row">
-      <div class="col-md-12 col-xs-12 ">
-        <div class="form-group">
-          <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
-          <div class="col-sm-10">
-            <textarea class="form-control" name="summaryProces" rows="6">Samenvatting besluit van de commissievergadering</textarea>
-          </div>
-        </div>
-      </div>
-    </div>
-
-                <div class="row">
-      <div class="col-md-12 col-xs-12 ">
-        <div class="form-group">
-          <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
-          <div class="col-sm-10">
-            <input class="form-control" type="file" name="inputFile"></input>
-          </div>
-        </div>
-      </div>
-    </div>
-            </div>
-        </div>
-       </div>
-     </div>
-
-
-
 
 
   <!-- extra gegevens -->
@@ -226,48 +136,7 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
-        <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
-        <div class="col-sm-10">
-          <input type="text" name="agendaTitle" class="form-control" placeholder="Titel agenda">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group row">
-        <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
-        <div class="col-md-2">
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <select class="form-control">
-            <option>Januari</option>
-            <option>Februari</option>
-            <option>Maart</option>
-            <option>April</option>
-            <option>Mei</option>
-            <option>Juli</option>
-            <option>Juni</option>
-            <option>Augustus</option>
-            <option>September</option>
-            <option>Oktober</option>
-            <option>November</option>
-            <option>December</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <select class="form-control">
-            <option>2016</option>
-            <option>2017</option>
-          </select>
-        </div>
-      </div>
+      <div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw fa-lg" aria-hidden="true"></i> Er kan nog geen agenda worden toegevoegd.</div>
     </div>
   </div>
 
@@ -293,8 +162,9 @@
 
 
   <div class="row">
-    <div class="col-md-4 col-md-offset-4 col-xs-12">
-      <button class="btn btn-lg btn-success btn-block" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>
+    <div class="col-md-4 col-md-offset-5 col-xs-12">
+      <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
+      <button class="btn btn-lg btn-success text-right" type="submit" name="add">toevoegen</button>
     </div>
   </div>
 

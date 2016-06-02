@@ -14,6 +14,15 @@ if (isset($_SESSION['mail'])) {
   exit();
 }
 
+//Check the user pressed the submit button
+if(isset($_POST['add'])) {
+  require_once "database/db_functions.php";
+  $db_login = new DB_functions();
+  $db_login_info = $db_login->griffieAdd();
+} else {
+
+    };
+
 // rare rrors soms
 
 ?>
@@ -25,11 +34,11 @@ if (isset($_SESSION['mail'])) {
   <base href="//gemeentedossier.nl" />
   <meta charset="utf-8">
 
-  <meta http-equiv="cache-control" content="max-age=0" />
-  <meta http-equiv="cache-control" content="no-cache" />
-  <meta http-equiv="expires" content="0" />
-  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-  <meta http-equiv="pragma" content="no-cache" />
+<!--  <meta http-equiv="cache-control" content="max-age=0" />-->
+<!--  <meta http-equiv="cache-control" content="no-cache" />-->
+<!--  <meta http-equiv="expires" content="0" />-->
+<!--  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />-->
+<!--  <meta http-equiv="pragma" content="no-cache" />-->
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.css"/>
@@ -67,19 +76,19 @@ if (isset($_SESSION['mail'])) {
   <?php
   switch ($action) {
     case "list";
-          require 'admin/griffie/list.php';
+          require_once 'admin/griffie/list.php';
           break;
     case "add";
-          require 'admin/griffie/add.php';
+          require_once 'admin/griffie/add.php';
           break;
     case "edit";
-          require 'admin/griffie/edit.php';
+          require_once 'admin/griffie/edit.php';
           break;
     case "delete";
-          require 'admin/griffie/delete.php';
+          require_once 'admin/griffie/delete.php';
           break;
     default:
-          require 'admin/griffie/list.php';
+          require_once 'admin/griffie/list.php';
           break; }
   ?>
 </div>
