@@ -212,7 +212,7 @@
   $db_getItem_info['contact'];
   $selectedBox = explode(",", $db_getItem_info['contact']);
   ?>
-  
+
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group">
@@ -236,7 +236,8 @@
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-xs-12">
-      <button class="btn btn-lg btn-danger btn-block" type ="submit" name ="BVPdelete">verwijderen</button>
+      <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
+      <button class="btn btn-lg btn-danger text-right" type ="submit" name ="BVPdelete">verwijderen</button>
     </div>
   </div>
 
