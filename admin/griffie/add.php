@@ -203,7 +203,7 @@
 
 
   <div class="row">
-    <div class="col-md-2 col-md-offset-8 col-xs-12">
+    <div class="col-md-8 col-md-offset-4 col-xs-12">
       <a class="btn btn-lg btn-default btn-block text-left" href="griffie">annuleren</a>
       <button class="btn btn-lg btn-success btn text-left" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>
     </div>
