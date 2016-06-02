@@ -12,7 +12,8 @@
       </thead>
       <tbody>
       <?php foreach ($db_getList_info as $db_getList_info_item) {
-      echo "
+
+        echo $db_getList_info_item['id'] . " 
       <tr>
         <td>" . $db_getList_info_item['id'] . "</td>
         <td>Een titel van een besluitvorming</td>
