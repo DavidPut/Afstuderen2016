@@ -62,14 +62,8 @@
   </div>
 
   <?php
-
     $db_getItem_info['type'];
     $selectedBox = explode(",", $db_getItem_info['type']);
-    $selectedBoxCount = count($selectedBox) -1;
-  echo $selectedBoxCount;
-    var_dump ($selectedBox);
-
-
   ?>
 
   <div class="row">
@@ -78,13 +72,13 @@
         <label for="inputTags" class="col-sm-2 control-label">Soort</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input disabled type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
+            <input disabled type="checkbox" id="inlineCheckbox1" value="F" <? if(phpin_array('F',$selectedBox)){echo "checked";} ?>> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input disabled type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
+            <input disabled type="checkbox" id="inlineCheckbox2" value="S" <? if(phpin_array('S',$selectedBox)){echo "checked";} ?>> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input disabled type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
+            <input disabled type="checkbox" id="inlineCheckbox3" value="B" <? if(phpin_array('B',$selectedBox)){echo "checked";} ?>> Bestuur en middelen
           </label>
         </div>
       </div>
