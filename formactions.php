@@ -19,7 +19,7 @@ if(isset($_POST['loginsubmit'])) {
         $_SESSION['role'] = $db_login_info["role"];
         $_SESSION['uid'] = $db_login_info["id"];
 
-        header("location: login");
+        header("location: griffie");
         exit();
       } else {
         // verkeerde wachtwoord
