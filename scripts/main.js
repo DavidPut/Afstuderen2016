@@ -109,13 +109,13 @@ function initMap(lat, long) {
         else if  (type == "social"){
             switch(time) {
                 case "low":
-                    image = './images/Marker_Icon_sociaal_green';
+                    image = './images/Marker_Icon_sociaal_green.png';
                     break;
                 case "mid":
-                    image = './images/Marker_Icon_sociaal_orange';
+                    image = './images/Marker_Icon_sociaal_orange.png';
                     break;
                 case "high":
-                    image = './images/Marker_Icon_sociaal_red';
+                    image = './images/Marker_Icon_sociaal_red.png';
                     break;
             }
         }
@@ -123,13 +123,13 @@ function initMap(lat, long) {
         else if  (type == "money"){
             switch(time) {
                 case "low":
-                    image = './images/Marker_Icon_bestuur_green';
+                    image = './images/Marker_Icon_bestuur_green.png';
                     break;
                 case "mid":
-                    image = './images/Marker_Icon_bestuur_orange';
+                    image = './images/Marker_Icon_bestuur_orange.png';
                     break;
                 case "high":
-                    image = './images/Marker_Icon_bestuur_red';
+                    image = './images/Marker_Icon_bestuur_red.png';
                     break;
             }
         }
