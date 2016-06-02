@@ -78,7 +78,7 @@ if (isset($_SESSION['mail'])) {
     <div class="container">
       
       <div class="row">
-          <form action="formactions.php <?php // echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+          <form action="formactions.php<?php // echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
             
             <div class="row">
               <div class="col-md-4 col-xs-12 col-md-offset-4">
