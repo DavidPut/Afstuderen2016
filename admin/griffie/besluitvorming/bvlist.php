@@ -29,7 +29,5 @@ if($action == 'edit'){
           echo "</p>
         </td>
       </tr>";} ?>
-
-  <?php for
   </tbody>
 </table>
