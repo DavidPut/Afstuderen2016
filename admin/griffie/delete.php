@@ -65,6 +65,8 @@
 
     $db_getItem_info['type'];
     $selectedBox = explode(",", $db_getItem_info['type']);
+    $selectedBoxCount = count($selectedBox) -1;
+  echo $selectedBoxCount;
     var_dump ($selectedBox);
 
 
