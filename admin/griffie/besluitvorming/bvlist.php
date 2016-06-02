@@ -24,7 +24,7 @@ if($action == 'edit'){
         <td>
           <p class='text-right'>
             <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"griffie/edit/".$db_getList_info_item['id']."\"><i class=\"fa fa-pencil fa-fw\"></i></a>
-            <a class=\"btn btn-danger disabled\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"griffie/delete/".$db_getList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
+            <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"griffie/delete/".$db_getList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
           </p>
         </td>
       </tr>"; } ?>
