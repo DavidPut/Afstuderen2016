@@ -25,9 +25,11 @@ if($action == 'edit'){
         <td>
           <p class='text-right'>";
             if($action == 'edit'){ echo "<a class=\"btn btn-default \" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"besluitvorming/edit/\"><i class=\"fa fa-pencil fa-fw\"></i></a>";}
-            echo "<a class=\"btn btn-danger ". if($action =='delete'){echo "disabled"}; ." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"besluitvorming/delete/\"><i class=\"fa fa-trash-o fa-fw\"></i></a>";
+            echo "<a class=\"btn btn-danger ".(($action == 'delete')?"'disabled'":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"besluitvorming/delete/\"><i class=\"fa fa-trash-o fa-fw\"></i></a>";
           echo "</p>
         </td>
       </tr>";} ?>
+
+  <?php for
   </tbody>
 </table>
