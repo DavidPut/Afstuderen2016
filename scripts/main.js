@@ -397,47 +397,29 @@ function filterType(){
     $('#checkbox-physical').click(function(){
         if ($('#checkbox-physical').is(':checked')) {
             $('.doc-row[type*="physical"]').removeClass("hiddenType");
-            markerReset();
         } else {
             $('.doc-row[type*="physical"]').addClass("hiddenType");
-            markerFilterType("physical");
         }
+        markerFilter("physical", "");
     });
 
     $('#checkbox-social').click(function(){
-
         if ($(this).is(':checked')) {
             $('.doc-row[type*="social"]').removeClass("hiddenType");
-            markerReset();
         } else {
             $('.doc-row[type*="social"]').addClass("hiddenType");
-            markerFilterType("social");
         }
+        markerFilter("social", "");
     });
 
     $('#checkbox-money').click(function(){
-
         if ($(this).is(':checked')) {
             $('.doc-row[type*="money"]').removeClass("hiddenType");
-            markerReset();
         } else {
             $('.doc-row[type*="money"]').addClass("hiddenType");
-            markerFilterType("money");
         }
+        markerFilter("money", "");
     });
-
-    //FILTER MARKERS
-    function markerFilterType(type){
-        for(var i = 0; i < markers.length; i++) {
-            //Get marker type
-            var markerType = markers[i].get("type");
-
-            //If marker has same type as user filter
-            if(markerType == type){
-                markers[i].setVisible(false);
-            }
-        }
-    }
 }
 
 //Filter by time
@@ -448,56 +430,106 @@ function filterTime(){
     $('#checkbox-low').click(function(){
         if ($(this).is(':checked')) {
             $('.doc-row[time*="low"]').removeClass("hiddenTime");
-            markerReset();
+            //markerReset("", "low");
         } else {
             $('.doc-row[time*="low"]').addClass("hiddenTime");
-            markerFilterTime("low");
+            //markerFilterTime("low");
         }
+        markerFilter("", "low");
     });
 
     //Filter by 1-5 year
     $('#checkbox-mid').click(function(){
         if ($(this).is(':checked')) {
             $('.doc-row[time*="mid"]').removeClass("hiddenTime");
-            markerReset();
+            //markerReset("", "mid");
         } else {
             $('.doc-row[time*="mid"]').addClass("hiddenTime");
-            markerFilterTime("mid");
+            //markerFilterTime("mid");
         }
+        markerFilter("", "mid");
     });
 
     //Filter by 5+ year
     $('#checkbox-high').click(function(){
         if ($(this).is(':checked')) {
             $('.doc-row[time*="high"]').removeClass("hiddenTime");
-            markerReset();
+            //markerReset("", "high");
         } else {
             $('.doc-row[time*="high"]').addClass("hiddenTime");
-            markerFilterTime("high");
+            //markerFilterTime("high");
+        }
+        markerFilter("", "high");
+    });
+
+
+}
+
+//Filter markers
+function markerFilter(mType, mTime){
+
+    //Get all rows with user specified type filter
+    $('.doc-row[type*="'+mType+'"]').each(function() {
+        //If doc has attr lat (meaning it has a marker) and has hidden class
+        if($(this).attr("lat") && $(this).hasClass("hiddenType")){
+            //Get document id
+            var mId = $(this).attr("id");
+            //Loop through markers
+            for(var i = 0; i < markers.length; i++) {
+                //If marker id is same as document id
+                if(markers[i].id == mId){
+                    //Hide markers (same as document)
+                    markers[i].setVisible(false);
+                }
+            }
+        }
+
+        //If document does not have any hidden classes
+        else if($(this).attr("lat") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hiddenTime") ){
+            //Get document id
+            var mId = $(this).attr("id");
+            //Loop through markers
+            for(var i = 0; i < markers.length; i++) {
+                //If marker id is same as document id
+                if(markers[i].id == mId){
+                    //Show markers (same as document)
+                    markers[i].setVisible(true);
+                }
+            }
         }
     });
 
-    //FILTER MARKERS
-    function markerFilterTime(time){
-        for(var i = 0; i < markers.length; i++) {
-            //Get marker time
-            var markerTime = markers[i].get("time");
+    //Get all rows with user specified time filter
+    $('.doc-row[time*="'+mTime+'"]').each(function() {
+        //If doc has attr lat (meaning it has a marker) and has hidden class
+        if($(this).attr("lat") && $(this).hasClass("hiddenTime")){
+            //Get document id
+            var mId = $(this).attr("id");
+            //Loop through markers
+            for(var i = 0; i < markers.length; i++) {
+                //If marker id is same as document id
+                if(markers[i].id == mId){
+                    //Hide markers (same as document)
+                    markers[i].setVisible(false);
+                }
+            }
 
-            //If marker has same time as user filter
-            if(markerTime == time){
-                markers[i].setVisible(false);
+        }
+        //If document does not have any hidden classes
+        else if($(this).attr("lat") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hiddenType") ){
+            //Get document id
+            var mId = $(this).attr("id");
+            //Loop through markers
+            for(var i = 0; i < markers.length; i++) {
+                //If marker id is same as document id
+                if(markers[i].id == mId){
+                    //Show markers (same as document)
+                    markers[i].setVisible(true);
+                }
             }
         }
-    }
-}
+    });
 
-//Reset markers and show on map
-//ToDo: Atm it resets all markers! -> add marker id to reset specific marker
-//ToDo: Also make sure that markerRange overwrites other filters!
-function markerReset(){
-    for(var i = 0; i < markers.length; i++) {
-        markers[i].setVisible(true);
-    }
 }
 
 //Link document to detail page
@@ -509,6 +541,7 @@ function linkDoc(){
 }
 
 //Filter amount of markers to show
+//ToDo: Make sure that markerRange overwrites other filters!
 function markerRange(){
     $('#marker-range').on("change", function() {
         //Range value
