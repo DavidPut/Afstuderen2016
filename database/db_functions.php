@@ -40,8 +40,8 @@ class DB_functions
     $no_of_rows = mysqli_num_rows($result);
     echo $no_of_rows;
     if ($no_of_rows > 0) {
-      print_r($result);
-      return $result;
+      $results = mysqli_fetch_assoc($result);
+      return $results;
       $this->db->close();
     } else {
       return false;
