@@ -38,6 +38,21 @@ class DB_functions
   public function griffielist(){
     
   }
+
+  public function griffieAdd(){
+
+//    INSERT INTO `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `adddate`)
+
+    $result = mysqli_query($this->db->connect(), "INSERT INTO process('id','title','summary','location','type','period','adddate') VALUES (NULL, 'besluitvorming test', 'Een mooie test voor een besluitvorming. Gemaakt door de griffier van de gemeenten Dromenland. Er staat een korte samenvatting hier. ', '2988 XC', 'f,s,b', '1', '')")or die( mysqli_error($this->db->connect()));
+    //$result = mysqli_query($this->db->connect(), "INSERT INTO zoof_pictures(tag, uid, likes, url, created_at) VALUES('$tag', '$id', 0, '$url', NOW())") or die( mysqli_error($this->db->connect()));
+    // check for successful store
+    if ($result) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
   
   public function raadslidlist(){
     
