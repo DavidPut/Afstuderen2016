@@ -57,7 +57,7 @@ if(isset($_POST['BVPadd'])) {
 
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
-        $db_addPush = $db_login->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        $db_addPush_info = $db_login->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
         
       }
     }
@@ -67,9 +67,7 @@ if(isset($_POST['BVPadd'])) {
 if($action == null || $action == 'list') {
   require_once "database/db_functions.php";
   $db_getList = new DB_functions();
-  $db_getList = $db_login->griffieList();
-
-  echo $db_getList;
+  $db_getList_info = $db_getList->griffieList();
 }
 
 
