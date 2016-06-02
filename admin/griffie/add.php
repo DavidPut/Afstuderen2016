@@ -1,4 +1,4 @@
-<form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+<form class="form-horizontal" action="formactions.php <?php // echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
 
   <!-- nieuwe besluitvorming -->
   <div class="row">

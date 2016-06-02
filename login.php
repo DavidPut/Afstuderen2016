@@ -78,7 +78,7 @@ if (isset($_SESSION['mail'])) {
     <div class="container">
       
       <div class="row">
-          <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+          <form action="formactions.php <?php // echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
             
             <div class="row">
               <div class="col-md-4 col-xs-12 col-md-offset-4">
@@ -101,7 +101,7 @@ if (isset($_SESSION['mail'])) {
             
             <div class="row">
               <div class="col-md-4 col-md-offset-4 col-xs-12">
-               <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="inloggen">Inloggen</button>
+               <button class="btn btn-lg btn-primary btn-block" type="submit" name="login" value="inloggen">Inloggen</button>
 
               </div>
             </div>
