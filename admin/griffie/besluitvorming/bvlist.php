@@ -8,8 +8,6 @@ if($action == 'edit'){
 <table class="table table-hover table-list">
   <thead>
   <tr>
-
-    <th class="col-md-1">Nummer</th>
     <th class="col-md-8">Titel</th>
     <?php if($action == 'edit') {
       echo '<th class="col-md-3 text-right">opties</th>';
