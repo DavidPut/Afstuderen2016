@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['login'])) {
+if(isset($_POST['loginsubmit'])) {
   if (isset($_POST['mail'])) {
     if (isset($_POST['password'])) {
 
