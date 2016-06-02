@@ -56,22 +56,21 @@ if(isset($_POST['BVPadd'])) {
         }
 
         require_once "database/db_functions.php";
-        $db_login = new DB_functions();
-        $db_login_info = $db_login->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        $db_addPush = new DB_functions();
+        $db_addPush = $db_login->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
         
       }
-
-
-
-
-
     }
   }
-} else {
+}
 
-    };
+if($action == null || $action == 'list') {
+  require_once "database/db_functions.php";
+  $db_getList = new DB_functions();
+  $db_getList = $db_login->griffielist();
+}
 
-// rare rrors soms
+
 
 ?>
 
