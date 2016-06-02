@@ -14,6 +14,13 @@ if (isset($_SESSION['mail'])) {
   exit();
 }
 
+//Check the user pressed the submit button
+if(isset($_POST['add'])) {
+  echo "check";
+} else {
+
+    };
+
 // rare rrors soms
 
 ?>
