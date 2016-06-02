@@ -3,9 +3,10 @@
   <div class="col-md-12 col-xs-12 ">
     <div class="page-header">
       <div class="pull-left">
-        <h3>Besluitvormingsprocessen <span class="label label-default"><i class="fa fa-list fa-fw" aria-hidden="true"></i></span></h3>
+        <h3>Besluitvormingsprocessen <span class="label label-info"><i class="fa fa-list fa-fw" aria-hidden="true"></i></span></h3>
       </div>
       <div class="pull-right">
+        <a class="btn btn-success pull-right" data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" href="griffie/add"><i class="fa fa-plus small-icon fa-lg"></i></a>
       </div>
       <div class="clearfix"></div>
     </div>
@@ -14,7 +15,6 @@
 
 <div class="row">
   <div class="col-md-12 col-md-offset-0 col-xs-12 ">
-    <a class="btn btn-success pull-right" data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces toevoegen" href="griffie/add"><i class="fa fa-plus small-icon fa-lg"></i></a>
     <table class="table table-hover table-list">
       <thead>
       <tr>
