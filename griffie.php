@@ -67,7 +67,7 @@ if(isset($_POST['BVPadd'])) {
 if($action == null || $action == 'list') {
   require_once "database/db_functions.php";
   $db_getList = new DB_functions();
-  $db_getList = $db_login->griffielist();
+  $db_getList = $db_login->griffieList();
 }
 
 
