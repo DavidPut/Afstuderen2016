@@ -21,8 +21,8 @@
         <td>
           <p class='text-right'>
             <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina' href=\"griffie/add\"><i class=\"fa fa-long-arrow-right fa-fw\"></i></a>
-            <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"griffie/besluitvorming/bvedit.php\"><i class=\"fa fa-pencil fa-fw\"></i></a>
-            <a class=\"btn btn-danger\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"griffie/besluitvorming/bvdelete.php\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
+            <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"besluitvorming/bvedit.php\"><i class=\"fa fa-pencil fa-fw\"></i></a>
+            <a class=\"btn btn-danger\" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"besluitvorming/bvdelete.php\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
           </p>
         </td>
       </tr>"; } ?>
