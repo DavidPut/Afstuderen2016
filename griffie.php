@@ -68,6 +68,8 @@ if($action == null || $action == 'list') {
   require_once "database/db_functions.php";
   $db_getList = new DB_functions();
   $db_getList = $db_login->griffieList();
+
+  echo $db_getList;
 }
 
 
