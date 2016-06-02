@@ -77,6 +77,10 @@ class DB_functions
     }
 
   }
+
+  public function griffieDelete(){
+    
+  }
   
   public function raadslidList(){
     
