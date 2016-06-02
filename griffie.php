@@ -16,7 +16,9 @@ if (isset($_SESSION['mail'])) {
 
 //Check the user pressed the submit button
 if(isset($_POST['add'])) {
-  echo "check";
+  require_once "database/db_functions.php";
+  $db_login = new DB_functions();
+  $db_login_info = $db_login->griffieAdd();
 } else {
 
     };
