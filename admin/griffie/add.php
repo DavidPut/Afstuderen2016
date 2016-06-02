@@ -204,8 +204,8 @@
 
   <div class="row">
     <div class="col-md-2 col-md-offset-8 col-xs-12">
-      <a class="btn btn-lg btn-block btn-default" href="griffie">annuleren</a>
-      <button class="btn btn-lg btn-success btn-block" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>
+      <a class="btn btn-lg btn-default" href="griffie">annuleren</a>
+      <button class="btn btn-lg btn-success" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>
     </div>
   </div>
 
