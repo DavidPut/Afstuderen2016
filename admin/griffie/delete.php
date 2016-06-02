@@ -72,20 +72,18 @@
         <label for="inputTags" class="col-sm-2 control-label">Soort</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input disabled type="checkbox" id="inlineCheckbox1" <?php if(in_array('F',$selectedBox)){echo 'value="F" checked';} ?>> Fysiek
+            <input disabled type="checkbox" id="inlineCheckbox1" value="F" <?php if(in_array('F',$selectedBox)){echo 'checked';} ?>> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input disabled type="checkbox" id="inlineCheckbox2" <?php if(in_array('S',$selectedBox)){echo 'value="S" checked';} ?>> Sociaal
+            <input disabled type="checkbox" id="inlineCheckbox2" value="S" <?php if(in_array('S',$selectedBox)){echo 'checked';} ?>> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input disabled type="checkbox" id="inlineCheckbox3" <?php if(in_array('B',$selectedBox)){echo 'value="B" checked';} ?>> Bestuur en middelen
+            <input disabled type="checkbox" id="inlineCheckbox3" value="B" <?php if(in_array('B',$selectedBox)){echo 'checked';} ?>> Bestuur en middelen
           </label>
         </div>
       </div>
     </div>
   </div>
-
-  <?php echo $db_getItem_info['period']; ?>
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
@@ -94,19 +92,19 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input disabled type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              <input disabled type="radio" name="optionsRadios" id="optionsRadios1" value="1" <?php if($db_getItem_info['period'] == '1'){echo 'checked';}?>>
               Korter dan een jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input disabled type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input disabled type="radio" name="optionsRadios" id="optionsRadios2" value="2" <?php if($db_getItem_info['period'] == '2'){echo 'checked';}?>>
               Langer dan een jaar, korter dan vijf jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input disabled type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+              <input disabled type="radio" name="optionsRadios" id="optionsRadios3" value="3" <?php if($db_getItem_info['period'] == '3'){echo 'checked';}?>>
               Vijf jaar of langer
             </label>
           </div>
