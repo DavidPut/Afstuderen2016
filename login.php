@@ -2,34 +2,6 @@
 
 session_start();
 
-//Check the user pressed the submit button
-if(isset($_POST['submit'])) {
-  if (isset($_POST['mail'])) {
-    if (isset($_POST['password'])) {
-
-      $form_mail = $_POST['mail'];
-      $form_pass = $_POST['password'];
-
-      require_once "database/db_functions.php";
-      $db_login = new DB_functions();
-      $db_login_info = $db_login->login($form_mail);
-
-      $database_pass = $db_login_info['password'];
-
-      if (md5($form_pass) == $database_pass) {
-        $_SESSION['mail'] = $db_login_info['mail'];
-        $_SESSION['name'] = $db_login_info["name"];
-        $_SESSION['role'] = $db_login_info["role"];
-        $_SESSION['uid'] = $db_login_info["id"];
-      } else {
-        // verkeerde wachtwoord
-        header("Location: login");
-        exit();
-      }
-    }
-  }
-}
-
 //If there is already a session, go to index and do stuff test test
 if (isset($_SESSION['mail'])) {
   switch ($_SESSION['role']){
@@ -78,7 +50,7 @@ if (isset($_SESSION['mail'])) {
     <div class="container">
       
       <div class="row">
-          <form action="formactions.php<?php // echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+          <form action="formactions.php" method="POST">
             
             <div class="row">
               <div class="col-md-4 col-xs-12 col-md-offset-4">
