@@ -12,8 +12,10 @@ if($action == 'edit'){
     <th class="col-md-1">Nummer</th>
     <th class="col-md-8">Titel</th>
     <?php if($action == 'edit') {
-      echo '<th class="col-md-3 text-right">Opties</th>';
-    } ?>
+      echo '<th class="col-md-3 text-right">opties</th>';
+    } else {
+      echo '<th class="col-md-3 text-right">actie</th>';
+    }?>
   </tr>
   </thead>
   <tbody>
