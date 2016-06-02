@@ -73,8 +73,8 @@ if (isset($_SESSION['mail'])) {
           <h3>Besluitvorming <span class="label label-success"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-          <button class="btn btn-list btn-default"><a href="griffie/edit">annuleren</a></button>
-          <button class="btn btn-list btn-success">opslaan<a href="griffie/edit"></a></button>
+          <a class="btn btn-default" href="griffie/edit">annuleren</a>
+          <button class="btn btn-list btn-success" type="submit" name ="add" value="toevoegen">opslaan</button>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -133,7 +133,7 @@ if (isset($_SESSION['mail'])) {
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-xs-12">
-      <button class="btn btn-lg btn-success btn-block" type = "submit" name = "add" value = "toevoegen">Toevoegen</button>
+      <button class="btn btn-lg btn-success btn-block" type="submit" name ="add" value ="toevoegen">Toevoegen</button>
     </div>
   </div>
 
