@@ -73,7 +73,7 @@ if (isset($_SESSION['mail'])) {
           <h3>Besluitvorming <span class="label label-success"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-          <button class="btn btn-list btn-default">annuleren<a href=".../griffie/edit"></a></button>
+          <button class="btn btn-list btn-default">annuleren<a href="/griffie/edit"></a></button>
           <button class="btn btn-list btn-success">opslaan<a href="griffie/edit"></a></button>
         </div>
         <div class="clearfix"></div>
