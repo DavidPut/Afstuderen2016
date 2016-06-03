@@ -187,7 +187,7 @@ if(isset($_POST['BVadd'])) {
 
         require_once "database/db_functions.php";
         $db_addBVPush = new DB_functions();
-        $db_addBVPush_info = $db_addPush->griffieBVAdd($pid, $BVtitle, $BVsummary);
+        $db_addBVPush_info = $db_addBVPush->griffieBVAdd($pid, $BVtitle, $BVsummary);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
