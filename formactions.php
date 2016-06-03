@@ -100,4 +100,75 @@ if(isset($_POST['BVPadd'])) {
   header("location: griffie/add");
   exit();
 }
+
+// Besluitvormingsproces updaten
+if(isset($_POST['BVPadd'])) {
+  $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
+  if(isset($_POST['BVPaddTitle']) && !empty($_POST['BVPaddTitle'])) {
+    if(isset($_POST['BVPaddSummary']) && !empty($_POST['BVPaddSummary'])) {
+      if(isset($_POST['BVPaddPeriod'])) {
+
+        $BVPtitle = $_POST['BVPaddTitle'];
+        $BVPsummary = $_POST['BVPaddSummary'];
+        $BVPperiod = $_POST['BVPaddPeriod'];
+
+        if (isset($_POST['BVPaddLocation'])) {
+          $BVPlocation = $_POST['BVPaddLocation'];
+        } else {
+          $BVPlocation = null;
+        }
+
+        if (isset($_POST['BVPaddTags'])) {
+          $BVPtags = $_POST['BVPaddTags'];
+        } else {
+          $BVPtags = null;
+        }
+
+        if (!empty($_POST['BVPaddType'])) {
+          $BVPtypes;
+          foreach ($_POST['BVPaddType'] as $selected) {
+            $BVPtypes = $BVPtypes . $selected . ",";
+          }
+          $_POST['BVPaddType'] = $BVPtypes;
+        } else {
+          $BVPtypes = null;
+        }
+
+        if (!empty($_POST['BVPaddContact'])) {
+          $BVPcontact = "";
+          foreach ($_POST['BVPaddContact'] as $selected) {
+            $BVPcontact = $BVPcontact . $selected . ",";
+          }
+        } else {
+          // is het empty.. geen probleem
+          $BVPcontact = null;
+        }
+
+        require_once "database/db_functions.php";
+        $db_addPush = new DB_functions();
+        $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+
+        unset($_SESSION['Callback']);
+        unset($_SESSION['POST']);
+        header("location: griffie");
+        exit();
+      }
+    }
+  }
+  //errors
+  header("location: griffie/add");
+  exit();
+}
+
+// Besluitvormingsproces verwijderen
+if(isset($_POST['BVPdelete'])) {
+  $id = $_GET['id'];
+
+  require_once "database/db_functions.php";
+  $db_addPush = new DB_functions();
+  $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+}
+
+
 ?>

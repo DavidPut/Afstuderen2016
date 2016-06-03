@@ -56,11 +56,11 @@ class DB_functions
     $no_of_rows = mysqli_num_rows($result);
     if ($no_of_rows > 0) {
       $row = mysqli_fetch_assoc($result);
+      $this->db->close();
       return $row;
-      $this->db->close();
     } else {
-      return false;
       $this->db->close();
+      return false;
     }
   }
 
@@ -69,17 +69,26 @@ class DB_functions
     $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `adddate`) VALUES (NULL, '$BVPtitle', '$BVPsummary', '$BVPlocation', '$BVPtypes', '$BVPperiod', '')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
+      $this->db->close();
       return true;
-      $this->db->close();
     } else {
-      return false;
       $this->db->close();
+      return false;
     }
 
   }
 
-  public function griffieDelete(){
-    
+  public function griffieDelete($id){
+    $result = mysqli_query($this->db->connect(), "DELETE * FROM process WHERE id = '$id'") or die(mysqli_error($this->db->connect()));
+    $result2 = mysqli_query($this->db->connect(), "DELETE * FROM process_decision WHERE id = '$pid'") or die(mysqli_error($this->db->connect()));
+    $result3 = mysqli_query($this->db->connect(), "DELETE * FROM process_agenda WHERE id = '$pid'") or die(mysqli_error($this->db->connect()));
+    if ($result && $result2 && $result3) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
   }
   
   public function raadslidList(){
