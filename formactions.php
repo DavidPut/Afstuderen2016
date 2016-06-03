@@ -165,6 +165,7 @@ if(isset($_POST['BVPadd'])) {
 if(isset($_POST['BVPdelete'])) {
   echo "test step 1";
   $id = $_POST['pid'];
+  echo $id;
 
   require_once "database/db_functions.php";
   $db_deletePush = new DB_functions();
