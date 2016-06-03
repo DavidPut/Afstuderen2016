@@ -47,10 +47,6 @@ if(isset($_POST['BVPadd'])) {
   $_SESSION['Callback'] = true;
   if(isset($_POST['BVPaddTitle']) && !empty($_POST['BVPaddTitle'])) {
     if(isset($_POST['BVPaddSummary']) && !empty($_POST['BVPaddSummary'])) {
-
-    } else {
-      header("Location: griffie/add");
-      exit();
       if(isset($_POST['BVPaddPeriod'])) {
 
         $BVPtitle = $_POST['BVPaddTitle'];
@@ -87,6 +83,9 @@ if(isset($_POST['BVPadd'])) {
           // is het empty.. geen probleem
           $BVPcontact = null;
         }
+
+        header("location: griffie/add");
+        exit();
 
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
