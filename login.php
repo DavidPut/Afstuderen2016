@@ -68,9 +68,9 @@ if (isset($_SESSION['mail'])) {
             
             <div class="row">
               <div class="col-md-4 col-xs-12 col-md-offset-4">
-                  <div class="input-group">
+                  <div class="input-group <?php if($_SESSION['Callback'] == true && empty($_POST['password'])){echo "has-error";}?>">
                     <span class="input-group-addon" id="basic-addon1">Wachtwoord</span>
-                    <input type="password" name="password" class="form-control <?php if($_SESSION['Callback'] == true && empty($_POST['password'])){echo "has-error";}?>" placeholder="uw wachtwoord" aria-describedby="basic-addon1">
+                    <input type="password" name="password" class="form-control" placeholder="uw wachtwoord" aria-describedby="basic-addon1">
                   </div>
                 </div>
              
