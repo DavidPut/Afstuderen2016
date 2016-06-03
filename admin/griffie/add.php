@@ -1,5 +1,5 @@
 <?php $_POST = $_SESSION['POST'];
-echo $_POST['BVPaddType'];
+echo $_POST['BVPaddType'][0];
 ?>
 
 <form class="form-horizontal" action="formactions.php" method="POST">
