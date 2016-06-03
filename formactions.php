@@ -28,7 +28,6 @@ if(isset($_POST['loginsubmit'])) {
         exit();
       } else {
         $_SESSION['Callback'] = true;
-        // verkeerde wachtwoord
         header("Location: login");
         exit();
       }

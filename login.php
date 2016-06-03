@@ -50,6 +50,9 @@ if (isset($_SESSION['mail'])) {
 
 
     <div class="container">
+      <?php if($_SESSION['Callback'] == true){echo"
+      <span class='label label-warning'>Het formulier is niet compleet</span>";
+        }?>
       
       <div class="row">
           <form action="formactions.php" method="POST">
@@ -67,7 +70,7 @@ if (isset($_SESSION['mail'])) {
               <div class="col-md-4 col-xs-12 col-md-offset-4">
                   <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">Wachtwoord</span>
-                    <input type="password" name="password" class="form-control" placeholder="uw wachtwoord" aria-describedby="basic-addon1">
+                    <input type="password" name="password" class="form-control <?php if($_SESSION['Callback'] == true && empty($_POST['password'])){echo "has-error";}?>" placeholder="uw wachtwoord" aria-describedby="basic-addon1">
                   </div>
                 </div>
              
