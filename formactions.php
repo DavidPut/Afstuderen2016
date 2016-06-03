@@ -145,9 +145,11 @@ if(isset($_POST['BVPedit'])) {
           $BVPcontact = null;
         }
 
-        //require_once "database/db_functions.php";
-        //$db_addPush = new DB_functions();
-        //$db_addPush_info = $db_addPush->griffieEdit($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        $pid =$_POST['pid'];
+
+        require_once "database/db_functions.php";
+        $db_addPush = new DB_functions();
+        $db_addPush_info = $db_addPush->griffieEdit($pid, $BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
@@ -157,7 +159,7 @@ if(isset($_POST['BVPedit'])) {
     }
   }
   //errors
-  header("location: griffie/edit/".$_POST['pid']."/");
+  header("location: griffie/edit/".$pid."/");
   exit();
 }
 
