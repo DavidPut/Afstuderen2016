@@ -3,6 +3,7 @@
 session_start();
 
 $action = urlencode($_GET['action']);
+$id = $_GET['id'];
 
 if (isset($_SESSION['mail'])) {
   if ($_SESSION['role'] != "griffier") {
@@ -63,18 +64,18 @@ if (isset($_SESSION['mail'])) {
 </nav>
 
 <div class="container">
-<form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+<form class="form-horizontal" action="formactions.php" method="POST">
 
   <!-- nieuwe besluitvorming -->
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
         <div class="pull-left">
-          <h3>Besluitvorming <span class="label label-success"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
+          <h3>Besluitvorming <span class="label label-success"><i class="fa fa-plus small-icon" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
           <a class="btn btn-default" href="griffie/edit">annuleren</a>
-          <button class="btn btn-list btn-success" type="submit" name ="add" value="toevoegen">opslaan</button>
+          <button class="btn btn-list btn-success" type="submit" name ="BVadd" value="toevoegen">opslaan</button>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -133,7 +134,8 @@ if (isset($_SESSION['mail'])) {
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-xs-12">
-      <button class="btn btn-lg btn-success btn-block" type="submit" name ="add" value ="toevoegen">Toevoegen</button>
+      <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
+      <button class="btn btn-lg btn-success text-right" type="submit" name="BVadd" value="toevoegen">toevoegen</button>
     </div>
   </div>
 
