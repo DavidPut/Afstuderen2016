@@ -22,7 +22,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddTitle'])){echo "has-error";}?>">
-        <label for="addTitle" class="col-sm-2 control-label">Titel</label>
+        <label for="addTitle" class="col-sm-2 control-label">Titel *</label>
         <div class="col-sm-10">
           <input type="text" name="BVPaddTitle" class="form-control" placeholder="Titel besluitvorming" value="<?php if($_SESSION['Callback'] == true){echo $_POST['BVPaddTitle'];}?>">
         </div>
@@ -33,7 +33,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddSummary'])){echo "has-error";}?>">
-        <label for="addSummary" class="col-sm-2 control-label">Samenvatting</label>
+        <label for="addSummary" class="col-sm-2 control-label">Samenvatting *</label>
         <div class="col-sm-10">
           <textarea class="form-control" name="BVPaddSummary" placeholder="Samenvatting besluitvorming" rows="3"><?php if($_SESSION['Callback'] == true){echo $_POST['BVPaddSummary'];}?></textarea>
         </div>
@@ -66,7 +66,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddType'])){echo "has-error";}?>">
-        <label for="inputTags" class="col-sm-2 control-label">Soort</label>
+        <label for="inputTags" class="col-sm-2 control-label">Soort *</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
             <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="F"> Fysiek
@@ -85,7 +85,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group">
-        <label for="inputTags" class="col-sm-2 control-label">Periode</label>
+        <label for="inputTags" class="col-sm-2 control-label">Periode *</label>
         <div class="col-sm-10">
           <div class="radio">
             <label>
