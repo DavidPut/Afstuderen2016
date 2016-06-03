@@ -2,7 +2,7 @@
 
 
 if($action == 'edit'){
-  echo '<a class="btn btn-success pull-right" href="griffie/besluitvorming/add"></i>toevoegen</a>';
+  echo '<a class="btn btn-success pull-right" href="griffie/'.$db_getItem_info_item['id'].'></i>toevoegen</a>';
 }
 ?>
 <table class="table table-hover table-list">
@@ -23,8 +23,8 @@ if($action == 'edit'){
         <td>".$db_getList_info_item['title']."</td>
         <td>
           <p class='text-right'>
-            ".(($action == 'edit')?"<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"griffie/edit/".$db_getList_info_item['id']."\"><i class=\"fa fa-pencil fa-fw\"></i></a>":"")."
-            <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"griffie/delete/".$db_getList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
+            ".(($action == 'edit')?"<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"griffie/edit/".$db_getItem_info_item['id']."/besluitvorming\"><i class=\"fa fa-pencil fa-fw\"></i></a>":"")."
+            <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"griffie/delete/".$db_getItem_info_item['id']."/besluitvorming\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
           </p>
         </td>
       </tr>"; } ?>
