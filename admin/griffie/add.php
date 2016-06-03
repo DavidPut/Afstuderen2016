@@ -1,4 +1,4 @@
-<?php $_POST = $_SESSION; ?>
+<?php $_POST = $_SESSION['POST']; ?>
 
 <form class="form-horizontal" action="formactions.php" method="POST">
 

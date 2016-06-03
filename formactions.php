@@ -35,7 +35,7 @@ if(isset($_POST['loginsubmit'])) {
 
 // Nieuwe besluitvormingsproces
 if(isset($_POST['BVPadd'])) {
-  $_SESSION = $_POST;
+  $_SESSION['POST'] = $_POST;
   if(isset($_POST['BVPaddTitle'])) {
     if(isset($_POST['BVPaddSummary'])) {
       header("Location: griffie/add");
