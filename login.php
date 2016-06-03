@@ -50,10 +50,6 @@ if (isset($_SESSION['mail'])) {
 
 
     <div class="container">
-      <?php if($_SESSION['Callback'] == true){echo"
-      <span class='label label-warning'>Het formulier is niet compleet</span>";
-        }?>
-      
       <div class="row">
           <form action="formactions.php" method="POST">
             
