@@ -80,8 +80,8 @@ class DB_functions
 
   public function griffieDelete($id){
     $result = mysqli_query($this->db->connect(), "DELETE * FROM process WHERE id = '$id'") or die(mysqli_error($this->db->connect()));
-    $result2 = mysqli_query($this->db->connect(), "DELETE * FROM process_decision WHERE id = '$pid'") or die(mysqli_error($this->db->connect()));
-    $result3 = mysqli_query($this->db->connect(), "DELETE * FROM process_agenda WHERE id = '$pid'") or die(mysqli_error($this->db->connect()));
+    $result2 = mysqli_query($this->db->connect(), "DELETE * FROM process_decision WHERE id = '$id'") or die(mysqli_error($this->db->connect()));
+    $result3 = mysqli_query($this->db->connect(), "DELETE * FROM process_agenda WHERE id = '$id'") or die(mysqli_error($this->db->connect()));
     if ($result && $result2 && $result3) {
       $this->db->close();
       return true;

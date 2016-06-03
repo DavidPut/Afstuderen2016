@@ -166,8 +166,11 @@ if(isset($_POST['BVPdelete'])) {
   $id = $_POST['pid'];
 
   require_once "database/db_functions.php";
-  $db_addPush = new DB_functions();
-  $db_addPush_info = $db_addPush->griffieDelete($id);
+  $db_deletePush = new DB_functions();
+  $db_deletePush_info = $db_deletePush->griffieDelete($id);
+
+  header("location: griffie/add");
+  exit();
 }
 
 
