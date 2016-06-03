@@ -169,7 +169,7 @@ if(isset($_POST['BVPdelete'])) {
   $db_deletePush = new DB_functions();
   $db_deletePush_info = $db_deletePush->griffieDelete($id);
 
-  header("location: griffie/add");
+  header("Location: griffie/add");
   exit();
 }
 
