@@ -6,6 +6,8 @@ $db_getBVList_info = $db_getBVList->griffieBVList($id);
 if($action == 'edit'){
   echo '<a class="btn btn-success pull-right" href="griffie/'.$db_getItem_info['id'].'/besluitvorming/add"></i>toevoegen</a>';
 }
+  if (is_array($db_getBVList_info)){
+
 ?>
 <table class="table table-hover table-list">
   <thead>
@@ -19,7 +21,7 @@ if($action == 'edit'){
   </tr>
   </thead>
   <tbody>
-  <?php if (is_array($db_getBVList_info)) {foreach ($db_getBVList_info as $db_getBVList_info_item) {
+  <?php foreach ($db_getBVList_info as $db_getBVList_info_item) {
     echo " 
       <tr>
         <td>".$db_getBVList_info_item['title']."</td>
