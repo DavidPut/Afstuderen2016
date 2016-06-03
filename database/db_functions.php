@@ -101,6 +101,27 @@ class DB_functions
     }
   }
 
+
+
+
+  public function griffieBVList(){
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_decision") or die(mysqli_error($this->db->connect()));
+    $no_of_rows = mysqli_num_rows($result);
+    if ($no_of_rows > 0) {
+      $rows_result = array();
+      while($row = mysqli_fetch_assoc($result)) {
+        $rows_result[] = $row;
+      }
+      return $rows_result;
+      $this->db->close();
+    } else {
+      return false;
+      $this->db->close();
+    }
+  }
+
+
+  // besluiten toevoegen
   public function griffieBVAdd($pid, $BVPtitle, $BVPsummary){
     $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_decision` (`id`,`pid`, `title`, `summary`) VALUES (NULL, '$pid', '$BVPtitle', '$BVPsummary')")or die( mysqli_error($this->db->connect()));
     // check for successful store
