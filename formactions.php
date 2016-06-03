@@ -163,6 +163,7 @@ if(isset($_POST['BVPadd'])) {
 
 // Besluitvormingsproces verwijderen
 if(isset($_POST['BVPdelete'])) {
+  echo "test step 1";
   $id = $_POST['pid'];
 
   require_once "database/db_functions.php";
