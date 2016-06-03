@@ -32,6 +32,11 @@ if(isset($_POST['loginsubmit'])) {
         header("Location: login");
         exit();
       }
+    } else {
+      // geen wachtwoord
+      $_SESSION['Callback'] == true;
+      header("Location: login");
+      exit();
     }
   }
 }
