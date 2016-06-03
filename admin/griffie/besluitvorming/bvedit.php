@@ -78,7 +78,7 @@ if (isset($_SESSION['mail'])) {
           </div>
           <div class="pull-right">
             <a class="btn btn-default" href="griffie/edit/<?php echo $pid; ?>">annuleren</a>
-            <button class="btn btn-list btn-success" type="submit" name ="BVedit" value="toevoegen">opslaan</button>
+            <button class="btn btn-list btn-primary" type="submit" name ="BVedit" value="toevoegen">opslaan</button>
           </div>
           <div class="clearfix"></div>
         </div>
