@@ -1,7 +1,4 @@
-<?php 
-$_POST = $_SESSION['POST'];
-$Callback = $_SESSION['Callback'];
-?>
+<?php $_POST = $_SESSION['POST']; ?>
 
 <form class="form-horizontal" action="formactions.php" method="POST">
 
@@ -177,5 +174,4 @@ $Callback = $_SESSION['Callback'];
 <?php
 if(isset($_SESSION['Callback'])){
   unset($_SESSION['Callback']);
-  session_write_close();
 } ?>
