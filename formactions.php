@@ -104,6 +104,7 @@ if(isset($_POST['BVPadd'])) {
 // Besluitvormingsproces updaten
 if(isset($_POST['BVPedit'])) {
   $_SESSION['POST'] = $_POST;
+  $pid = $_POST['pid'];
   $_SESSION['Callback'] = true;
   if(isset($_POST['BVPeditTitle']) && !empty($_POST['BVPeditTitle'])) {
     if(isset($_POST['BVPeditSummary']) && !empty($_POST['BVPeditSummary'])) {
@@ -145,8 +146,6 @@ if(isset($_POST['BVPedit'])) {
           $BVPcontact = null;
         }
 
-        $pid =$_POST['pid'];
-
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
         $db_addPush_info = $db_addPush->griffieEdit($pid, $BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
@@ -159,7 +158,7 @@ if(isset($_POST['BVPedit'])) {
     }
   }
   //errors
-  header("location: griffie/edit/".$id."/");
+  header("location: griffie/edit/".$pid."/");
   exit();
 }
 
