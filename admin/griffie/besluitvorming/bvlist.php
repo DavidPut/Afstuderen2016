@@ -2,7 +2,6 @@
 
 
 if($action == 'edit'){
-  echo $db_getItem_info['id'];
   echo '<a class="btn btn-success pull-right" href="griffie/edit/'.$db_getItem_info['id'].'/besluitvorming/add"></i>toevoegen</a>';
 }
 ?>
