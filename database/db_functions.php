@@ -103,9 +103,9 @@ class DB_functions
 
 
 
-
-  public function griffieBVList(){
-    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_decision") or die(mysqli_error($this->db->connect()));
+  // lijst van besluiten bij id proces
+  public function griffieBVList($pid){
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_decision WHERE pid = '$pid'") or die(mysqli_error($this->db->connect()));
     $no_of_rows = mysqli_num_rows($result);
     if ($no_of_rows > 0) {
       $rows_result = array();
