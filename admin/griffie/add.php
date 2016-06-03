@@ -43,7 +43,7 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddLocation'])){echo "has-error";}?>">
+      <div class="form-group">
         <label for="addLocation" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
           <input class="form-control" type="text" name="BVPaddLocation" placeholder="Een postcode of adres"></input>
@@ -84,7 +84,7 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
+      <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddPeriod'])){echo "has-error";}?>">
         <label for="inputTags" class="col-sm-2 control-label">Periode *</label>
         <div class="col-sm-10">
           <div class="radio">
