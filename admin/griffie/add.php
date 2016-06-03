@@ -71,13 +71,13 @@ echo $_POST['BVPaddType'][2];
         <label for="inputTags" class="col-sm-2 control-label">Soort *</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="F" <?php if(in_array('F',$_POST['BVPaddType'])){echo 'checked';} unset($_POST['BVPaddType']);?>> Fysiek
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="F" <?php if(in_array('F',$_POST['BVPaddType'][])){echo 'checked';} unset($_POST['BVPaddType']);?>> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox2" value="S" <?php if(in_array('S',$_POST['BVPaddType'])){echo 'checked';} unset($_POST['BVPaddType']);?>> Sociaal
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox2" value="S" <?php if(in_array('S',$_POST['BVPaddType'][])){echo 'checked';} unset($_POST['BVPaddType']);?>> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox3" value="B" <?php if(in_array('B',$_POST['BVPaddType'])){echo 'checked';} unset($_POST['BVPaddType']);?>> Bestuur en middelen
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox3" value="B" <?php if(in_array('B',$_POST['BVPaddType'][])){echo 'checked';} unset($_POST['BVPaddType']);?>> Bestuur en middelen
           </label>
         </div>
       </div>
