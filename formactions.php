@@ -36,6 +36,7 @@ if(isset($_POST['loginsubmit'])) {
 // Nieuwe besluitvormingsproces
 if(isset($_POST['BVPadd'])) {
   $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
   if(isset($_POST['BVPaddTitle'])) {
     if(isset($_POST['BVPaddSummary'])) {
       header("Location: griffie/add");
@@ -82,6 +83,8 @@ if(isset($_POST['BVPadd'])) {
         $db_addPush = new DB_functions();
         $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
 
+        unset($_SESSION['Callback']);
+        unset($_SESSION['POST']);
         header("location: griffie");
         exit();
       }

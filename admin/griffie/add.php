@@ -35,7 +35,7 @@
       <div class="form-group">
         <label for="addSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea class="form-control" name="BVPaddSummary" placeholder="Samenvatting besluitvorming" rows="3"><?php echo $_POST['BVPaddSummary']?></textarea>
+          <textarea class="form-control" name="BVPaddSummary" placeholder="Samenvatting besluitvorming" rows="3"><?php if($_SESSION['Callback'] == true){echo $_POST['BVPaddSummary'];}?></textarea>
         </div>
       </div>
     </div>
@@ -171,3 +171,7 @@
   </div>
 
 </form>
+<?php
+if(isset($_SESSION['Callback'])){
+  unset($_SESSION['Callback']);
+} ?>
