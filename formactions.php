@@ -104,8 +104,8 @@ if(isset($_POST['BVPadd'])) {
 // Besluitvormingsproces updaten
 if(isset($_POST['BVPedit'])) {
   $_SESSION['POST'] = $_POST;
-  $pid = $_POST['pid'];
   $_SESSION['Callback'] = true;
+  $pid = $_POST['pid'];
   if(isset($_POST['BVPeditTitle']) && !empty($_POST['BVPeditTitle'])) {
     if(isset($_POST['BVPeditSummary']) && !empty($_POST['BVPeditSummary'])) {
       if(isset($_POST['BVPeditPeriod'])) {
@@ -152,7 +152,7 @@ if(isset($_POST['BVPedit'])) {
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
-        header("location: griffie/edit/".$pid."/");
+        header("location: griffie/");
         exit();
       }
     }
