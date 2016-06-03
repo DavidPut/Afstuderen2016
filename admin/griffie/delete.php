@@ -1,4 +1,5 @@
 <form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+  <input type="hidden" name="pid" value="<?php echo $db_getItem_info['id']; ?>">
 
   <!-- nieuwe besluitvorming -->
   <div class="row">

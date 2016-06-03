@@ -163,11 +163,11 @@ if(isset($_POST['BVPadd'])) {
 
 // Besluitvormingsproces verwijderen
 if(isset($_POST['BVPdelete'])) {
-  $id = $_GET['id'];
+  $id = $_POST['pid'];
 
   require_once "database/db_functions.php";
   $db_addPush = new DB_functions();
-  $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+  $db_addPush_info = $db_addPush->griffieDelete($id);
 }
 
 
