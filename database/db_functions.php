@@ -79,6 +79,7 @@ class DB_functions
   }
 
   public function griffieDelete($pid){
+    echo "test step 2";
     $result = mysqli_query($this->db->connect(), "DELETE * FROM process WHERE id = '$pid'") or die(mysqli_error($this->db->connect()));
     $result2 = mysqli_query($this->db->connect(), "DELETE * FROM process_decision WHERE pid = '$pid'") or die(mysqli_error($this->db->connect()));
     $result3 = mysqli_query($this->db->connect(), "DELETE * FROM process_agenda WHERE pid = '$pid'") or die(mysqli_error($this->db->connect()));
