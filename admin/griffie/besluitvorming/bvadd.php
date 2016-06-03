@@ -3,7 +3,7 @@
 session_start();
 
 $action = urlencode($_GET['action']);
-$id = $_GET['id'];
+$id = urlencode($_GET['id']);
 
 if (isset($_SESSION['mail'])) {
   if ($_SESSION['role'] != "griffier") {
