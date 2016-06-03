@@ -71,13 +71,13 @@ echo $_POST['BVPaddType'];
         <label for="inputTags" class="col-sm-2 control-label">Soort *</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="F" <?php if(in_array('F',$_POST['BVPaddType'])){echo 'checked';} ?>> Fysiek
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="F"> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox2" value="S" <?php if(in_array('S',$_POST['BVPaddType'])){echo 'checked';} ?>> Sociaal
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox2" value="S"> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox3" value="B" <?php if(in_array('B',$_POST['BVPaddType'])){echo 'checked';} ?>> Bestuur en middelen
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox3" value="B"> Bestuur en middelen
           </label>
         </div>
       </div>
