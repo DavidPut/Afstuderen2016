@@ -34,7 +34,7 @@
       <div class="form-group">
         <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea readonly="readonly" class="form-control" name="summary"rows="3"><?php echo $db_getItem_info['summary']; ?></textarea>
+          <textarea readonly="readonly" class="form-control" rows="3"><?php echo $db_getItem_info['summary']; ?></textarea>
         </div>
       </div>
     </div>
@@ -45,7 +45,7 @@
       <div class="form-group">
         <label for="inputAdrescode" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
-          <input readonly="readonly" class="form-control" type="text" name="adrescode" value="<?php echo $db_getItem_info['location']; ?>">
+          <input readonly="readonly" class="form-control" type="text" value="<?php echo $db_getItem_info['location']; ?>">
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
       <div class="form-group">
         <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
-          <input readonly="readonly" class="form-control" type="text" name="tags" value="<?php echo $db_getItem_info['tags']; ?>">
+          <input readonly="readonly" class="form-control" type="text" value="<?php echo $db_getItem_info['tags']; ?>">
         </div>
       </div>
     </div>
