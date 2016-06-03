@@ -65,7 +65,6 @@ class DB_functions
   }
 
   public function griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact){
-
     $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `adddate`) VALUES (NULL, '$BVPtitle', '$BVPsummary', '$BVPlocation', '$BVPtypes', '$BVPperiod', '')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
@@ -75,7 +74,18 @@ class DB_functions
       $this->db->close();
       return false;
     }
+  }
 
+  public function griffieEdit($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact){
+    //$result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `adddate`) VALUES (NULL, '$BVPtitle', '$BVPsummary', '$BVPlocation', '$BVPtypes', '$BVPperiod', '')")or die( mysqli_error($this->db->connect()));
+    // check for successful store
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
   }
 
   public function griffieDelete($pid){

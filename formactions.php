@@ -102,42 +102,42 @@ if(isset($_POST['BVPadd'])) {
 }
 
 // Besluitvormingsproces updaten
-if(isset($_POST['BVPadd'])) {
+if(isset($_POST['BVPedit'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
-  if(isset($_POST['BVPaddTitle']) && !empty($_POST['BVPaddTitle'])) {
-    if(isset($_POST['BVPaddSummary']) && !empty($_POST['BVPaddSummary'])) {
-      if(isset($_POST['BVPaddPeriod'])) {
+  if(isset($_POST['BVPeditTitle']) && !empty($_POST['BVPeditTitle'])) {
+    if(isset($_POST['BVPeditSummary']) && !empty($_POST['BVPeditSummary'])) {
+      if(isset($_POST['BVPeditPeriod'])) {
 
-        $BVPtitle = $_POST['BVPaddTitle'];
-        $BVPsummary = $_POST['BVPaddSummary'];
-        $BVPperiod = $_POST['BVPaddPeriod'];
+        $BVPtitle = $_POST['BVPeditTitle'];
+        $BVPsummary = $_POST['BVPeditSummary'];
+        $BVPperiod = $_POST['BVPeditPeriod'];
 
-        if (isset($_POST['BVPaddLocation'])) {
-          $BVPlocation = $_POST['BVPaddLocation'];
+        if (isset($_POST['BVPeditLocation'])) {
+          $BVPlocation = $_POST['BVPeditLocation'];
         } else {
           $BVPlocation = null;
         }
 
-        if (isset($_POST['BVPaddTags'])) {
-          $BVPtags = $_POST['BVPaddTags'];
+        if (isset($_POST['BVPeditTags'])) {
+          $BVPtags = $_POST['BVPeditTags'];
         } else {
           $BVPtags = null;
         }
 
-        if (!empty($_POST['BVPaddType'])) {
+        if (!empty($_POST['BVPeditType'])) {
           $BVPtypes;
-          foreach ($_POST['BVPaddType'] as $selected) {
+          foreach ($_POST['BVPeditType'] as $selected) {
             $BVPtypes = $BVPtypes . $selected . ",";
           }
-          $_POST['BVPaddType'] = $BVPtypes;
+          $_POST['BVPeditType'] = $BVPtypes;
         } else {
           $BVPtypes = null;
         }
 
-        if (!empty($_POST['BVPaddContact'])) {
+        if (!empty($_POST['BVPeditContact'])) {
           $BVPcontact = "";
-          foreach ($_POST['BVPaddContact'] as $selected) {
+          foreach ($_POST['BVPeditContact'] as $selected) {
             $BVPcontact = $BVPcontact . $selected . ",";
           }
         } else {
@@ -145,19 +145,19 @@ if(isset($_POST['BVPadd'])) {
           $BVPcontact = null;
         }
 
-        require_once "database/db_functions.php";
-        $db_addPush = new DB_functions();
-        $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        //require_once "database/db_functions.php";
+        //$db_addPush = new DB_functions();
+        //$db_addPush_info = $db_addPush->griffieEdit($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
-        header("location: griffie");
+        header("location: griffie/");
         exit();
       }
     }
   }
   //errors
-  header("location: griffie/add");
+  header("location: griffie/edit/".$_POST['pid']."/");
   exit();
 }
 
