@@ -91,7 +91,7 @@ if (isset($_SESSION['mail'])) {
         <div class = "panel panel-default">
 
           <div class = "panel-heading">
-            <h3 class = "panel-title">Nieuwe besluitvorming</h3>
+            <h3 class = "panel-title">Bestaande besluitvorming</h3>
           </div>
 
           <div class = "panel-body">
