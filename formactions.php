@@ -183,18 +183,18 @@ if(isset($_POST['BVadd'])) {
     if(isset($_POST['BVPaddSummary']) && !empty($_POST['BVPaddSummary'])) {
       
         require_once "database/db_functions.php";
-        $db_addPush = new DB_functions();
-        $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        $db_addBVPush = new DB_functions();
+        $db_addBVPush_info = $db_addPush->griffieBVAdd($pid, $BVPtitle, $BVPsummary);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
-        header("location: griffie");
+        header("location: griffie/edit/".$pid."/");
         exit();
       
     }
   }
   //errors
-  header("location: griffie/add");
+  header("location: griffie/".$pid."/besluitvorming/add");
   exit();
 }
 

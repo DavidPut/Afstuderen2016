@@ -100,7 +100,19 @@ class DB_functions
       return false;
     }
   }
-  
+
+  public function griffieBVAdd($pid, $BVPtitle, $BVPsummary){
+    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_decision` (`id`,`pid`, `title`, `summary`) VALUES (NULL, '$pid', '$BVPtitle', '$BVPsummary')")or die( mysqli_error($this->db->connect()));
+    // check for successful store
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
   public function raadslidList(){
     
   }
