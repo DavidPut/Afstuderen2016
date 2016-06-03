@@ -45,6 +45,7 @@ if(isset($_POST['loginsubmit'])) {
 if(isset($_POST['BVPadd'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
+  session_write_close();
   if(isset($_POST['BVPaddTitle']) && !empty($_POST['BVPaddTitle'])) {
     if(isset($_POST['BVPaddSummary']) && !empty($_POST['BVPaddSummary'])) {
       if(isset($_POST['BVPaddPeriod'])) {
@@ -89,8 +90,10 @@ if(isset($_POST['BVPadd'])) {
         $db_addPush = new DB_functions();
         $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
 
+        session_start();
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
+        session_write_close();
         header("location: griffie");
         exit();
       }
@@ -204,6 +207,7 @@ if(isset($_POST['BVadd'])) {
 if(isset($_POST['BVedit'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
+  session_write_close();
   $pid = $_POST['pid'];
   $bid = $_POST['bid'];
   if(isset($_POST['BVeditTitle']) && !empty($_POST['BVeditTitle'])) {
@@ -216,8 +220,10 @@ if(isset($_POST['BVedit'])) {
       $db_editBVPush = new DB_functions();
       $db_editBVPush_info = $db_editBVPush->griffieBVEdit($pid, $bid, $BVtitle, $BVsummary);
 
+      session_start();
       unset($_SESSION['Callback']);
       unset($_SESSION['POST']);
+      session_write_close();
       header("location: griffie/edit/".$pid."/");
       exit();
     }
