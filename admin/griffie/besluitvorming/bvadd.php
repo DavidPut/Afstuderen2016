@@ -134,7 +134,7 @@ if (isset($_SESSION['mail'])) {
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-xs-12">
-      <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
+      <a class="btn btn-lg btn-default text-left" href="griffie/edit/<?php echo $id; ?>">annuleren</a>
       <button class="btn btn-lg btn-success text-right" type="submit" name="BVadd" value="toevoegen">toevoegen</button>
     </div>
   </div>
