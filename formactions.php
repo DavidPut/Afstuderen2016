@@ -4,8 +4,8 @@ session_start();
 
 if(isset($_POST['loginsubmit'])) {
   $_SESSION['POST'] = $_POST;
-  if (isset($_POST['mail'])) {
-    if (isset($_POST['password'])) {
+  if (isset($_POST['mail']) && !empty($_POST['mail'])) {
+    if (isset($_POST['password']) && !empty($_POST['password'])) {
 
       $form_mail = $_POST['mail'];
       $form_pass = $_POST['password'];
