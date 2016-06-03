@@ -1,4 +1,4 @@
-<form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+<form class="form-horizontal" action="formactions.php" method="POST">
   <input type="hidden" name="pid" value="<?php echo $db_getItem_info['id']; ?>">
 
   <!-- nieuwe besluitvorming -->
@@ -190,7 +190,7 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-5 col-xs-12">
       <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
-      <button class="btn btn-lg btn-danger text-right" type ="submit" name ="BVPdelete">verwijderen</button>
+      <button class="btn btn-lg btn-danger text-right" type ="submit" name="BVPdelete">verwijderen</button>
     </div>
   </div>
 
