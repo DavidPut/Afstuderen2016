@@ -193,11 +193,37 @@ if(isset($_POST['BVadd'])) {
         unset($_SESSION['POST']);
         header("location: griffie/edit/".$pid."/");
         exit();
-      
     }
   }
   //errors
-  header("location: griffie/".$pid."/besluitvorming/add");
+  header("location: griffie/edit/".$pid."/besluitvorming/add");
+  exit();
+}
+
+// Nieuwe besluit bij besluitvormingsproces
+if(isset($_POST['BVedit'])) {
+  $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
+  $pid = $_POST['pid'];
+  $bid = $_POST['bid'];
+  if(isset($_POST['BVeditTitle']) && !empty($_POST['BVeditTitle'])) {
+    if(isset($_POST['BVeditSummary']) && !empty($_POST['BVeditSummary'])) {
+
+      $BVtitle = $_POST['BVeditTitle'];
+      $BVsummary = $_POST['BVeditSummary'];
+
+      require_once "database/db_functions.php";
+      $db_editBVPush = new DB_functions();
+      $db_editBVPush_info = $db_editBVPush->griffieBVEdit($pid, $bid, $BVtitle, $BVsummary);
+
+      unset($_SESSION['Callback']);
+      unset($_SESSION['POST']);
+      header("location: griffie/edit/".$pid."/");
+      exit();
+    }
+  }
+  //errors
+  header("location: griffie/edit/".$pid."/besluitvorming/add");
   exit();
 }
 

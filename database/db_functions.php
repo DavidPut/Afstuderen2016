@@ -134,6 +134,19 @@ class DB_functions
     }
   }
 
+  // besluiten toevoegen
+  public function griffieBVEdit($pid, $bid, $BVtitle, $BVsummary){
+    $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process_decision` SET `title` = '$BVtitle', `summary` = '$BVsummary' WHERE `process_decision`.`id` = '$bid' && `pid` = '$pid'") or die( mysqli_error($this->db->connect()));
+    // check for successful store
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
   public function raadslidList(){
     
   }
