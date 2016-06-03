@@ -174,5 +174,29 @@ if(isset($_POST['BVPdelete'])) {
   exit();
 }
 
+// Nieuwe besluit bij besluitvormingsproces
+if(isset($_POST['BVadd'])) {
+  $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
+  $pid = $_POST['pid'];
+  if(isset($_POST['BVaddTitle']) && !empty($_POST['BVPaddTitle'])) {
+    if(isset($_POST['BVPaddSummary']) && !empty($_POST['BVPaddSummary'])) {
+      
+        require_once "database/db_functions.php";
+        $db_addPush = new DB_functions();
+        $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+
+        unset($_SESSION['Callback']);
+        unset($_SESSION['POST']);
+        header("location: griffie");
+        exit();
+      
+    }
+  }
+  //errors
+  header("location: griffie/add");
+  exit();
+}
+
 
 ?>
