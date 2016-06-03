@@ -37,8 +37,9 @@ if(isset($_POST['loginsubmit'])) {
 if(isset($_POST['BVPadd'])) {
   if(isset($_POST['BVPaddTitle'])) {
   } else {
-    header("location griffie/add");
-    exit();
+    echo "test";
+    //header("location griffie/add");
+    //exit();
     if(isset($_POST['BVPaddSummary'])) {
       if(isset($_POST['BVPaddPeriod'])) {
 
