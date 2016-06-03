@@ -36,6 +36,7 @@ if(isset($_POST['loginsubmit'])) {
 // Nieuwe besluitvormingsproces
 if(isset($_POST['BVPadd'])) {
   if(isset($_POST['BVPaddTitle'])) {
+    echo "test2";
   } else {
     echo "test";
     //header("location griffie/add");
