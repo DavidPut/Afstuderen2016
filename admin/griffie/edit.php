@@ -6,10 +6,10 @@
       <div class="page-header">
         <div class="pull-left">
           <h3>Besluitvormingsproces <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
+          <a class="btn btn-default" href="dossier.html">naar pagina</a>
         </div>
         <div class="pull-right">
-          <button data-toggle="tooltip" data-placement="top" title="naar pagina" class="btn btn-list btn-default">naar pagina<a href="dossier.html"></a></button>
-          <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">annuleren<a href="griffie"></a></button>
+          <a class="btn btn-default" href="griffie">annuleren</a>
           <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces aanpassen" class="btn btn-list btn-primary">aanpassen<a href="griffie"></a></button>
         </div>
         <div class="clearfix"></div>
