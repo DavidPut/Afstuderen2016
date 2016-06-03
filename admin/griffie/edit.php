@@ -35,7 +35,7 @@
       <div class="form-group">
         <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea class="form-control" name="BVPeditSummary" placeholder="Samenvatting besluitvorming" rows="3"><?php if($_SESSION['Callback'] == true){echo $_POST['BVPeditTitle'];} else {echo $db_getItem_info['summary'];} ?></textarea>
+          <textarea class="form-control" name="BVPeditSummary" placeholder="Samenvatting besluitvorming" rows="3"><?php if($_SESSION['Callback'] == true){echo $_POST['BVPeditSummary'];} else {echo $db_getItem_info['summary'];} ?></textarea>
         </div>
       </div>
     </div>
