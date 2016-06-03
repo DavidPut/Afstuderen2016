@@ -27,14 +27,14 @@ if(isset($_POST['loginsubmit'])) {
         header("location: griffie");
         exit();
       } else {
-        $_SESSION['Callback'] == true;
+        $_SESSION['Callback'] = true;
         // verkeerde wachtwoord
         header("Location: login");
         exit();
       }
     } else {
       // geen wachtwoord
-      $_SESSION['Callback'] == true;
+      $_SESSION['Callback'] = true;
       header("Location: login");
       exit();
     }
