@@ -179,12 +179,15 @@ if(isset($_POST['BVadd'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
   $pid = $_POST['pid'];
-  if(isset($_POST['BVaddTitle']) && !empty($_POST['BVPaddTitle'])) {
-    if(isset($_POST['BVPaddSummary']) && !empty($_POST['BVPaddSummary'])) {
-      
+  if(isset($_POST['BVaddTitle']) && !empty($_POST['BVaddTitle'])) {
+    if(isset($_POST['BVaddSummary']) && !empty($_POST['BVaddSummary'])) {
+
+        $BVtitle = $_POST['BVaddTitle'];
+        $BVsummary = $_POST['BVaddSummary'];
+
         require_once "database/db_functions.php";
         $db_addBVPush = new DB_functions();
-        $db_addBVPush_info = $db_addPush->griffieBVAdd($pid, $BVPtitle, $BVPsummary);
+        $db_addBVPush_info = $db_addPush->griffieBVAdd($pid, $BVtitle, $BVsummary);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
