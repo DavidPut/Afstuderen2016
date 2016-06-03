@@ -3,7 +3,7 @@
 session_start();
 
 $_POST = $_SESSION['POST'];
-echo $_POST['mail'];
+if($_SESSION['Callback'] == true){echo $_POST['mail'];}
 
 //If there is already a session, go to index and do stuff test test
 if (isset($_SESSION['mail'])) {
