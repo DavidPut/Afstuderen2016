@@ -75,7 +75,7 @@ if (isset($_SESSION['mail'])) {
           <h3>Besluitvorming <span class="label label-success"><i class="fa fa-plus small-icon" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-          <a class="btn btn-default" href="griffie/edit/<?php echo $id; ?>">annuleren</a>
+          <a class="btn btn-default" href="griffie/edit/<?php echo "trol".$id."lol"; ?>">annuleren</a>
           <button class="btn btn-list btn-success" type="submit" name ="BVadd" value="toevoegen">opslaan</button>
         </div>
         <div class="clearfix"></div>
