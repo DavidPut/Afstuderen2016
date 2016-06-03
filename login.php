@@ -59,7 +59,7 @@ if (isset($_SESSION['mail'])) {
               <div class="col-md-4 col-xs-12 col-md-offset-4">
                 <div class="input-group">
                   <span class="input-group-addon" id="basic-addon1">E-mailadres</span>
-                  <input type="email" name="mail" class="form-control" placeholder="uw e-mailadres" <?php if($_SESSION['Callback'] == true){echo 'value="'.$_POST['mail'].'"';}?> aria-describedby="basic-addon1" autofocus>
+                  <input type="email" name="mail" class="form-control" placeholder="uw e-mailadres" value="<?php if($_SESSION['Callback'] == true){echo $_POST['mail'];}?>" aria-describedby="basic-addon1" autofocus>
                 </div>
               </div>
             </div>
