@@ -19,7 +19,7 @@ if($action == 'edit'){
   </tr>
   </thead>
   <tbody>
-  <?php foreach ($db_getBVList_info as $db_getBVList_info_item) { 
+  <?php if (is_array($db_getBVList_info)) {foreach ($db_getBVList_info as $db_getBVList_info_item) {
     echo " 
       <tr>
         <td>".$db_getBVList_info_item['title']."</td>
@@ -29,6 +29,6 @@ if($action == 'edit'){
             <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"griffie/".$db_getItem_info['id']."/besluitvorming\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
           </p>
         </td>
-      </tr>"; } ?>
+      </tr>"; }} ?>
   </tbody>
 </table>
