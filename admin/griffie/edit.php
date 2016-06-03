@@ -21,7 +21,7 @@
       <div class="form-group">
         <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Titel besluitvorming">
+          <input type="text" class="form-control" placeholder="Titel besluitvorming" value="<?php echo $db_getItem_info['title']; ?>">
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
       <div class="form-group">
         <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
+          <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"><?php echo $db_getItem_info['summary']; ?></textarea>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
       <div class="form-group">
         <label for="inputAdrescode" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres"></input>
+          <input class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres" value="<?php echo $db_getItem_info['location']; ?>"></input>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
       <div class="form-group">
         <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="tags" placeholder="Tags, gescheiden door komma's"></input>
+          <input class="form-control" type="text" name="tags" placeholder="Tags, gescheiden door komma's" value="<?php echo $db_getItem_info['tags']; ?>">></input>
         </div>
       </div>
     </div>
@@ -66,13 +66,13 @@
         <label for="inputTags" class="col-sm-2 control-label">Soort</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
+            <input type="checkbox" id="inlineCheckbox1" value="F" <?php if(in_array('F',$selectedBox)){echo 'checked';} ?>> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
+            <input type="checkbox" id="inlineCheckbox2" value="S" <?php if(in_array('S',$selectedBox)){echo 'checked';} ?>> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
+            <input type="checkbox" id="inlineCheckbox3" value="B" <?php if(in_array('B',$selectedBox)){echo 'checked';} ?>> Bestuur en middelen
           </label>
         </div>
       </div>
@@ -86,19 +86,19 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" <?php if($db_getItem_info['period'] == '1'){echo 'checked';}?>>
               Korter dan een jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input type="radio" name="optionsRadios" id="optionsRadios2" value="2" <?php if($db_getItem_info['period'] == '2'){echo 'checked';}?>>
               Langer dan een jaar, korter dan vijf jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+              <input type="radio" name="optionsRadios" id="optionsRadios3" value="3" <?php if($db_getItem_info['period'] == '3'){echo 'checked';}?>>
               Vijf jaar of langer
             </label>
           </div>
@@ -162,12 +162,12 @@
         <div class="col-sm-10">
           <div class="checkbox">
             <label>
-              <input type="checkbox" value=""> Gemeente contactgegevens
+              <input type="checkbox" value="GEM"> Gemeente contactgegevens
             </label>
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox" value=""> Griffie contactgegevens
+              <input type="checkbox" value="GRIEF"> Griffie contactgegevens
             </label>
           </div>
         </div>

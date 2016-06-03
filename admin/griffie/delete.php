@@ -172,12 +172,12 @@
         <div class="col-sm-10">
           <div class="checkbox">
             <label>
-              <input type="checkbox" value=""> Gemeente contactgegevens
+              <input type="checkbox" value="GEM"> Gemeente contactgegevens
             </label>
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox" value=""> Griffie contactgegevens
+              <input type="checkbox" value="GRIEF"> Griffie contactgegevens
             </label>
           </div>
         </div>

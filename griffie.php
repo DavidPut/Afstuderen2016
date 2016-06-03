@@ -25,7 +25,9 @@ if($action == null || $action == 'list') {
 }
 
 if ($action == 'edit' && $id != null){
-  
+  require_once "database/db_functions.php";
+  $db_getItem = new DB_functions();
+  $db_getItem_info = $db_getItem->griffieItem($id);
 } elseif ($action == 'delete' && $id != null){
   require_once "database/db_functions.php"; 
   $db_getItem = new DB_functions();

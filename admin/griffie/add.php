@@ -151,12 +151,12 @@ echo $_POST['BVPaddType'][2];
         <div class="col-sm-10">
           <div class="checkbox">
             <label>
-              <input type="checkbox" name="BVPaddcontact[]" value=""> Gemeente contactgegevens
+              <input type="checkbox" name="BVPaddcontact[]" value="GEM"> Gemeente contactgegevens
             </label>
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox" name="BVPaddContact[]" value=""> Griffie contactgegevens
+              <input type="checkbox" name="BVPaddContact[]" value="GRIEF"> Griffie contactgegevens
             </label>
           </div>
         </div>
