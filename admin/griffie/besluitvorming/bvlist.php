@@ -2,7 +2,7 @@
 
 
 if($action == 'edit'){
-  echo '<a class="btn btn-success pull-right" href="griffie/'.$db_getItem_info_item['id'].'/besluitvorming/add"></i>toevoegen</a>';
+  echo '<a class="btn btn-success pull-right" href="griffie/'.$db_getItem_info['id'].'/besluitvorming/add"></i>toevoegen</a>';
 }
 ?>
 <table class="table table-hover table-list">
