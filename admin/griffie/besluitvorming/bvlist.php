@@ -1,5 +1,7 @@
 <?php
-
+require_once "database/db_functions.php";
+$db_getBVList = new DB_functions();
+$db_getBVList_info = $db_getBVList->griffieBVlist();
 
 if($action == 'edit'){
   echo '<a class="btn btn-success pull-right" href="griffie/'.$db_getItem_info['id'].'/besluitvorming/add"></i>toevoegen</a>';
@@ -17,10 +19,10 @@ if($action == 'edit'){
   </tr>
   </thead>
   <tbody>
-  <?php for ($x = 0; $x <= 5; $x++) {
+  <?php foreach ($db_getBVList_info as $db_getBVList_info_item) { {
     echo " 
       <tr>
-        <td>".$db_getList_info_item['title']."</td>
+        <td>".$db_getBVList_info_item['title']."</td>
         <td>
           <p class='text-right'>
             ".(($action == 'edit')?"<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"griffie/".$db_getItem_info['id']."/besluitvorming/\"><i class=\"fa fa-pencil fa-fw\"></i></a>":"")."
