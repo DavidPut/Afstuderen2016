@@ -69,6 +69,7 @@ if(isset($_POST['BVPadd'])) {
           $BVPtypes;
           foreach ($_POST['BVPaddType'] as $selected) {
             $BVPtypes = $BVPtypes . $selected . ",";
+            $_POST['BVPaddType'] = $BVPtypes;
           }
         } else {
           $BVPtypes = null;
