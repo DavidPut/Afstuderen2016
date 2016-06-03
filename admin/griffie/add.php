@@ -21,7 +21,7 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
+      <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddTitle'])){echo "has-error";}?>">
         <label for="addTitle" class="col-sm-2 control-label">Titel</label>
         <div class="col-sm-10">
           <input type="text" name="BVPaddTitle" class="form-control" placeholder="Titel besluitvorming">
@@ -32,7 +32,7 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
+      <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddSummary'])){echo "has-error";}?>">
         <label for="addSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
           <textarea class="form-control" name="BVPaddSummary" placeholder="Samenvatting besluitvorming" rows="3"><?php if($_SESSION['Callback'] == true){echo $_POST['BVPaddSummary'];}?></textarea>
@@ -43,7 +43,7 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
+      <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['addLocation'])){echo "has-error";}?>">
         <label for="addLocation" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
           <input class="form-control" type="text" name="BVPaddLocation" placeholder="Een postcode of adres"></input>
