@@ -4,10 +4,9 @@
     <div class="page-header">
       <div class="pull-left">
         <h3>Besluitvormingsprocessen <span class="label label-info"><i class="fa fa-list fa-fw" aria-hidden="true"></i></span></h3>
-        <a class="btn btn-success pull-right" href="griffie/add"><i class="fa fa-plus small-icon fa-lg"></i> Toevoegen</a>
       </div>
       <div class="pull-right">
-        
+        <a class="btn btn-success pull-right" href="griffie/add"><i class="fa fa-plus small-icon fa-lg"></i> Toevoegen</a>
       </div>
       <div class="clearfix"></div>
     </div>
