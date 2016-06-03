@@ -9,7 +9,7 @@
         </div>
         <div class="pull-right">
           <a class="btn btn-default" href="griffie">annuleren</a>
-          <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces aanpassen" class="btn btn-list btn-primary">aanpassen<a href="griffie"></a></button>
+          <button class="btn btn-list btn-success" type="submit" name ="BVedit" value="toevoegen">aanpassen</button>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -21,7 +21,7 @@
       <div class="form-group">
         <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Titel besluitvorming" value="<?php echo $db_getItem_info['title']; ?>">
+          <input type="text" name="BVPeditTitle"class="form-control" placeholder="Titel besluitvorming" value="<?php echo $db_getItem_info['title']; ?>">
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
       <div class="form-group">
         <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"><?php echo $db_getItem_info['summary']; ?></textarea>
+          <textarea class="form-control" name="BVPeditSummary" placeholder="Samenvatting besluitvorming" rows="3"><?php echo $db_getItem_info['summary']; ?></textarea>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
       <div class="form-group">
         <label for="inputAdrescode" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres" value="<?php echo $db_getItem_info['location']; ?>"></input>
+          <input class="form-control" type="text" name="BVPeditLocation" placeholder="Een postcode of adres" value="<?php echo $db_getItem_info['location']; ?>"></input>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
       <div class="form-group">
         <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="tags" placeholder="Tags, gescheiden door komma's" value="<?php echo $db_getItem_info['tags']; ?>"></input>
+          <input class="form-control" type="text" name="BVPeditTags" placeholder="Tags, gescheiden door komma's" value="<?php echo $db_getItem_info['tags']; ?>"></input>
         </div>
       </div>
     </div>
@@ -71,13 +71,13 @@
         <label for="inputTags" class="col-sm-2 control-label">Soort</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox1" value="F" <?php if(in_array('F',$selectedBox)){echo 'checked';} ?>> Fysiek
+            <input type="checkbox" name="BVPeditType[]" id="inlineCheckbox1" value="F" <?php if(in_array('F',$selectedBox)){echo 'checked';} ?>> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox2" value="S" <?php if(in_array('S',$selectedBox)){echo 'checked';} ?>> Sociaal
+            <input type="checkbox" name="BVPeditType[]" id="inlineCheckbox2" value="S" <?php if(in_array('S',$selectedBox)){echo 'checked';} ?>> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox3" value="B" <?php if(in_array('B',$selectedBox)){echo 'checked';} ?>> Bestuur en middelen
+            <input type="checkbox" name="BVPeditType[]" id="inlineCheckbox3" value="B" <?php if(in_array('B',$selectedBox)){echo 'checked';} ?>> Bestuur en middelen
           </label>
         </div>
       </div>
@@ -91,19 +91,19 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" <?php if($db_getItem_info['period'] == '1'){echo 'checked';}?>>
+              <input type="radio" name="BVPeditPeriod" id="optionsRadios1" value="1" <?php if($db_getItem_info['period'] == '1'){echo 'checked';}?>>
               Korter dan een jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios2" value="2" <?php if($db_getItem_info['period'] == '2'){echo 'checked';}?>>
+              <input type="radio" name="BVPeditPeriod" id="optionsRadios2" value="2" <?php if($db_getItem_info['period'] == '2'){echo 'checked';}?>>
               Langer dan een jaar, korter dan vijf jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios3" value="3" <?php if($db_getItem_info['period'] == '3'){echo 'checked';}?>>
+              <input type="radio" name="BVPeditPeriod" id="optionsRadios3" value="3" <?php if($db_getItem_info['period'] == '3'){echo 'checked';}?>>
               Vijf jaar of langer
             </label>
           </div>
@@ -167,12 +167,12 @@
         <div class="col-sm-10">
           <div class="checkbox">
             <label>
-              <input type="checkbox" value="GEM"> Gemeente contactgegevens
+              <input type="checkbox" name="BVPeditContact[]" value="GEM"> Gemeente contactgegevens
             </label>
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox" value="GRIEF"> Griffie contactgegevens
+              <input type="checkbox" name="BVPeditContact[]" value="GRIEF"> Griffie contactgegevens
             </label>
           </div>
         </div>
@@ -183,7 +183,7 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-xs-12">
       <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
-      <button class="btn btn-lg btn-primary text-right" type = "submit" name = "edit" value = "aanpassen">Aanpassen</button>
+      <button class="btn btn-lg btn-primary text-right" type = "submit" name = "BVPedit" value = "aanpassen">aanpassen</button>
     </div>
   </div>
 
