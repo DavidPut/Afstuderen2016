@@ -153,13 +153,13 @@ if(isset($_POST['BVPedit'])) {
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
-        header("location: griffie/");
+        header("location: griffie/edit/".$pid."/");
         exit();
       }
     }
   }
   //errors
-  header("location: griffie/edit/".$pid."/");
+  header("location: griffie/edit/".$id."/");
   exit();
 }
 
