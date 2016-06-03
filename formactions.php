@@ -3,6 +3,7 @@
 session_start();
 
 if(isset($_POST['loginsubmit'])) {
+  $_SESSION['POST'] = $_POST;
   if (isset($_POST['mail'])) {
     if (isset($_POST['password'])) {
 
@@ -21,9 +22,12 @@ if(isset($_POST['loginsubmit'])) {
         $_SESSION['role'] = $db_login_info["role"];
         $_SESSION['uid'] = $db_login_info["id"];
 
+        unset($_SESSION['Callback']);
+        unset($_SESSION['POST']);
         header("location: griffie");
         exit();
       } else {
+        $_SESSION['Callback'] == true;
         // verkeerde wachtwoord
         header("Location: login");
         exit();

@@ -2,6 +2,8 @@
 
 session_start();
 
+$_POST = $_SESSION['POST'];
+
 //If there is already a session, go to index and do stuff test test
 if (isset($_SESSION['mail'])) {
   switch ($_SESSION['role']){
@@ -56,7 +58,7 @@ if (isset($_SESSION['mail'])) {
               <div class="col-md-4 col-xs-12 col-md-offset-4">
                 <div class="input-group">
                   <span class="input-group-addon" id="basic-addon1">E-mailadres</span>
-                  <input type="email" name="mail" class="form-control" placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>
+                  <input type="email" name="mail" class="form-control" <?php if($_SESSION['Callback'] == true){echo 'value="'.$_POST['BVPaddSummary'].'"';}?> placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>
                 </div>
               </div>
             </div>
@@ -83,3 +85,11 @@ if (isset($_SESSION['mail'])) {
   </body>
 
 </html>
+
+<?php
+
+if(isset($_SESSION['Callback'])){
+  unset($_SESSION['Callback']);
+}
+
+?>
