@@ -36,9 +36,6 @@ if(isset($_POST['loginsubmit'])) {
 // Nieuwe besluitvormingsproces
 if(isset($_POST['BVPadd'])) {
   if(isset($_POST['BVPaddTitle'])) {
-    header("Location: griffie/add");
-    exit();
-  } else {
     if(isset($_POST['BVPaddSummary'])) {
       if(isset($_POST['BVPaddPeriod'])) {
 
