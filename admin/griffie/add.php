@@ -45,7 +45,7 @@ echo $_POST['BVPaddType'][2];
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-warning";}?>">
         <label for="addLocation" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
           <input class="form-control" type="text" name="BVPaddLocation" placeholder="Een postcode of adres"></input>
@@ -56,7 +56,7 @@ echo $_POST['BVPaddType'][2];
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-warning";}?>">
         <label for="addTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
           <input class="form-control" type="text" name="BVPaddTags" placeholder="Tags, gescheiden door komma's"></input>
@@ -67,17 +67,17 @@ echo $_POST['BVPaddType'][2];
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddType'])){echo "has-error";}?>">
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
         <label for="inputTags" class="col-sm-2 control-label">Soort *</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="F" <?php if(in_array('F',$_POST['BVPaddType'][])){echo 'checked';} unset($_POST['BVPaddType']);?>> Fysiek
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="F"> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox2" value="S" <?php if(in_array('S',$_POST['BVPaddType'][])){echo 'checked';} unset($_POST['BVPaddType']);?>> Sociaal
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox2" value="S"> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox3" value="B" <?php if(in_array('B',$_POST['BVPaddType'][])){echo 'checked';} unset($_POST['BVPaddType']);?>> Bestuur en middelen
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox3" value="B"> Bestuur en middelen
           </label>
         </div>
       </div>
@@ -86,7 +86,7 @@ echo $_POST['BVPaddType'][2];
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddPeriod'])){echo "has-error";}?>">
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
         <label for="inputTags" class="col-sm-2 control-label">Periode *</label>
         <div class="col-sm-10">
           <div class="radio">
@@ -146,7 +146,7 @@ echo $_POST['BVPaddType'][2];
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-warning";}?>">
         <label for="inputContact" class="col-sm-2 control-label">Contactgegevens</label>
         <div class="col-sm-10">
           <div class="checkbox">
