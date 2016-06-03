@@ -45,8 +45,8 @@ if(isset($_POST['loginsubmit'])) {
 if(isset($_POST['BVPadd'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
-  if(isset($_POST['BVPaddTitle']) && !empty($_POST['password'])) {
-    if(isset($_POST['BVPaddSummary']) && !empty($_POST['password'])) {
+  if(isset($_POST['BVPaddTitle']) && !empty($_POST['BVPaddTitle'])) {
+    if(isset($_POST['BVPaddSummary']) && !empty($_POST['BVPaddSummary'])) {
 
     } else {
       header("Location: griffie/add");
