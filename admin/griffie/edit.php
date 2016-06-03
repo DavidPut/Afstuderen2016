@@ -10,7 +10,7 @@
         </div>
         <div class="pull-right">
           <a class="btn btn-default" href="griffie">annuleren</a>
-          <button class="btn btn-list btn-success" type="submit" name ="BVedit" value="toevoegen">aanpassen</button>
+          <button class="btn btn-list btn-primary" type="submit" name ="BVedit" value="toevoegen">aanpassen</button>
         </div>
         <div class="clearfix"></div>
       </div>
