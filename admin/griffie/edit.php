@@ -206,3 +206,8 @@
   });
 </script>
 
+<?php
+if(isset($_SESSION['Callback'])){
+  unset($_SESSION['Callback']);
+} ?>
+
