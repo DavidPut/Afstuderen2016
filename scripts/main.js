@@ -222,7 +222,7 @@ function moveSidebar(){
         $('.mob-sidebar').addClass('side-bar');
 
         //Make toggle button vertical
-        $(".toggle-button").css({"top" : "99.2%", "left"  : "50%", "height" : "35px", "width" : "80px"});
+        $(".toggle-button").css({"top" : "99.2%", "left"  : "1.5%", "height" : "35px", "width" : "97%"});
         $(".toggle-button p").removeClass("rotate").css("margin-top", "0px");
         $(".toggle-button button").css({"transition" : "top 0.3s", "top" : "25px"});
     }
