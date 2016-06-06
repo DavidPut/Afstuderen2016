@@ -1,4 +1,6 @@
-<form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+<?php $_POST = $_SESSION['POST']; ?>
+
+<form class="form-horizontal" action="formactions.php" method="POST">
 
   <!-- nieuwe besluitvorming -->
   <div class="row">
@@ -19,10 +21,10 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
-        <label for="addTitle" class="col-sm-2 control-label">Titel</label>
+      <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddTitle'])){echo "has-error";}?>">
+        <label for="addTitle" class="col-sm-2 control-label">Titel *</label>
         <div class="col-sm-10">
-          <input type="text" name="BVPaddTitle" class="form-control" placeholder="Titel besluitvorming">
+          <input type="text" name="BVPaddTitle" class="form-control" placeholder="Titel besluitvorming" value="<?php if($_SESSION['Callback'] == true){echo $_POST['BVPaddTitle'];}?>">
         </div>
       </div>
     </div>
@@ -30,10 +32,10 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
-        <label for="addSummary" class="col-sm-2 control-label">Samenvatting</label>
+      <div class="form-group <?php if($_SESSION['Callback'] == true && empty($_POST['BVPaddSummary'])){echo "has-error";}?>">
+        <label for="addSummary" class="col-sm-2 control-label">Samenvatting *</label>
         <div class="col-sm-10">
-          <textarea class="form-control" name="BVPaddSummary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
+          <textarea class="form-control" name="BVPaddSummary" placeholder="Samenvatting besluitvorming" rows="3"><?php if($_SESSION['Callback'] == true){echo $_POST['BVPaddSummary'];}?></textarea>
         </div>
       </div>
     </div>
@@ -41,7 +43,7 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-warning";}?>">
         <label for="addLocation" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
           <input class="form-control" type="text" name="BVPaddLocation" placeholder="Een postcode of adres"></input>
@@ -52,7 +54,7 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-warning";}?>">
         <label for="addTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
           <input class="form-control" type="text" name="BVPaddTags" placeholder="Tags, gescheiden door komma's"></input>
@@ -63,8 +65,8 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
-        <label for="inputTags" class="col-sm-2 control-label">Soort</label>
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
+        <label for="inputTags" class="col-sm-2 control-label">Soort *</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
             <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="F"> Fysiek
@@ -82,8 +84,8 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
-        <label for="inputTags" class="col-sm-2 control-label">Periode</label>
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
+        <label for="inputTags" class="col-sm-2 control-label">Periode *</label>
         <div class="col-sm-10">
           <div class="radio">
             <label>
@@ -142,17 +144,17 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-warning";}?>">
         <label for="inputContact" class="col-sm-2 control-label">Contactgegevens</label>
         <div class="col-sm-10">
           <div class="checkbox">
             <label>
-              <input type="checkbox" name="BVPaddcontact[]" value=""> Gemeente contactgegevens
+              <input type="checkbox" name="BVPaddcontact[]" value="GEM"> Gemeente contactgegevens
             </label>
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox" name="BVPaddContact[]" value=""> Griffie contactgegevens
+              <input type="checkbox" name="BVPaddContact[]" value="GRIEF"> Griffie contactgegevens
             </label>
           </div>
         </div>
@@ -169,3 +171,7 @@
   </div>
 
 </form>
+<?php
+if(isset($_SESSION['Callback'])){
+  unset($_SESSION['Callback']);
+} ?>

@@ -1,16 +1,18 @@
-<form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+<?php $_POST = $_SESSION['POST']; ?>
+
+<form class="form-horizontal" action="formactions.php" method="POST">
+  <input type="hidden" name="pid" value="<?php echo $db_getItem_info['id']; ?>">
 
   <!-- nieuwe besluitvorming -->
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
         <div class="pull-left">
-          <h3>Besluitvormingsproces <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
+          <h3>Besluitvormingsproces <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span> <a class="btn btn-default" href="dossier.html">naar pagina</a></h3>
         </div>
         <div class="pull-right">
-          <button data-toggle="tooltip" data-placement="top" title="naar pagina" class="btn btn-list btn-default">naar pagina<a href="dossier.html"></a></button>
-          <button data-toggle="tooltip" data-placement="top" title="Aanpassen annuleren" class="btn btn-list btn-default">annuleren<a href="griffie"></a></button>
-          <button data-toggle="tooltip" data-placement="top" title="Besluitvormingsproces aanpassen" class="btn btn-list btn-primary">aanpassen<a href="griffie"></a></button>
+          <a class="btn btn-default" href="griffie">annuleren</a>
+          <button class="btn btn-list btn-primary" type="submit" name ="BVPedit" value="toevoegen">aanpassen</button>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -22,7 +24,7 @@
       <div class="form-group">
         <label for="inputTitle" class="col-sm-2 control-label">Titel</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Titel besluitvorming">
+          <input type="text" name="BVPeditTitle"class="form-control" placeholder="Titel besluitvorming" value="<?php if($_SESSION['Callback'] == true){echo $_POST['BVPeditTitle'];} else {echo $db_getItem_info['title'];} ?>">
         </div>
       </div>
     </div>
@@ -33,7 +35,7 @@
       <div class="form-group">
         <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="3"></textarea>
+          <textarea class="form-control" name="BVPeditSummary" placeholder="Samenvatting besluitvorming" rows="3"><?php if($_SESSION['Callback'] == true){echo $_POST['BVPeditSummary'];} else {echo $db_getItem_info['summary'];} ?></textarea>
         </div>
       </div>
     </div>
@@ -44,7 +46,7 @@
       <div class="form-group">
         <label for="inputAdrescode" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="adrescode" placeholder="Een postcode of adres"></input>
+          <input class="form-control" type="text" name="BVPeditLocation" placeholder="Een postcode of adres" value="<?php echo $db_getItem_info['location']; ?>"></input>
         </div>
       </div>
     </div>
@@ -55,11 +57,16 @@
       <div class="form-group">
         <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="tags" placeholder="Tags, gescheiden door komma's"></input>
+          <input class="form-control" type="text" name="BVPeditTags" placeholder="Tags, gescheiden door komma's" value="<?php echo $db_getItem_info['tags']; ?>"></input>
         </div>
       </div>
     </div>
   </div>
+
+  <?php
+  $db_getItem_info['type'];
+  $selectedBox = explode(",", $db_getItem_info['type']);
+  ?>
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
@@ -67,13 +74,13 @@
         <label for="inputTags" class="col-sm-2 control-label">Soort</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox1" value="option1"> Fysiek
+            <input type="checkbox" name="BVPeditType[]" id="inlineCheckbox1" value="F" <?php if(in_array('F',$selectedBox)){echo 'checked';} ?>> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox2" value="option2"> Sociaal
+            <input type="checkbox" name="BVPeditType[]" id="inlineCheckbox2" value="S" <?php if(in_array('S',$selectedBox)){echo 'checked';} ?>> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox3" value="option3"> Bestuur en middelen
+            <input type="checkbox" name="BVPeditType[]" id="inlineCheckbox3" value="B" <?php if(in_array('B',$selectedBox)){echo 'checked';} ?>> Bestuur en middelen
           </label>
         </div>
       </div>
@@ -87,19 +94,19 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              <input type="radio" name="BVPeditPeriod" id="optionsRadios1" value="1" <?php if($db_getItem_info['period'] == '1'){echo 'checked';}?>>
               Korter dan een jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input type="radio" name="BVPeditPeriod" id="optionsRadios2" value="2" <?php if($db_getItem_info['period'] == '2'){echo 'checked';}?>>
               Langer dan een jaar, korter dan vijf jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+              <input type="radio" name="BVPeditPeriod" id="optionsRadios3" value="3" <?php if($db_getItem_info['period'] == '3'){echo 'checked';}?>>
               Vijf jaar of langer
             </label>
           </div>
@@ -163,12 +170,12 @@
         <div class="col-sm-10">
           <div class="checkbox">
             <label>
-              <input type="checkbox" value=""> Gemeente contactgegevens
+              <input type="checkbox" name="BVPeditContact[]" value="GEM"> Gemeente contactgegevens
             </label>
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox" value=""> Griffie contactgegevens
+              <input type="checkbox" name="BVPeditContact[]" value="GRIEF"> Griffie contactgegevens
             </label>
           </div>
         </div>
@@ -178,7 +185,8 @@
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-xs-12">
-      <button class="btn btn-lg btn-primary btn-block" type = "submit" name = "edit" value = "Aanpassen">Aanpassen</button>
+      <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
+      <button class="btn btn-lg btn-primary text-right" type = "submit" name = "BVPedit" value = "aanpassen">aanpassen</button>
     </div>
   </div>
 
@@ -197,3 +205,9 @@
     });
   });
 </script>
+
+<?php
+if(isset($_SESSION['Callback'])){
+  unset($_SESSION['Callback']);
+} ?>
+

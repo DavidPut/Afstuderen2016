@@ -1,11 +1,12 @@
-<form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+<form class="form-horizontal" action="formactions.php" method="POST">
+  <input type="hidden" name="pid" value="<?php echo $db_getItem_info['id']; ?>">
 
   <!-- nieuwe besluitvorming -->
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
         <div class="pull-left">
-        <h3>Besluitvormingsproces <span class="label label-danger"><i class="fa fa-trash-o small-icon" aria-hidden="true"></i></span></h3>
+        <h3>Besluitvormingsproces <span class="label label-danger"><i class="fa fa-trash-o small-icon" aria-hidden="true"></i></span> <a class="btn btn-default" href="dossier.html">naar pagina</a></h3>
         </div>
         <div class="pull-right">
           <a class="btn btn-default" href="griffie">annuleren</a>
@@ -33,7 +34,7 @@
       <div class="form-group">
         <label for="inputSummary" class="col-sm-2 control-label">Samenvatting</label>
         <div class="col-sm-10">
-          <textarea readonly="readonly" class="form-control" name="summary"rows="3"><?php echo $db_getItem_info['summary']; ?></textarea>
+          <textarea readonly="readonly" class="form-control" rows="3"><?php echo $db_getItem_info['summary']; ?></textarea>
         </div>
       </div>
     </div>
@@ -44,7 +45,7 @@
       <div class="form-group">
         <label for="inputAdrescode" class="col-sm-2 control-label">Postcode/adres</label>
         <div class="col-sm-10">
-          <input readonly="readonly" class="form-control" type="text" name="adrescode" value="<?php echo $db_getItem_info['location']; ?>"></input>
+          <input readonly="readonly" class="form-control" type="text" value="<?php echo $db_getItem_info['location']; ?>">
         </div>
       </div>
     </div>
@@ -55,7 +56,7 @@
       <div class="form-group">
         <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
-          <input readonly="readonly" class="form-control" type="text" name="tags" value="<?php echo $db_getItem_info['tags']; ?>"></input>
+          <input readonly="readonly" class="form-control" type="text" value="<?php echo $db_getItem_info['tags']; ?>">
         </div>
       </div>
     </div>
@@ -172,12 +173,12 @@
         <div class="col-sm-10">
           <div class="checkbox">
             <label>
-              <input type="checkbox" value=""> Gemeente contactgegevens
+              <input type="checkbox" value="GEM"> Gemeente contactgegevens
             </label>
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox" value=""> Griffie contactgegevens
+              <input type="checkbox" value="GRIEF"> Griffie contactgegevens
             </label>
           </div>
         </div>
@@ -189,7 +190,7 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-5 col-xs-12">
       <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
-      <button class="btn btn-lg btn-danger text-right" type ="submit" name ="BVPdelete">verwijderen</button>
+      <button class="btn btn-lg btn-danger text-right" type ="submit" name="BVPdelete">verwijderen</button>
     </div>
   </div>
 

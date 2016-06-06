@@ -1,9 +1,13 @@
 <?php
-
+require_once "database/db_functions.php";
+$db_getBVList = new DB_functions();
+$db_getBVList_info = $db_getBVList->griffieBVList($id);
 
 if($action == 'edit'){
-  echo '<a class="btn btn-success pull-right" href="griffie/besluitvorming/add"></i>toevoegen</a>';
+  echo '<a class="btn btn-success pull-right" href="griffie/edit/'.$db_getItem_info['id'].'/besluitvorming/add"></i>toevoegen</a>';
 }
+  if (is_array($db_getBVList_info)){
+
 ?>
 <table class="table table-hover table-list">
   <thead>
@@ -17,29 +21,16 @@ if($action == 'edit'){
   </tr>
   </thead>
   <tbody>
-  <?php for ($x = 0; $x <= 5; $x++) {
+  <?php foreach ($db_getBVList_info as $db_getBVList_info_item) {
     echo " 
       <tr>
-        <td>".$db_getList_info_item['title']."</td>
+        <td>".$db_getBVList_info_item['title']."</td>
         <td>
           <p class='text-right'>
-            <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"griffie/edit/".$db_getList_info_item['id']."\"><i class=\"fa fa-pencil fa-fw\"></i></a>
-            <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"griffie/delete/".$db_getList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
+            ".(($action == 'edit')?"<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"griffie/edit/".$db_getItem_info['id']."/besluitvorming/edit/".$db_getBVList_info_item['id']."\"><i class=\"fa fa-pencil fa-fw\"></i></a>":"")."
+            <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"griffie/edit/".$db_getItem_info['id']."/besluitvorming/delete/".$db_getBVList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
           </p>
         </td>
-      </tr>"; } ?>
-
-
-<!--    echo "-->
-<!--      <tr>-->
-<!--        <td>" . $x . "</td>-->
-<!--        <td>Een titel van een besluitvorming</td>-->
-<!--        <td>-->
-<!--          <p class='text-right'>";-->
-<!--            if($action == 'edit'){ echo "<a class=\"btn btn-default \" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"besluitvorming/edit/\"><i class=\"fa fa-pencil fa-fw\"></i></a>";}-->
-<!--            echo "<a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"besluitvorming/delete/\"><i class=\"fa fa-trash-o fa-fw\"></i></a>";-->
-<!--          echo "</p>-->
-<!--        </td>-->
-<!--      </tr>";} ?>-->
+      </tr>"; }} ?>
   </tbody>
 </table>

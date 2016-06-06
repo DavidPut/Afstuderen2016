@@ -56,32 +56,97 @@ class DB_functions
     $no_of_rows = mysqli_num_rows($result);
     if ($no_of_rows > 0) {
       $row = mysqli_fetch_assoc($result);
+      $this->db->close();
       return $row;
-      $this->db->close();
     } else {
-      return false;
       $this->db->close();
+      return false;
     }
   }
 
   public function griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact){
-
     $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `adddate`) VALUES (NULL, '$BVPtitle', '$BVPsummary', '$BVPlocation', '$BVPtypes', '$BVPperiod', '')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
+      $this->db->close();
       return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
+  public function griffieEdit($pid, $BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact){
+    $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process` SET `title` = '$BVPtitle', `summary` = '$BVPsummary', `location` = '$BVPlocation', `period` = '$BVPperiod',`type` = '$BVPtypes'  WHERE `process`.`id` = '$pid'") or die( mysqli_error($this->db->connect()));
+    // check for successful store
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
+  public function griffieDelete($pid){
+    $result = mysqli_query($this->db->connect(), "DELETE FROM process WHERE id = '$pid'") or die(mysqli_error($this->db->connect()));
+    $result2 = mysqli_query($this->db->connect(), "DELETE FROM process_decision WHERE pid = '$pid'") or die(mysqli_error($this->db->connect()));
+    $result3 = mysqli_query($this->db->connect(), "DELETE FROM process_agenda WHERE pid = '$pid'") or die(mysqli_error($this->db->connect()));
+    if ($result && $result2 && $result3) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
+
+
+  // lijst van besluiten bij id proces
+  public function griffieBVList($pid){
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_decision WHERE pid = '$pid'") or die(mysqli_error($this->db->connect()));
+    $no_of_rows = mysqli_num_rows($result);
+    if ($no_of_rows > 0) {
+      $rows_result = array();
+      while($row = mysqli_fetch_assoc($result)) {
+        $rows_result[] = $row;
+      }
+      return $rows_result;
       $this->db->close();
     } else {
       return false;
       $this->db->close();
     }
-
   }
 
-  public function griffieDelete(){
-    
+
+  // besluiten toevoegen
+  public function griffieBVAdd($pid, $BVPtitle, $BVPsummary){
+    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_decision` (`id`,`pid`, `title`, `summary`) VALUES (NULL, '$pid', '$BVPtitle', '$BVPsummary')")or die( mysqli_error($this->db->connect()));
+    // check for successful store
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
   }
-  
+
+  // besluiten toevoegen
+  public function griffieBVEdit($pid, $bid, $BVtitle, $BVsummary){
+    $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process_decision` SET `title` = '$BVtitle', `summary` = '$BVsummary' WHERE `process_decision`.`id` = '$bid' && `pid` = '$pid'") or die( mysqli_error($this->db->connect()));
+    // check for successful store
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
   public function raadslidList(){
     
   }

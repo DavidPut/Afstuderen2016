@@ -3,6 +3,7 @@
 session_start();
 
 $action = urlencode($_GET['action']);
+$id = urlencode($_GET['id']);
 
 if (isset($_SESSION['mail'])) {
   if ($_SESSION['role'] != "griffier") {
@@ -63,18 +64,19 @@ if (isset($_SESSION['mail'])) {
 </nav>
 
 <div class="container">
-<form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+<form class="form-horizontal" action="formactions.php" method="POST">
+  <input type="hidden" name="pid" value="<?php echo $id; ?>">
 
   <!-- nieuwe besluitvorming -->
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
         <div class="pull-left">
-          <h3>Besluitvorming <span class="label label-success"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
+          <h3>Besluitvorming <span class="label label-success"><i class="fa fa-plus small-icon" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-          <a class="btn btn-default" href="griffie/edit">annuleren</a>
-          <button class="btn btn-list btn-success" type="submit" name ="add" value="toevoegen">opslaan</button>
+          <a class="btn btn-default" href="griffie/edit/<?php echo $id; ?>">annuleren</a>
+          <button class="btn btn-list btn-success" type="submit" name ="BVadd" value="toevoegen">opslaan</button>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -97,7 +99,7 @@ if (isset($_SESSION['mail'])) {
               <div class="form-group">
                 <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
                 <div class="col-sm-10">
-                  <input type="text" name="title" class="form-control" placeholder="Titel proces">
+                  <input type="text" name="BVaddTitle" class="form-control" placeholder="Titel besluit">
                 </div>
               </div>
             </div>
@@ -108,7 +110,7 @@ if (isset($_SESSION['mail'])) {
               <div class="form-group">
                 <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control" name="summary" placeholder="Samenvatting besluitvorming" rows="6"></textarea>
+                  <textarea class="form-control" name="BVaddSummary" placeholder="Samenvatting besluit" rows="6"></textarea>
                 </div>
               </div>
             </div>
@@ -119,7 +121,7 @@ if (isset($_SESSION['mail'])) {
               <div class="form-group">
                 <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="file" name="inputFile"></input>
+                  <input class="form-control" type="BVaddfile" name="inputFile"></input>
                 </div>
               </div>
             </div>
@@ -133,7 +135,8 @@ if (isset($_SESSION['mail'])) {
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-xs-12">
-      <button class="btn btn-lg btn-success btn-block" type="submit" name ="add" value ="toevoegen">Toevoegen</button>
+      <a class="btn btn-lg btn-default text-left" href="griffie/edit/<?php echo $id; ?>">annuleren</a>
+      <button class="btn btn-lg btn-success text-right" type="submit" name="BVadd" value="toevoegen">toevoegen</button>
     </div>
   </div>
 

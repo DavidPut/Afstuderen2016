@@ -2,33 +2,7 @@
 
 session_start();
 
-//Check the user pressed the submit button
-if(isset($_POST['submit'])) {
-  if (isset($_POST['mail'])) {
-    if (isset($_POST['password'])) {
-
-      $form_mail = $_POST['mail'];
-      $form_pass = $_POST['password'];
-
-      require_once "database/db_functions.php";
-      $db_login = new DB_functions();
-      $db_login_info = $db_login->login($form_mail);
-
-      $database_pass = $db_login_info['password'];
-
-      if (md5($form_pass) == $database_pass) {
-        $_SESSION['mail'] = $db_login_info['mail'];
-        $_SESSION['name'] = $db_login_info["name"];
-        $_SESSION['role'] = $db_login_info["role"];
-        $_SESSION['uid'] = $db_login_info["id"];
-      } else {
-        // verkeerde wachtwoord
-        header("Location: login");
-        exit();
-      }
-    }
-  }
-}
+$_POST = $_SESSION['POST'];
 
 //If there is already a session, go to index and do stuff test test
 if (isset($_SESSION['mail'])) {
@@ -76,22 +50,21 @@ if (isset($_SESSION['mail'])) {
 
 
     <div class="container">
-      
       <div class="row">
-          <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+          <form action="formactions.php" method="POST">
             
             <div class="row">
               <div class="col-md-4 col-xs-12 col-md-offset-4">
                 <div class="input-group">
                   <span class="input-group-addon" id="basic-addon1">E-mailadres</span>
-                  <input type="email" name="mail" class="form-control" placeholder="uw e-mailadres" aria-describedby="basic-addon1" autofocus>
+                  <input type="email" name="mail" class="form-control" placeholder="uw e-mailadres" value="<?php if($_SESSION['Callback'] == true){echo $_POST['mail'];}?>" aria-describedby="basic-addon1" autofocus>
                 </div>
               </div>
             </div>
             
             <div class="row">
               <div class="col-md-4 col-xs-12 col-md-offset-4">
-                  <div class="input-group">
+                  <div class="input-group <?php if($_SESSION['Callback'] == true && empty($_POST['password'])){echo "has-error";}?>">
                     <span class="input-group-addon" id="basic-addon1">Wachtwoord</span>
                     <input type="password" name="password" class="form-control" placeholder="uw wachtwoord" aria-describedby="basic-addon1">
                   </div>
@@ -101,7 +74,7 @@ if (isset($_SESSION['mail'])) {
             
             <div class="row">
               <div class="col-md-4 col-md-offset-4 col-xs-12">
-               <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="inloggen">Inloggen</button>
+               <button class="btn btn-lg btn-primary btn-block" type="submit" name="loginsubmit" value="inloggen">Inloggen</button>
 
               </div>
             </div>
@@ -111,3 +84,9 @@ if (isset($_SESSION['mail'])) {
   </body>
 
 </html>
+
+<?php
+if(isset($_SESSION['Callback'])){
+  unset($_SESSION['Callback']);
+}
+?>
