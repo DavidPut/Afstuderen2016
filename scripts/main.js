@@ -642,9 +642,10 @@ function markerRange(){
             //Marker distance from center in km
             var distance = google.maps.geometry.spherical.computeDistanceBetween(center, latlong) / 1000;
 
+            //Marker id
             var id = markers[i].get("id");
 
-            //If distance bigger then specified range
+            //If distance bigger then user specified range
             if(distance > range) {
                 //Hide document with marker
                 $('.doc-row[id*="'+id+'"]').addClass("hiddenRange");
@@ -652,12 +653,12 @@ function markerRange(){
                 markers[i].setVisible(false);
                 //Reset checkbox filters
                 $('input:checkbox').prop('checked', true);
-
             }
+            //Reset
             else {
-                //Show document with marker
-                $('.doc-row[id*="'+id+'"]').removeClass("hiddenRange");
-                //Show marker
+                //Show documents
+                $('.doc-row').removeClass("hiddenRange hiddenType hiddenTime");
+                //Show markers
                 markers[i].setVisible(true);
                 //Reset checkbox filters
                 $('input:checkbox').prop('checked', true);
