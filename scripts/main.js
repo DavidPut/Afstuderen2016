@@ -231,6 +231,11 @@ function moveSidebar(){
         //Add and remove classes for proper padding placement
         $('.mob-sidebar').removeClass('side-bar');
         $('.no-padding').addClass('side-bar');
+
+        //Place toggle button outside filter block
+        var btnW = $(".toggle-button").outerWidth();
+        $(".toggle-button").css({"margin-left": "-" + btnW + "px"});
+
     }
 }
 

@@ -170,6 +170,10 @@ function moveSidebar(){
     }
     else {
         $(".mob-sidebar").detach().appendTo('.side-bar');
+
+        //Place toggle button outside filter block
+        var btnW = $(".toggle-button").outerWidth();
+        $(".toggle-button").css({"margin-left": "-" + btnW + "px"});
     }
 }
 
