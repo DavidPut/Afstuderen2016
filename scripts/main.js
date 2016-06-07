@@ -134,11 +134,14 @@ function initMap(lat, long) {
             }
         }
 
+        //Remove spacing from title
+        var trimTitle = title.replace(/^\s+|\s+$/gm,'');
+
         //Create marker
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(lat, long),
             map: map,
-            title: title,
+            title: trimTitle,
             type: type,
             time: time,
             icon: image,
@@ -197,7 +200,7 @@ function initMap(lat, long) {
     });
 }
 
-//Limit characters.
+//Limit characters
 function characterLimit(){
     var myTag = $('.document-content').text();
     if (myTag.length > 15) {
@@ -206,13 +209,13 @@ function characterLimit(){
     }
 }
 
-//To center location icon, add height to icon-block.
+//To center location icon, add height to icon-block
 function addHeight(){
     var height = $('.loc-block').height();
     $('.icon-block').css("height", height + "px");
 }
 
-//Move sidebar for mobile users.
+//Move sidebar for mobile users
 function moveSidebar(){
     if ($(window).width() < 992) {
         $(".cont-sidebar").detach().appendTo('.mob-sidebar');
@@ -342,11 +345,13 @@ $(document).on('click', '.toggle-button', function() {
     else {
         $(this).toggleClass('toggle-button-selected');
         var sidebarW = $(".side-bar").outerWidth();
+        console.log($(window).width());
         if (state){
             $(".side-bar").animate({ "left": sidebarW + "px" }, "slow" );
             state = false;
         }
         else {
+
             $(".side-bar").animate({ "left": "-="+sidebarW+"px" }, "slow" );
             state = true;
         }
