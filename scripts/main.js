@@ -414,6 +414,7 @@ function filterTags(){
             $.each( tagsArray, function( i, val ) {
                 //User input to lowercase
                 val = val.toLowerCase();
+                
                 //Remove/add documents that contain value specified in tags
                 $('.doc-row[tags*="'+val+'"]').addClass("showBlock").removeClass("hidden");
                 $(".doc-row" ).not(".showBlock").addClass("hidden");
