@@ -63,6 +63,10 @@ function toggleDossier(){
 
 //Calender plugin
 function calendar(){
+
+    //Get current date, using moments library
+    var currentDate = moment().format('YYYY-MM-DD');
+
     $('#calendar').fullCalendar({
 
         //When clicked on item in calendar
@@ -79,8 +83,9 @@ function calendar(){
             right: 'month,agendaWeek,agendaDay'
         },
 
+
         //Calendar settings
-        defaultDate: '2016-05-12',
+        defaultDate: currentDate,
         editable: true,
         eventLimit: true, // allow "more" link when too many events
 
@@ -158,7 +163,7 @@ function toggleButton(){
     $(".toggle-button").css("top", sidebarHeight / 2  + "px");
 }
 
-//Move sidebar for mobile users.
+//Move sidebar for mobile users
 function moveSidebar(){
     if ($(window).width() < 992) {
         $(".side-bar").detach().appendTo('.mob-sidebar');
@@ -170,6 +175,10 @@ function moveSidebar(){
     }
     else {
         $(".mob-sidebar").detach().appendTo('.side-bar');
+
+        //Place toggle button outside filter block
+        var btnW = $(".toggle-button").outerWidth();
+        $(".toggle-button").css({"margin-left": "-" + btnW + "px"});
     }
 }
 

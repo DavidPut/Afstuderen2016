@@ -134,11 +134,14 @@ function initMap(lat, long) {
             }
         }
 
+        //Remove spacing from title
+        var trimTitle = title.replace(/^\s+|\s+$/gm,'');
+
         //Create marker
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(lat, long),
             map: map,
-            title: title,
+            title: trimTitle,
             type: type,
             time: time,
             icon: image,
@@ -197,7 +200,7 @@ function initMap(lat, long) {
     });
 }
 
-//Limit characters.
+//Limit characters
 function characterLimit(){
     var myTag = $('.document-content').text();
     if (myTag.length > 15) {
@@ -206,13 +209,13 @@ function characterLimit(){
     }
 }
 
-//To center location icon, add height to icon-block.
+//To center location icon, add height to icon-block
 function addHeight(){
     var height = $('.loc-block').height();
     $('.icon-block').css("height", height + "px");
 }
 
-//Move sidebar for mobile users.
+//Move sidebar for mobile users
 function moveSidebar(){
     if ($(window).width() < 992) {
         $(".cont-sidebar").detach().appendTo('.mob-sidebar');
@@ -222,7 +225,7 @@ function moveSidebar(){
         $('.mob-sidebar').addClass('side-bar');
 
         //Make toggle button vertical
-        $(".toggle-button").css({"top" : "99.2%", "left"  : "50%", "height" : "35px", "width" : "80px"});
+        $(".toggle-button").css({"top" : "99.2%", "left"  : "1.5%", "height" : "35px", "width" : "97%"});
         $(".toggle-button p").removeClass("rotate").css("margin-top", "0px");
         $(".toggle-button button").css({"transition" : "top 0.3s", "top" : "25px"});
     }
@@ -231,6 +234,11 @@ function moveSidebar(){
         //Add and remove classes for proper padding placement
         $('.mob-sidebar').removeClass('side-bar');
         $('.no-padding').addClass('side-bar');
+
+        //Place toggle button outside filter block
+        var btnW = $(".toggle-button").outerWidth();
+        $(".toggle-button").css({"margin-left": "-" + btnW + "px"});
+
     }
 }
 
@@ -337,11 +345,13 @@ $(document).on('click', '.toggle-button', function() {
     else {
         $(this).toggleClass('toggle-button-selected');
         var sidebarW = $(".side-bar").outerWidth();
+        console.log($(window).width());
         if (state){
             $(".side-bar").animate({ "left": sidebarW + "px" }, "slow" );
             state = false;
         }
         else {
+
             $(".side-bar").animate({ "left": "-="+sidebarW+"px" }, "slow" );
             state = true;
         }
@@ -637,9 +647,10 @@ function markerRange(){
             //Marker distance from center in km
             var distance = google.maps.geometry.spherical.computeDistanceBetween(center, latlong) / 1000;
 
+            //Marker id
             var id = markers[i].get("id");
 
-            //If distance bigger then specified range
+            //If distance bigger then user specified range
             if(distance > range) {
                 //Hide document with marker
                 $('.doc-row[id*="'+id+'"]').addClass("hiddenRange");
@@ -647,12 +658,12 @@ function markerRange(){
                 markers[i].setVisible(false);
                 //Reset checkbox filters
                 $('input:checkbox').prop('checked', true);
-
             }
+            //Reset
             else {
-                //Show document with marker
-                $('.doc-row[id*="'+id+'"]').removeClass("hiddenRange");
-                //Show marker
+                //Show documents
+                $('.doc-row').removeClass("hiddenRange hiddenType hiddenTime");
+                //Show markers
                 markers[i].setVisible(true);
                 //Reset checkbox filters
                 $('input:checkbox').prop('checked', true);
