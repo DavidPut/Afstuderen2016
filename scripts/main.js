@@ -399,8 +399,14 @@ function filterTags(){
         //Temp array to split makerBooleansArray
         var tempArr = [];
 
-        //Reset
+        //Reset documents
         $(".doc-row" ).removeClass("showBlock").removeClass("hidden");
+
+        //Reset markers
+        for(var j = 0; j < markers.length; j++) {
+
+            markers[j].setVisible(true);
+        }
 
         //If empty tag, reset
         if(tags == ""){
@@ -412,7 +418,7 @@ function filterTags(){
             //FILTER DOCUMENTS
             //Loop through array
             $.each( tagsArray, function( i, val ) {
-                
+
                 //User input to lowercase
                 val = val.toLowerCase();
 

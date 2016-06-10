@@ -92,59 +92,33 @@ function calendar(){
         //Calendar items
         events: [
             {
-                title: 'All Day Event',
-                start: '2016-05-01'
+                title: 'Informatieavond',
+                start: '2016-06-05'
             },
             {
-                title: 'Long Event',
-                start: '2016-05-07',
-                end: '2016-05-10'
+                title: 'Burgerbijeenkomst',
+                start: '2016-06-08'
             },
             {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2016-05-09T16:00:00'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2016-05-16T16:00:00'
-            },
-            {
-                title: 'Conference',
-                start: '2016-05-11',
-                end: '2016-05-13'
-            },
-            {
-                title: 'Meeting',
-                start: '2016-05-12T10:30:00',
-                end: '2016-05-12T12:30:00'
-            },
-            {
-                title: 'Lunch',
-                start: '2016-05-12T12:00:00'
-            },
-            {
-                title: 'Meeting',
-                start: '2016-05-12T14:30:00'
-            },
-            {
-                title: 'Happy Hour',
-                start: '2016-05-12T17:30:00'
-            },
-            {
-                title: 'Dinner',
-                start: '2016-05-12T20:00:00'
-            },
-            {
-                title: 'Birthday Party',
-                start: '2016-05-13T07:00:00'
-            },
-            {
-                title: 'Click for Google',
-                url: 'http://google.com/',
-                start: '2016-05-28'
+                title: 'Inspreekavond',
+                start: '2016-06-18'
             }
+            //{
+            //    title: 'Long Event',
+            //    start: '2016-05-07',
+            //    end: '2016-05-10'
+            //},
+            //{
+            //    id: 999,
+            //    title: 'Repeating Event',
+            //    start: '2016-05-09T16:00:00'
+            //},
+
+            //{
+            //    title: 'Click for Google',
+            //    url: 'http://google.com/',
+            //    start: '2016-05-28'
+            //}
         ],
 
         //Calendar height
