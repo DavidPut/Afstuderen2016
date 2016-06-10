@@ -12,7 +12,7 @@ long = 4.659263;
 //Markers array
 var markers = [];
 
-$( document ).ready(function() {
+$(document).ready(function() {
     initMap(lat, long);
     //getPosition();
     characterLimit();
@@ -345,7 +345,6 @@ $(document).on('click', '.toggle-button', function() {
     else {
         $(this).toggleClass('toggle-button-selected');
         var sidebarW = $(".side-bar").outerWidth();
-        console.log($(window).width());
         if (state){
             $(".side-bar").animate({ "left": sidebarW + "px" }, "slow" );
             state = false;
@@ -400,8 +399,14 @@ function filterTags(){
         //Temp array to split makerBooleansArray
         var tempArr = [];
 
-        //Reset
+        //Reset documents
         $(".doc-row" ).removeClass("showBlock").removeClass("hidden");
+
+        //Reset markers
+        for(var j = 0; j < markers.length; j++) {
+
+            markers[j].setVisible(true);
+        }
 
         //If empty tag, reset
         if(tags == ""){
@@ -410,10 +415,13 @@ function filterTags(){
 
         //Filter by tags
         else{
-
             //FILTER DOCUMENTS
             //Loop through array
             $.each( tagsArray, function( i, val ) {
+
+                //User input to lowercase
+                val = val.toLowerCase();
+
                 //Remove/add documents that contain value specified in tags
                 $('.doc-row[tags*="'+val+'"]').addClass("showBlock").removeClass("hidden");
                 $(".doc-row" ).not(".showBlock").addClass("hidden");
@@ -636,7 +644,7 @@ function markerRange(){
         var center = map.getCenter();
 
         //Change ranger value
-        $( "#range-value").empty().append('<h5>' + range + 'km' + '</h5>' );
+        $("#range-value").empty().append('<h5>' + range + 'km' + '</h5>' );
 
         //Loop through all markers
         for(var i = 0; i < markers.length; i++) {
