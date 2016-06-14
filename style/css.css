@@ -96,6 +96,14 @@ body {
     margin:auto;
 }
 
+.ic-img{
+    padding-left : 0px;
+}
+
+.fa-info + .tooltip {
+    width: 200px;
+}
+
 .search-form{
     margin-top: 8px;
     width: 250px;
@@ -129,6 +137,7 @@ body {
 
 #location-form{
     margin-top:10px;
+    margin-bottom:10px;
 }
 
 .search-block {
