@@ -439,7 +439,10 @@ function filterTags(){
 
         //If empty tag, reset
         if(tags == ""){
-            $(".doc-row" ).removeClass("hidden");
+            //Show documents
+            $('.doc-row').removeClass("hidden hiddenRange hiddenType hiddenTime");
+            //Reset checkbox filters
+            $('input:checkbox').prop('checked', true);
         }
 
         //Filter by tags
