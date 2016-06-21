@@ -5,7 +5,7 @@ var map;
 var lat;
 var long;
 
-//Default
+///Default
 lat = 51.811994;
 long = 4.659263;
 
@@ -80,18 +80,21 @@ function initMap(lat, long) {
     var marker;
 
     //Get document
-    $('.doc-row[lat]').each(function() {
+    $('.doc-row[location]').each(function() {
 
         //Get attributes
         var id = $(this).attr("id");
-        var lat = $(this).attr("lat");
-        var long = $(this).attr("long");
+        var location = $(this).attr("location");
+
         var type = $(this).attr("type");
         var time = $(this).attr("time");
         var tags = $(this).attr("tags");
 
+
+
         //Get title
         var title = $(this).find(".doc-title").text();
+
 
         //Type physical
         if(type == "physical") {
@@ -139,52 +142,61 @@ function initMap(lat, long) {
         //Remove spacing from title
         var trimTitle = title.replace(/^\s+|\s+$/gm,'');
 
-        //Create marker
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(lat, long),
-            map: map,
-            title: trimTitle,
-            type: type,
-            time: time,
-            icon: image,
-            id: id
-        });
+        var geocoder = new google.maps.Geocoder();
 
-        //Set position
-        marker.set('lat', lat);
-        marker.set('long', long);
-        //Set tags
-        marker.set('tags', tags);
-        //Set type
-        marker.set('type', type);
-        //Set time
-        marker.set('time', time);
-        //Push marker to array
-        markers.push(marker);
+        //Location to latlong
+        geocoder.geocode( { 'address': location}, function(results, status) {
 
-        //Add infowindow
-        var infowindow = new google.maps.InfoWindow({
-            content: trimTitle
-        });
+            if (status == google.maps.GeocoderStatus.OK) {
 
-        //Scroll to document
-        marker.addListener('click', function() {
+                var mlat = results[0].geometry.location.lat();
+                var mlong = results[0].geometry.location.lng();
 
-            //Open infowindow
-            infowindow.open(map, this);
+                //Create marker
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(mlat, mlong),
+                    map: map,
+                    title: trimTitle,
+                    type: type,
+                    time: time,
+                    icon: image,
+                    id: id
+                });
 
-            $('html, body').delay(2000).animate({
-                scrollTop: $('.doc-row[id*="'+id+'"]').offset().top
-            },  2000);
+                //Set position
+                marker.set('lat', mlat);
+                marker.set('long', mlong);
+                //Set tags
+                marker.set('tags', tags);
+                //Set type
+                marker.set('type', type);
+                //Set time
+                marker.set('time', time);
+                //Push marker to array
+                markers.push(marker);
 
-            //If animations are complete
-            $('html, body').promise().done(function(){
-                //Highlight document
-                $('.doc-row[id*="'+id+'"]').find('.doc-block').effect("highlight", {}, 3000);
-            });
+                //Add infowindow
+                var infowindow = new google.maps.InfoWindow({
+                    content: trimTitle
+                });
 
+                //Scroll to document
+                marker.addListener('click', function() {
 
+                    //Open infowindow
+                    infowindow.open(map, this);
 
+                    $('html, body').delay(2000).animate({
+                        scrollTop: $('.doc-row[id*="'+id+'"]').offset().top
+                    },  2000);
+
+                    //If animations are complete
+                    $('html, body').promise().done(function(){
+                        //Highlight document
+                        $('.doc-row[id*="'+id+'"]').find('.doc-block').effect("highlight", {}, 3000);
+                    });
+                });
+            }
         });
     });
 
@@ -663,7 +675,7 @@ function markerFilter(mType, mTime){
 function linkDoc(){
     $('.btn-more').click(function(e) {
         var id = $(this).closest('.doc-row').attr('id');
-        window.location.href = "dossier.html?id=" + id;
+        window.location.href = "dossier.php?id=" + id;
     });
 }
 
