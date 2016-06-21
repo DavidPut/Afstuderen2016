@@ -89,19 +89,19 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddPeriod" id="optionsRadios1" value="1">
+              <input type="radio" name="BVPaddPeriod" id="optionsRadios1" value="low">
               Korter dan een jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddPeriod" id="optionsRadios2" value="2">
+              <input type="radio" name="BVPaddPeriod" id="optionsRadios2" value="mid">
               Langer dan een jaar, korter dan vijf jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddPeriod" id="optionsRadios3" value="3">
+              <input type="radio" name="BVPaddPeriod" id="optionsRadios3" value="high">
               Vijf jaar of langer
             </label>
           </div>

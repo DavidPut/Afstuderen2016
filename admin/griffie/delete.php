@@ -93,19 +93,19 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input disabled type="radio" name="optionsRadios" id="optionsRadios1" value="1" <?php if($db_getItem_info['period'] == '1'){echo 'checked';}?>>
+              <input disabled type="radio" name="optionsRadios" id="optionsRadios1" value="low" <?php if($db_getItem_info['period'] == 'low'){echo 'checked';}?>>
               Korter dan een jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input disabled type="radio" name="optionsRadios" id="optionsRadios2" value="2" <?php if($db_getItem_info['period'] == '2'){echo 'checked';}?>>
+              <input disabled type="radio" name="optionsRadios" id="optionsRadios2" value="mid" <?php if($db_getItem_info['period'] == 'mid'){echo 'checked';}?>>
               Langer dan een jaar, korter dan vijf jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input disabled type="radio" name="optionsRadios" id="optionsRadios3" value="3" <?php if($db_getItem_info['period'] == '3'){echo 'checked';}?>>
+              <input disabled type="radio" name="optionsRadios" id="optionsRadios3" value="high" <?php if($db_getItem_info['period'] == 'high'){echo 'checked';}?>>
               Vijf jaar of langer
             </label>
           </div>
