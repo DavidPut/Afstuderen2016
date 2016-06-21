@@ -69,13 +69,13 @@
         <label for="inputTags" class="col-sm-2 control-label">Soort *</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="F"> Fysiek
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="physical"> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox2" value="S"> Sociaal
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox2" value="social"> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox3" value="B"> Bestuur en middelen
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox3" value="money"> Bestuur en middelen
           </label>
         </div>
       </div>
