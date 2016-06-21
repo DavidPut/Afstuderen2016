@@ -69,7 +69,7 @@ if (isset($_SESSION['mail'])) {
     <input type="hidden" name="pid" value="<?php echo $pid; ?>">
     <input type="hidden" name="bid" value="<?php echo $bid; ?>">
 
-    <!-- nieuwe besluitvorming -->
+    <!-- nieuwe besluitvorming //-->
     <div class="row">
       <div class="col-md-12 col-xs-12 ">
         <div class="page-header">
