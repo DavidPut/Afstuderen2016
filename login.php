@@ -8,11 +8,11 @@ $_POST = $_SESSION['POST'];
 if (isset($_SESSION['mail'])) {
   switch ($_SESSION['role']){
     case "raadslid";
-      header("Location: raadslid");
+      header("Location: raadslid.php");
       exit();
       break;
     case "griffier";
-      header("Location: griffie");
+      header("Location: griffie.php");
       exit();
       break;
     default:

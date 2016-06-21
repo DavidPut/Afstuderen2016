@@ -24,17 +24,17 @@ if(isset($_POST['loginsubmit'])) {
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
-        header("location: griffie");
+        header("location: griffie.php");
         exit();
       } else {
         $_SESSION['Callback'] = true;
-        header("Location: login");
+        header("Location: login.php");
         exit();
       }
     } else {
       // geen wachtwoord
       $_SESSION['Callback'] = true;
-      header("Location: login");
+      header("Location: login.php");
       exit();
     }
   }
