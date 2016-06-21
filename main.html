@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="style/css.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/style/bootstrap.min.css">
 
+    <!-- Extra fonts -->
+    <link href='./fonts/font-awesome.min.css' rel='stylesheet'/>
+
     <!-- Google maps api -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZJfE_Tj_HySFXXamSQw5WG2RZ6SHotJ0&libraries=geometry"></script>
 
@@ -39,7 +42,7 @@
         <div class="row doc-content"></div>
 
         <!--DOCUMENTS BEGIN-->
-        <div class="row doc-row" id="1" date="12-05-2016" lat="51.8119941" long="4.659262600000034" tags="school, bouwen" type="physical" time="low">
+        <div class="row doc-row" id="1" date="12-05-2016" lat="51.8119941" long="4.659262600000034" tags="school, bouwen, fysiek" type="physical" time="low">
             <div class="col-md-12 col-xs-12 doc-block loc-block">
 
                 <div class="col-md-10 col-xs-10">
@@ -62,7 +65,7 @@
             </div>
         </div>
 
-        <div class="row doc-row" id="4" date="30-02-2016" lat="51.815755" long="4.689440" tags="bouwen, sportvereniging" type="physical" time="mid">
+        <div class="row doc-row" id="4" date="30-02-2016" lat="51.815755" long="4.689440" tags="bouwen, sportvereniging, fysiek" type="physical" time="mid">
             <div class="col-md-12 col-xs-12 doc-block loc-block">
 
                 <div class="col-md-10 col-xs-10">
@@ -85,7 +88,7 @@
             </div>
         </div>
 
-        <div class="row doc-row" id="2" date="5-05-2016" tags="bouwen, plein" type="physical" time="mid">
+        <div class="row doc-row" id="2" date="5-05-2016" tags="bouwen, plein, fysiek" type="physical" time="mid">
             <div class="col-md-10 col-xs-10 doc-block">
 
                 <div class="col-md-12 col-xs-12">
@@ -122,7 +125,7 @@
             </div>
         </div>
 
-        <div class="row doc-row" id="5" date="15-03-2016" lat="51.808956" long="4.684369" tags="plein, politie" type="social" time="high">
+        <div class="row doc-row" id="5" date="15-03-2016" lat="51.808956" long="4.684369" tags="plein, politie, sociaal" type="social" time="high">
             <div class="col-md-12 col-xs-12 doc-block loc-block">
 
                 <div class="col-md-10 col-xs-10">
@@ -154,15 +157,6 @@
 
             <div class="search-block">
                 <span class="text-center"><h4>Filter</h4></span>
-                <!--Location search bar-->
-                <form id="location-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control input-loc" placeholder="Adres" name="srch-term" id="srch-loc">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default btn-loc" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
 
                 <!--Tags search bar-->
                 <form id="tags-form" role="search">
@@ -173,15 +167,69 @@
                         </div>
                     </div>
                 </form>
+
+                <!--Location search bar-->
+                <form id="location-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-loc" placeholder="Adres" name="srch-term" id="srch-loc">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default btn-loc" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Let op! Zoekwoorden overschrijft alle anderen filters.
             </div>
+
 
             <!--Document type filters-->
             <div class="doc-type-block">
                 <span class="text-center"><h4>Type besluitvorming</h4></span>
                 <form id="type-form" role="filter">
-                    <input id="checkbox-physical" type="checkbox" name="physical" value="Physical" checked> <img src="images/Icon_hammer.png" alt="Icon physical"> = Fysiek <br>
-                    <input id="checkbox-social" type="checkbox" name="social" value="Social" checked> <img src="images/Icon_people.png" alt="Icon social"> = Sociaal  <br>
-                    <input id="checkbox-money" type="checkbox" name="money" value="Money" checked>  <img src="images/Icon_money.png" alt="Icon money"> = Bestuur & middelen <br>
+                    <div class="row">
+                        <div class="col-md-1 col-xs-1">
+                            <input id="checkbox-physical" type="checkbox" name="physical" value="Physical" checked>
+                        </div>
+                        <div class="col-md-1 col-xs-2 ic-img">
+                            <img src="images/Icon_hammer.png" alt="Icon physical">
+                        </div>
+                        <div class="col-md-5 col-xs-6">
+                            <p>= Fysiek</p>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <i class="fa fa-info" aria-hidden="true" title="Besluitvormingen met betrekking tot de bouw (zichtbare veranderingen in de stad."></i>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-1 col-xs-1">
+                            <input id="checkbox-social" type="checkbox" name="social" value="Social" checked>
+                        </div>
+                        <div class="col-md-1 col-xs-2 ic-img">
+                            <img src="images/Icon_people.png" alt="Icon social">
+                        </div>
+                        <div class="col-md-5 col-xs-6">
+                            <p>= Sociaal</p>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <i class="fa fa-info" aria-hidden="true" title="Besluitvormingen zoals speelterreinen, verenigingsleven en vrijwilligerswerk." ></i>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-1 col-xs-1">
+                            <input id="checkbox-money" type="checkbox" name="money" value="Money" checked>
+                        </div>
+                        <div class="col-md-1 ic-img col-xs-2">
+                            <img src="images/Icon_money.png" alt="Icon money">
+                        </div>
+                        <div class="col-md-5 col-xs-6">
+                            <p>= Bestuur & middelen</p>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <i class="fa fa-info" aria-hidden="true" title="Besluitvormingen over hoeveel geld ergens naar toe gaat."></i>
+                        </div>
+                    </div>
+
                 </form>
             </div>
 

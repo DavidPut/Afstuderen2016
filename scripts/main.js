@@ -17,6 +17,7 @@ $(document).ready(function() {
     //getPosition();
     characterLimit();
     addHeight();
+    toggleSidebar();
     moveSidebar();
     addIcons();
     addTimeColors();
@@ -26,6 +27,7 @@ $(document).ready(function() {
     filterTime();
     linkDoc();
     markerRange();
+    toolTip();
 });
 
 //ToDo: Switch to HTTPS website: HTML5 geolocation is depricated for non https websites. https://developers.google.com/web/updates/2016/04/geolocation-on-secure-contexts-only
@@ -147,6 +149,7 @@ function initMap(lat, long) {
             icon: image,
             id: id
         });
+
         //Set position
         marker.set('lat', lat);
         marker.set('long', long);
@@ -159,12 +162,29 @@ function initMap(lat, long) {
         //Push marker to array
         markers.push(marker);
 
+        //Add infowindow
+        var infowindow = new google.maps.InfoWindow({
+            content: trimTitle
+        });
+
         //Scroll to document
         marker.addListener('click', function() {
-            $('html, body').animate({
+
+            //Open infowindow
+            infowindow.open(map, this);
+
+            $('html, body').delay(2000).animate({
                 scrollTop: $('.doc-row[id*="'+id+'"]').offset().top
-            }, 2000);
-            $('.doc-row[id*="'+id+'"]').find('.doc-block').effect("highlight", {}, 3000);
+            },  2000);
+
+            //If animations are complete
+            $('html, body').promise().done(function(){
+                //Highlight document
+                $('.doc-row[id*="'+id+'"]').find('.doc-block').effect("highlight", {}, 3000);
+            });
+
+
+
         });
     });
 
@@ -323,39 +343,49 @@ function addTimeColors(){
 }
 
 //Sidebar toggle
-var state = true;
-$(document).on('click', '.toggle-button', function() {
+function toggleSidebar(){
 
-    //Mobile
+    var state = true;
+    var sidebarH = $(".side-bar").outerHeight();
+
+    //Default mobile state closed
     if ($(window).width() < 992) {
-        $(this).toggleClass("toggle-button-selected-vert");
-        var sidebarH = $(".side-bar").outerHeight();
-
-        if (state){
-            $( ".mob-sidebar" ).animate({ "margin-top": "-="+sidebarH + "px" }, "slow" );
-            state = false;
-        }
-        else {
-            $( ".mob-sidebar" ).animate({ "margin-top": "+="+sidebarH+"px" }, "slow" );
-            state = true;
-        }
+        state = false;
+        $( ".mob-sidebar" ).css({ "margin-top": "-="+sidebarH + "px" } );
     }
 
-    //Desktop
-    else {
-        $(this).toggleClass('toggle-button-selected');
-        var sidebarW = $(".side-bar").outerWidth();
-        if (state){
-            $(".side-bar").animate({ "left": sidebarW + "px" }, "slow" );
-            state = false;
-        }
-        else {
+    $(document).on('click', '.toggle-button', function() {
+        //Mobile
+        if ($(window).width() < 992) {
+            $(this).toggleClass("toggle-button-selected-vert");
 
-            $(".side-bar").animate({ "left": "-="+sidebarW+"px" }, "slow" );
-            state = true;
+            if (state){
+                $( ".mob-sidebar" ).animate({ "margin-top": "-="+sidebarH + "px" }, "slow" );
+                state = false;
+            }
+            else {
+                $( ".mob-sidebar" ).animate({ "margin-top": "+="+sidebarH+"px" }, "slow" );
+                state = true;
+            }
         }
-    }
-});
+
+        //Desktop
+        else {
+            $(this).toggleClass('toggle-button-selected');
+            var sidebarW = $(".side-bar").outerWidth();
+            if (state){
+                $(".side-bar").animate({ "left": sidebarW + "px" }, "slow" );
+                state = false;
+            }
+            else {
+
+                $(".side-bar").animate({ "left": "-="+sidebarW+"px" }, "slow" );
+                state = true;
+            }
+        }
+    });
+}
+
 
 //Sort documents by date
 function sortDocs(){
@@ -404,13 +434,15 @@ function filterTags(){
 
         //Reset markers
         for(var j = 0; j < markers.length; j++) {
-
             markers[j].setVisible(true);
         }
 
         //If empty tag, reset
         if(tags == ""){
-            $(".doc-row" ).removeClass("hidden");
+            //Show documents
+            $('.doc-row').removeClass("hidden hiddenRange hiddenType hiddenTime");
+            //Reset checkbox filters
+            $('input:checkbox').prop('checked', true);
         }
 
         //Filter by tags
@@ -636,18 +668,18 @@ function linkDoc(){
 }
 
 //Filter amount of markers to show
-function markerRange(){
-    $('#marker-range').on("change", function() {
+function markerRange() {
+    $('#marker-range').on("change", function () {
         //Range value
         var range = $(this).val();
         //Map center in latlong
         var center = map.getCenter();
 
         //Change ranger value
-        $("#range-value").empty().append('<h5>' + range + 'km' + '</h5>' );
+        $("#range-value").empty().append('<h5>' + range + 'km' + '</h5>');
 
         //Loop through all markers
-        for(var i = 0; i < markers.length; i++) {
+        for (var i = 0; i < markers.length; i++) {
 
             //Latlong of marker
             var latlong = new google.maps.LatLng(markers[i].get('lat'), markers[i].get('long'));
@@ -659,9 +691,9 @@ function markerRange(){
             var id = markers[i].get("id");
 
             //If distance bigger then user specified range
-            if(distance > range) {
+            if (distance > range) {
                 //Hide document with marker
-                $('.doc-row[id*="'+id+'"]').addClass("hiddenRange");
+                $('.doc-row[id*="' + id + '"]').addClass("hiddenRange");
                 //Hide marker
                 markers[i].setVisible(false);
                 //Reset checkbox filters
@@ -678,5 +710,11 @@ function markerRange(){
             }
         }
     });
+}
+
+//Shows information tooltip
+function toolTip() {
+    $('.fa-info' ).tooltip();
+
 }
 

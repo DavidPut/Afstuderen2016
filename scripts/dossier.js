@@ -6,10 +6,12 @@ $(document).ready(function() {
     toggleDossier();
     calendar();
     toggleButton();
+    toggleSidebar();
     moveSidebar();
     emailAbbo();
     sortDocs();
     toggleTitleDate();
+    toolTip();
 });
 
 //Toggle title and date position
@@ -155,41 +157,52 @@ function moveSidebar(){
         $(".toggle-button").css({"margin-left": "-" + btnW + "px"});
     }
 }
-
 //Sidebar toggle
-state = true;
-$(document).on('click', '.toggle-button', function() {
+function toggleSidebar(){
+    var state = true;
+    var sidebarH = $(".side-bar").outerHeight();
 
-    //Mobile
+    //Default mobile state closed
     if ($(window).width() < 992) {
-        $(this).toggleClass("toggle-button-selected-vert");
-        var sidebarH = $(".side-bar").outerHeight();
-
-        if (state){
-            $( ".mob-sidebar" ).animate({ "margin-top": "-="+sidebarH + "px" }, "slow" );
-            state = false;
-        }
-        else {
-            $( ".mob-sidebar" ).animate({ "margin-top": "+="+sidebarH+"px" }, "slow" );
-            state = true;
-        }
+        state = false;
+        $( ".mob-sidebar" ).css({ "margin-top": "-="+sidebarH + "px" } );
     }
 
-    //Desktop
-    else {
-        $(this).toggleClass('toggle-button-selected');
-        var sidebarW = $(".side-bar").outerWidth();
-        if (state){
+    $(document).on('click', '.toggle-button', function() {
 
-            $( ".side-bar" ).animate({ "left": sidebarW + "px" }, "slow" );
-            state = false;
+        //Mobile
+        if ($(window).width() < 992) {
+            $(this).toggleClass("toggle-button-selected-vert");
+
+
+            if (state){
+                $( ".mob-sidebar" ).animate({ "margin-top": "-="+sidebarH + "px" }, "slow" );
+                state = false;
+            }
+            else {
+                $( ".mob-sidebar" ).animate({ "margin-top": "+="+sidebarH+"px" }, "slow" );
+                state = true;
+            }
         }
+
+        //Desktop
         else {
-            $( ".side-bar" ).animate({ "left": "-="+sidebarW+"px" }, "slow" );
-            state = true;
+            $(this).toggleClass('toggle-button-selected');
+            var sidebarW = $(".side-bar").outerWidth();
+            if (state){
+
+                $( ".side-bar" ).animate({ "left": sidebarW + "px" }, "slow" );
+                state = false;
+            }
+            else {
+                $( ".side-bar" ).animate({ "left": "-="+sidebarW+"px" }, "slow" );
+                state = true;
+            }
         }
-    }
-});
+    });
+}
+
+
 
 //Keep updated on dossier changes
 //ToDo: Adding email functionality --> if db changes send email
@@ -234,4 +247,10 @@ function sortDocs(){
     $(".dos-content").first().removeClass("closed");
     //Switch image toggle button to open
     $(".dos-content").first().parent().find(".dos-toggle").toggleClass("glyphicon-minus glyphicon-plus");
+}
+
+//Shows information tooltip
+function toolTip() {
+    $('.fa-info' ).tooltip();
+
 }
