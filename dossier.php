@@ -182,9 +182,7 @@ $db_user = $db_functions->selectUser($_GET["id"]);
 
                          ';
                         foreach ($db_opinion as $process_opinion) {
-
-                        }
-
+                            echo '
                             <div class="row">
                                 <div class="col-md-12">
                                     <p><b>CDA -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -224,12 +222,16 @@ $db_user = $db_functions->selectUser($_GET["id"]);
                                     <p><b>PVDA -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                                 </div>
                             </div>
-                        </div>
+                        </div>';
+                        }
 
+
+
+                      echo '
                     </div>
                 </div>
             </div>
-        </div>
+        </div>';
 
         }
         ?>
