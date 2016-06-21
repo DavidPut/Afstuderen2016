@@ -74,11 +74,11 @@ if (isset($_SESSION['mail'])) {
       <div class="col-md-12 col-xs-12 ">
         <div class="page-header">
           <div class="pull-left">
-            <h3>Besluitvorming <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
+            <h3>Besluitvorming <span class="label label-danger"><i class="fa fa-trash-o small-icon" aria-hidden="true"></i></span></h3>
           </div>
           <div class="pull-right">
             <a class="btn btn-default" href="griffie.php?action=edit&id=<?php echo $pid; ?>">annuleren</a>
-            <button class="btn btn-list btn-primary" type="submit" name ="BVdelete" value="verwijderen">verwijderen</button>
+            <button class="btn btn-list btn-danger" type="submit" name ="BVdelete" value="verwijderen">verwijderen</button>
           </div>
           <div class="clearfix"></div>
         </div>
