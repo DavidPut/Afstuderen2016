@@ -6,10 +6,10 @@
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
         <div class="pull-left">
-        <h3>Besluitvormingsproces <span class="label label-danger"><i class="fa fa-trash-o small-icon" aria-hidden="true"></i></span> <a class="btn btn-default" href="dossier.html">naar pagina</a></h3>
+        <h3>Besluitvormingsproces <span class="label label-danger"><i class="fa fa-trash-o small-icon" aria-hidden="true"></i></span> <a class="btn btn-default" href="dossier.php?id='<?php echo $db_getItem_info['id']; ?>">naar pagina</a></h3>
         </div>
         <div class="pull-right">
-          <a class="btn btn-default" href="griffie">annuleren</a>
+          <a class="btn btn-default" href="griffie.php">annuleren</a>
           <button name="BVPdelete" class="btn btn-list btn-danger">verwijderen</button>
         </div>
         <div class="clearfix"></div>
@@ -189,7 +189,7 @@
 
   <div class="row">
     <div class="col-md-4 col-md-offset-5 col-xs-12">
-      <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
+      <a class="btn btn-lg btn-default text-left" href="griffie.php">annuleren</a>
       <button class="btn btn-lg btn-danger text-right" type ="submit" name="BVPdelete">verwijderen</button>
     </div>
   </div>
