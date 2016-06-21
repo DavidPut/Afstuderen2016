@@ -138,7 +138,7 @@ if (isset($_SESSION['mail'])) {
     <div class="row">
       <div class="col-md-4 col-md-offset-4 col-xs-12">
         <a class="btn btn-lg btn-default text-left" href="griffie.php?action=edit&id=<?php echo $pid; ?>">annuleren</a>
-        <button class="btn btn-lg btn-primary text-right" type="submit" name="BVedit" value="toevoegen">toevoegen</button>
+        <button class="btn btn-lg btn-primary text-right" type="submit" name="BVedit" value="opslaan">opslaan</button>
       </div>
     </div>
 
