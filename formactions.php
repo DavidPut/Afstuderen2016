@@ -24,17 +24,17 @@ if(isset($_POST['loginsubmit'])) {
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
-        header("location: griffie");
+        header("location: griffie.php");
         exit();
       } else {
         $_SESSION['Callback'] = true;
-        header("Location: login");
+        header("Location: login.php");
         exit();
       }
     } else {
       // geen wachtwoord
       $_SESSION['Callback'] = true;
-      header("Location: login");
+      header("Location: login.php");
       exit();
     }
   }
@@ -91,13 +91,13 @@ if(isset($_POST['BVPadd'])) {
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
-        header("location: griffie");
+        header("location: griffie.php");
         exit();
       }
     }
   }
   //errors
-  header("location: griffie/add");
+  header("location: griffie.php?action=add");
   exit();
 }
 
@@ -152,13 +152,13 @@ if(isset($_POST['BVPedit'])) {
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
-        header("location: griffie/");
+        header("location: griffie.php");
         exit();
       }
     }
   }
   //errors
-  header("location: griffie/edit/".$pid."/");
+  header("location: griffie.php?action=edit&id=".$pid."");
   exit();
 }
 
@@ -170,7 +170,7 @@ if(isset($_POST['BVPdelete'])) {
   $db_deletePush = new DB_functions();
   $db_deletePush_info = $db_deletePush->griffieDelete($id);
 
-  header("location: griffie");
+  header("location: griffie.php");
   exit();
 }
 
@@ -191,12 +191,12 @@ if(isset($_POST['BVadd'])) {
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
-        header("location: griffie/edit/".$pid."/");
+        header("location: griffie.php?action=edit&id=".$pid."");
         exit();
     }
   }
   //errors
-  header("location: griffie/edit/".$pid."/besluitvorming/add");
+  header("location: admin/griffie/besluitvorming/bvadd.php?id=".$pid."");
   exit();
 }
 
@@ -218,12 +218,12 @@ if(isset($_POST['BVedit'])) {
 
       unset($_SESSION['Callback']);
       unset($_SESSION['POST']);
-      header("location: griffie/edit/".$pid."/");
+      header("location: griffie.php?action=edit&id=".$pid."");
       exit();
     }
   }
   //errors
-  header("location: griffie/edit/".$pid."/besluitvorming/add");
+  header("location: admin/griffie/besluitvorming/bvedit.php?id=".$pid."&bid=".$bid."");
   exit();
 }
 

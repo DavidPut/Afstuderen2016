@@ -77,7 +77,7 @@ if (isset($_SESSION['mail'])) {
             <h3>Besluitvorming <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
           </div>
           <div class="pull-right">
-            <a class="btn btn-default" href="griffie/edit/<?php echo $pid; ?>">annuleren</a>
+            <a class="btn btn-default" href="griffie.php?action=edit&id=<?php echo $pid; ?>">annuleren</a>
             <button class="btn btn-list btn-primary" type="submit" name ="BVedit" value="toevoegen">opslaan</button>
           </div>
           <div class="clearfix"></div>
@@ -137,8 +137,8 @@ if (isset($_SESSION['mail'])) {
 
     <div class="row">
       <div class="col-md-4 col-md-offset-4 col-xs-12">
-        <a class="btn btn-lg btn-default text-left" href="griffie/edit/<?php echo $pid; ?>">annuleren</a>
-        <button class="btn btn-lg btn-primary text-right" type="submit" name="BVedit" value="toevoegen">toevoegen</button>
+        <a class="btn btn-lg btn-default text-left" href="griffie.php?action=edit&id=<?php echo $pid; ?>">annuleren</a>
+        <button class="btn btn-lg btn-primary text-right" type="submit" name="BVedit" value="opslaan">opslaan</button>
       </div>
     </div>
 

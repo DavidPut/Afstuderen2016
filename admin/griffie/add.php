@@ -10,7 +10,7 @@
         <h3>Besluitvormingsproces <span class="label label-success"><i class="fa fa-plus fa-fw" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-          <a class="btn btn-default" href="griffie">annuleren</a>
+          <a class="btn btn-default" href="griffie.php">annuleren</a>
           <button type="submit" name ="BVPadd" class="btn btn-list btn-success">toevoegen</button>
         </div>
         <div class="clearfix"></div>
@@ -69,13 +69,13 @@
         <label for="inputTags" class="col-sm-2 control-label">Soort *</label>
         <div class="col-sm-10">
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="F"> Fysiek
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox1" value="physical"> Fysiek
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox2" value="S"> Sociaal
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox2" value="social"> Sociaal
           </label>
           <label class="checkbox-inline">
-            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox3" value="B"> Bestuur en middelen
+            <input type="checkbox" name="BVPaddType[]" id="inlineCheckbox3" value="money"> Bestuur en middelen
           </label>
         </div>
       </div>
@@ -89,19 +89,19 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddPeriod" id="optionsRadios1" value="1">
+              <input type="radio" name="BVPaddPeriod" id="optionsRadios1" value="low">
               Korter dan een jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddPeriod" id="optionsRadios2" value="2">
+              <input type="radio" name="BVPaddPeriod" id="optionsRadios2" value="mid">
               Langer dan een jaar, korter dan vijf jaar
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddPeriod" id="optionsRadios3" value="3">
+              <input type="radio" name="BVPaddPeriod" id="optionsRadios3" value="high">
               Vijf jaar of langer
             </label>
           </div>
@@ -165,7 +165,7 @@
 
   <div class="row">
     <div class="col-md-4 col-md-offset-5 col-xs-12">
-      <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
+      <a class="btn btn-lg btn-default text-left" href="griffie.php">annuleren</a>
       <button class="btn btn-lg btn-success text-right" type="submit" name="BVPadd">toevoegen</button>
     </div>
   </div>
