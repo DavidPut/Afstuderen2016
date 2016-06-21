@@ -10,7 +10,7 @@
         <h3>Besluitvormingsproces <span class="label label-success"><i class="fa fa-plus fa-fw" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-          <a class="btn btn-default" href="griffie">annuleren</a>
+          <a class="btn btn-default" href="griffie.php">annuleren</a>
           <button type="submit" name ="BVPadd" class="btn btn-list btn-success">toevoegen</button>
         </div>
         <div class="clearfix"></div>
@@ -165,7 +165,7 @@
 
   <div class="row">
     <div class="col-md-4 col-md-offset-5 col-xs-12">
-      <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
+      <a class="btn btn-lg btn-default text-left" href="griffie.php">annuleren</a>
       <button class="btn btn-lg btn-success text-right" type="submit" name="BVPadd">toevoegen</button>
     </div>
   </div>
