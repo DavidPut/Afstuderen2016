@@ -8,10 +8,10 @@
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
         <div class="pull-left">
-          <h3>Besluitvormingsproces <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span> <a class="btn btn-default" href="dossier.html">naar pagina</a></h3>
+          <h3>Besluitvormingsproces <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span> <a class="btn btn-default" href="dossier.php?id='<?php echo $db_getItem_info['id']; ?>">naar pagina</a></h3>
         </div>
         <div class="pull-right">
-          <a class="btn btn-default" href="griffie">annuleren</a>
+          <a class="btn btn-default" href="griffie.php">annuleren</a>
           <button class="btn btn-list btn-primary" type="submit" name ="BVPedit" value="toevoegen">aanpassen</button>
         </div>
         <div class="clearfix"></div>
@@ -185,7 +185,7 @@
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4 col-xs-12">
-      <a class="btn btn-lg btn-default text-left" href="griffie">annuleren</a>
+      <a class="btn btn-lg btn-default text-left" href="griffie.php">annuleren</a>
       <button class="btn btn-lg btn-primary text-right" type = "submit" name = "BVPedit" value = "aanpassen">aanpassen</button>
     </div>
   </div>
