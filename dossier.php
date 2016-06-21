@@ -13,10 +13,6 @@ $db_functions = new DB_functions();
 $db_process_byId = $db_functions->griffieItem($_GET["id"]);
 //Decisions
 $db_decisions = $db_functions->griffieBVList($_GET["id"]);
-//Opinion
-$db_opinion = $db_functions->decisionOpinion($_GET["id"]);
-//User
-$db_user = $db_functions->selectUser($_GET["id"]);
 
 ?>
 <!DOCTYPE html>
@@ -179,7 +175,9 @@ $db_user = $db_functions->selectUser($_GET["id"]);
                          ';
 
 
-
+                        //Opinion
+                        $db_opinion = $db_functions->decisionOpinion($decision_block["id"]);
+                         echo "Dit is:". $decision_block["id"];
                         echo '
                         <!-- Politic view positive -->
                          <div class="col-md-4 politic-block">
@@ -187,24 +185,71 @@ $db_user = $db_functions->selectUser($_GET["id"]);
                          ';
                          foreach ($db_opinion as $process_opinion) {
 
+
+                             //Select user
+                             $db_user = $db_functions->selectUser($process_opinion["uid"]);
+
                              if ($process_opinion["vote"] == 1) {
                                  echo '
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p><b>'.$db_user["name"].' ('.$db_user["partij"].')</b> '.$process_opinion["opinion"].' </p>
+                                        <p><b>'.$db_user[0]["name"].' ('.$db_user[0]["partij"].')</b> '.$process_opinion["opinion"].' </p>
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p><b>D66 -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                    </div>
-                                </div>
-                            </div>';
+                             ';
                              }
                          }
                          echo '
-                         </div>
+                         </div>';
+
+                         echo '
+                         <!-- Politic view negative -->
+                         <div class="col-md-4 politic-block">
+                         <span class="politic-icon fa fa-times"></span>
+                         ';
+                        foreach ($db_opinion as $process_opinion) {
+
+                            //Select user
+                            $db_user = $db_functions->selectUser($process_opinion["uid"]);
+
+                            if ($process_opinion["vote"] == 2) {
+                                echo '
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p><b>'.$db_user[0]["name"].' ('.$db_user[0]["partij"].')</b> '.$process_opinion["opinion"].' </p>
+                                                </div>
+                                            </div>
+                                         ';
+                            }
+                        }
+                         echo '
+                         </div>';
+
+
+                         echo '
+                         <!-- Politic view unknown -->
+                         <div class="col-md-4 politic-block">
+                         <span class="fa fa-question" aria-hidden="true"></span>
+                         ';
+                        foreach ($db_opinion as $process_opinion) {
+
+                            //Select user
+                            $db_user = $db_functions->selectUser($process_opinion["uid"]);
+
+                            if ($process_opinion["vote"] == 3) {
+                                echo '
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p><b>'.$db_user[0]["name"].' ('.$db_user[0]["partij"].')</b> '.$process_opinion["opinion"].' </p>
+                                    </div>
+                                </div>
+                             ';
+                            }
+                        }
+                         echo '
+                         </div>';
+
+                    echo '
                     </div>
                 </div>
             </div>
