@@ -80,10 +80,10 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 
         <!--DOCUMENTS BEGIN-->
 
-        <?php foreach ($db_decisions as $decision_block){
+        <?php foreach ($db_decisions as $decision_block) {
             echo '
 
-            <div class="row dos-doc" id="'.$_GET["id"].'" date="'.$decision_block["date"].'">
+            <div class="row dos-doc" id="' . $_GET["id"] . '" date="' . $decision_block["date"] . '">
             <div class="col-md-9 content-block">
 
                 <div class="row toggle-row">
@@ -95,10 +95,10 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                 <div class="row titleDate-row">
                     <div class="col-md-11">
                         <div class="col-md-3 col-xs-5">
-                            <h5>'.$decision_block["date"].'</h5>
+                            <h5>' . $decision_block["date"] . '</h5>
                         </div>
                         <div class="col-md-9 col-xs-6">
-                            <h4><b>'.$decision_block["title"].'</b></h4>
+                            <h4><b>' . $decision_block["title"] . '</b></h4>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                         <li>Nam auctor feugiat lectus, sit amet luctus erat bibendum non.</li>
                     </ul>
                     <!--Detailed text-->
-                    <p>'.$decision_block["summary"].'</p>
+                    <p>' . $decision_block["summary"] . '</p>
 
                     <hr>
                     <!--RIS files-->
@@ -175,81 +175,101 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                          ';
 
 
-                        //Opinion
-                        $db_opinion = $db_functions->decisionOpinion($decision_block["id"]);
-                         echo "Dit is:". $decision_block["id"];
-                        echo '
+            //Get opinions by id
+            $db_opinion = $db_functions->decisionOpinion($decision_block["id"]);
+
+            echo '
                         <!-- Politic view positive -->
                          <div class="col-md-4 politic-block">
                          <span class="politic-icon fa fa-check"></span>
                          ';
-                         foreach ($db_opinion as $process_opinion) {
+
+            //If opinion exist
+            if ($db_opinion) {
 
 
-                             //Select user
-                             $db_user = $db_functions->selectUser($process_opinion["uid"]);
+                //Loop through opinions
+                foreach ($db_opinion as $process_opinion) {
 
-                             if ($process_opinion["vote"] == 1) {
-                                 echo '
+                    //Select user by uid
+                    $db_user = $db_functions->selectUser($process_opinion["uid"]);
+
+                    //If vote is 1 -> positive
+                    if ($process_opinion["vote"] == 1) {
+                        echo '
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p><b>'.$db_user[0]["name"].' ('.$db_user[0]["partij"].')</b> '.$process_opinion["opinion"].' </p>
+                                        <p><b>' . $db_user[0]["name"] . ' (' . $db_user[0]["partij"] . ')</b> ' . $process_opinion["opinion"] . ' </p>
                                     </div>
                                 </div>
                              ';
-                             }
-                         }
-                         echo '
-                         </div>';
+                    }
+                }
+            }
 
-                         echo '
+            echo '
+                         </div>
+
                          <!-- Politic view negative -->
                          <div class="col-md-4 politic-block">
                          <span class="politic-icon fa fa-times"></span>
                          ';
-                        foreach ($db_opinion as $process_opinion) {
 
-                            //Select user
-                            $db_user = $db_functions->selectUser($process_opinion["uid"]);
 
-                            if ($process_opinion["vote"] == 2) {
-                                echo '
+            //If opinion exist
+            if ($db_opinion) {
+                //Loop through opinions
+                foreach ($db_opinion as $process_opinion) {
+
+                    //Select user by uid
+                    $db_user = $db_functions->selectUser($process_opinion["uid"]);
+
+                    //If vote is 2 -> negative
+                    if ($process_opinion["vote"] == 2) {
+                        echo '
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <p><b>'.$db_user[0]["name"].' ('.$db_user[0]["partij"].')</b> '.$process_opinion["opinion"].' </p>
+                                                    <p><b>' . $db_user[0]["name"] . ' (' . $db_user[0]["partij"] . ')</b> ' . $process_opinion["opinion"] . ' </p>
                                                 </div>
                                             </div>
                                          ';
-                            }
-                        }
-                         echo '
-                         </div>';
+                    }
+                }
+            }
 
+            echo '
+                         </div>
 
-                         echo '
                          <!-- Politic view unknown -->
                          <div class="col-md-4 politic-block">
                          <span class="fa fa-question" aria-hidden="true"></span>
                          ';
-                        foreach ($db_opinion as $process_opinion) {
 
-                            //Select user
-                            $db_user = $db_functions->selectUser($process_opinion["uid"]);
 
-                            if ($process_opinion["vote"] == 3) {
-                                echo '
+            //If opinion exist
+            if ($db_opinion) {
+                foreach ($db_opinion as $process_opinion) {
+
+                    //Select user by uid
+                    $db_user = $db_functions->selectUser($process_opinion["uid"]);
+
+                    //If vote is 3 -> unknown
+                    if ($process_opinion["vote"] == 3) {
+                        echo '
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p><b>'.$db_user[0]["name"].' ('.$db_user[0]["partij"].')</b> '.$process_opinion["opinion"].' </p>
+                                        <p><b>' . $db_user[0]["name"] . ' (' . $db_user[0]["partij"] . ')</b> ' . $process_opinion["opinion"] . ' </p>
                                     </div>
                                 </div>
                              ';
-                            }
-                        }
-                         echo '
-                         </div>';
+                    }
+                }
+            }
 
-                    echo '
+            echo '
+                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -258,7 +278,6 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
         }
         ?>
 
-        
 
         <!--DOCUMENTS END-->
     </div>
@@ -273,7 +292,9 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                     <h4>Abonneren </h4>
                 </div>
                 <div class="col-md-3 col-xs-3">
-                    <h4><i class="fa fa-info" aria-hidden="true" title="U abonneert zich hiermee op het volledige dossier. Bij aanpassingen of updates wordt u op de hoogte gehouden."></i></h4>
+                    <h4><i class="fa fa-info" aria-hidden="true"
+                           title="U abonneert zich hiermee op het volledige dossier. Bij aanpassingen of updates wordt u op de hoogte gehouden."></i>
+                    </h4>
                 </div>
             </div>
             <div class="row">
