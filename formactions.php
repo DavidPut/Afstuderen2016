@@ -218,12 +218,12 @@ if(isset($_POST['BVedit'])) {
 
       unset($_SESSION['Callback']);
       unset($_SESSION['POST']);
-      header("location: admin/griffie/besluitvorming/bvadd.php?id=".$pid."");
+      header("location: griffie.php?action=edit&id=".$pid."");
       exit();
     }
   }
   //errors
-  header("location: admin/griffie/besluitvorming/bvadd.php?id=".$pid."");
+  header("location: admin/griffie/besluitvorming/bvedit.php?id=".$pid."&bid=".$bid."");
   exit();
 }
 
