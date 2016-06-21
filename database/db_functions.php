@@ -159,7 +159,7 @@ class DB_functions
 
   // politieke meningen per process decision
   public function decisionOpinion($did){
-    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_opinion WHERE pid = '$did'") or die(mysqli_error($this->db->connect()));
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_opinion WHERE did = '$did'") or die(mysqli_error($this->db->connect()));
     $no_of_rows = mysqli_num_rows($result);
     if ($no_of_rows > 0) {
       $rows_result = array();
