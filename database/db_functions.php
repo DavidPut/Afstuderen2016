@@ -65,8 +65,8 @@ class DB_functions
   }
 
   //griffie process toevoegen
-  public function griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPaddTags, $BVPtypes, $BVPcontact){
-    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `searchtags`) VALUES (NULL, '$BVPtitle', '$BVPsummary', '$BVPlocation', '$BVPtypes', '$BVPperiod', '$BVPaddTags')")or die( mysqli_error($this->db->connect()));
+  public function griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact){
+    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `searchtags`) VALUES (NULL, '$BVPtitle', '$BVPsummary', '$BVPlocation', '$BVPtypes', '$BVPperiod', '$BVPtags')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
       $this->db->close();
