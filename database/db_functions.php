@@ -66,7 +66,8 @@ class DB_functions
 
   //griffie process toevoegen
   public function griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact){
-    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `searchtags`) VALUES (NULL, '$BVPtitle', '$BVPsummary', '$BVPlocation', '$BVPtypes', '$BVPperiod', '$BVPtags')")or die( mysqli_error($this->db->connect()));
+    $datenow = date("d/m/Y");
+    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `searchtags`,`date`) VALUES (NULL, '$BVPtitle', '$BVPsummary', '$BVPlocation', '$BVPtypes', '$BVPperiod', '$BVPtags','$datenow')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
       $this->db->close();
@@ -125,7 +126,8 @@ class DB_functions
 
   // besluiten toevoegen
   public function griffieBVAdd($pid, $BVPtitle, $BVPsummary){
-    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_decision` (`id`,`pid`, `title`, `summary`) VALUES (NULL, '$pid', '$BVPtitle', '$BVPsummary')")or die( mysqli_error($this->db->connect()));
+    $datenow = date("d/m/Y");
+    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_decision` (`id`,`pid`, `title`, `summary`, `date`) VALUES (NULL, '$pid', '$BVPtitle', '$BVPsummary','$datenow')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
       $this->db->close();
@@ -136,7 +138,7 @@ class DB_functions
     }
   }
 
-  // besluiten toevoegen
+  // besluiten updaten
   public function griffieBVEdit($pid, $bid, $BVtitle, $BVsummary){
     $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process_decision` SET `title` = '$BVtitle', `summary` = '$BVsummary' WHERE `process_decision`.`id` = '$bid' && `pid` = '$pid'") or die( mysqli_error($this->db->connect()));
     // check for successful store
