@@ -176,58 +176,35 @@ $db_user = $db_functions->selectUser($_GET["id"]);
                             </div>
                         </div>
 
-                        <!-- Politic view positive -->
-                        <div class="col-md-4 politic-block">
-                            <span class="politic-icon fa fa-check"></span>
-
                          ';
-                        foreach ($db_opinion as $process_opinion) {
-                            echo '
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p><b>CDA -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+
+
+
+                        echo '
+                        <!-- Politic view positive -->
+                         <div class="col-md-4 politic-block">
+                         <span class="politic-icon fa fa-check"></span>
+                         ';
+                         foreach ($db_opinion as $process_opinion) {
+
+                             if ($process_opinion["vote"] == 1) {
+                                 echo '
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p><b>'.$db_user["name"].' ('.$db_user["partij"].')</b> '.$process_opinion["opinion"].' </p>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p><b>D66 -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p><b>D66 -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- Politic view negative -->
-                        <div class="col-md-4 politic-block">
-                            <span class="politic-icon fa fa-times"></span>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p><b>GroenLinks -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Politic view unknown -->
-                        <div class="col-md-4 politic-block">
-                            <span class="fa fa-question" aria-hidden="true"></span>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p><b>VVD -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p><b>PVDA -</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                </div>
-                            </div>
-                        </div>';
-                        }
-
-
-
-                      echo '
+                            </div>';
+                             }
+                         }
+                         echo '
+                         </div>
                     </div>
                 </div>
             </div>
