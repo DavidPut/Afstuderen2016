@@ -156,5 +156,39 @@ class DB_functions
   public function raadslidList(){
     
   }
+
+  // politieke meningen per process decision
+  public function decisionOpinion($pid){
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_opinion WHERE pid = '$pid'") or die(mysqli_error($this->db->connect()));
+    $no_of_rows = mysqli_num_rows($result);
+    if ($no_of_rows > 0) {
+      $rows_result = array();
+      while($row = mysqli_fetch_assoc($result)) {
+        $rows_result[] = $row;
+      }
+      return $rows_result;
+      $this->db->close();
+    } else {
+      return false;
+      $this->db->close();
+    }
+  }
+
+  // selecteer gebruikers
+  public function selectUser($id){
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM users WHERE id = '$id'") or die(mysqli_error($this->db->connect()));
+    $no_of_rows = mysqli_num_rows($result);
+    if ($no_of_rows > 0) {
+      $rows_result = array();
+      while($row = mysqli_fetch_assoc($result)) {
+        $rows_result[] = $row;
+      }
+      return $rows_result;
+      $this->db->close();
+    } else {
+      return false;
+      $this->db->close();
+    }
+  }
   
 }
