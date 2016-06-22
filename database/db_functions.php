@@ -34,7 +34,7 @@ class DB_functions
       $this->db->close();
     }
   }
-  
+
   public function griffieList(){
     $result = mysqli_query($this->db->connect(), "SELECT * FROM process") or die(mysqli_error($this->db->connect()));
     $no_of_rows = mysqli_num_rows($result);
@@ -154,7 +154,7 @@ class DB_functions
   //nogagenda
 
   public function raadslidList(){
-    
+
   }
 
   // politieke meningen per process decision
@@ -190,5 +190,38 @@ class DB_functions
       $this->db->close();
     }
   }
-  
+
+  //Selecteer agenda bij pid
+  public function selectCalendar($pid)
+  {
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_agenda WHERE pid = '$pid'") or die(mysqli_error($this->db->connect()));
+    $no_of_rows = mysqli_num_rows($result);
+    if ($no_of_rows > 0) {
+      $rows_result = array();
+      while ($row = mysqli_fetch_assoc($result)) {
+        $rows_result[] = $row;
+      }
+      return $rows_result;
+      $this->db->close();
+    } else {
+      return false;
+      $this->db->close();
+    }
+  }
+
+  public function selectContact($pid){
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_contact WHERE pid = '$pid'") or die(mysqli_error($this->db->connect()));
+    $no_of_rows = mysqli_num_rows($result);
+    if ($no_of_rows > 0) {
+      $rows_result = array();
+      while ($row = mysqli_fetch_assoc($result)) {
+        $rows_result[] = $row;
+      }
+      return $rows_result;
+      $this->db->close();
+    } else {
+      return false;
+      $this->db->close();
+    }
+  }
 }
