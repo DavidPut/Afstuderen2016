@@ -208,4 +208,20 @@ class DB_functions
       $this->db->close();
     }
   }
+
+  public function selectContact($pid){
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_contact WHERE pid = '$pid'") or die(mysqli_error($this->db->connect()));
+    $no_of_rows = mysqli_num_rows($result);
+    if ($no_of_rows > 0) {
+      $rows_result = array();
+      while ($row = mysqli_fetch_assoc($result)) {
+        $rows_result[] = $row;
+      }
+      return $rows_result;
+      $this->db->close();
+    } else {
+      return false;
+      $this->db->close();
+    }
+  }
 }
