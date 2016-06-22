@@ -174,7 +174,6 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 
                          ';
 
-
             //Get opinions by id
             $db_opinion = $db_functions->decisionOpinion($decision_block["id"]);
 
@@ -186,7 +185,6 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 
             //If opinion exist
             if ($db_opinion) {
-
 
                 //Loop through opinions
                 foreach ($db_opinion as $process_opinion) {
@@ -214,7 +212,6 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                          <div class="col-md-4 politic-block">
                          <span class="politic-icon fa fa-times"></span>
                          ';
-
 
             //If opinion exist
             if ($db_opinion) {
@@ -245,7 +242,6 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                          <span class="fa fa-question" aria-hidden="true"></span>
                          ';
 
-
             //If opinion exist
             if ($db_opinion) {
                 foreach ($db_opinion as $process_opinion) {
@@ -265,11 +261,8 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                     }
                 }
             }
-
             echo '
                          </div>
-
-
                     </div>
                 </div>
             </div>
@@ -277,8 +270,6 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 
         }
         ?>
-
-
         <!--DOCUMENTS END-->
     </div>
 
