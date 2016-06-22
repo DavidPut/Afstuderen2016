@@ -59,7 +59,7 @@ $db_calendar = $db_functions->selectCalendar($_GET["id"]);
 
 <div class="container-fluid">
 
-    <a class="btn btn-primary btn-more " href="./main.html">Terug</a>
+    <a class="btn btn-primary btn-more " href="./index.php">Terug</a>
 
     <!--Position for mobile sidebar-->
     <div class="row mob-sidebar"></div>
@@ -126,41 +126,13 @@ $db_calendar = $db_functions->selectCalendar($_GET["id"]);
                     <div class="ris-files">
                         <div class="row">
                             <div class="col-md-4">
-                                <a href="#">In sit amet massa massa</a>
+                                <a href="'.$decision_block["url"].'" target="_blank">'.$decision_block["title"].'</a>
                             </div>
                             <div class="col-md-4">
                                 <p>of</p>
                             </div>
                             <div class="col-md-4">
-                                <a href="#">
-                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="#">In sit amet massa massa</a>
-                            </div>
-                            <div class="col-md-4">
-                                <p>of</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#">
-                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="#">In sit amet massa massa</a>
-                            </div>
-                            <div class="col-md-4">
-                                <p>of</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#">
+                                <a href="'.$decision_block["url"].'" target="_blank">
                                     <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
                                 </a>
                             </div>
