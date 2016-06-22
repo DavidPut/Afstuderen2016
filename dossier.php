@@ -15,6 +15,8 @@ $db_process_byId = $db_functions->griffieItem($_GET["id"]);
 $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 //Calendar
 $db_calendar = $db_functions->selectCalendar($_GET["id"]);
+//Contact
+$db_contact = $db_functions->selectContact($_GET["id"]);
 
 ?>
 <!DOCTYPE html>
@@ -285,21 +287,27 @@ $db_calendar = $db_functions->selectCalendar($_GET["id"]);
                 <div class="col-md-12">
                     <h4>Contactgegevens</h4>
                 </div>
-                <div class="col-md-2 col-xs-2">
-                    <img class="img-responsive" src="./images/Profile.png" alt="Contact photo">
-                </div>
-                <div class="col-md-10 col-xs-10">
-                    <p class="contact">Piet Hoogdijk <br> Piet_Hoogdijk@gmail.com <br> 06-11144422</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-xs-2">
-                    <img class="img-responsive" src="./images/Profile.png" alt="Contact photo">
-                </div>
-                <div class="col-md-10 col-xs-10">
-                    <p class="contact">Carlijn Vliet <br> Carlijn_Vliet@gmail.com <br> 06-55522277</p>
-                </div>
+            <?php
+            //Loop through contact data
+            foreach ($db_contact as $contact) {
+                echo '
+                    <div class="col-md-2 col-xs-2">
+                        <img class="img-responsive" src="./images/Profile.png" alt="Contact photo">
+                    </div>
+                    <div class="col-md-10 col-xs-10">
+                        <p class="contact"'.$contact["name"].'
+                         ';
+                            //If there is an email
+                            if($contact["email"] != ""){
+                                echo "<br>".$contact["email"];
+                            }
+                            //If there is an phone number
+                            if($contact["phone"] !=""){
+                                echo "<br>".$contact["phone"];
+                            }
+                    echo '</div> ';
+            }
+            ?>
             </div>
         </div>
 
