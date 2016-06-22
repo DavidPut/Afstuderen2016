@@ -13,6 +13,8 @@ $db_functions = new DB_functions();
 $db_process_byId = $db_functions->griffieItem($_GET["id"]);
 //Decisions
 $db_decisions = $db_functions->griffieBVList($_GET["id"]);
+//Calendar
+$db_calendar = $db_functions->selectCalendar($_GET["id"]);
 
 ?>
 <!DOCTYPE html>
@@ -343,6 +345,7 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                 </div>
                 <div class="col-md-12">
                     <div id='calendar'></div>
+                    <div id='calendar-info'></div>
                 </div>
             </div>
         </div>
@@ -354,8 +357,8 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 </body>
 </html>
 
-<script>
-    //Calendar variables
-    var calendar_title;
-    var calendar_date;
-</script>
+<script>var cal_values = <?php echo json_encode($db_calendar); ?>;</script>
+
+
+
+

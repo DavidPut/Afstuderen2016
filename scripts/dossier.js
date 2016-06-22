@@ -69,13 +69,17 @@ function calendar(){
     //Get current date, using moments library
     var currentDate = moment().format('YYYY-MM-DD');
 
+
     $('#calendar').fullCalendar({
+
 
         //When clicked on item in calendar
         eventClick: function(calEvent, jsEvent, view) {
             console.log('Event: ' + calEvent.title);
             console.log('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
             console.log('View: ' + view.name);
+
+            $("#calendar-info").empty().append( "<h4> Informatie: </h4>" + "<p>" + calEvent.title + "</p>"  );
         },
 
         //Header settings
@@ -91,20 +95,21 @@ function calendar(){
         editable: true,
         eventLimit: true, // allow "more" link when too many events
 
+
         //Calendar items
         events: [
-            {
-                title: 'Informatieavond',
-                start: '2016-06-05'
-            },
-            {
-                title: 'Burgerbijeenkomst',
-                start: '2016-06-08'
-            },
-            {
-                title: 'Inspreekavond',
-                start: '2016-06-18'
-            }
+            //{
+            //    title: 'Informatieavond',
+            //    start: '2016-06-05'
+            //},
+            //{
+            //    title: 'Burgerbijeenkomst',
+            //    start: '2016-06-08'
+            //},
+            //{
+            //    title: 'Inspreekavond',
+            //    start: '2016-06-18'
+            //}
             //{
             //    title: 'Long Event',
             //    start: '2016-05-07',
@@ -131,6 +136,17 @@ function calendar(){
     $(".fc-toolbar").addClass("row");
     $(".fc-left").addClass("col-md-6");
     $(".fc-right").addClass("col-md-6");
+
+    //Fill calendar with database values
+    $.each(cal_values, function( key, value ) {
+        var date = moment(value.date, "DD-MM-YYYY");
+        var formatted = moment(date, 'DD-MM-YYYY').format('YYYY-MM-DD');
+
+        var event={id:key , title: value.title, start: formatted};
+        $('#calendar').fullCalendar( 'renderEvent', event, true);
+
+    });
+
 }
 
 //Toggle button placement
@@ -252,5 +268,4 @@ function sortDocs(){
 //Shows information tooltip
 function toolTip() {
     $('.fa-info' ).tooltip();
-
 }
