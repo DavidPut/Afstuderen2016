@@ -34,7 +34,7 @@ class DB_functions
       $this->db->close();
     }
   }
-  
+
   public function griffieList(){
     $result = mysqli_query($this->db->connect(), "SELECT * FROM process") or die(mysqli_error($this->db->connect()));
     $no_of_rows = mysqli_num_rows($result);
@@ -66,7 +66,7 @@ class DB_functions
 
   //griffie process toevoegen
   public function griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact){
-    $datenow = date("d/m/Y");
+    $datenow = date("d-m-Y");
     $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `searchtags`,`date`) VALUES (NULL, '$BVPtitle', '$BVPsummary', '$BVPlocation', '$BVPtypes', '$BVPperiod', '$BVPtags','$datenow')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
@@ -154,7 +154,7 @@ class DB_functions
   //nogagenda
 
   public function raadslidList(){
-    
+
   }
 
   // politieke meningen per process decision
