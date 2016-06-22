@@ -11,6 +11,10 @@ require_once "database/db_functions.php";
 $db_functions = new DB_functions();
 $db_process = $db_functions->griffieList();
 
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+
 ?>
 
 <html>
@@ -57,11 +61,12 @@ $db_process = $db_functions->griffieList();
 
 
         <?php foreach ($db_process as $process_block){
-
             //If process without location
-            if($process_block["location"] == ""){
+            if(empty($process_block["location"])){
+                //Sort by first specified tag
+                $sortedType = explode("," , $process_block["type"]);
                 echo '
-                    <div class="row doc-row" id="'.$process_block["id"].'" date="'.$process_block["date"].'" tags="'.$process_block["searchtags"].'" type="'.$process_block["type"].'" time="'.$process_block["period"].'">
+                    <div class="row doc-row" id="'.$process_block["id"].'" date="'.$process_block["date"].'" tags="'.$process_block["searchtags"].'" type="'.$sortedType[0].'" time="'.$process_block["period"].'">
                         <div class="col-md-10 col-xs-10 doc-block">
 
                             <div class="col-md-12 col-xs-12">
@@ -70,10 +75,10 @@ $db_process = $db_functions->griffieList();
                                         <img class="pull-left icon-document" src="" alt="icon document">
                                     </div>
                                     <div class="col-md-9 doc-title">
-                                        <h1>Bouw stadsplein</h1>
+                                        <h1>'.$process_block["title"].'</h1>
                                     </div>
                                 </div>
-                                <p class="document-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tincidunt purus, quis sodales justo. Sed egestas, leo ac tristique tincidunt, purus lectus auctor enim, eu semper lectus eros id velit. Nullam semper laoreet malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit amet consequat metus. Ut varius, urna a rutrum volutpat, tellus tellus semper massa, vel faucibus justo lacus quis dolor.</p>
+                                <p class="document-content">'.$process_block["summary"].'</p>
                                 <button class="btn btn-primary btn-more" type="submit">Lees meer</button>
                             </div>
                         </div>
@@ -81,10 +86,11 @@ $db_process = $db_functions->griffieList();
                 ';
             }
             //Else with location
-            else{
+            else if(!empty($process_block["location"])){
+                //Sort by first specified tag
+                $sortedType = explode("," , $process_block["type"]);
                echo'
-
-                    <div class="row doc-row" id="'.$process_block["id"].'"  date="'.$process_block["date"].'"  location="'.$process_block["location"].'"  tags="'.$process_block["searchtags"].'"  type="'.$process_block["type"].'"  time="'.$process_block["period"].'" >
+                    <div class="row doc-row" id="'.$process_block["id"].'"  date="'.$process_block["date"].'"  location="'.$process_block["location"].'"  tags="'.$process_block["searchtags"].'"  type="'.$sortedType[0].'"  time="'.$process_block["period"].'" >
                         <div class="col-md-12 col-xs-12 doc-block loc-block">
 
                             <div class="col-md-10 col-xs-10">
@@ -106,8 +112,6 @@ $db_process = $db_functions->griffieList();
 
                         </div>
                     </div>
-
-
                ';
             }
         }

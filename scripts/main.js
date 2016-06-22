@@ -90,54 +90,10 @@ function initMap(lat, long) {
         var time = $(this).attr("time");
         var tags = $(this).attr("tags");
 
-
-
         //Get title
         var title = $(this).find(".doc-title").text();
 
 
-        //Type physical
-        if(type == "physical") {
-            switch(time) {
-                case "low":
-                    image = './images/Marker_Icon_fysiek_green.png';
-                    break;
-                case "mid":
-                    image = './images/Marker_Icon_fysiek_orange.png';
-                    break;
-                case "high":
-                    image = './images/Marker_Icon_fysiek_red.png';
-                    break;
-            }
-        }
-        //Type social
-        else if  (type == "social"){
-            switch(time) {
-                case "low":
-                    image = './images/Marker_Icon_sociaal_green.png';
-                    break;
-                case "mid":
-                    image = './images/Marker_Icon_sociaal_orange.png';
-                    break;
-                case "high":
-                    image = './images/Marker_Icon_sociaal_red.png';
-                    break;
-            }
-        }
-        //Type money
-        else if  (type == "money"){
-            switch(time) {
-                case "low":
-                    image = './images/Marker_Icon_bestuur_green.png';
-                    break;
-                case "mid":
-                    image = './images/Marker_Icon_bestuur_orange.png';
-                    break;
-                case "high":
-                    image = './images/Marker_Icon_bestuur_red.png';
-                    break;
-            }
-        }
 
         //Remove spacing from title
         var trimTitle = title.replace(/^\s+|\s+$/gm,'');
@@ -151,6 +107,49 @@ function initMap(lat, long) {
 
                 var mlat = results[0].geometry.location.lat();
                 var mlong = results[0].geometry.location.lng();
+
+                //Type physical
+                if(type == "physical") {
+                    switch(time) {
+                        case "low":
+                            image = './images/Marker_Icon_fysiek_green.png';
+                            break;
+                        case "mid":
+                            image = './images/Marker_Icon_fysiek_orange.png';
+                            break;
+                        case "high":
+                            image = './images/Marker_Icon_fysiek_red.png';
+                            break;
+                    }
+                }
+                //Type social
+                else if  (type == "social"){
+                    switch(time) {
+                        case "low":
+                            image = './images/Marker_Icon_sociaal_green.png';
+                            break;
+                        case "mid":
+                            image = './images/Marker_Icon_sociaal_orange.png';
+                            break;
+                        case "high":
+                            image = './images/Marker_Icon_sociaal_red.png';
+                            break;
+                    }
+                }
+                //Type money
+                else if  (type == "money"){
+                    switch(time) {
+                        case "low":
+                            image = './images/Marker_Icon_bestuur_green.png';
+                            break;
+                        case "mid":
+                            image = './images/Marker_Icon_bestuur_orange.png';
+                            break;
+                        case "high":
+                            image = './images/Marker_Icon_bestuur_red.png';
+                            break;
+                    }
+                }
 
                 //Create marker
                 marker = new google.maps.Marker({
@@ -611,7 +610,7 @@ function markerFilter(mType, mTime){
         //Get all rows with user specified type filter
         $('.doc-row[type*="'+mType+'"]').each(function() {
             //If doc has attr lat (meaning it has a marker) and has hidden class
-            if($(this).attr("lat") && $(this).hasClass("hiddenType")){
+            if($(this).attr("location") && $(this).hasClass("hiddenType")){
                 //Get document id
                 var mId = $(this).attr("id");
                 //Loop through markers
@@ -625,7 +624,7 @@ function markerFilter(mType, mTime){
             }
 
             //If document does not have any hidden classes
-            else if($(this).attr("lat") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hiddenTime")  ){
+            else if($(this).attr("location") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hiddenTime")  ){
                 //Get document id
                 var mId = $(this).attr("id");
                 //Loop through markers
@@ -642,7 +641,7 @@ function markerFilter(mType, mTime){
         //Get all rows with user specified time filter
         $('.doc-row[time*="'+mTime+'"]').each(function() {
             //If doc has attr lat (meaning it has a marker) and has hidden class
-            if($(this).attr("lat") && $(this).hasClass("hiddenTime")){
+            if($(this).attr("location") && $(this).hasClass("hiddenTime")){
                 //Get document id
                 var mId = $(this).attr("id");
                 //Loop through markers
@@ -655,7 +654,7 @@ function markerFilter(mType, mTime){
                 }
             }
             //If document does not have any hidden classes
-            else if($(this).attr("lat") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hiddenType") ){
+            else if($(this).attr("location") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hiddenType") ){
                 //Get document id
                 var mId = $(this).attr("id");
                 //Loop through markers
