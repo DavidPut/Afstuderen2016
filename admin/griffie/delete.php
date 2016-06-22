@@ -203,7 +203,7 @@
       startView: 1,
       maxViewMode: 0,
       language: "nl",
-      calendarWeeks: true,
+      calendarWeeks: false,
       autoclose: true,
       todayHighlight: true,
       enableOnReadonly: false
