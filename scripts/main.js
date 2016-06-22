@@ -468,7 +468,7 @@ function filterTags(){
                 val = val.toLowerCase();
 
                 //Remove/add documents that contain value specified in tags
-                $('.doc-row[tags*="'+val+'"]').addClass("showBlock").removeClass("hidden");
+                $('.doc-row[tags*="'+val+'"]').addClass("showBlock").removeClass("hidden hiddenType hiddenTime");
                 $(".doc-row" ).not(".showBlock").addClass("hidden");
 
                 //FILTER MARKERS
@@ -611,7 +611,7 @@ function markerFilter(mType, mTime){
     else{
         //Get all rows with user specified type filter
         $('.doc-row[type*="'+mType+'"]').each(function() {
-            //If doc has attr lat (meaning it has a marker) and has hidden class
+            //If doc has attr location (meaning it has a marker) and hidden class
             if($(this).attr("location") && $(this).hasClass("hiddenType")){
                 //Get document id
                 var mId = $(this).attr("id");
@@ -626,7 +626,7 @@ function markerFilter(mType, mTime){
             }
 
             //If document does not have any hidden classes
-            else if($(this).attr("location") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hiddenTime")  ){
+            else if($(this).attr("location") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hidden") ){
                 //Get document id
                 var mId = $(this).attr("id");
                 //Loop through markers
@@ -656,7 +656,7 @@ function markerFilter(mType, mTime){
                 }
             }
             //If document does not have any hidden classes
-            else if($(this).attr("location") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hiddenType") ){
+            else if($(this).attr("location") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hidden") ){
                 //Get document id
                 var mId = $(this).attr("id");
                 //Loop through markers
@@ -715,11 +715,16 @@ function markerRange() {
             //Reset
             else {
                 //Show documents
-                $('.doc-row').removeClass("hiddenRange hiddenType hiddenTime");
+                $('.doc-row').removeClass("hiddenRange hiddenType hiddenTime hidden");
                 //Show markers
                 markers[i].setVisible(true);
                 //Reset checkbox filters
                 $('input:checkbox').prop('checked', true);
+                //Empty tag filter
+                $('.input-tags').val('');
+                //Empty location filter
+                $('.input-loc').val('');
+               
             }
         }
     });
