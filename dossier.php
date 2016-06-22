@@ -84,8 +84,10 @@ $db_contact = $db_functions->selectContact($_GET["id"]);
 
         <!--DOCUMENTS BEGIN-->
 
-        <?php foreach ($db_decisions as $decision_block) {
-            echo '
+
+        <?php if(!empty($db_decisions)) {
+            foreach ($db_decisions as $decision_block) {
+                echo '
 
             <div class="row dos-doc" id="' . $_GET["id"] . '" date="' . $decision_block["date"] . '">
             <div class="col-md-9 content-block">
@@ -128,13 +130,13 @@ $db_contact = $db_functions->selectContact($_GET["id"]);
                     <div class="ris-files">
                         <div class="row">
                             <div class="col-md-4">
-                                <a href="'.$decision_block["url"].'" target="_blank">'.$decision_block["title"].'</a>
+                                <a href="' . $decision_block["url"] . '" target="_blank">' . $decision_block["title"] . '</a>
                             </div>
                             <div class="col-md-4">
                                 <p>of</p>
                             </div>
                             <div class="col-md-4">
-                                <a href="'.$decision_block["url"].'" target="_blank">
+                                <a href="' . $decision_block["url"] . '" target="_blank">
                                     <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
                                 </a>
                             </div>
@@ -150,38 +152,38 @@ $db_contact = $db_functions->selectContact($_GET["id"]);
 
                          ';
 
-            //Get opinions by id
-            $db_opinion = $db_functions->decisionOpinion($decision_block["id"]);
+                //Get opinions by id
+                $db_opinion = $db_functions->decisionOpinion($decision_block["id"]);
 
-            echo '
+                echo '
                         <!-- Politic view positive -->
                          <div class="col-md-4 politic-block">
                          <span class="politic-icon fa fa-check"></span>
                          ';
 
-            //If opinion exist
-            if ($db_opinion) {
+                //If opinion exist
+                if ($db_opinion) {
 
-                //Loop through opinions
-                foreach ($db_opinion as $process_opinion) {
+                    //Loop through opinions
+                    foreach ($db_opinion as $process_opinion) {
 
-                    //Select user by uid
-                    $db_user = $db_functions->selectUser($process_opinion["uid"]);
+                        //Select user by uid
+                        $db_user = $db_functions->selectUser($process_opinion["uid"]);
 
-                    //If vote is 1 -> positive
-                    if ($process_opinion["vote"] == 1) {
-                        echo '
+                        //If vote is 1 -> positive
+                        if ($process_opinion["vote"] == 1) {
+                            echo '
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p><b>' . $db_user[0]["name"] . ' (' . $db_user[0]["partij"] . ')</b> ' . $process_opinion["opinion"] . ' </p>
                                     </div>
                                 </div>
                              ';
+                        }
                     }
                 }
-            }
 
-            echo '
+                echo '
                          </div>
 
                          <!-- Politic view negative -->
@@ -189,28 +191,28 @@ $db_contact = $db_functions->selectContact($_GET["id"]);
                          <span class="politic-icon fa fa-times"></span>
                          ';
 
-            //If opinion exist
-            if ($db_opinion) {
-                //Loop through opinions
-                foreach ($db_opinion as $process_opinion) {
+                //If opinion exist
+                if ($db_opinion) {
+                    //Loop through opinions
+                    foreach ($db_opinion as $process_opinion) {
 
-                    //Select user by uid
-                    $db_user = $db_functions->selectUser($process_opinion["uid"]);
+                        //Select user by uid
+                        $db_user = $db_functions->selectUser($process_opinion["uid"]);
 
-                    //If vote is 2 -> negative
-                    if ($process_opinion["vote"] == 2) {
-                        echo '
+                        //If vote is 2 -> negative
+                        if ($process_opinion["vote"] == 2) {
+                            echo '
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p><b>' . $db_user[0]["name"] . ' (' . $db_user[0]["partij"] . ')</b> ' . $process_opinion["opinion"] . ' </p>
                                                 </div>
                                             </div>
                                          ';
+                        }
                     }
                 }
-            }
 
-            echo '
+                echo '
                          </div>
 
                          <!-- Politic view unknown -->
@@ -218,32 +220,33 @@ $db_contact = $db_functions->selectContact($_GET["id"]);
                          <span class="fa fa-question" aria-hidden="true"></span>
                          ';
 
-            //If opinion exist
-            if ($db_opinion) {
-                foreach ($db_opinion as $process_opinion) {
+                //If opinion exist
+                if ($db_opinion) {
+                    foreach ($db_opinion as $process_opinion) {
 
-                    //Select user by uid
-                    $db_user = $db_functions->selectUser($process_opinion["uid"]);
+                        //Select user by uid
+                        $db_user = $db_functions->selectUser($process_opinion["uid"]);
 
-                    //If vote is 3 -> unknown
-                    if ($process_opinion["vote"] == 3) {
-                        echo '
+                        //If vote is 3 -> unknown
+                        if ($process_opinion["vote"] == 3) {
+                            echo '
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p><b>' . $db_user[0]["name"] . ' (' . $db_user[0]["partij"] . ')</b> ' . $process_opinion["opinion"] . ' </p>
                                     </div>
                                 </div>
                              ';
+                        }
                     }
                 }
-            }
-            echo '
+                echo '
                          </div>
                     </div>
                 </div>
             </div>
         </div>';
 
+            }
         }
         ?>
         <!--DOCUMENTS END-->
@@ -288,24 +291,26 @@ $db_contact = $db_functions->selectContact($_GET["id"]);
                     <h4>Contactgegevens</h4>
                 </div>
             <?php
-            //Loop through contact data
-            foreach ($db_contact as $contact) {
-                echo '
+            if(!empty($db_contact)) {
+                //Loop through contact data
+                foreach ($db_contact as $contact) {
+                    echo '
                     <div class="col-md-2 col-xs-2">
                         <img class="img-responsive" src="./images/Profile.png" alt="Contact photo">
                     </div>
                     <div class="col-md-10 col-xs-10">
-                        <p class="contact"'.$contact["name"].'
+                        <p class="contact"' . $contact["name"] . '
                          ';
-                            //If there is an email
-                            if($contact["email"] != ""){
-                                echo "<br>".$contact["email"];
-                            }
-                            //If there is an phone number
-                            if($contact["phone"] !=""){
-                                echo "<br>".$contact["phone"];
-                            }
+                    //If there is an email
+                    if ($contact["email"] != "") {
+                        echo "<br>" . $contact["email"];
+                    }
+                    //If there is an phone number
+                    if ($contact["phone"] != "") {
+                        echo "<br>" . $contact["phone"];
+                    }
                     echo '</div> ';
+                }
             }
             ?>
             </div>

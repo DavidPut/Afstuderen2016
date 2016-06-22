@@ -233,11 +233,13 @@ function initMap(lat, long) {
 
 //Limit characters
 function characterLimit(){
-    var myTag = $('.document-content').text();
-    if (myTag.length > 15) {
-        var truncated = myTag.trim().substring(0, 300) + "…";
-        $('.document-content').text(truncated);
-    }
+    $('.document-content').each(function( index ) {
+        var myTag = $(this).text();
+        if (myTag.length > 80) {
+            var truncated = myTag.trim().substring(0, 300) + "…";
+            $(this).text(truncated);
+        }
+    });
 }
 
 //To center location icon, add height to icon-block
