@@ -13,6 +13,10 @@ $db_functions = new DB_functions();
 $db_process_byId = $db_functions->griffieItem($_GET["id"]);
 //Decisions
 $db_decisions = $db_functions->griffieBVList($_GET["id"]);
+//Calendar
+$db_calendar = $db_functions->selectCalendar($_GET["id"]);
+//Contact
+$db_contact = $db_functions->selectContact($_GET["id"]);
 
 ?>
 <!DOCTYPE html>
@@ -57,7 +61,7 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 
 <div class="container-fluid">
 
-    <a class="btn btn-primary btn-more " href="./main.html">Terug</a>
+    <a class="btn btn-primary btn-more " href="./index.php">Terug</a>
 
     <!--Position for mobile sidebar-->
     <div class="row mob-sidebar"></div>
@@ -80,10 +84,10 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 
         <!--DOCUMENTS BEGIN-->
 
-        <?php foreach ($db_decisions as $decision_block){
+        <?php foreach ($db_decisions as $decision_block) {
             echo '
 
-            <div class="row dos-doc" id="'.$_GET["id"].'" date="'.$decision_block["date"].'">
+            <div class="row dos-doc" id="' . $_GET["id"] . '" date="' . $decision_block["date"] . '">
             <div class="col-md-9 content-block">
 
                 <div class="row toggle-row">
@@ -95,10 +99,10 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                 <div class="row titleDate-row">
                     <div class="col-md-11">
                         <div class="col-md-3 col-xs-5">
-                            <h5>'.$decision_block["date"].'</h5>
+                            <h5>' . $decision_block["date"] . '</h5>
                         </div>
                         <div class="col-md-9 col-xs-6">
-                            <h4><b>'.$decision_block["title"].'</b></h4>
+                            <h4><b>' . $decision_block["title"] . '</b></h4>
                         </div>
                     </div>
                 </div>
@@ -111,7 +115,7 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                         <li>Nam auctor feugiat lectus, sit amet luctus erat bibendum non.</li>
                     </ul>
                     <!--Detailed text-->
-                    <p>'.$decision_block["summary"].'</p>
+                    <p>' . $decision_block["summary"] . '</p>
 
                     <hr>
                     <!--RIS files-->
@@ -124,41 +128,13 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                     <div class="ris-files">
                         <div class="row">
                             <div class="col-md-4">
-                                <a href="#">In sit amet massa massa</a>
+                                <a href="'.$decision_block["url"].'" target="_blank">'.$decision_block["title"].'</a>
                             </div>
                             <div class="col-md-4">
                                 <p>of</p>
                             </div>
                             <div class="col-md-4">
-                                <a href="#">
-                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="#">In sit amet massa massa</a>
-                            </div>
-                            <div class="col-md-4">
-                                <p>of</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#">
-                                    <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="#">In sit amet massa massa</a>
-                            </div>
-                            <div class="col-md-4">
-                                <p>of</p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#">
+                                <a href="'.$decision_block["url"].'" target="_blank">
                                     <img border="0" alt="PDF icon" src="./images/PDF-icon.png" width="32" height="32">
                                 </a>
                             </div>
@@ -174,82 +150,95 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 
                          ';
 
+            //Get opinions by id
+            $db_opinion = $db_functions->decisionOpinion($decision_block["id"]);
 
-                        //Opinion
-                        $db_opinion = $db_functions->decisionOpinion($decision_block["id"]);
-                         echo "Dit is:". $decision_block["id"];
-                        echo '
+            echo '
                         <!-- Politic view positive -->
                          <div class="col-md-4 politic-block">
                          <span class="politic-icon fa fa-check"></span>
                          ';
-                         foreach ($db_opinion as $process_opinion) {
 
+            //If opinion exist
+            if ($db_opinion) {
 
-                             //Select user
-                             $db_user = $db_functions->selectUser($process_opinion["uid"]);
+                //Loop through opinions
+                foreach ($db_opinion as $process_opinion) {
 
-                             if ($process_opinion["vote"] == 1) {
-                                 echo '
+                    //Select user by uid
+                    $db_user = $db_functions->selectUser($process_opinion["uid"]);
+
+                    //If vote is 1 -> positive
+                    if ($process_opinion["vote"] == 1) {
+                        echo '
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p><b>'.$db_user[0]["name"].' ('.$db_user[0]["partij"].')</b> '.$process_opinion["opinion"].' </p>
+                                        <p><b>' . $db_user[0]["name"] . ' (' . $db_user[0]["partij"] . ')</b> ' . $process_opinion["opinion"] . ' </p>
                                     </div>
                                 </div>
                              ';
-                             }
-                         }
-                         echo '
-                         </div>';
+                    }
+                }
+            }
 
-                         echo '
+            echo '
+                         </div>
+
                          <!-- Politic view negative -->
                          <div class="col-md-4 politic-block">
                          <span class="politic-icon fa fa-times"></span>
                          ';
-                        foreach ($db_opinion as $process_opinion) {
 
-                            //Select user
-                            $db_user = $db_functions->selectUser($process_opinion["uid"]);
+            //If opinion exist
+            if ($db_opinion) {
+                //Loop through opinions
+                foreach ($db_opinion as $process_opinion) {
 
-                            if ($process_opinion["vote"] == 2) {
-                                echo '
+                    //Select user by uid
+                    $db_user = $db_functions->selectUser($process_opinion["uid"]);
+
+                    //If vote is 2 -> negative
+                    if ($process_opinion["vote"] == 2) {
+                        echo '
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <p><b>'.$db_user[0]["name"].' ('.$db_user[0]["partij"].')</b> '.$process_opinion["opinion"].' </p>
+                                                    <p><b>' . $db_user[0]["name"] . ' (' . $db_user[0]["partij"] . ')</b> ' . $process_opinion["opinion"] . ' </p>
                                                 </div>
                                             </div>
                                          ';
-                            }
-                        }
-                         echo '
-                         </div>';
+                    }
+                }
+            }
 
+            echo '
+                         </div>
 
-                         echo '
                          <!-- Politic view unknown -->
                          <div class="col-md-4 politic-block">
                          <span class="fa fa-question" aria-hidden="true"></span>
                          ';
-                        foreach ($db_opinion as $process_opinion) {
 
-                            //Select user
-                            $db_user = $db_functions->selectUser($process_opinion["uid"]);
+            //If opinion exist
+            if ($db_opinion) {
+                foreach ($db_opinion as $process_opinion) {
 
-                            if ($process_opinion["vote"] == 3) {
-                                echo '
+                    //Select user by uid
+                    $db_user = $db_functions->selectUser($process_opinion["uid"]);
+
+                    //If vote is 3 -> unknown
+                    if ($process_opinion["vote"] == 3) {
+                        echo '
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p><b>'.$db_user[0]["name"].' ('.$db_user[0]["partij"].')</b> '.$process_opinion["opinion"].' </p>
+                                        <p><b>' . $db_user[0]["name"] . ' (' . $db_user[0]["partij"] . ')</b> ' . $process_opinion["opinion"] . ' </p>
                                     </div>
                                 </div>
                              ';
-                            }
-                        }
-                         echo '
-                         </div>';
-
-                    echo '
+                    }
+                }
+            }
+            echo '
+                         </div>
                     </div>
                 </div>
             </div>
@@ -257,9 +246,6 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 
         }
         ?>
-
-        
-
         <!--DOCUMENTS END-->
     </div>
 
@@ -273,7 +259,9 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                     <h4>Abonneren </h4>
                 </div>
                 <div class="col-md-3 col-xs-3">
-                    <h4><i class="fa fa-info" aria-hidden="true" title="U abonneert zich hiermee op het volledige dossier. Bij aanpassingen of updates wordt u op de hoogte gehouden."></i></h4>
+                    <h4><i class="fa fa-info" aria-hidden="true"
+                           title="U abonneert zich hiermee op het volledige dossier. Bij aanpassingen of updates wordt u op de hoogte gehouden."></i>
+                    </h4>
                 </div>
             </div>
             <div class="row">
@@ -299,21 +287,27 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                 <div class="col-md-12">
                     <h4>Contactgegevens</h4>
                 </div>
-                <div class="col-md-2 col-xs-2">
-                    <img class="img-responsive" src="./images/Profile.png" alt="Contact photo">
-                </div>
-                <div class="col-md-10 col-xs-10">
-                    <p class="contact">Piet Hoogdijk <br> Piet_Hoogdijk@gmail.com <br> 06-11144422</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-xs-2">
-                    <img class="img-responsive" src="./images/Profile.png" alt="Contact photo">
-                </div>
-                <div class="col-md-10 col-xs-10">
-                    <p class="contact">Carlijn Vliet <br> Carlijn_Vliet@gmail.com <br> 06-55522277</p>
-                </div>
+            <?php
+            //Loop through contact data
+            foreach ($db_contact as $contact) {
+                echo '
+                    <div class="col-md-2 col-xs-2">
+                        <img class="img-responsive" src="./images/Profile.png" alt="Contact photo">
+                    </div>
+                    <div class="col-md-10 col-xs-10">
+                        <p class="contact"'.$contact["name"].'
+                         ';
+                            //If there is an email
+                            if($contact["email"] != ""){
+                                echo "<br>".$contact["email"];
+                            }
+                            //If there is an phone number
+                            if($contact["phone"] !=""){
+                                echo "<br>".$contact["phone"];
+                            }
+                    echo '</div> ';
+            }
+            ?>
             </div>
         </div>
 
@@ -331,6 +325,7 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
                 </div>
                 <div class="col-md-12">
                     <div id='calendar'></div>
+                    <div id='calendar-info'></div>
                 </div>
             </div>
         </div>
@@ -342,8 +337,8 @@ $db_decisions = $db_functions->griffieBVList($_GET["id"]);
 </body>
 </html>
 
-<script>
-    //Calendar variables
-    var calendar_title;
-    var calendar_date;
-</script>
+<script>var cal_values = <?php echo json_encode($db_calendar); ?>;</script>
+
+
+
+
