@@ -654,7 +654,7 @@ function markerFilter(mType, mTime){
 
         //Get all rows with user specified time filter
         $('.doc-row[time*="'+mTime+'"]').each(function() {
-            //If doc has attr lat (meaning it has a marker) and has hidden class
+            //If doc has attr location (meaning it has a marker) and has hidden class
             if($(this).attr("location") && $(this).hasClass("hiddenTime")){
                 //Get document id
                 var mId = $(this).attr("id");
