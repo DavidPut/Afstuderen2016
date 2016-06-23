@@ -202,15 +202,27 @@ function initMap(lat, long) {
     //Click document marker
     $('.doc-row a').click(function() {
 
-        //Lat and long attributes
-        var lat = $(this).closest('.doc-row').attr('lat');
-        var long = $(this).closest('.doc-row').attr('long');
+        //Location attribute
+        var location = $(this).closest('.doc-row').attr('location');
 
-        //Center map
-        map.setCenter(new google.maps.LatLng(lat, long));
+        var geocoder = new google.maps.Geocoder();
 
-        //Scroll to top
-        $("html,body").animate({ scrollTop: 0 }, "slow");
+        //Location to latlong
+        geocoder.geocode( { 'address': location}, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                //Lat and long vars
+                var mlat = results[0].geometry.location.lat();
+                var mlong = results[0].geometry.location.lng();
+
+                //Center map
+                map.setCenter(new google.maps.LatLng(mlat, mlong));
+
+                //Scroll to top
+                $("html,body").animate({ scrollTop: 0 }, "slow");
+            }
+        });
     });
 
     //Location search
@@ -724,7 +736,7 @@ function markerRange() {
                 $('.input-tags').val('');
                 //Empty location filter
                 $('.input-loc').val('');
-               
+
             }
         }
     });
