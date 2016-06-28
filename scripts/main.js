@@ -90,54 +90,10 @@ function initMap(lat, long) {
         var time = $(this).attr("time");
         var tags = $(this).attr("tags");
 
-
-
         //Get title
         var title = $(this).find(".doc-title").text();
 
 
-        //Type physical
-        if(type == "physical") {
-            switch(time) {
-                case "low":
-                    image = './images/Marker_Icon_fysiek_green.png';
-                    break;
-                case "mid":
-                    image = './images/Marker_Icon_fysiek_orange.png';
-                    break;
-                case "high":
-                    image = './images/Marker_Icon_fysiek_red.png';
-                    break;
-            }
-        }
-        //Type social
-        else if  (type == "social"){
-            switch(time) {
-                case "low":
-                    image = './images/Marker_Icon_sociaal_green.png';
-                    break;
-                case "mid":
-                    image = './images/Marker_Icon_sociaal_orange.png';
-                    break;
-                case "high":
-                    image = './images/Marker_Icon_sociaal_red.png';
-                    break;
-            }
-        }
-        //Type money
-        else if  (type == "money"){
-            switch(time) {
-                case "low":
-                    image = './images/Marker_Icon_bestuur_green.png';
-                    break;
-                case "mid":
-                    image = './images/Marker_Icon_bestuur_orange.png';
-                    break;
-                case "high":
-                    image = './images/Marker_Icon_bestuur_red.png';
-                    break;
-            }
-        }
 
         //Remove spacing from title
         var trimTitle = title.replace(/^\s+|\s+$/gm,'');
@@ -151,6 +107,49 @@ function initMap(lat, long) {
 
                 var mlat = results[0].geometry.location.lat();
                 var mlong = results[0].geometry.location.lng();
+
+                //Type physical
+                if(type == "physical") {
+                    switch(time) {
+                        case "low":
+                            image = './images/Marker_Icon_fysiek_green.png';
+                            break;
+                        case "mid":
+                            image = './images/Marker_Icon_fysiek_orange.png';
+                            break;
+                        case "high":
+                            image = './images/Marker_Icon_fysiek_red.png';
+                            break;
+                    }
+                }
+                //Type social
+                else if  (type == "social"){
+                    switch(time) {
+                        case "low":
+                            image = './images/Marker_Icon_sociaal_green.png';
+                            break;
+                        case "mid":
+                            image = './images/Marker_Icon_sociaal_orange.png';
+                            break;
+                        case "high":
+                            image = './images/Marker_Icon_sociaal_red.png';
+                            break;
+                    }
+                }
+                //Type money
+                else if  (type == "money"){
+                    switch(time) {
+                        case "low":
+                            image = './images/Marker_Icon_bestuur_green.png';
+                            break;
+                        case "mid":
+                            image = './images/Marker_Icon_bestuur_orange.png';
+                            break;
+                        case "high":
+                            image = './images/Marker_Icon_bestuur_red.png';
+                            break;
+                    }
+                }
 
                 //Create marker
                 marker = new google.maps.Marker({
@@ -203,15 +202,27 @@ function initMap(lat, long) {
     //Click document marker
     $('.doc-row a').click(function() {
 
-        //Lat and long attributes
-        var lat = $(this).closest('.doc-row').attr('lat');
-        var long = $(this).closest('.doc-row').attr('long');
+        //Location attribute
+        var location = $(this).closest('.doc-row').attr('location');
 
-        //Center map
-        map.setCenter(new google.maps.LatLng(lat, long));
+        var geocoder = new google.maps.Geocoder();
 
-        //Scroll to top
-        $("html,body").animate({ scrollTop: 0 }, "slow");
+        //Location to latlong
+        geocoder.geocode( { 'address': location}, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                //Lat and long vars
+                var mlat = results[0].geometry.location.lat();
+                var mlong = results[0].geometry.location.lng();
+
+                //Center map
+                map.setCenter(new google.maps.LatLng(mlat, mlong));
+
+                //Scroll to top
+                $("html,body").animate({ scrollTop: 0 }, "slow");
+            }
+        });
     });
 
     //Location search
@@ -234,11 +245,13 @@ function initMap(lat, long) {
 
 //Limit characters
 function characterLimit(){
-    var myTag = $('.document-content').text();
-    if (myTag.length > 15) {
-        var truncated = myTag.trim().substring(0, 300) + "…";
-        $('.document-content').text(truncated);
-    }
+    $('.document-content').each(function( index ) {
+        var myTag = $(this).text();
+        if (myTag.length > 80) {
+            var truncated = myTag.trim().substring(0, 300) + "…";
+            $(this).text(truncated);
+        }
+    });
 }
 
 //To center location icon, add height to icon-block
@@ -467,7 +480,7 @@ function filterTags(){
                 val = val.toLowerCase();
 
                 //Remove/add documents that contain value specified in tags
-                $('.doc-row[tags*="'+val+'"]').addClass("showBlock").removeClass("hidden");
+                $('.doc-row[tags*="'+val+'"]').addClass("showBlock").removeClass("hidden hiddenType hiddenTime");
                 $(".doc-row" ).not(".showBlock").addClass("hidden");
 
                 //FILTER MARKERS
@@ -610,8 +623,8 @@ function markerFilter(mType, mTime){
     else{
         //Get all rows with user specified type filter
         $('.doc-row[type*="'+mType+'"]').each(function() {
-            //If doc has attr lat (meaning it has a marker) and has hidden class
-            if($(this).attr("lat") && $(this).hasClass("hiddenType")){
+            //If doc has attr location (meaning it has a marker) and hidden class
+            if($(this).attr("location") && $(this).hasClass("hiddenType")){
                 //Get document id
                 var mId = $(this).attr("id");
                 //Loop through markers
@@ -625,7 +638,7 @@ function markerFilter(mType, mTime){
             }
 
             //If document does not have any hidden classes
-            else if($(this).attr("lat") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hiddenTime")  ){
+            else if($(this).attr("location") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hidden") ){
                 //Get document id
                 var mId = $(this).attr("id");
                 //Loop through markers
@@ -641,8 +654,8 @@ function markerFilter(mType, mTime){
 
         //Get all rows with user specified time filter
         $('.doc-row[time*="'+mTime+'"]').each(function() {
-            //If doc has attr lat (meaning it has a marker) and has hidden class
-            if($(this).attr("lat") && $(this).hasClass("hiddenTime")){
+            //If doc has attr location (meaning it has a marker) and has hidden class
+            if($(this).attr("location") && $(this).hasClass("hiddenTime")){
                 //Get document id
                 var mId = $(this).attr("id");
                 //Loop through markers
@@ -655,7 +668,7 @@ function markerFilter(mType, mTime){
                 }
             }
             //If document does not have any hidden classes
-            else if($(this).attr("lat") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hiddenType") ){
+            else if($(this).attr("location") && !$(this).hasClass("hiddenTime") && !$(this).hasClass("hiddenType") && !$(this).hasClass("hidden") ){
                 //Get document id
                 var mId = $(this).attr("id");
                 //Loop through markers
@@ -714,11 +727,16 @@ function markerRange() {
             //Reset
             else {
                 //Show documents
-                $('.doc-row').removeClass("hiddenRange hiddenType hiddenTime");
+                $('.doc-row').removeClass("hiddenRange hiddenType hiddenTime hidden");
                 //Show markers
                 markers[i].setVisible(true);
                 //Reset checkbox filters
                 $('input:checkbox').prop('checked', true);
+                //Empty tag filter
+                $('.input-tags').val('');
+                //Empty location filter
+                $('.input-loc').val('');
+
             }
         }
     });
