@@ -1,5 +1,22 @@
 <?php $_POST = $_SESSION['POST']; ?>
 
+  <!-- nieuwe besluitvorming -->
+  <div class="row">
+    <div class="col-md-12 col-xs-12 ">
+      <div class="page-header">
+        <div class="pull-left">
+          <h3>Besluitvorming <span class="label label-success"><i class="fa fa-plus small-icon" aria-hidden="true"></i></span></h3>
+        </div>
+        <div class="pull-right">
+          <a class="btn btn-default" href="griffie.php?action=edit&id=<?php echo $id; ?>">annuleren</a>
+          <button class="btn btn-list btn-success" type="submit" name ="BVadd" value="toevoegen">toevoegen</button>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+
+
   <form class="form-horizontal" action="formactions.php" method="POST">
     <input type="hidden" name="pid" value="<?php echo $db_getItem_info['id']; ?>">
 
