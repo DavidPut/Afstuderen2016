@@ -58,9 +58,9 @@ if (isset($_SESSION['mail'])) {
     case "list";
       require 'admin/raadslid/list.php';
       break;
-//    case "add";
-//      require 'admin/raadslid/add.php';
-//      break;
+/    case "add";
+/      require 'admin/raadslid/add.php';
+/      break;
 //    case "edit";
 //      require 'admin/raadslid/edit.php';
 //      break;
