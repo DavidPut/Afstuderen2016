@@ -1,4 +1,6 @@
 <?php
+echo "test";
+
 require_once "database/db_functions.php";
 $db_getBVList = new DB_functions();
 $db_getBVList_info = $db_getBVList->griffieBVList($id);
@@ -7,8 +9,6 @@ if($action == 'edit'){
   echo '<a class="btn btn-success pull-right" href="admin/raadslid/besluitvorming/bvadd.php?id='.$db_getItem_info['id'].'"></i>toevoegen</a>';
 }
 if (is_array($db_getBVList_info)){
-
-echo "test";
 
 ?>
 
