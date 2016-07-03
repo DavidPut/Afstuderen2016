@@ -24,7 +24,7 @@ if(isset($_POST['loginsubmit'])) {
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
-        header("location: griffie.php");
+        header("location: login.php");
         exit();
       } else {
         $_SESSION['Callback'] = true;
