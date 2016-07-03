@@ -10,7 +10,7 @@ $db_getBVOpinionList_info = $db_getBVList->raadslidList($id, $_SESSION['uid']);
 if($action == 'edit'){
   echo '<a class="btn btn-success pull-right" href="admin/raadslid/besluitvorming/bvadd.php?id='.$db_getItem_info['id'].'"></i>toevoegen</a>';
 }
-if (is_array($db_getBVList_info)){
+if ($db_getBVList_info){
 
 ?>
 
@@ -40,7 +40,10 @@ if (is_array($db_getBVList_info)){
       </tr>"; }} ?>
   </tbody>
   <tbody>
-  <?php foreach ($db_getBVOpinionList_info as $db_getBVOpinionList_info_item) {
+  <?php
+  if($db_getBVOpinionList_info){
+
+  foreach ($db_getBVOpinionList_info as $db_getBVOpinionList_info_item) {
     echo " 
       <tr>
         <td>".$db_getBVOpinionList_info_item['opinion']."</td>
@@ -50,6 +53,6 @@ if (is_array($db_getBVList_info)){
             <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"admin/raadslid/besluitvorming/bvdelete.php?id=".$db_getItem_info['id']."&bid=".$db_getBVList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
           </p>
         </td>
-      </tr>"; } ?>
+      </tr>"; }} ?>
   </tbody>
 </table>
