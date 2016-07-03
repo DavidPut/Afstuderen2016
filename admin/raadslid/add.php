@@ -64,6 +64,21 @@
             <h3 class = "panel-title">Nieuwe besluitvorming</h3>
           </div>
 
+          <!-- bv -->
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-xs-12 ">
+              <div class="page-header">
+                <h4>Besluitvorming</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-xs-12 ">
+              <?php require_once "besluitvorming/bvlist.php"; ?>
+            </div>
+          </div>
+
           <div class = "panel-body">
 
             <div class="row">
