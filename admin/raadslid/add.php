@@ -51,7 +51,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="page-header">
-        <h4>Besluitvorming</h4>
+        <h4>Besluitvormingzz</h4>
       </div>
     </div>
   </div>
