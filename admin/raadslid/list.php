@@ -14,11 +14,11 @@
       </thead>
       <tbody>
       <?php
-      for ($x = 0; $x <= 20; $x++) {
+      foreach ($db_getList_info as $db_getList_info_item) {
         echo "
       <tr>
-        <td>" . $x . "</td>
-        <td>Een titel van een besluitvorming</td>
+        <td>".$db_getList_info_item['id']."</td>
+        <td>".$db_getList_info_item['title']."</td>
         <td>0
         2
         ja</td>
