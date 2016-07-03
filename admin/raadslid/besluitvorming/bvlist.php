@@ -50,6 +50,6 @@ if (is_array($db_getBVList_info)){
             <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"admin/raadslid/besluitvorming/bvdelete.php?id=".$db_getItem_info['id']."&bid=".$db_getBVList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
           </p>
         </td>
-      </tr>"; }} ?>
+      </tr>"; } ?>
   </tbody>
 </table>
