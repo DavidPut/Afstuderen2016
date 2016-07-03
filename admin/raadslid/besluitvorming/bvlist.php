@@ -8,7 +8,11 @@ if($action == 'edit'){
 }
 if (is_array($db_getBVList_info)){
 
+echo "test";
+
 ?>
+
+
 <table class="table table-hover table-list">
   <thead>
   <tr>
