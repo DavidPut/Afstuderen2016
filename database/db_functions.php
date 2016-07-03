@@ -44,7 +44,6 @@ class DB_functions
         $rows_result[] = $row;
       }
       return $rows_result;
-      $this->db->close();
     } else {
       return false;
       $this->db->close();
