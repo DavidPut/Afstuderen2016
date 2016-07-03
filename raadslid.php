@@ -14,6 +14,10 @@ if (isset($_SESSION['mail'])) {
   exit();
 }
 
+if(isset($_GET['id'])) {
+  $id = urlencode($_GET['id']);
+}
+
 //list griffie 
 if($action == null || $action == 'list') {
   require_once "database/db_functions.php"; //test
