@@ -9,7 +9,7 @@
         </div>
         <div class="pull-right">
 
-          <a class="btn btn-default" href="raadslid.php?action=edit&id=<?php echo $id; ?>">annuleren</a>
+          <a class="btn btn-default" href="raadslid.php?action=list">annuleren</a>
           <button class="btn btn-list btn-success" type="submit" name ="BVadd" value="toevoegen">toevoegen</button>
         </div>
         <div class="clearfix"></div>
