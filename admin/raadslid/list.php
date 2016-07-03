@@ -4,11 +4,7 @@
       <thead>
       <tr>
         <th class="col-md-1">Nummer</th>
-        <th class="col-md-6">Titel</th>
-        <th class="col-md-2">
-          <i class="fa fa-comment-o" aria-hidden="true"></i>
-          <i class="fa fa-comments" aria-hidden="true"></i>
-          <i class="fa fa-comments" aria-hidden="true"></i></th>
+        <th class="col-md-8">Titel</th>
         <th class="col-md-3">Opties</th>
       </tr>
       </thead>
@@ -19,9 +15,6 @@
       <tr>
         <td>".$db_getList_info_item['id']."</td>
         <td>".$db_getList_info_item['title']."</td>
-        <td>0
-        2
-        ja</td>
         <td>
             <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina' href=\"dossier.php?id=".$db_getList_info_item['id']."\"><i class=\"fa fa-long-arrow-right fa-fw\"></i></a>
             <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"raadslid.php?action=add&id=".$db_getList_info_item['id']."\"><i class=\"fa fa-pencil fa-fw\"></i></a>
