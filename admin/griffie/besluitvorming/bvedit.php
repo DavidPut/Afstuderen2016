@@ -20,7 +20,7 @@ if (isset($_SESSION['mail'])) {
 //database verkrijgen data
 require_once "../../../database/db_functions.php";
 $db_getBVItem = new DB_functions();
-$db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
+$db_getBVItem_info = $db_getBVItem->BVItem($pid, $bid);
 
 ?>
 
