@@ -2,7 +2,7 @@
 
 <form class="form-horizontal" action="formactions.php" method="POST">
 
-  <!-- nieuwe besluitvorming -->
+  <!-- nieuwe besluitvorming //-->
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">

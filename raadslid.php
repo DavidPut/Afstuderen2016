@@ -14,6 +14,17 @@ if (isset($_SESSION['mail'])) {
   exit();
 }
 
+if(isset($_GET['id'])) {
+  $id = urlencode($_GET['id']);
+}
+
+//list griffie 
+if($action == null || $action == 'list') {
+  require_once "database/db_functions.php"; //test
+  $db_getList = new DB_functions();
+  $db_getList_info = $db_getList->griffieList();
+}
+
 
 ?>
 
@@ -56,11 +67,11 @@ if (isset($_SESSION['mail'])) {
   <?php
   switch ($action) {
     case "list";
-      require 'admin/raadslid/list.php';
+        require 'admin/raadslid/list.php';
+        break;
+   case "add";
+      require 'admin/raadslid/add.php';
       break;
-//    case "add";
-//      require 'admin/raadslid/add.php';
-//      break;
 //    case "edit";
 //      require 'admin/raadslid/edit.php';
 //      break;
