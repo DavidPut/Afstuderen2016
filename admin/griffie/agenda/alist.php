@@ -25,8 +25,8 @@ if (is_array($db_getBVList_info)){
   <?php foreach ($db_getBVList_info as $db_getBVList_info_item) {
     echo " 
       <tr>
-        <td>".$db_getBVList_info_item['title']."</td>
         <td>".$db_getBVList_info_item['date']."</td>
+        <td>".$db_getBVList_info_item['title']."</td>
         <td>
           <p class='text-right'>
             ".(($action == 'edit')?"<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"admin/griffie/besluitvorming/bvedit.php?id=".$db_getItem_info['id']."&bid=".$db_getBVList_info_item['id']."\"><i class=\"fa fa-pencil fa-fw\"></i></a>":"")."
