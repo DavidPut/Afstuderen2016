@@ -79,7 +79,7 @@ class DB_functions
 
   //griffieEDit
   public function griffieEdit($pid, $BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact){
-    $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process` SET `title` = '$BVPtitle', `summary` = '$BVPsummary', `location` = '$BVPlocation', `period` = '$BVPperiod',`type` = '$BVPtypes'  WHERE `process`.`id` = '$pid'") or die( mysqli_error($this->db->connect()));
+    $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process` SET `title` = '$BVPtitle', `summary` = '$BVPsummary', `location` = '$BVPlocation', `period` = '$BVPperiod',`type` = '$BVPtypes', `searchtags` = '$BVPtags'  WHERE `process`.`id` = '$pid'") or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
       $this->db->close();
