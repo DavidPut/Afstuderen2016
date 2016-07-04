@@ -153,19 +153,16 @@ class DB_functions
   //nogagenda
 
   // pakt de lijst voor raadsleden met de besluiten of ze al gereageerd hebben op het besluit
-  public function raadslidList($pid, $uid){
-    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_opinion WHERE pid = '$pid' AND uid ='$uid'") or die(mysqli_error($this->db->connect()));
+  public function raadslidList($pid, $did, $uid){
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_opinion WHERE pid = '$pid' AND id = '$did' AND uid ='$uid'") or die(mysqli_error($this->db->connect()));
     $no_of_rows = mysqli_num_rows($result);
     if ($no_of_rows > 0) {
-      $rows_result = array();
-      while($row = mysqli_fetch_assoc($result)) {
-        $rows_result[] = $row;
-      }
-      return $rows_result;
+      $row = mysqli_fetch_assoc($result);
       $this->db->close();
+      return $row;
     } else {
-      return false;
       $this->db->close();
+      return false;
     }
   }
 
