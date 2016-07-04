@@ -83,7 +83,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
           </div>
           <div class="pull-right">
             <a class="btn btn-default" href="raadslid.php?action=add&id=<?php echo $id; ?>">annuleren</a>
-            <button class="btn btn-list btn-success" type="submit" name ="BVadd" value="toevoegen">toevoegen</button>
+            <button class="btn btn-list btn-success" type="submit" name ="BVOpinionadd" value="toevoegen">toevoegen</button>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -156,7 +156,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
                 <div class="form-group">
                   <label for="inputSummaryProces" class="col-sm-2 control-label">Standpunt</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" name="BVaddOpinion" placeholder="Mijn standpunt" rows="2"></textarea>
+                    <textarea class="form-control" name="BVPaddOpinion" placeholder="Mijn standpunt" rows="2"></textarea>
                   </div>
                 </div>
               </div>
