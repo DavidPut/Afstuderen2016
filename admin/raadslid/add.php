@@ -25,7 +25,7 @@
 
     <?php
 
-    $db_getContactItem_info = $db_getList->RaadslidContactItem($_GET['id'], $_SESSION['uid']);
+    $db_getContactItem_info = $db_getList->raadslidContactItem($_GET['id'], $_SESSION['uid']);
 
 
     ?>
@@ -37,13 +37,13 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddContact" id="optionsRadios1" value="off">
+              <input type="radio" name="BVPaddContact" id="optionsRadios1" value="off" <?php if($db_getContactItem_info == false){echo 'checked';}?>>
               Mijn contactgegevens niet achterlaten
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddContact" id="optionsRadios2" value="on">
+              <input type="radio" name="BVPaddContact" id="optionsRadios2" value="on" <?php if($db_getContactItem_info){echo 'checked';}?>>
               Mijn contactgegevens achterlaten
             </label>
           </div>

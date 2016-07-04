@@ -312,7 +312,7 @@ if(isset($_POST['RaadslidContactEdit'])) {
 
       require_once "database/db_functions.php";
       $db_addBVPush = new DB_functions();
-      $db_addBVPush_info = $db_addBVPush->raadslidOpinionAdd($pid, $did, $uid, $BVvote, $BVopinion);
+      $db_addBVPush_info = $db_addBVPush->raadslidContactEdit($pid, $did, $uid, $BVvote, $BVopinion);
 
       unset($_SESSION['Callback']);
       unset($_SESSION['POST']);

@@ -219,6 +219,34 @@ class DB_functions
     }
   }
 
+  // besluiten opinie updaten
+  public function raadslidContactEdit($pid, $did, $uid, $BVvote, $BVopinion){
+    $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process_opinion` SET `vote` = '$BVvote', `opinion` = '$BVopinion' WHERE `process_opinion`.`pid` = '$pid' && `did` = '$did' && `uid` = '$uid' ") or die( mysqli_error($this->db->connect()));
+    // check for successful store
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
+  //  raadslid comtact item
+  public function raadslidContactItem($pid, $uid){
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_contact WHERE pid = '$pid' AND uid = '$uid'") or die(mysqli_error($this->db->connect()));
+    $no_of_rows = mysqli_num_rows($result);
+    if ($no_of_rows > 0) {
+      $row = mysqli_fetch_assoc($result);
+      return $row;
+      $this->db->close();
+    } else {
+      return false;
+      $this->db->close();
+    }
+  }
+
+
   // politieke meningen per process decision
   public function decisionOpinion($did){
     $result = mysqli_query($this->db->connect(), "SELECT * FROM process_opinion WHERE did = '$did'") or die(mysqli_error($this->db->connect()));
