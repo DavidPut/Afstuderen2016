@@ -5,10 +5,9 @@
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
         <div class="pull-left">
-          <h3>Besluitvormingsproces <span class="label label-success"><i class="fa fa-plus small-icon" aria-hidden="true"></i></span></h3>
+          <h3>Besluitvorming <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
         </div>
         <div class="pull-right">
-
           <a class="btn btn-default" href="raadslid.php?action=list">annuleren</a>
           <button class="btn btn-list btn-success" type="submit" name ="BVadd" value="toevoegen">toevoegen</button>
         </div>
@@ -59,6 +58,13 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <?php require_once "besluitvorming/bvlist.php"; ?>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 col-xs-12">
+      <a class="btn btn-lg btn-default text-left" href="raadslid.php">annuleren</a>
+      <button class="btn btn-lg btn-primary text-right" type = "submit" name = "BVPedit" value = "aanpassen">aanpassen</button>
     </div>
   </div>
 
