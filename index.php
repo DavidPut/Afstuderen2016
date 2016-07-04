@@ -17,7 +17,8 @@ header("Expires: 0"); // Proxies.
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <!-- Icon for FF, Chrome, Opera -->
     <link rel="icon" type="image/png" href="images/Icon_people.png" sizes="16x16">

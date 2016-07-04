@@ -483,6 +483,9 @@ function filterTags(){
                 $('.doc-row[tags*="'+val+'"]').addClass("showBlock").removeClass("hidden hiddenType hiddenTime");
                 $(".doc-row" ).not(".showBlock").addClass("hidden");
 
+                //Reset checkbox filters
+                $('input:checkbox').prop('checked', true);
+
                 //FILTER MARKERS
                 for(var i = 0; i < markers.length; i++) {
 
