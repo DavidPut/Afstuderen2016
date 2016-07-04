@@ -28,7 +28,6 @@ if ($db_getBVList_info){
         <td>
           <p class='text-right'>";
             $db_getBVOpinionList_info = $db_getBVList->raadslidList($id, $db_getBVList_info_item['id'], $_SESSION['uid']);
-            echo $db_getBVOpinionList_info['id'];
             if ($db_getBVOpinionList_info){
               echo "<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"admin/raadslid/besluitvorming/bvedit.php?id=\"><i class=\"fa fa-pencil fa-fw\"></i></a>";
               echo "<a class=\"btn btn-danger \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"admin/raadslid/besluitvorming/bvdelete.php?id=".$db_getItem_info['id']."&bid=".$db_getBVList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>";
