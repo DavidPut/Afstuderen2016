@@ -20,6 +20,7 @@ if (isset($_SESSION['mail'])) {
 require_once "../../../database/db_functions.php";
 $db_getBVItem = new DB_functions();
 $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
+$db_getBVOpinionItem_info = $db_getBVItem->raadslidList($id, $bid, $_SESSION['uid']);
 
 
 //data opsturen
@@ -85,7 +86,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
           </div>
           <div class="pull-right">
             <a class="btn btn-default" href="raadslid.php?action=add&id=<?php echo $id; ?>">annuleren</a>
-            <button class="btn btn-list btn-success" type="submit" name ="BVOpiniondelete" value="verwijderen">verwijderen</button>
+            <button class="btn btn-list btn-danger" type="submit" name ="BVOpiniondelete" value="verwijderen">verwijderen</button>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -132,19 +133,19 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
                   <div class="col-sm-10">
                     <div class="radio">
                       <label>
-                        <input type="radio" name="BVPaddVote" id="optionsRadios1" value="1">
+                        <input disabled type="radio" name="BVPaddVote" id="optionsRadios1" value="1" <?php if($db_getBVOpinionItem_info['vote'] == '1'){echo 'checked';}?>>
                         Voor
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="BVPaddVote" id="optionsRadios2" value="2" checked>
+                        <input disabled type="radio" name="BVPaddVote" id="optionsRadios2" value="2" <?php if($db_getBVOpinionItem_info['vote'] == '2'){echo 'checked';}?>>
                         Neutraal
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="BVPaddVote" id="optionsRadios3" value="3">
+                        <input disabled type="radio" name="BVPaddVote" id="optionsRadios3" value="3" <?php if($db_getBVOpinionItem_info['vote'] == '3'){echo 'checked';}?>>
                         Tegen
                       </label>
                     </div>
@@ -158,7 +159,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
                 <div class="form-group">
                   <label for="inputSummaryProces" class="col-sm-2 control-label">Standpunt</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" name="BVPaddOpinion" placeholder="Mijn standpunt" rows="2"></textarea>
+                    <textarea readonly="readonly" class="form-control" name="BVPaddOpinion" value="<?php echo $db_getBVOpinionItem_info['opinion']; ?>" rows="2"></textarea>
                   </div>
                 </div>
               </div>
