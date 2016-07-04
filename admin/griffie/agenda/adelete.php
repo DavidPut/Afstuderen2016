@@ -69,7 +69,7 @@ $db_getBVItem_info = $db_getBVItem->AgendaItem($aid);
 
 <div class="container">
   <form class="form-horizontal" action="formactions.php" method="POST">
-    <input type="hidden" name="aid" value="<?php echo $id; ?>">
+    <input type="hidden" name="aid" value="<?php echo $aid; ?>">
 
     <!-- nieuwe besluitvorming -->
     <div class="row">
