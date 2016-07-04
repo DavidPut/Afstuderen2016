@@ -38,12 +38,13 @@ if ($db_getBVList_info){
                 if($db_getBVOpinionList_info_item['did'] == $db_getBVList_info_item['id']){
                   echo "<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"admin/raadslid/besluitvorming/bvedit.php?id=\"><i class=\"fa fa-pencil fa-fw\"></i></a>";
                   echo "<a class=\"btn btn-danger \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"admin/raadslid/besluitvorming/bvdelete.php?id=".$db_getItem_info['id']."&bid=".$db_getBVList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>";
-                }
+                } else {
+                  echo "<a class=\"btn btn-success\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Toevoegen\" href=\"admin/raadslid/besluitvorming/bvadd.php?id=\"><i class=\"fa fa-plus fa-fw\"></i></a>";
+                };
               }
             } else {
               echo "<a class=\"btn btn-success\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Toevoegen\" href=\"admin/raadslid/besluitvorming/bvadd.php?id=\"><i class=\"fa fa-plus fa-fw\"></i></a>";
             }; }} ?>
-
           </p>
         </td>
       </tr>
