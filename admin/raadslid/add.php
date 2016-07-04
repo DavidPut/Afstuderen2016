@@ -12,7 +12,7 @@
           <h3>Besluitvorming <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span>
             <a class="btn btn-default" href="dossier.php?id=<?php echo $_GET['id']; ?>">naar pagina</a>
             <a class="btn btn-default" href="https://www.facebook.com/share.php?u=gemeentedossier.nl/dossier.php?id=<?php echo $_GET['id']; ?>" target="_blank">facebook delen</a>
-            <a class="btn btn-default" href="https://twitter.com/home?status=gemeentedossier.nl/dossier.php?id=<?php echo $_GET['id']; ?>%20Staat%20belangrijk%20nieuws%20in%20van%20de%20besluitvorming%20van%20de%20gemeente.%20<?php echo $_GET['id']; ?>" target="_blank">twitter delen</a>
+            <a class="btn btn-default" href="https://twitter.com/home?status=http%3A//gemeentedossier.nl/dossier.php?id=<?php echo $_GET['id']; ?>%20Staat%20belangrijk%20nieuws%20in%20van%20de%20besluitvorming%20van%20de%20gemeente.%20<?php echo $_GET['id']; ?>" target="_blank">twitter delen</a>
 
 
           </h3>
