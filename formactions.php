@@ -136,15 +136,24 @@ if(isset($_POST['BVPedit'])) {
           $BVPtypes = null;
         }
 
-        if (!empty($_POST['BVPeditContact'])) {
-          $BVPcontact = "";
-          foreach ($_POST['BVPeditContact'] as $selected) {
-            $BVPcontact = $BVPcontact . $selected . ",";
+        if(isset($_POST['BVPaddContact']) && !empty($_POST['BVPaddContact'])) {
+
+          $BVcontact = $_POST['BVPaddContact'];
+          if($BVcontact == "off"){
+            require_once "database/db_functions.php";
+            $db_addBVPush = new DB_functions();
+            $db_addBVPush_info = $db_addBVPush->raadslidContactDelete($pid, $uid);
+          } elseif ($BVcontact == "on") {
+            require_once "database/db_functions.php";
+            $db_addBVPush = new DB_functions();
+            $db_getUser_info = $db_addBVPush->selectGebruiker($uid);
+            $db_addBVPush_info = $db_addBVPush->raadslidContactEdit($pid, $uid, $db_getUser_info['name'], $db_getUser_info['mail'], $db_getUser_info['telefoon']);
+          } else {
+            // deleten maar
+            require_once "database/db_functions.php";
+            $db_addBVPush = new DB_functions();
+            $db_addBVPush_info = $db_addBVPush->raadslidContactDelete($pid, $uid);
           }
-        } else {
-          // is het empty.. geen probleem
-          $BVPcontact = null;
-        }
 
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
