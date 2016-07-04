@@ -256,7 +256,7 @@ if(isset($_POST['BVOpinionadd'])) {
 }
 
 // Besluitvormingsproces opinie verwijderen
-if(isset($_POST['BVPdelete'])) {
+if(isset($_POST['BVOpiniondelete'])) {
   $pid = $_POST['pid'];
   $did = $_POST['did'];
   $uid = $_POST['uid'];
