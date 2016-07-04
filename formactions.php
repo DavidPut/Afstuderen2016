@@ -374,6 +374,18 @@ if(isset($_POST['agendaAdd'])) {
   exit();
 }
 
+// Besluitvormingsproces verwijderen
+if(isset($_POST['agendaDelete'])) {
+  $id = $_POST['aid'];
+
+  require_once "database/db_functions.php";
+  $db_deletePush = new DB_functions();
+  $db_deletePush_info = $db_deletePush->griffieAgendaDelete($aid);
+
+  header("location: griffie.php");
+  exit();
+}
+
 
 
 ?>
