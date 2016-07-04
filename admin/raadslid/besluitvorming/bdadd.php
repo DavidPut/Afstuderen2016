@@ -124,11 +124,28 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
             </div>
 
             <div class="row">
-              <div class="col-md-12 col-xs-12 ">
-                <div class="form-group">
-                  <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
+              <div class="col-md-10 col-md-offset-1 col-xs-12 ">
+                <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
+                  <label for="inputTags" class="col-sm-2 control-label">Periode *</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="BVaddfile" name="inputFile"></input>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="BVPaddPeriod" id="optionsRadios1" value="1">
+                        Voor
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="BVPaddPeriod" id="optionsRadios2" value="2">
+                        Neutraal
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="BVPaddPeriod" id="optionsRadios3" value="3">
+                        Tegen
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -143,7 +160,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
     <div class="row">
       <div class="col-md-4 col-md-offset-4 col-xs-12">
         <a class="btn btn-lg btn-default text-left" href="raadslid.php?action=add&id=<?php echo $id; ?>">annuleren</a>
-        <button class="btn btn-lg btn-success text-right" type="submit" name="BVadd" value="toevoegen">toevoegen</button>
+        <button class="btn btn-lg btn-success text-right" type="submit" name="BVOpinionadd" value="toevoegen">toevoegen</button>
       </div>
     </div>
 
