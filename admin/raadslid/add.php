@@ -25,7 +25,7 @@
 
     <?php
 
-    $db_getContactItem_info = $db_getList->RaadslidContactItem($db_getItem_info['id'], $uid);
+    $db_getContactItem_info = $db_getList->RaadslidContactItem($_GET['id'], $_SESSION['uid']);
 
 
     ?>
