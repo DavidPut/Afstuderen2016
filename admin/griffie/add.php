@@ -138,31 +138,10 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw fa-lg" aria-hidden="true"></i> Er kan nog geen agenda worden toegevoegd.</div>
+      <div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw fa-lg" aria-hidden="true"></i> Er kan nog geen agenda worden toegevoegd en contactgegevens worden achtergelaten.</div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
-        <label for="inputTags" class="col-sm-2 control-label">Contactgegevens</label>
-        <div class="col-sm-10">
-          <div class="radio">
-            <label>
-              <input type="radio" name="BVPaddContact" id="optionsRadios1" value="off" <?php if($db_getContactItem_info == false){echo 'checked';}?>>
-              Griffier contactgegevens niet achterlaten
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="BVPaddContact" id="optionsRadios2" value="on" <?php if($db_getContactItem_info == true){echo 'checked';}?>>
-              Griffier contactgegevens achterlaten
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-md-4 col-md-offset-5 col-xs-12">
