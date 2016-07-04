@@ -130,22 +130,33 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
                   <div class="col-sm-10">
                     <div class="radio">
                       <label>
-                        <input type="radio" name="BVPaddPeriod" id="optionsRadios1" value="1">
+                        <input type="radio" name="BVPaddVote" id="optionsRadios1" value="1">
                         Voor
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="BVPaddPeriod" id="optionsRadios2" value="2">
+                        <input type="radio" name="BVPaddVote" id="optionsRadios2" value="2">
                         Neutraal
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="BVPaddPeriod" id="optionsRadios3" value="3">
+                        <input type="radio" name="BVPaddVote" id="optionsRadios3" value="3">
                         Tegen
                       </label>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-xs-12 ">
+                <div class="form-group">
+                  <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
+                  <div class="col-sm-10">
+                    <textarea class="form-control" name="BVaddOpinion" placeholder="Samenvatting besluit" rows="6"></textarea>
                   </div>
                 </div>
               </div>
