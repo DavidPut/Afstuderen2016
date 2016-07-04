@@ -349,7 +349,7 @@ if(isset($_POST['RaadslidContactEdit'])) {
 }
 
 // Nieuwe besluit bij besluitvormingsproces
-if(isset($_POST['AgendaAdd'])) {
+if(isset($_POST['agendaAdd'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
   $pid = $_POST['pid'];
