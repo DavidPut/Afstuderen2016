@@ -169,7 +169,7 @@ class DB_functions
 
   // pakt de lijst voor raadsleden met de besluiten of ze al gereageerd hebben op het besluit
   public function raadslidDelete($pid, $did, $uid){
-    $result = mysqli_query($this->db->connect(), "DELETE FROM process_opinion WHERE id = '$pid' AND did = '$did' AND uid ='$uid' ") or die(mysqli_error($this->db->connect()));
+    $result = mysqli_query($this->db->connect(), "DELETE FROM process_opinion WHERE pid = '$pid' AND did = '$did' AND uid ='$uid' ") or die(mysqli_error($this->db->connect()));
     if ($result) {
       $this->db->close();
       return true;
