@@ -57,7 +57,7 @@
       <div class="form-group">
         <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="BVPeditTags" placeholder="Tags, gescheiden door komma's" value="<?php echo $db_getItem_info['tags']; ?>"></input>
+          <input class="form-control" type="text" name="BVPeditTags" placeholder="Tags, gescheiden door komma's" value="<?php echo $db_getItem_info['searchtags']; ?>"></input>
         </div>
       </div>
     </div>
