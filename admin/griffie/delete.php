@@ -176,13 +176,13 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddContact" id="optionsRadios1" value="off" <?php if($db_getContactItem_info == false){echo 'checked';}?>>
+              <input type="radio" disabled name="BVPaddContact" id="optionsRadios1" value="off" <?php if($db_getContactItem_info == false){echo 'checked';}?>>
               Griffier contactgegevens niet achterlaten
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddContact" id="optionsRadios2" value="on" <?php if($db_getContactItem_info == true){echo 'checked';}?>>
+              <input type="radio" disabled name="BVPaddContact" id="optionsRadios2" value="on" <?php if($db_getContactItem_info == true){echo 'checked';}?>>
               Griffier contactgegevens achterlaten
             </label>
           </div>
