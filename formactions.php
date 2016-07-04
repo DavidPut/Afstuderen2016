@@ -324,7 +324,7 @@ if(isset($_POST['RaadslidContactEdit'])) {
 
       unset($_SESSION['Callback']);
       unset($_SESSION['POST']);
-      header("location: raadslid.php?action=add&id=".$pid."");
+      header("location: raadslid.php");
       exit();
   }
   //errors
