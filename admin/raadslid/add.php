@@ -62,59 +62,6 @@
     </div>
   </div>
 
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-
-        <div class = "panel panel-default">
-
-          <div class = "panel-heading">
-            <h3 class = "panel-title">Nieuwe besluitvorming</h3>
-          </div>
-
-          <div class = "panel-body">
-
-            <div class="row">
-              <div class="col-md-12 col-xs-12 ">
-                <div class="form-group">
-                  <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
-                  <div class="col-sm-10">
-                    <input type="text" name="BVaddTitle" class="form-control" placeholder="Titel besluit">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-xs-12 ">
-                <div class="form-group">
-                  <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
-                  <div class="col-sm-10">
-                    <textarea class="form-control" name="BVaddSummary" placeholder="Samenvatting besluit" rows="6"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-xs-12 ">
-                <div class="form-group">
-                  <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
-                  <div class="col-sm-10">
-                    <input class="form-control" type="BVaddfile" name="inputFile"></input>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-
-
 <?php
 if(isset($_SESSION['Callback'])){
   unset($_SESSION['Callback']);
