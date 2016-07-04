@@ -141,23 +141,7 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
-        <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
-        <div class="col-sm-10">
-          <input readonly="readonly" type="text" name="agendaTitle" class="form-control" placeholder="Titel agenda">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group row">
-        <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
-        <div class="col-sm-10 date">
-          <input readonly="readonly" type="text" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj">
-        </div>
-      </div>
+      <?php require_once "agenda/alist.php"; ?>
     </div>
   </div>
 
