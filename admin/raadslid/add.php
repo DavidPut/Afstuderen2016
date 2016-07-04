@@ -9,7 +9,7 @@
     <div class="col-md-12 col-xs-12 ">
       <div class="page-header">
         <div class="pull-left">
-          <h3>Besluitvorming <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span></h3>
+          <h3>Besluitvorming <span class="label label-primary"><i class="fa fa-pencil small-icon" aria-hidden="true"></i></span> <a class="btn btn-default" href="dossier.php?id=<?php echo $_GET['id']; ?>">naar pagina</a></h3>
         </div>
         <div class="pull-right">
           <a class="btn btn-default" href="raadslid.php?action=list">annuleren</a>
