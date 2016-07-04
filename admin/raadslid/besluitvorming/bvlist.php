@@ -17,7 +17,7 @@ if ($db_getBVList_info){
   <thead>
   <tr>
     <th class="col-md-8">Titel</th>
-    <th class="col-md-3 text-right">opties</th>';
+    <th class="col-md-3 text-right">Opties</th>';
   </tr>
   </thead>
   <tbody>
