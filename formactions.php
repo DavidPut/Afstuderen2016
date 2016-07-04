@@ -75,16 +75,6 @@ if(isset($_POST['BVPadd'])) {
           $BVPtypes = null;
         }
 
-        if (!empty($_POST['BVPaddContact'])) {
-          $BVPcontact = "";
-          foreach ($_POST['BVPaddContact'] as $selected) {
-            $BVPcontact = $BVPcontact . $selected . ",";
-          }
-        } else {
-          // is het empty.. geen probleem
-          $BVPcontact = null;
-        }
-
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
         $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, strtolower($BVPtags), $BVPtypes, $BVPcontact);
