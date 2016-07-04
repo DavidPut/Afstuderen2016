@@ -32,7 +32,7 @@
             <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Ga naar pagina' href=\"dossier.php?id=".$db_getList_info_item['id']."\"><i class=\"fa fa-long-arrow-right fa-fw\"></i></a>
             <a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Aanpassen' href=\"raadslid.php?action=add&id=".$db_getList_info_item['id']."\"><i class=\"fa fa-pencil fa-fw\"></i></a>
             <a href=\"https://www.facebook.com/share.php?u=gemeentedossier.nl/dossier.php?id=".$db_getList_info_item['id']."&action=new&title=test\" target=\"blank\"><button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Delen'><i class=\"fa fa-facebook-f small-icon\" aria-hidden=\"true\"></i></button></a>
-            <a href=\https://twitter.com/home?status=http%3A//gemeentedossier.nl/dossier.php?id=".$db_getList_info_item['id']."%20Staat%20belangrijk%20nieuws%20in%20van%20de%20besluitvorming%20van%20de%20gemeente.%20\" target=\"_blank\"><button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Delen'><i class=\"fa fa-facebook-f small-icon\" aria-hidden=\"true\"></i></button></a>
+            <a href=\https://twitter.com/home?status=http%3A//gemeentedossier.nl/dossier.php?id=".$db_getList_info_item['id']."%20Staat%20belangrijk%20nieuws%20in%20van%20de%20besluitvorming%20van%20de%20gemeente.%20\" target=\"_blank\"><button type=\"button\" class=\"btn btn-list btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title='Delen'><i class=\"fa fa-twitter small-icon\" aria-hidden=\"true\"></i></button></a>
         </td>
       </tr>";
       } ?>
