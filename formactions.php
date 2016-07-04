@@ -139,7 +139,7 @@ if(isset($_POST['BVPedit'])) {
         if(isset($_POST['BVPaddContact']) && !empty($_POST['BVPaddContact'])) {
 
           $BVcontact = $_POST['BVPaddContact'];
-          if($BVcontact == "off"){
+          if ($BVcontact == "off") {
             require_once "database/db_functions.php";
             $db_addBVPush = new DB_functions();
             $db_addBVPush_info = $db_addBVPush->raadslidContactDelete($pid, $uid);
@@ -154,6 +154,7 @@ if(isset($_POST['BVPedit'])) {
             $db_addBVPush = new DB_functions();
             $db_addBVPush_info = $db_addBVPush->raadslidContactDelete($pid, $uid);
           }
+        }
 
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
