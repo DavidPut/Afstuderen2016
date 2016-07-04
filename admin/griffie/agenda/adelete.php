@@ -80,7 +80,7 @@ $db_getBVItem_info = $db_getBVItem->AgendaItem($aid);
           </div>
           <div class="pull-right">
             <a class="btn btn-default" href="griffie.php?action=edit&id=<?php echo $id; ?>">annuleren</a>
-            <button class="btn btn-list btn-danger" type="submit" name ="agendaAdd" value="verwijderen">verwijderen</button>
+            <button class="btn btn-list btn-danger" type="submit" name ="agendaDelete" value="verwijderen">verwijderen</button>
           </div>
           <div class="clearfix"></div>
         </div>
