@@ -16,7 +16,6 @@ if (isset($_SESSION['mail'])) {
 }
 
 //database verkrijgen data
-require_once "..../database/db_functions.php";
 require_once "...../database/db_functions.php";
 require_once "database/db_functions.php";
 $db_getBVList = new DB_functions();
