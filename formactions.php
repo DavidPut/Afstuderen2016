@@ -198,10 +198,11 @@ if(isset($_POST['BVadd'])) {
 
         $BVtitle = $_POST['BVaddTitle'];
         $BVsummary = $_POST['BVaddSummary'];
+        $BVurl = $_POST['BVurl'];
 
         require_once "database/db_functions.php";
         $db_addBVPush = new DB_functions();
-        $db_addBVPush_info = $db_addBVPush->griffieBVAdd($pid, $BVtitle, $BVsummary);
+        $db_addBVPush_info = $db_addBVPush->griffieBVAdd($pid, $BVtitle, $BVsummary, $BVurl);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
@@ -225,10 +226,11 @@ if(isset($_POST['BVedit'])) {
 
       $BVtitle = $_POST['BVeditTitle'];
       $BVsummary = $_POST['BVeditSummary'];
+      $BVurl = $_POST['BVurl'];
 
       require_once "database/db_functions.php";
       $db_editBVPush = new DB_functions();
-      $db_editBVPush_info = $db_editBVPush->griffieBVEdit($pid, $bid, $BVtitle, $BVsummary);
+      $db_editBVPush_info = $db_editBVPush->griffieBVEdit($pid, $bid, $BVtitle, $BVsummary, $BVurl);
 
       unset($_SESSION['Callback']);
       unset($_SESSION['POST']);

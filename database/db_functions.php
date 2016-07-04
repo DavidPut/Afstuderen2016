@@ -137,9 +137,9 @@ class DB_functions
 
 
   // besluiten toevoegen
-  public function griffieBVAdd($pid, $BVPtitle, $BVPsummary){
+  public function griffieBVAdd($pid, $BVPtitle, $BVPsummary, $BVurl){
     $datenow = date("d-m-Y");
-    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_decision` (`id`,`pid`, `title`, `summary`, `date`) VALUES (NULL, '$pid', '$BVPtitle', '$BVPsummary','$datenow')")or die( mysqli_error($this->db->connect()));
+    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_decision` (`id`,`pid`, `title`, `summary`,`url`, `date`) VALUES (NULL, '$pid', '$BVPtitle', '$BVPsummary','$BVurl','$datenow')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
       $this->db->close();
@@ -151,8 +151,8 @@ class DB_functions
   }
 
   // besluiten updaten
-  public function griffieBVEdit($pid, $bid, $BVtitle, $BVsummary){
-    $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process_decision` SET `title` = '$BVtitle', `summary` = '$BVsummary' WHERE `process_decision`.`id` = '$bid' && `pid` = '$pid'") or die( mysqli_error($this->db->connect()));
+  public function griffieBVEdit($pid, $bid, $BVtitle, $BVsummary, $BVurl){
+    $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process_decision` SET `title` = '$BVtitle', `summary` = '$BVsummary', `url` = '$BVurl' WHERE `process_decision`.`id` = '$bid' && `pid` = '$pid'") or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
       $this->db->close();

@@ -127,7 +127,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($pid, $bid);
                 <div class="form-group">
                   <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
                   <div class="col-sm-10">
-                    <input class="form-control" placeholder="http://www.mijngemeente.nl/locatie/bestanden" type="text" value="<?php echo $db_getBVItem_info['url']; ?>" name="inputFile"></input>
+                    <input class="form-control" placeholder="http://www.mijngemeente.nl/locatie/bestanden" type="text" value="<?php echo $db_getBVItem_info['url']; ?>" name="BVurl"></input>
                   </div>
                 </div>
               </div>
