@@ -104,6 +104,18 @@ class DB_functions
     }
   }
 
+  public function griffieDeleteItem($pid, $did){
+    $result = mysqli_query($this->db->connect(), "DELETE FROM process_decision WHERE pid = '$pid' && id = '$did'") or die(mysqli_error($this->db->connect()));
+    $result2 = mysqli_query($this->db->connect(), "DELETE FROM process_opinion WHERE pid = '$pid' && did = '$did'") or die(mysqli_error($this->db->connect()));
+    if ($result && $result2) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
 
 
   // lijst van besluiten bij id proces
