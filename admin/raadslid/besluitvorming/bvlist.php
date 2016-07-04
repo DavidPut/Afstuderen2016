@@ -38,8 +38,6 @@ if ($db_getBVList_info){
                 if($db_getBVOpinionList_info_item['did'] == $db_getBVList_info_item['id']){
                   echo "".(($action == 'edit')?"<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"admin/raadslid?action=list\"><i class=\"fa fa-pencil fa-fw\"></i></a>":"")."
                     <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"admin/raadslid/besluitvorming/bvdelete.php?id=".$db_getItem_info['id']."&bid=".$db_getBVList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>";
-                } else {
-                  echo "error, geen matches";
                 }
               }
             } else {
