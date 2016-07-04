@@ -24,7 +24,8 @@
 
 
     <?php
-
+    require_once "database/db_functions.php"; //test
+    $db_getList = new DB_functions();
     $db_getContactItem_info = $db_getList->raadslidContactItem($_GET['id'], $_SESSION['uid']);
 
 
