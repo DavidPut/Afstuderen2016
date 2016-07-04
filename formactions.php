@@ -68,7 +68,7 @@ if(isset($_POST['BVPadd'])) {
         if (!empty($_POST['BVPaddType'])) {
           $BVPtypes;
           foreach ($_POST['BVPaddType'] as $selected) {
-            $BVPtypes = $BVPtypes . $selected . ",";
+            $BVPtypes = strtolower($BVPtypes) . $selected . ",";
           }
           $_POST['BVPaddType'] = $BVPtypes;
         } else {
@@ -129,7 +129,7 @@ if(isset($_POST['BVPedit'])) {
         if (!empty($_POST['BVPeditType'])) {
           $BVPtypes;
           foreach ($_POST['BVPeditType'] as $selected) {
-            $BVPtypes = $BVPtypes . $selected . ",";
+            $BVPtypes = strtolower($BVPtypes) . $selected . ",";
           }
           $_POST['BVPeditType'] = $BVPtypes;
         } else {
