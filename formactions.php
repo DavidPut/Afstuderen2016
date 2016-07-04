@@ -68,7 +68,7 @@ if(isset($_POST['BVPadd'])) {
         if (!empty($_POST['BVPaddType'])) {
           $BVPtypes;
           foreach ($_POST['BVPaddType'] as $selected) {
-            $BVPtypes = strtolower($BVPtypes) . $selected . ",";
+            $BVPtypes = $BVPtypes . $selected . ",";
           }
           $_POST['BVPaddType'] = $BVPtypes;
         } else {
@@ -87,7 +87,7 @@ if(isset($_POST['BVPadd'])) {
 
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
-        $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, strtolower($BVPtags), $BVPtypes, $BVPcontact);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
@@ -129,7 +129,7 @@ if(isset($_POST['BVPedit'])) {
         if (!empty($_POST['BVPeditType'])) {
           $BVPtypes;
           foreach ($_POST['BVPeditType'] as $selected) {
-            $BVPtypes = strtolower($BVPtypes) . $selected . ",";
+            $BVPtypes = $BVPtypes . $selected . ",";
           }
           $_POST['BVPeditType'] = $BVPtypes;
         } else {
@@ -148,7 +148,7 @@ if(isset($_POST['BVPedit'])) {
 
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
-        $db_addPush_info = $db_addPush->griffieEdit($pid, $BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        $db_addPush_info = $db_addPush->griffieEdit($pid, $BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, strtolower($BVPtags), $BVPtypes, $BVPcontact);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
