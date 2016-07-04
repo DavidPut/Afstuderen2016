@@ -136,7 +136,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="BVPaddVote" id="optionsRadios2" value="2">
+                        <input type="radio" name="BVPaddVote" id="optionsRadios2" value="2" checked>
                         Neutraal
                       </label>
                     </div>
