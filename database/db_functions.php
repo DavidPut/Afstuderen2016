@@ -383,9 +383,21 @@ class DB_functions
     }
   }
 
-  // pakt de lijst voor raadsleden met de besluiten of ze al gereageerd hebben op het besluit
   public function griffieAgendaDelete($aid){
     $result = mysqli_query($this->db->connect(), "DELETE FROM process_agenda WHERE id = '$aid' ") or die(mysqli_error($this->db->connect()));
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
+  // besluiten updaten
+  public function griffieAgendaEdit($aid, $title, $date){
+    $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process_agenda` SET `title` = '$title', `date` = '$date' WHERE `process_agenda`.`id` = '$aid'") or die( mysqli_error($this->db->connect()));
+    // check for successful store
     if ($result) {
       $this->db->close();
       return true;

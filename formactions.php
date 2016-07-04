@@ -348,7 +348,7 @@ if(isset($_POST['RaadslidContactEdit'])) {
   exit();
 }
 
-// Nieuwe besluit bij besluitvormingsproces
+// Nieuwe agenda bij besluitvormingsproces
 if(isset($_POST['agendaAdd'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
@@ -374,7 +374,7 @@ if(isset($_POST['agendaAdd'])) {
   exit();
 }
 
-// Besluitvormingsproces verwijderen
+// agenda verwijderen
 if(isset($_POST['agendaDelete'])) {
   $aid = $_POST['aid'];
 
@@ -383,6 +383,33 @@ if(isset($_POST['agendaDelete'])) {
   $db_deletePush_info = $db_deletePush->griffieAgendaDelete($aid);
 
   header("location: griffie.php");
+  exit();
+}
+
+// Nieuwe besluit bij besluitvormingsproces
+if(isset($_POST['agendaEdit'])) {
+  $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
+  $pid = $_POST['pid'];
+  $aid = $_POST['aid'];
+  if(isset($_POST['agendaTitle']) && !empty($_POST['agendaTitle'])) {
+    if(isset($_POST['agendaDate']) && !empty($_POST['agendaDate'])) {
+
+      $title = $_POST['agendaTitle'];
+      $date = $_POST['agendaDate'];
+
+      require_once "database/db_functions.php";
+      $db_addBVPush = new DB_functions();
+      $db_addBVPush_info = $db_addBVPush->griffieAgendaEdit($aid, $title, $date);
+
+      unset($_SESSION['Callback']);
+      unset($_SESSION['POST']);
+      header("location: griffie.php?action=edit&id=".$pid."");
+      exit();
+    }
+  }
+  //errors
+  header("location: admin/griffie/besluitvorming/bvadd.php?id=".$pid."");
   exit();
 }
 
