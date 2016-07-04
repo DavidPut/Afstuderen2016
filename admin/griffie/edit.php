@@ -2,6 +2,7 @@
 
 <form class="form-horizontal" action="formactions.php" method="POST">
   <input type="hidden" name="pid" value="<?php echo $db_getItem_info['id']; ?>">
+  <input type="hidden" name="uid" value="<?php echo $_SESSION['uid']; ?>">
 
   <!-- nieuwe besluitvorming -->
   <div class="row">
