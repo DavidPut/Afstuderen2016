@@ -119,9 +119,9 @@ if (isset($_SESSION['mail'])) {
           <div class="row">
             <div class="col-md-12 col-xs-12 ">
               <div class="form-group">
-                <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
+                <label for="inputSummaryProces" class="col-sm-2 control-label">Link bestanden</label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="BVaddfile" name="inputFile"></input>
+                  <input class="form-control" type="text" placeholder="http://www.mijngemeente.nl/locatie/bestanden" name="inputFile"></input>
                 </div>
               </div>
             </div>
