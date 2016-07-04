@@ -4,6 +4,7 @@ session_start();
 
 $action = urlencode($_GET['action']);
 $id = urlencode($_GET['id']);
+$aid = urlencode($_GET['aid']);
 
 if (isset($_SESSION['mail'])) {
   if ($_SESSION['role'] != "griffier") {
@@ -18,7 +19,7 @@ if (isset($_SESSION['mail'])) {
 //database verkrijgen data
 require_once "../../../database/db_functions.php";
 $db_getBVItem = new DB_functions();
-$db_getBVItem_info = $db_getBVItem->AgendaItem($id);
+$db_getBVItem_info = $db_getBVItem->AgendaItem($aid);
 
 ?>
 
@@ -102,7 +103,7 @@ $db_getBVItem_info = $db_getBVItem->AgendaItem($id);
                 <div class="form-group">
                   <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
                   <div class="col-sm-10">
-                    <input type="text" disabled name="agendaTitle" class="form-control" placeholder="Titel agenda">
+                    <input type="text" disabled name="agendaTitle" class="form-control" placeholder="Titel voor agendadatum" value="<?php echo $db_getBVItem_info['title']; ?>">
                   </div>
                 </div>
               </div>
@@ -113,7 +114,7 @@ $db_getBVItem_info = $db_getBVItem->AgendaItem($id);
                 <div class="form-group">
                   <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
                   <div class="col-sm-10 date">
-                    <input type="text" disabled name="agendaDate" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj">
+                    <input type="text" disabled name="agendaDate" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj" value="<?php echo $db_getBVItem_info['date']; ?>">
                   </div>
                 </div>
               </div>

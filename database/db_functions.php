@@ -383,5 +383,19 @@ class DB_functions
     }
   }
 
+  // agenda laten zien
+  public function AgendaItem($aid){
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_agenda WHERE id = '$aid'") or die(mysqli_error($this->db->connect()));
+    $no_of_rows = mysqli_num_rows($result);
+    if ($no_of_rows > 0) {
+      $row = mysqli_fetch_assoc($result);
+      $this->db->close();
+      return $row;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
   
 }
