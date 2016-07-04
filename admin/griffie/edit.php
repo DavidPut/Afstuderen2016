@@ -144,6 +144,12 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
+      <?php require_once "agenda/alist.php"; ?>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group">
         <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
         <div class="col-sm-10">
