@@ -15,7 +15,10 @@ if (isset($_SESSION['mail'])) {
   exit();
 }
 
-// rare rrors soms
+//database verkrijgen data
+require_once "../../../database/db_functions.php";
+$db_getBVItem = new DB_functions();
+$db_getBVItem_info = $db_getBVItem->AgendaItem($id);
 
 ?>
 
