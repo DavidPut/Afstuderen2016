@@ -369,5 +369,19 @@ class DB_functions
       $this->db->close();
     }
   }
+
+  // agenda toevoegen
+  public function griffieAgendaAdd($pid, $title, $date){
+    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_agenda` (`id`,`pid`, `title`, `date`) VALUES (NULL, '$pid', '$title', '$date')")or die( mysqli_error($this->db->connect()));
+    // check for successful store
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
   
 }

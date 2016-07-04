@@ -76,7 +76,7 @@ if (isset($_SESSION['mail'])) {
           </div>
           <div class="pull-right">
             <a class="btn btn-default" href="griffie.php?action=edit&id=<?php echo $id; ?>">annuleren</a>
-            <button class="btn btn-list btn-success" type="submit" name ="BVadd" value="toevoegen">toevoegen</button>
+            <button class="btn btn-list btn-success" type="submit" name ="agendaAdd" value="toevoegen">toevoegen</button>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -110,7 +110,7 @@ if (isset($_SESSION['mail'])) {
                 <div class="form-group">
                   <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
                   <div class="col-sm-10 date">
-                    <input type="text" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj">
+                    <input type="text" name="agendaDate" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj">
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ if (isset($_SESSION['mail'])) {
     <div class="row">
       <div class="col-md-4 col-md-offset-4 col-xs-12">
         <a class="btn btn-lg btn-default text-left" href="griffie.php?action=edit&id=<?php echo $id; ?>">annuleren</a>
-        <button class="btn btn-lg btn-success text-right" type="submit" name="BVadd" value="toevoegen">toevoegen</button>
+        <button class="btn btn-lg btn-success text-right" type="submit" name="agendaAdd" value="toevoegen">toevoegen</button>
       </div>
     </div>
 

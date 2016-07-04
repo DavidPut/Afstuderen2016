@@ -348,5 +348,32 @@ if(isset($_POST['RaadslidContactEdit'])) {
   exit();
 }
 
+// Nieuwe besluit bij besluitvormingsproces
+if(isset($_POST['AgendaAdd'])) {
+  $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
+  $pid = $_POST['pid'];
+  if(isset($_POST['agendaTitle']) && !empty($_POST['agendaTitle'])) {
+    if(isset($_POST['agendaDate']) && !empty($_POST['agendaDate'])) {
+
+      $title = $_POST['agendaTitle'];
+      $date = $_POST['agendaDate'];
+
+      require_once "database/db_functions.php";
+      $db_addBVPush = new DB_functions();
+      $db_addBVPush_info = $db_addBVPush->griffieAgendaAdd($pid, $title, $date);
+
+      unset($_SESSION['Callback']);
+      unset($_SESSION['POST']);
+      header("location: griffie.php?action=edit&id=".$pid."");
+      exit();
+    }
+  }
+  //errors
+  header("location: admin/griffie/besluitvorming/bvadd.php?id=".$pid."");
+  exit();
+}
+
+
 
 ?>
