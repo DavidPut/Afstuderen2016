@@ -159,7 +159,7 @@ $db_getBVOpinionItem_info = $db_getBVItem->raadslidList($id, $bid, $_SESSION['ui
                 <div class="form-group">
                   <label for="inputSummaryProces" class="col-sm-2 control-label">Standpunt</label>
                   <div class="col-sm-10">
-                    <textarea readonly="readonly" class="form-control" name="BVPaddOpinion" value="<?php echo $db_getBVOpinionItem_info['opinion']; ?>" rows="2"></textarea>
+                    <textarea readonly="readonly" class="form-control" name="BVPaddOpinion" rows="2"><?php echo $db_getBVOpinionItem_info['opinion']; ?></textarea>
                   </div>
                 </div>
               </div>
