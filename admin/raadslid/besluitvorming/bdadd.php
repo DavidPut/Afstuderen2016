@@ -156,7 +156,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
                 <div class="form-group">
                   <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" name="BVaddOpinion" placeholder="Samenvatting besluit" rows="6"></textarea>
+                    <textarea class="form-control" name="BVaddOpinion" placeholder="Samenvatting besluit" rows="2"></textarea>
                   </div>
                 </div>
               </div>
