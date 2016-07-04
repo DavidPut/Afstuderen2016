@@ -376,7 +376,7 @@ if(isset($_POST['agendaAdd'])) {
 
 // Besluitvormingsproces verwijderen
 if(isset($_POST['agendaDelete'])) {
-  $id = $_POST['aid'];
+  $aid = $_POST['aid'];
 
   require_once "database/db_functions.php";
   $db_deletePush = new DB_functions();
