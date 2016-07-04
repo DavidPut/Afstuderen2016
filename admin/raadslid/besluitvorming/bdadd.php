@@ -19,7 +19,8 @@ if (isset($_SESSION['mail'])) {
 //database verkrijgen data
 require_once "../../../database/db_functions.php";
 $db_getBVItem = new DB_functions();
-$db_getBVOpinionList_info = $db_getBVItem->raadslidList($id, $db_getBVList_info_item['id'], $_SESSION['uid']);
+$db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
+
 
 //data opsturen
 
@@ -81,7 +82,7 @@ $db_getBVOpinionList_info = $db_getBVItem->raadslidList($id, $db_getBVList_info_
             <h3>Besluitvorming <span class="label label-success"><i class="fa fa-plus small-icon" aria-hidden="true"></i></span></h3>
           </div>
           <div class="pull-right">
-            <a class="btn btn-default" href="griffie.php?action=edit&id=<?php echo $id; ?>">annuleren</a>
+            <a class="btn btn-default" href="raadslid.php?action=add&id=<?php echo $id; ?>">annuleren</a>
             <button class="btn btn-list btn-success" type="submit" name ="BVadd" value="toevoegen">toevoegen</button>
           </div>
           <div class="clearfix"></div>
@@ -95,7 +96,7 @@ $db_getBVOpinionList_info = $db_getBVItem->raadslidList($id, $db_getBVList_info_
         <div class = "panel panel-default">
 
           <div class = "panel-heading">
-            <h3 class = "panel-title">Nieuwe besluitvorming</h3>
+            <h3 class = "panel-title">Besluitvorming</h3>
           </div>
 
           <div class = "panel-body">
@@ -105,8 +106,7 @@ $db_getBVOpinionList_info = $db_getBVItem->raadslidList($id, $db_getBVList_info_
                 <div class="form-group">
                   <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
                   <div class="col-sm-10">
-                    <p></p>
-                    <input type="text" name="BVaddTitle" class="form-control" placeholder="Titel besluit">
+                    <p><?php echo $db_getBVItem_info['title']; ?></p>
                   </div>
                 </div>
               </div>
@@ -117,7 +117,7 @@ $db_getBVOpinionList_info = $db_getBVItem->raadslidList($id, $db_getBVList_info_
                 <div class="form-group">
                   <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" name="BVaddSummary" placeholder="Samenvatting besluit" rows="6"></textarea>
+                    <p><?php echo $db_getBVItem_info['summary']; ?></p>
                   </div>
                 </div>
               </div>

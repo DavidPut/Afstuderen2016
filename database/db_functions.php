@@ -167,9 +167,9 @@ class DB_functions
     }
   }
 
-  // pakt de lijst voor raadsleden met de besluiten of ze al gereageerd hebben op het besluit
+  // pakt BV item met daarin titel en tekst
   public function BVItem($pid, $did){
-    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_opinion WHERE pid = '$pid' AND did = '$did' AND uid ='$uid'") or die(mysqli_error($this->db->connect()));
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM process_decision WHERE pid = '$pid' AND id = '$did'") or die(mysqli_error($this->db->connect()));
     $no_of_rows = mysqli_num_rows($result);
     if ($no_of_rows > 0) {
       $row = mysqli_fetch_assoc($result);
