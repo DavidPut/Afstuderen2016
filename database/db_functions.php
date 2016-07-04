@@ -181,6 +181,19 @@ class DB_functions
     }
   }
 
+  // besluiten toevoegen
+  public function raadslidOpinionAdd($pid, $did, $uid, $BVvote, $BVopinion){
+    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_opinion` (`id`,`pid`,`did`,`uid`, `vote`, `opinion`) VALUES (NULL, '$pid', '$did', '$uid', '$BVvote', '$BVopinion')")or die( mysqli_error($this->db->connect()));
+    // check for successful store
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
   // politieke meningen per process decision
   public function decisionOpinion($did){
     $result = mysqli_query($this->db->connect(), "SELECT * FROM process_opinion WHERE did = '$did'") or die(mysqli_error($this->db->connect()));

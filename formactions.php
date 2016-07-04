@@ -232,6 +232,8 @@ if(isset($_POST['BVOpinionadd'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
   $pid = $_POST['pid'];
+  $did = $_POST['did'];
+  $uid = $_POST['uid'];
   if(isset($_POST['BVPaddVote']) && !empty($_POST['BVPaddVote'])) {
     if(isset($_POST['BVPaddOpinion']) && !empty($_POST['BVPaddOpinion'])) {
 
