@@ -4,7 +4,7 @@ $db_getBVList = new DB_functions();
 $db_getBVList_info = $db_getBVList->griffieAgendaList($id);
 
 if($action == 'edit'){
-  echo '<a class="btn btn-success pull-right" href="admin/griffie/besluitvorming/bvadd.php?id='.$db_getItem_info['id'].'"></i>toevoegen</a>';
+  echo '<a class="btn btn-success pull-right" href="admin/griffie/agenda/aadd.php?id='.$db_getItem_info['id'].'"></i>toevoegen</a>';
 }
 if (is_array($db_getBVList_info)){
 
@@ -29,8 +29,8 @@ if (is_array($db_getBVList_info)){
         <td>".$db_getBVList_info_item['title']."</td>
         <td>
           <p class='text-right'>
-            ".(($action == 'edit')?"<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"admin/griffie/besluitvorming/bvedit.php?id=".$db_getItem_info['id']."&bid=".$db_getBVList_info_item['id']."\"><i class=\"fa fa-pencil fa-fw\"></i></a>":"")."
-            <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"admin/griffie/besluitvorming/bvdelete.php?id=".$db_getItem_info['id']."&bid=".$db_getBVList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
+            ".(($action == 'edit')?"<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"admin/griffie/agenda/aedit.php?id=".$db_getItem_info['id']."&bid=".$db_getBVList_info_item['id']."\"><i class=\"fa fa-pencil fa-fw\"></i></a>":"")."
+            <a class=\"btn btn-danger ".(($action == 'delete')?"disabled":'')." \" data-toggle=\"tooltip\" data-placement=\"top\" title='Verwijderen' href=\"admin/griffie/agenda/adelete.php?id=".$db_getItem_info['id']."&bid=".$db_getBVList_info_item['id']."\"><i class=\"fa fa-trash-o fa-fw\"></i></a>
           </p>
         </td>
       </tr>"; }} ?>
