@@ -1,4 +1,17 @@
 <div class="row">
+  <div class="col-md-12 col-xs-12 ">
+    <div class="page-header">
+      <div class="pull-left">
+        <h3>Besluitvormingsprocessen <span class="label label-info"><i class="fa fa-list fa-fw" aria-hidden="true"></i></span></h3>
+      </div>
+      <div class="pull-right">
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
   <div class="col-md-12 col-md-offset-0 col-xs-12 ">
     <table class="table table-hover table-list">
       <thead>
