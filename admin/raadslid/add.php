@@ -44,7 +44,7 @@
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="BVPaddContact" id="optionsRadios2" value="on" <?php if($db_getContactItem_info){echo 'checked';}?>>
+              <input type="radio" name="BVPaddContact" id="optionsRadios2" value="on" <?php if($db_getContactItem_info == true){echo 'checked';}?>>
               Mijn contactgegevens achterlaten
             </label>
           </div>
