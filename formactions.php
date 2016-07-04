@@ -302,23 +302,30 @@ if(isset($_POST['RaadslidContactEdit'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
   $pid = $_POST['pid'];
-  $did = $_POST['did'];
   $uid = $_POST['uid'];
-  if(isset($_POST['BVPaddVote']) && !empty($_POST['BVPaddVote'])) {
-    if(isset($_POST['BVPaddOpinion']) && !empty($_POST['BVPaddOpinion'])) {
+  if(isset($_POST['BVPaddContact']) && !empty($_POST['BVPaddContact'])) {
 
-      $BVvote = $_POST['BVPaddVote'];
-      $BVopinion = $_POST['BVPaddOpinion'];
-
-      require_once "database/db_functions.php";
-      $db_addBVPush = new DB_functions();
-      $db_addBVPush_info = $db_addBVPush->raadslidContactEdit($pid, $did, $uid, $BVvote, $BVopinion);
+      $BVcontact = $_POST['BVPaddContact'];
+      if($BVcontact == "off"){
+        require_once "database/db_functions.php";
+        $db_addBVPush = new DB_functions();
+        $db_addBVPush_info = $db_addBVPush->raadslidContactDelete($pid, $uid);
+      } elseif ($BVcontact == "on") {
+        require_once "database/db_functions.php";
+        $db_addBVPush = new DB_functions();
+        $db_getUser_info = $db_addBVPush->->login($form_mail);
+        $db_addBVPush_info = $db_addBVPush->raadslidContactEdit($pid, $uid, $db_getUser_info['name'], $db_getUser_info['mail'], $db_getUser_info['telefoon']);
+      } else {
+        // deleten maar
+        require_once "database/db_functions.php";
+        $db_addBVPush = new DB_functions();
+        $db_addBVPush_info = $db_addBVPush->raadslidContactDelete($pid, $uid);
+      }
 
       unset($_SESSION['Callback']);
       unset($_SESSION['POST']);
       header("location: raadslid.php?action=add&id=".$pid."");
       exit();
-    }
   }
   //errors
   header("location: admin/raadslid/besluitvorming/bvadd.php?id=".$pid."&bid=".$did."");

@@ -220,9 +220,21 @@ class DB_functions
   }
 
   // besluiten opinie updaten
-  public function raadslidContactEdit($pid, $did, $uid, $BVvote, $BVopinion){
-    $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process_opinion` SET `vote` = '$BVvote', `opinion` = '$BVopinion' WHERE `process_opinion`.`pid` = '$pid' && `did` = '$did' && `uid` = '$uid' ") or die( mysqli_error($this->db->connect()));
+  public function raadslidContactEdit($pid, $uid, $name, $email, $phone){
+    $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_contact` (`id`,`uid`,`pid`, `name`, `email`, `phone`) VALUES (NULL, '$uid', '$pid', '$name', '$email', '$phone')")or die( mysqli_error($this->db->connect()));
     // check for successful store
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
+  // pakt de lijst voor raadsleden met de besluiten of ze al gereageerd hebben op het besluit
+  public function raadslidContactDelete($pid, $uid){
+    $result = mysqli_query($this->db->connect(), "DELETE FROM process_contact WHERE pid = '$pid' AND uid ='$uid' ") or die(mysqli_error($this->db->connect()));
     if ($result) {
       $this->db->close();
       return true;
