@@ -97,9 +97,9 @@ if (isset($_SESSION['mail'])) {
             <div class="row">
               <div class="col-md-12 col-xs-12 ">
                 <div class="form-group">
-                  <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
+                  <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
                   <div class="col-sm-10">
-                    <input type="text" name="BVaddTitle" class="form-control" placeholder="Titel besluit">
+                    <input type="text" name="agendaTitle" class="form-control" placeholder="Titel agenda">
                   </div>
                 </div>
               </div>
@@ -108,20 +108,9 @@ if (isset($_SESSION['mail'])) {
             <div class="row">
               <div class="col-md-12 col-xs-12 ">
                 <div class="form-group">
-                  <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
-                  <div class="col-sm-10">
-                    <textarea class="form-control" name="BVaddSummary" placeholder="Samenvatting besluit" rows="6"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-xs-12 ">
-                <div class="form-group">
-                  <label for="inputSummaryProces" class="col-sm-2 control-label">Link bestanden</label>
-                  <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="http://www.mijngemeente.nl/locatie/bestanden" name="inputFile"></input>
+                  <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
+                  <div class="col-sm-10 date">
+                    <input type="text" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj">
                   </div>
                 </div>
               </div>
@@ -145,6 +134,19 @@ if (isset($_SESSION['mail'])) {
 <script>
   $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+<script>
+  $(document).ready(function() {
+    $('.input-group-addon-text').datepicker({
+      format: "dd-mm-yyyy",
+      startView: 1,
+      maxViewMode: 0,
+      language: "nl",
+      calendarWeeks: false,
+      autoclose: true,
+      todayHighlight: true
+    });
   });
 </script>
 
