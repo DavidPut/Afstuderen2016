@@ -176,12 +176,12 @@ if(isset($_POST['BVPdelete'])) {
 
 // Besluitvormingsproces verwijderen
 if(isset($_POST['BVdelete'])) {
-  $id = $_POST['pid'];
-  $bid = $_POST['did'];
+  $pid = $_POST['pid'];
+  $did = $_POST['did'];
 
   require_once "database/db_functions.php";
   $db_deletePush = new DB_functions();
-  $db_deletePush_info = $db_deletePush->griffieDeleteItem($id, $bid);
+  $db_deletePush_info = $db_deletePush->griffieDeleteItem($pid, $did);
 
   header("location: griffie.php");
   exit();
