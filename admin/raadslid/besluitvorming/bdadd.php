@@ -16,6 +16,8 @@ if (isset($_SESSION['mail'])) {
 }
 
 //database verkrijgen data
+require_once "database/db_functions.php";
+$db_getBVList = new DB_functions();
 $db_getBVOpinionList_info = $db_getBVList->raadslidList($id, $db_getBVList_info_item['id'], $_SESSION['uid']);
 
 //data opsturen
