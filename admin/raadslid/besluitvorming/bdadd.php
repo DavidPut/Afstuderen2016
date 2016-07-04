@@ -126,7 +126,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
             <div class="row">
               <div class="col-md-12 col-xs-12 ">
                 <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
-                  <label for="inputTags" class="col-sm-2 control-label">Standpunt</label>
+                  <label for="inputTags" class="col-sm-2 control-label">Stem</label>
                   <div class="col-sm-10">
                     <div class="radio">
                       <label>
@@ -154,9 +154,9 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
             <div class="row">
               <div class="col-md-12 col-xs-12 ">
                 <div class="form-group">
-                  <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
+                  <label for="inputSummaryProces" class="col-sm-2 control-label">Standpunt</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" name="BVaddOpinion" placeholder="Samenvatting besluit" rows="2"></textarea>
+                    <textarea class="form-control" name="BVaddOpinion" placeholder="Mijn standpunt" rows="2"></textarea>
                   </div>
                 </div>
               </div>
