@@ -4,7 +4,7 @@ session_start();
 
 $action = urlencode($_GET['action']);
 $pid = urlencode($_GET['id']);
-$did = urlencode($_GET['bid']);
+$bid = urlencode($_GET['bid']);
 
 if (isset($_SESSION['mail'])) {
   if ($_SESSION['role'] != "griffier") {
@@ -70,7 +70,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($pid, $bid);
 <div class="container">
   <form class="form-horizontal" action="formactions.php" method="POST">
     <input type="hidden" name="pid" value="<?php echo $pid; ?>">
-    <input type="hidden" name="did" value="<?php echo $did; ?>">
+    <input type="hidden" name="did" value="<?php echo $bid; ?>">
 
     <!-- nieuwe besluitvorming //-->
     <div class="row">
