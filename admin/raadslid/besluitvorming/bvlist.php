@@ -17,11 +17,7 @@ if ($db_getBVList_info){
   <thead>
   <tr>
     <th class="col-md-8">Titel</th>
-    <?php if($action == 'edit') {
-      echo '<th class="col-md-3 text-right">opties</th>';
-    } else {
-      echo '<th class="col-md-3 text-right">actie</th>';
-    }?>
+    <th class="col-md-3 text-right">opties</th>';
   </tr>
   </thead>
   <tbody>
@@ -31,9 +27,6 @@ if ($db_getBVList_info){
         <td>".$db_getBVList_info_item['title']."</td>
         <td>
           <p class='text-right'>";
-            echo $id." ";
-            echo $db_getBVList_info_item['id']." ";
-            echo $_SESSION['uid']." ";
             $db_getBVOpinionList_info = $db_getBVList->raadslidList($id, $db_getBVList_info_item['id'], $_SESSION['uid']);
             echo $db_getBVOpinionList_info['id'];
             if ($db_getBVOpinionList_info){
