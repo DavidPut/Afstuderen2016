@@ -297,5 +297,33 @@ if(isset($_POST['BVOpiniondelete'])) {
   exit();
 }
 
+// Nieuwe opinie en stem bij besluitvormingsproces
+if(isset($_POST['RaadslidContactEdit'])) {
+  $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
+  $pid = $_POST['pid'];
+  $did = $_POST['did'];
+  $uid = $_POST['uid'];
+  if(isset($_POST['BVPaddVote']) && !empty($_POST['BVPaddVote'])) {
+    if(isset($_POST['BVPaddOpinion']) && !empty($_POST['BVPaddOpinion'])) {
+
+      $BVvote = $_POST['BVPaddVote'];
+      $BVopinion = $_POST['BVPaddOpinion'];
+
+      require_once "database/db_functions.php";
+      $db_addBVPush = new DB_functions();
+      $db_addBVPush_info = $db_addBVPush->raadslidOpinionAdd($pid, $did, $uid, $BVvote, $BVopinion);
+
+      unset($_SESSION['Callback']);
+      unset($_SESSION['POST']);
+      header("location: raadslid.php?action=add&id=".$pid."");
+      exit();
+    }
+  }
+  //errors
+  header("location: admin/raadslid/besluitvorming/bvadd.php?id=".$pid."&bid=".$did."");
+  exit();
+}
+
 
 ?>

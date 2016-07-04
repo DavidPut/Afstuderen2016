@@ -18,19 +18,22 @@
 
 
   <form class="form-horizontal" action="formactions.php" method="POST">
-    <input type="hidden" name="pid" value="<?php echo $db_getItem_info['id']; ?>">
+    <input type="hidden" name="pid" value="<?php echo $_GET['id']; ?>">
+    <input type="hidden" name="uid" value="<?php echo $_SESSION['uid']; ?>">
 
 
 
     <?php
-    $db_getItem_info['type'];
-    $selectedBox = explode(",", $db_getItem_info['type']);
+
+    $db_getContactItem_info = $db_getList->RaadslidContactItem($db_getItem_info['id'], $uid);
+
+
     ?>
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
       <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
-        <label for="inputTags" class="col-sm-2 control-label">Contactgegevens *</label>
+        <label for="inputTags" class="col-sm-2 control-label">Contactgegevens</label>
         <div class="col-sm-10">
           <div class="radio">
             <label>
