@@ -313,7 +313,7 @@ if(isset($_POST['RaadslidContactEdit'])) {
       } elseif ($BVcontact == "on") {
         require_once "database/db_functions.php";
         $db_addBVPush = new DB_functions();
-        $db_getUser_info = $db_addBVPush->->login($form_mail);
+        $db_getUser_info = $db_addBVPush->login($form_mail);
         $db_addBVPush_info = $db_addBVPush->raadslidContactEdit($pid, $uid, $db_getUser_info['name'], $db_getUser_info['mail'], $db_getUser_info['telefoon']);
       } else {
         // deleten maar
