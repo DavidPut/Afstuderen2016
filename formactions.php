@@ -106,6 +106,7 @@ if(isset($_POST['BVPedit'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
   $pid = $_POST['pid'];
+  $uid = $_POST['uid'];
   if(isset($_POST['BVPeditTitle']) && !empty($_POST['BVPeditTitle'])) {
     if(isset($_POST['BVPeditSummary']) && !empty($_POST['BVPeditSummary'])) {
       if(isset($_POST['BVPeditPeriod'])) {
