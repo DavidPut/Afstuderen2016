@@ -31,7 +31,10 @@ if ($db_getBVList_info){
         <td>".$db_getBVList_info_item['title']."</td>
         <td>
           <p class='text-right'>";
-            $db_getBVOpinionList_info = $db_getBVList->raadslidList($id,$db_getBVList_info_item['id'], $_SESSION['uid']);
+            echo $id." ";
+            echo $db_getBVList_info_item['id']." ";
+            echo $_SESSION['uid']." ";
+            $db_getBVOpinionList_info = $db_getBVList->raadslidList($id, $db_getBVList_info_item['id'], $_SESSION['uid']);
             echo $db_getBVOpinionList_info['id'];
             if ($db_getBVOpinionList_info){
               echo "<a class=\"btn btn-default\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Aanpassen\" href=\"admin/raadslid/besluitvorming/bvedit.php?id=\"><i class=\"fa fa-pencil fa-fw\"></i></a>";
