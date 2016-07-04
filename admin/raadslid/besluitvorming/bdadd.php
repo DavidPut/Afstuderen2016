@@ -126,7 +126,7 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
             <div class="row">
               <div class="col-md-12 col-xs-12 ">
                 <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
-                  <label for="inputTags" class="col-sm-2 control-label">Periode *</label>
+                  <label for="inputTags" class="col-sm-2 control-label">Standpunt</label>
                   <div class="col-sm-10">
                     <div class="radio">
                       <label>
