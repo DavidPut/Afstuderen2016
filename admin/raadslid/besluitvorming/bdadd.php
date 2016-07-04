@@ -4,6 +4,7 @@ session_start();
 
 $action = urlencode($_GET['action']);
 $id = urlencode($_GET['id']);
+$bid = urlencode($_GET['bid']);
 
 if (isset($_SESSION['mail'])) {
   if ($_SESSION['role'] != "raadslid") {
@@ -17,8 +18,8 @@ if (isset($_SESSION['mail'])) {
 
 //database verkrijgen data
 require_once "../../../database/db_functions.php";
-$db_getBVList = new DB_functions();
-$db_getBVOpinionList_info = $db_getBVList->raadslidList($id, $db_getBVList_info_item['id'], $_SESSION['uid']);
+$db_getBVItem = new DB_functions();
+$db_getBVOpinionList_info = $db_getBVItem->raadslidList($id, $db_getBVList_info_item['id'], $_SESSION['uid']);
 
 //data opsturen
 
@@ -104,7 +105,7 @@ $db_getBVOpinionList_info = $db_getBVList->raadslidList($id, $db_getBVList_info_
                 <div class="form-group">
                   <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
                   <div class="col-sm-10">
-                    <p>Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot "Hier uw tekst, hier uw tekst" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar "lorem ipsum" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).</p>
+                    <p></p>
                     <input type="text" name="BVaddTitle" class="form-control" placeholder="Titel besluit">
                   </div>
                 </div>
