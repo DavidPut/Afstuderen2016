@@ -1,5 +1,9 @@
 <?php $_POST = $_SESSION['POST']; ?>
 
+  <form class="form-horizontal" action="formactions.php" method="POST">
+  <input type="hidden" name="pid" value="<?php echo $_GET['id']; ?>">
+  <input type="hidden" name="uid" value="<?php echo $_SESSION['uid']; ?>">
+
   <!-- nieuwe besluitvorming -->
   <div class="row">
     <div class="col-md-12 col-xs-12 ">
@@ -15,13 +19,6 @@
       </div>
     </div>
   </div>
-
-
-  <form class="form-horizontal" action="formactions.php" method="POST">
-    <input type="hidden" name="pid" value="<?php echo $_GET['id']; ?>">
-    <input type="hidden" name="uid" value="<?php echo $_SESSION['uid']; ?>">
-
-
 
     <?php
     require_once "database/db_functions.php"; //test
