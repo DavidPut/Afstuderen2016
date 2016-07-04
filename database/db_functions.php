@@ -276,6 +276,20 @@ class DB_functions
     }
   }
 
+  public function selectGebruiker($uid)
+  {
+    $result = mysqli_query($this->db->connect(), "SELECT * FROM users WHERE id = '$uid'") or die(mysqli_error($this->db->connect()));
+    $no_of_rows = mysqli_num_rows($result);
+    if ($no_of_rows > 0) {
+      $row = mysqli_fetch_assoc($result);
+      return $row;
+      $this->db->close();
+    } else {
+      return false;
+      $this->db->close();
+    }
+  }
+
   // selecteer gebruikers
   public function selectUser($id){
     $result = mysqli_query($this->db->connect(), "SELECT * FROM users WHERE id = '$id'") or die(mysqli_error($this->db->connect()));
