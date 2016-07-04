@@ -167,6 +167,18 @@ class DB_functions
     }
   }
 
+  // pakt de lijst voor raadsleden met de besluiten of ze al gereageerd hebben op het besluit
+  public function raadslidDelete($pid, $did, $uid){
+    $result = mysqli_query($this->db->connect(), "DELETE FROM process WHERE id = '$pid' AND did = '$did' AND uid ='$uid' ") or die(mysqli_error($this->db->connect()));
+    if ($result) {
+      $this->db->close();
+      return true;
+    } else {
+      $this->db->close();
+      return false;
+    }
+  }
+
   // pakt BV item met daarin titel en tekst
   public function BVItem($pid, $did){
     $result = mysqli_query($this->db->connect(), "SELECT * FROM process_decision WHERE pid = '$pid' AND id = '$did'") or die(mysqli_error($this->db->connect()));

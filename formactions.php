@@ -255,5 +255,19 @@ if(isset($_POST['BVOpinionadd'])) {
   exit();
 }
 
+// Besluitvormingsproces opinie verwijderen
+if(isset($_POST['BVPdelete'])) {
+  $pid = $_POST['pid'];
+  $did = $_POST['did'];
+  $uid = $_POST['uid'];
+
+  require_once "database/db_functions.php";
+  $db_deletePush = new DB_functions();
+  $db_deletePush_info = $db_deletePush->raadslidDelete($pid, $did, $uid);
+
+  header("location: raadslid.php?action=add&id=".$pid."");
+  exit();
+}
+
 
 ?>
