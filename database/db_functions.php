@@ -126,7 +126,7 @@ class DB_functions
 
   // besluiten toevoegen
   public function griffieBVAdd($pid, $BVPtitle, $BVPsummary){
-    $datenow = date("d/m/Y");
+    $datenow = date("d-m-Y");
     $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_decision` (`id`,`pid`, `title`, `summary`, `date`) VALUES (NULL, '$pid', '$BVPtitle', '$BVPsummary','$datenow')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
