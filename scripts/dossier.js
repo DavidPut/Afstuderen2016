@@ -164,6 +164,10 @@ function moveSidebar(){
         $(".toggle-button").css({"top" : "99.5%", "left"  : "7%", "height" : "35px", "width" : "97%"});
         $(".toggle-button p").removeClass("rotate").css("margin-top", "0px");
         $(".toggle-button button").css({"transition" : "top 0.3s", "top" : "25px"});
+
+        //Hide navigation for mobile
+        $(".btn-more").addClass("hidden");
+
     }
     else {
         $(".mob-sidebar").detach().appendTo('.side-bar');
@@ -171,6 +175,9 @@ function moveSidebar(){
         //Place toggle button outside filter block
         var btnW = $(".toggle-button").outerWidth();
         $(".toggle-button").css({"margin-left": "-" + btnW + "px"});
+
+        //Show navigation for desktop
+        $(".btn-more").removeClass("hidden");
     }
 }
 //Sidebar toggle
