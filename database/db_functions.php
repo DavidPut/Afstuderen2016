@@ -23,6 +23,7 @@ class DB_functions
    */
   public function login($mail)
   {
+    $mail = mysqli_real_escape_string($this->db->connect(),$mail);
     $result = mysqli_query($this->db->connect(), "SELECT * FROM users WHERE mail = '$mail'") or die(mysqli_error($this->db->connect()));
     $no_of_rows = mysqli_num_rows($result);
     if ($no_of_rows > 0) {
@@ -66,6 +67,10 @@ class DB_functions
   //griffie process toevoegen
   public function griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact){
     $datenow = date("d-m-Y");
+    $BVPtitle = mysqli_real_escape_string($this->db->connect(),$BVPtitle);
+    $BVPsummary = mysqli_real_escape_string($this->db->connect(),$BVPsummary);
+    $BVPlocation = mysqli_real_escape_string($this->db->connect(),$BVPlocation);
+    $BVPtags = mysqli_real_escape_string($this->db->connect(),$BVPtags);
     $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process` (`id`, `title`, `summary`, `location`, `type`, `period`, `searchtags`,`date`) VALUES (NULL, '$BVPtitle', '$BVPsummary', '$BVPlocation', '$BVPtypes', '$BVPperiod', '$BVPtags','$datenow')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
@@ -79,6 +84,10 @@ class DB_functions
 
   //griffieEDit
   public function griffieEdit($pid, $BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact){
+    $BVPtitle = mysqli_real_escape_string($this->db->connect(),$BVPtitle);
+    $BVPsummary = mysqli_real_escape_string($this->db->connect(),$BVPsummary);
+    $BVPlocation = mysqli_real_escape_string($this->db->connect(),$BVPlocation);
+    $BVPtags = mysqli_real_escape_string($this->db->connect(),$BVPtags);
     $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process` SET `title` = '$BVPtitle', `summary` = '$BVPsummary', `location` = '$BVPlocation', `period` = '$BVPperiod',`type` = '$BVPtypes', `searchtags` = '$BVPtags'  WHERE `process`.`id` = '$pid'") or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
@@ -138,6 +147,8 @@ class DB_functions
 
   // besluiten toevoegen
   public function griffieBVAdd($pid, $BVPtitle, $BVPsummary, $BVurl){
+    $BVPtitle = mysqli_real_escape_string($this->db->connect(),$BVPtitle);
+    $BVPsummary = mysqli_real_escape_string($this->db->connect(),$BVPsummary);
     $datenow = date("d-m-Y");
     $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_decision` (`id`,`pid`, `title`, `summary`,`url`, `date`) VALUES (NULL, '$pid', '$BVPtitle', '$BVPsummary','$BVurl','$datenow')")or die( mysqli_error($this->db->connect()));
     // check for successful store
@@ -152,6 +163,8 @@ class DB_functions
 
   // besluiten updaten
   public function griffieBVEdit($pid, $bid, $BVtitle, $BVsummary, $BVurl){
+    $BVtitle = mysqli_real_escape_string($this->db->connect(),$BVtitle);
+    $BVsummary = mysqli_real_escape_string($this->db->connect(),$BVsummary);
     $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process_decision` SET `title` = '$BVtitle', `summary` = '$BVsummary', `url` = '$BVurl' WHERE `process_decision`.`id` = '$bid' && `pid` = '$pid'") or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
