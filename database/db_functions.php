@@ -372,6 +372,7 @@ class DB_functions
 
   // agenda toevoegen
   public function griffieAgendaAdd($pid, $title, $date){
+    $title = mysqli_real_escape_string($this->db->connect(),$title);
     $result = mysqli_query($this->db->connect(), "INSERT INTO `gdadmin_dossier`.`process_agenda` (`id`,`pid`, `title`, `date`) VALUES (NULL, '$pid', '$title', '$date')")or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {

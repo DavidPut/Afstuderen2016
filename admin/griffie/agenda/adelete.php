@@ -115,7 +115,7 @@ $db_getBVItem_info = $db_getBVItem->AgendaItem($aid);
                 <div class="form-group">
                   <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
                   <div class="col-sm-10 date">
-                    <input type="text" disabled name="agendaDate" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj" value="<?php echo $db_getBVItem_info['date']; ?>">
+                    <input type="text" disabled name="agendaDate" class="form-control input-group-addon-text" placeholder="dd-mm-jjjj" value="<?php echo $db_getBVItem_info['date']; ?>">
                   </div>
                 </div>
               </div>

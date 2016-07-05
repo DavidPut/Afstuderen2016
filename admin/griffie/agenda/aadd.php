@@ -110,7 +110,7 @@ if (isset($_SESSION['mail'])) {
                 <div class="form-group">
                   <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
                   <div class="col-sm-10 date">
-                    <input type="text" name="agendaDate" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj">
+                    <input type="text" name="agendaDate" class="form-control input-group-addon-text" placeholder="dd-mm-jjjj">
                   </div>
                 </div>
               </div>
