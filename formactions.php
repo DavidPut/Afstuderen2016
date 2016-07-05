@@ -75,19 +75,9 @@ if(isset($_POST['BVPadd'])) {
           $BVPtypes = null;
         }
 
-        if (!empty($_POST['BVPaddContact'])) {
-          $BVPcontact = "";
-          foreach ($_POST['BVPaddContact'] as $selected) {
-            $BVPcontact = $BVPcontact . $selected . ",";
-          }
-        } else {
-          // is het empty.. geen probleem
-          $BVPcontact = null;
-        }
-
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
-        $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        $db_addPush_info = $db_addPush->griffieAdd($BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, strtolower($BVPtags), $BVPtypes, $BVPcontact);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
@@ -106,6 +96,7 @@ if(isset($_POST['BVPedit'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
   $pid = $_POST['pid'];
+  $uid = $_POST['uid'];
   if(isset($_POST['BVPeditTitle']) && !empty($_POST['BVPeditTitle'])) {
     if(isset($_POST['BVPeditSummary']) && !empty($_POST['BVPeditSummary'])) {
       if(isset($_POST['BVPeditPeriod'])) {
@@ -136,19 +127,29 @@ if(isset($_POST['BVPedit'])) {
           $BVPtypes = null;
         }
 
-        if (!empty($_POST['BVPeditContact'])) {
-          $BVPcontact = "";
-          foreach ($_POST['BVPeditContact'] as $selected) {
-            $BVPcontact = $BVPcontact . $selected . ",";
+        if(isset($_POST['BVPaddContact']) && !empty($_POST['BVPaddContact'])) {
+
+          $BVcontact = $_POST['BVPaddContact'];
+          if ($BVcontact == "off") {
+            require_once "database/db_functions.php";
+            $db_addBVPush = new DB_functions();
+            $db_addBVPush_info = $db_addBVPush->raadslidContactDelete($pid, $uid);
+          } elseif ($BVcontact == "on") {
+            require_once "database/db_functions.php";
+            $db_addBVPush = new DB_functions();
+            $db_getUser_info = $db_addBVPush->selectGebruiker($uid);
+            $db_addBVPush_info = $db_addBVPush->raadslidContactEdit($pid, $uid, $db_getUser_info['name'], $db_getUser_info['mail'], $db_getUser_info['telefoon']);
+          } else {
+            // deleten maar
+            require_once "database/db_functions.php";
+            $db_addBVPush = new DB_functions();
+            $db_addBVPush_info = $db_addBVPush->raadslidContactDelete($pid, $uid);
           }
-        } else {
-          // is het empty.. geen probleem
-          $BVPcontact = null;
         }
 
         require_once "database/db_functions.php";
         $db_addPush = new DB_functions();
-        $db_addPush_info = $db_addPush->griffieEdit($pid, $BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, $BVPtags, $BVPtypes, $BVPcontact);
+        $db_addPush_info = $db_addPush->griffieEdit($pid, $BVPtitle, $BVPsummary, $BVPperiod, $BVPlocation, strtolower($BVPtags), $BVPtypes, $BVPcontact);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
@@ -174,6 +175,19 @@ if(isset($_POST['BVPdelete'])) {
   exit();
 }
 
+// Besluitvormingsproces verwijderen
+if(isset($_POST['BVdelete'])) {
+  $pid = $_POST['pid'];
+  $did = $_POST['did'];
+
+  require_once "database/db_functions.php";
+  $db_deletePush = new DB_functions();
+  $db_deletePush_info = $db_deletePush->griffieDeleteItem($pid, $did);
+
+  header("location: griffie.php");
+  exit();
+}
+
 // Nieuwe besluit bij besluitvormingsproces
 if(isset($_POST['BVadd'])) {
   $_SESSION['POST'] = $_POST;
@@ -184,10 +198,11 @@ if(isset($_POST['BVadd'])) {
 
         $BVtitle = $_POST['BVaddTitle'];
         $BVsummary = $_POST['BVaddSummary'];
+        $BVurl = $_POST['BVurl'];
 
         require_once "database/db_functions.php";
         $db_addBVPush = new DB_functions();
-        $db_addBVPush_info = $db_addBVPush->griffieBVAdd($pid, $BVtitle, $BVsummary);
+        $db_addBVPush_info = $db_addBVPush->griffieBVAdd($pid, $BVtitle, $BVsummary, $BVurl);
 
         unset($_SESSION['Callback']);
         unset($_SESSION['POST']);
@@ -200,7 +215,7 @@ if(isset($_POST['BVadd'])) {
   exit();
 }
 
-// Nieuwe besluit bij besluitvormingsproces
+// aanpassen besluit bij besluitvormingsproces
 if(isset($_POST['BVedit'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
@@ -211,10 +226,11 @@ if(isset($_POST['BVedit'])) {
 
       $BVtitle = $_POST['BVeditTitle'];
       $BVsummary = $_POST['BVeditSummary'];
+      $BVurl = $_POST['BVurl'];
 
       require_once "database/db_functions.php";
       $db_editBVPush = new DB_functions();
-      $db_editBVPush_info = $db_editBVPush->griffieBVEdit($pid, $bid, $BVtitle, $BVsummary);
+      $db_editBVPush_info = $db_editBVPush->griffieBVEdit($pid, $bid, $BVtitle, $BVsummary, $BVurl);
 
       unset($_SESSION['Callback']);
       unset($_SESSION['POST']);
@@ -232,6 +248,8 @@ if(isset($_POST['BVOpinionadd'])) {
   $_SESSION['POST'] = $_POST;
   $_SESSION['Callback'] = true;
   $pid = $_POST['pid'];
+  $did = $_POST['did'];
+  $uid = $_POST['uid'];
   if(isset($_POST['BVPaddVote']) && !empty($_POST['BVPaddVote'])) {
     if(isset($_POST['BVPaddOpinion']) && !empty($_POST['BVPaddOpinion'])) {
 
@@ -252,6 +270,149 @@ if(isset($_POST['BVOpinionadd'])) {
   header("location: admin/raadslid/besluitvorming/bvadd.php?id=".$pid."&bid=".$did."");
   exit();
 }
+
+// Nieuwe opinie en stem bij besluitvormingsproces
+if(isset($_POST['BVOpinionedit'])) {
+  $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
+  $pid = $_POST['pid'];
+  $did = $_POST['did'];
+  $uid = $_POST['uid'];
+  if(isset($_POST['BVPaddVote']) && !empty($_POST['BVPaddVote'])) {
+    if(isset($_POST['BVPaddOpinion']) && !empty($_POST['BVPaddOpinion'])) {
+
+      $BVvote = $_POST['BVPaddVote'];
+      $BVopinion = $_POST['BVPaddOpinion'];
+
+      require_once "database/db_functions.php";
+      $db_addBVPush = new DB_functions();
+      $db_addBVPush_info = $db_addBVPush->raadslidOpinionEdit($pid, $did, $uid, $BVvote, $BVopinion);
+
+      unset($_SESSION['Callback']);
+      unset($_SESSION['POST']);
+      header("location: raadslid.php?action=add&id=".$pid."");
+      exit();
+    }
+  }
+  //errors
+  header("location: admin/raadslid/besluitvorming/bvadd.php?id=".$pid."&bid=".$did."");
+  exit();
+}
+
+// Besluitvormingsproces opinie verwijderen
+if(isset($_POST['BVOpiniondelete'])) {
+  $pid = $_POST['pid'];
+  $did = $_POST['did'];
+  $uid = $_POST['uid'];
+
+  require_once "database/db_functions.php";
+  $db_deletePush = new DB_functions();
+  $db_deletePush_info = $db_deletePush->raadslidDelete($pid, $did, $uid);
+
+  header("location: raadslid.php?action=add&id=".$pid."");
+  exit();
+}
+
+// Nieuwe opinie en stem bij besluitvormingsproces
+if(isset($_POST['RaadslidContactEdit'])) {
+  $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
+  $pid = $_POST['pid'];
+  $uid = $_POST['uid'];
+  if(isset($_POST['BVPaddContact']) && !empty($_POST['BVPaddContact'])) {
+
+      $BVcontact = $_POST['BVPaddContact'];
+      if($BVcontact == "off"){
+        require_once "database/db_functions.php";
+        $db_addBVPush = new DB_functions();
+        $db_addBVPush_info = $db_addBVPush->raadslidContactDelete($pid, $uid);
+      } elseif ($BVcontact == "on") {
+        require_once "database/db_functions.php";
+        $db_addBVPush = new DB_functions();
+        $db_getUser_info = $db_addBVPush->selectGebruiker($uid);
+        $db_addBVPush_info = $db_addBVPush->raadslidContactEdit($pid, $uid, $db_getUser_info['name'], $db_getUser_info['mail'], $db_getUser_info['telefoon']);
+      } else {
+        // deleten maar
+        require_once "database/db_functions.php";
+        $db_addBVPush = new DB_functions();
+        $db_addBVPush_info = $db_addBVPush->raadslidContactDelete($pid, $uid);
+      }
+
+      unset($_SESSION['Callback']);
+      unset($_SESSION['POST']);
+      header("location: raadslid.php");
+      exit();
+  }
+  //errors
+  header("location: admin/raadslid/besluitvorming/bvadd.php?id=".$pid."&bid=".$did."");
+  exit();
+}
+
+// Nieuwe agenda bij besluitvormingsproces
+if(isset($_POST['agendaAdd'])) {
+  $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
+  $pid = $_POST['pid'];
+  if(isset($_POST['agendaTitle']) && !empty($_POST['agendaTitle'])) {
+    if(isset($_POST['agendaDate']) && !empty($_POST['agendaDate'])) {
+
+      $title = $_POST['agendaTitle'];
+      $date = $_POST['agendaDate'];
+
+      require_once "database/db_functions.php";
+      $db_addBVPush = new DB_functions();
+      $db_addBVPush_info = $db_addBVPush->griffieAgendaAdd($pid, $title, $date);
+
+      unset($_SESSION['Callback']);
+      unset($_SESSION['POST']);
+      header("location: griffie.php?action=edit&id=".$pid."");
+      exit();
+    }
+  }
+  //errors
+  header("location: admin/griffie/besluitvorming/bvadd.php?id=".$pid."");
+  exit();
+}
+
+// agenda verwijderen
+if(isset($_POST['agendaDelete'])) {
+  $aid = $_POST['aid'];
+
+  require_once "database/db_functions.php";
+  $db_deletePush = new DB_functions();
+  $db_deletePush_info = $db_deletePush->griffieAgendaDelete($aid);
+
+  header("location: griffie.php");
+  exit();
+}
+
+// Nieuwe besluit bij besluitvormingsproces
+if(isset($_POST['agendaEdit'])) {
+  $_SESSION['POST'] = $_POST;
+  $_SESSION['Callback'] = true;
+  $pid = $_POST['pid'];
+  $aid = $_POST['aid'];
+  if(isset($_POST['agendaTitle']) && !empty($_POST['agendaTitle'])) {
+    if(isset($_POST['agendaDate']) && !empty($_POST['agendaDate'])) {
+
+      $title = $_POST['agendaTitle'];
+      $date = $_POST['agendaDate'];
+
+      require_once "database/db_functions.php";
+      $db_addBVPush = new DB_functions();
+      $db_addBVPush_info = $db_addBVPush->griffieAgendaEdit($aid, $title, $date);
+
+      unset($_SESSION['Callback']);
+      unset($_SESSION['POST']);
+      header("location: griffie.php?action=edit&id=".$pid."");
+      exit();
+    }
+  }
+  //errors
+  header("location: admin/griffie/besluitvorming/bvadd.php?id=".$pid."");
+  exit();
+}
+
 
 
 ?>

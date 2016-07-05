@@ -2,6 +2,7 @@
 
 <form class="form-horizontal" action="formactions.php" method="POST">
   <input type="hidden" name="pid" value="<?php echo $db_getItem_info['id']; ?>">
+  <input type="hidden" name="uid" value="<?php echo $_SESSION['uid']; ?>">
 
   <!-- nieuwe besluitvorming -->
   <div class="row">
@@ -57,7 +58,7 @@
       <div class="form-group">
         <label for="inputTags" class="col-sm-2 control-label">Zoekwoorden</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="BVPeditTags" placeholder="Tags, gescheiden door komma's" value="<?php echo $db_getItem_info['tags']; ?>"></input>
+          <input class="form-control" type="text" name="BVPeditTags" placeholder="Tags, gescheiden door komma's" value="<?php echo $db_getItem_info['searchtags']; ?>"></input>
         </div>
       </div>
     </div>
@@ -143,39 +144,34 @@
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
-        <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
-        <div class="col-sm-10">
-          <input type="text" name="agendaTitle" class="form-control" placeholder="Titel agenda">
-        </div>
-      </div>
+      <?php require_once "agenda/alist.php"; ?>
     </div>
   </div>
+  
+
+  <?php
+  require_once "database/db_functions.php"; //test
+  $db_getList = new DB_functions();
+  $db_getContactItem_info = $db_getList->raadslidContactItem($_GET['id'], $_SESSION['uid']);
+
+
+  ?>
 
   <div class="row">
     <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
-        <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
-        <div class="col-sm-10 date">
-          <input type="text" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-xs-12 ">
-      <div class="form-group">
-        <label for="inputContact" class="col-sm-2 control-label">Contactgegevens</label>
+      <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
+        <label for="inputTags" class="col-sm-2 control-label">Contactgegevens</label>
         <div class="col-sm-10">
-          <div class="checkbox">
+          <div class="radio">
             <label>
-              <input type="checkbox" name="BVPeditContact[]" value="GEM"> Gemeente contactgegevens
+              <input type="radio" name="BVPaddContact" id="optionsRadios1" value="off" <?php if($db_getContactItem_info == false){echo 'checked';}?>>
+              Griffier contactgegevens niet achterlaten
             </label>
           </div>
-          <div class="checkbox">
+          <div class="radio">
             <label>
-              <input type="checkbox" name="BVPeditContact[]" value="GRIEF"> Griffie contactgegevens
+              <input type="radio" name="BVPaddContact" id="optionsRadios2" value="on" <?php if($db_getContactItem_info == true){echo 'checked';}?>>
+              Griffier contactgegevens achterlaten
             </label>
           </div>
         </div>

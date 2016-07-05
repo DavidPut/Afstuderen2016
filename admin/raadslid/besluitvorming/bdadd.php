@@ -73,6 +73,8 @@ $db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
 <div class="container">
   <form class="form-horizontal" action="formactions.php" method="POST">
     <input type="hidden" name="pid" value="<?php echo $id; ?>">
+    <input type="hidden" name="did" value="<?php echo $bid; ?>">
+    <input type="hidden" name="uid" value="<?php echo $_SESSION['uid']; ?>">
 
     <!-- nieuwe besluitvorming -->
     <div class="row">

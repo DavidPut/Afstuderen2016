@@ -4,10 +4,10 @@ session_start();
 
 $action = urlencode($_GET['action']);
 $id = urlencode($_GET['id']);
-$bid = urlencode($_GET['bid']);
+$aid = urlencode($_GET['aid']);
 
 if (isset($_SESSION['mail'])) {
-  if ($_SESSION['role'] != "raadslid") {
+  if ($_SESSION['role'] != "griffier") {
     header("Location: indexerror.php");
     exit();
   }
@@ -19,11 +19,7 @@ if (isset($_SESSION['mail'])) {
 //database verkrijgen data
 require_once "../../../database/db_functions.php";
 $db_getBVItem = new DB_functions();
-$db_getBVItem_info = $db_getBVItem->BVItem($id, $bid);
-$db_getBVOpinionItem_info = $db_getBVItem->raadslidList($id, $bid, $_SESSION['uid']);
-
-
-//data opsturen
+$db_getBVItem_info = $db_getBVItem->AgendaItem($aid);
 
 ?>
 
@@ -73,9 +69,8 @@ $db_getBVOpinionItem_info = $db_getBVItem->raadslidList($id, $bid, $_SESSION['ui
 
 <div class="container">
   <form class="form-horizontal" action="formactions.php" method="POST">
+    <input type="hidden" name="aid" value="<?php echo $aid; ?>">
     <input type="hidden" name="pid" value="<?php echo $id; ?>">
-    <input type="hidden" name="did" value="<?php echo $bid; ?>">
-    <input type="hidden" name="uid" value="<?php echo $_SESSION['uid']; ?>">
 
     <!-- nieuwe besluitvorming -->
     <div class="row">
@@ -85,8 +80,8 @@ $db_getBVOpinionItem_info = $db_getBVItem->raadslidList($id, $bid, $_SESSION['ui
             <h3>Besluitvorming <span class="label label-danger"><i class="fa fa-trash-o small-icon" aria-hidden="true"></i></span></h3>
           </div>
           <div class="pull-right">
-            <a class="btn btn-default" href="raadslid.php?action=add&id=<?php echo $id; ?>">annuleren</a>
-            <button class="btn btn-list btn-danger" type="submit" name ="BVOpiniondelete" value="verwijderen">verwijderen</button>
+            <a class="btn btn-default" href="griffie.php?action=edit&id=<?php echo $id; ?>">annuleren</a>
+            <button class="btn btn-list btn-danger" type="submit" name ="agendaDelete" value="verwijderen">verwijderen</button>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -99,7 +94,7 @@ $db_getBVOpinionItem_info = $db_getBVItem->raadslidList($id, $bid, $_SESSION['ui
         <div class = "panel panel-default">
 
           <div class = "panel-heading">
-            <h3 class = "panel-title">Besluitvorming</h3>
+            <h3 class = "panel-title">Agendadatum</h3>
           </div>
 
           <div class = "panel-body">
@@ -107,9 +102,9 @@ $db_getBVOpinionItem_info = $db_getBVItem->raadslidList($id, $bid, $_SESSION['ui
             <div class="row">
               <div class="col-md-12 col-xs-12 ">
                 <div class="form-group">
-                  <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
+                  <label for="inputTitleProces" class="col-sm-2 control-label">Agenda</label>
                   <div class="col-sm-10">
-                    <p><?php echo $db_getBVItem_info['title']; ?></p>
+                    <input type="text" disabled name="agendaTitle" class="form-control" placeholder="Titel voor agendadatum" value="<?php echo $db_getBVItem_info['title']; ?>">
                   </div>
                 </div>
               </div>
@@ -118,48 +113,9 @@ $db_getBVOpinionItem_info = $db_getBVItem->raadslidList($id, $bid, $_SESSION['ui
             <div class="row">
               <div class="col-md-12 col-xs-12 ">
                 <div class="form-group">
-                  <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
-                  <div class="col-sm-10">
-                    <p><?php echo $db_getBVItem_info['summary']; ?></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-xs-12 ">
-                <div class="form-group <?php if($_SESSION['Callback'] == true){echo "has-error";}?>">
-                  <label for="inputTags" class="col-sm-2 control-label">Stem</label>
-                  <div class="col-sm-10">
-                    <div class="radio">
-                      <label>
-                        <input disabled type="radio" name="BVPaddVote" id="optionsRadios1" value="1" <?php if($db_getBVOpinionItem_info['vote'] == '1'){echo 'checked';}?>>
-                        Voor
-                      </label>
-                    </div>
-                    <div class="radio">
-                      <label>
-                        <input disabled type="radio" name="BVPaddVote" id="optionsRadios2" value="2" <?php if($db_getBVOpinionItem_info['vote'] == '2'){echo 'checked';}?>>
-                        Neutraal
-                      </label>
-                    </div>
-                    <div class="radio">
-                      <label>
-                        <input disabled type="radio" name="BVPaddVote" id="optionsRadios3" value="3" <?php if($db_getBVOpinionItem_info['vote'] == '3'){echo 'checked';}?>>
-                        Tegen
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-xs-12 ">
-                <div class="form-group">
-                  <label for="inputSummaryProces" class="col-sm-2 control-label">Standpunt</label>
-                  <div class="col-sm-10">
-                    <textarea readonly="readonly" class="form-control" name="BVPaddOpinion" rows="2"><?php echo $db_getBVOpinionItem_info['opinion']; ?></textarea>
+                  <label for="inputDateExtra" class="col-sm-2 control-label">Datum</label>
+                  <div class="col-sm-10 date">
+                    <input type="text" disabled name="agendaDate" class="form-control input-group-addon-text" placeholder="dd/mm/jjjj" value="<?php echo $db_getBVItem_info['date']; ?>">
                   </div>
                 </div>
               </div>
@@ -173,8 +129,8 @@ $db_getBVOpinionItem_info = $db_getBVItem->raadslidList($id, $bid, $_SESSION['ui
 
     <div class="row">
       <div class="col-md-4 col-md-offset-4 col-xs-12">
-        <a class="btn btn-lg btn-default text-left" href="raadslid.php?action=add&id=<?php echo $id; ?>">annuleren</a>
-        <button class="btn btn-lg btn-danger text-right" type="submit" name="BVOpiniondelete" value="verwijderen">verwijderen</button>
+        <a class="btn btn-lg btn-default text-left" href="griffie.php?action=edit&id=<?php echo $id; ?>">annuleren</a>
+        <button class="btn btn-lg btn-danger text-right" type="submit" name="agendaDelete" value="verwijderen">verwijderen</button>
       </div>
     </div>
 
@@ -183,6 +139,19 @@ $db_getBVOpinionItem_info = $db_getBVItem->raadslidList($id, $bid, $_SESSION['ui
 <script>
   $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+<script>
+  $(document).ready(function() {
+    $('.input-group-addon-text').datepicker({
+      format: "dd-mm-yyyy",
+      startView: 1,
+      maxViewMode: 0,
+      language: "nl",
+      calendarWeeks: false,
+      autoclose: true,
+      todayHighlight: true
+    });
   });
 </script>
 

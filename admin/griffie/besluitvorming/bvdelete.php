@@ -16,7 +16,10 @@ if (isset($_SESSION['mail'])) {
   exit();
 }
 
-// rare rrors soms
+//database verkrijgen data
+require_once "../../../database/db_functions.php";
+$db_getBVItem = new DB_functions();
+$db_getBVItem_info = $db_getBVItem->BVItem($pid, $bid);
 
 ?>
 
@@ -67,7 +70,7 @@ if (isset($_SESSION['mail'])) {
 <div class="container">
   <form class="form-horizontal" action="formactions.php" method="POST">
     <input type="hidden" name="pid" value="<?php echo $pid; ?>">
-    <input type="hidden" name="bid" value="<?php echo $bid; ?>">
+    <input type="hidden" name="did" value="<?php echo $bid; ?>">
 
     <!-- nieuwe besluitvorming //-->
     <div class="row">
@@ -101,7 +104,7 @@ if (isset($_SESSION['mail'])) {
                 <div class="form-group">
                   <label for="inputTitleProces" class="col-sm-2 control-label">Titel</label>
                   <div class="col-sm-10">
-                    <input type="text" name="BVeditTitle" class="form-control" placeholder="Titel besluit">
+                    <input type="text" name="BVeditTitle" class="form-control" value="<?php echo $db_getBVItem_info['title']; ?>" disabled>
                   </div>
                 </div>
               </div>
@@ -112,7 +115,7 @@ if (isset($_SESSION['mail'])) {
                 <div class="form-group">
                   <label for="inputSummaryProces" class="col-sm-2 control-label">Samenvatting proces</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" name="BVeditSummary" placeholder="Samenvatting besluit" rows="6"></textarea>
+                    <textarea readonly="readonly" class="form-control" name="BVeditSummary" placeholder="Samenvatting besluit" rows="6"><?php echo $db_getBVItem_info['summary']; ?></textarea>
                   </div>
                 </div>
               </div>
@@ -123,7 +126,7 @@ if (isset($_SESSION['mail'])) {
                 <div class="form-group">
                   <label for="inputSummaryProces" class="col-sm-2 control-label">Bestanden</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="BVeditfile" name="inputFile"></input>
+                    <input class="form-control" disabled type="text" name="inputFile" value="<?php echo $db_getBVItem_info['url']; ?>"></input>
                   </div>
                 </div>
               </div>
