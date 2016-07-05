@@ -61,7 +61,7 @@ $db_contact = $db_functions->selectContact($_GET["id"]);
 
 <div class="container-fluid">
 
-    <a class="btn btn-primary btn-more " href="./index.php">Terug</a>
+    <a class="btn btn-primary btn-more" href="./index.php">Terug</a>
 
     <!--Position for mobile sidebar-->
     <div class="row mob-sidebar"></div>
