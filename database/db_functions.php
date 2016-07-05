@@ -396,6 +396,7 @@ class DB_functions
 
   // besluiten updaten
   public function griffieAgendaEdit($aid, $title, $date){
+    $title = mysqli_real_escape_string($this->db->connect(),$title);
     $result = mysqli_query($this->db->connect(), "UPDATE `gdadmin_dossier`.`process_agenda` SET `title` = '$title', `date` = '$date' WHERE `process_agenda`.`id` = '$aid'") or die( mysqli_error($this->db->connect()));
     // check for successful store
     if ($result) {
